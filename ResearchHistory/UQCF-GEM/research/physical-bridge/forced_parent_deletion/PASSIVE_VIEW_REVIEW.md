@@ -1,0 +1,21 @@
+# Review of the root amount inferred from an unchanged view
+
+**Disposition.** The reviewed calculation fixes only view C's marginal plus the existence of a nonnegative joint realization with A. For the five-vertex counting reference, every allowed A-root reading is at most 2 before the parent deletion. After that deletion the A-source range is [3,5] and the B-source range is [0,2]. No specific A update was chosen. The bare incidence grammar alone does not imply these grade conditions.
+
+The mathematical burden has moved to a concrete, independently testable premise within the formal model. On the A-source branch the signed joint root amount is exactly a−3. Its nonnegativity is exactly the lower bound on A. The interval result cannot itself establish why a physical episode should satisfy this joint-source condition. If the grade is accessible, only the anchored A coordinate needs to be read; the experimenter need not observe the full tree. Whether A actually has that means of reading its own formal amount remains open.
+
+## Frozen source and review
+
+[GitHub Actions run 44912036306, attempt 1](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44912036306) used the same scientific and workflow revision `919eb0d4138341fd10aab0654f89668701784dff`. Source replay, independent review and publication audit all succeeded. The publication job freshly generated the same replay.
+
+Gemini 3.1 Pro Preview returned ACCEPTED with 13 explicit proof checks, empty findings, missing-assumption and counterexample lists, and OPEN for the physical bridge. The reviewer reconstructed both endpoint intervals and their attainments, the equality and negative-gluing controls, the prior counting construction, the integer fiber and the alternative executable paths. The review expressly leaves actual occurrence and physical access open. [Raw reviewer answer](evidence/passive_view/review_verdict.json) and [publication receipt](evidence/passive_view/publication_audit.json).
+
+The three downloaded ZIPs matched GitHub's archive hashes. Their ZIP entries passed integrity checks. The downloaded replay is byte-identical to the frozen `passive_view_results.json`. The raw response and receipt also match the independent publication-job log bytes. Raw response SHA-256 `83f0ce849abdab8479f2fa258ac6277f736fbbdbae690ae52dc5471f2c5aa933`. [Archive manifests](evidence/passive_view/downloaded_archives.json) and [durable evidence](evidence/passive_view).
+
+## Original caller and bot challenge
+
+[Grok's response](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-7063645821) distinguishes a decreasing number of live incidences from an extensive grade. The extent of the whole support relation does fall. In this example the chosen passive grade counts the five fixed *ambient vertices*, each once, and then projects the counts into C; its total is five. Only the passive marginal is retained in the relaxed calculation. This supplies a consistent mathematical grade interpretation and leaves its physical realization open.
+
+In a supplementary original-code check outside the Gemini freeze, v16.25 `certify_refinement` called `composition_records` on the two stipulated middle-to-endpoint transitions. Its A-indexed basis row for a unit at p sends it to o on the A branch and keeps it at p on the B branch. Weighting the returned matrix rows by the common-ambient counting preparation reproduces 4 and 1. The actual return is a global certificate list annotated with view and basis. Nothing in this caller dispatches a read to a physical subsystem A. These supplied-endpoint calls do not establish that a second event occurs. [Recorded rows](evidence/passive_view/original_composition_rows.json).
+
+The v16.50 normalizer is an original executable rule that determines successive edits. For the default palette order and target it starts with additions on both branches and reaches a common endpoint. The broader signed grammar therefore has a working competing continuation. This leaves a sharply phrased outstanding identification: find an actual source operation which both realizes the required incidence episode and justifies the relevant positive local data or their operational use.

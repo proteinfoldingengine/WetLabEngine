@@ -1,0 +1,881 @@
+{
+  "archive_git_blob": "9dd2e4445bca36dfe59f10fc7b7debd1ee2bc81e",
+  "archive_rows": 2863,
+  "archive_sha256": "bad1d22fb839dcf904fda3acdb4defc63bc1eeda3a6c680528d434aaa66128d1",
+  "automatic_event_activation_and_physical_owner_read": "OPEN",
+  "same_site_control": {
+    "B_deletion": {
+      "archived_row_zero_based": 1882,
+      "end": [
+        31,
+        1,
+        1
+      ],
+      "identity": [
+        "R",
+        3,
+        [
+          0,
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "moves": 14,
+      "own_write_indices": [
+        2,
+        4
+      ],
+      "path": [
+        [
+          19,
+          1,
+          31
+        ],
+        [
+          19,
+          3,
+          31
+        ],
+        [
+          23,
+          3,
+          31
+        ],
+        [
+          23,
+          7,
+          31
+        ],
+        [
+          31,
+          7,
+          31
+        ],
+        [
+          31,
+          15,
+          31
+        ],
+        [
+          31,
+          31,
+          31
+        ],
+        [
+          31,
+          29,
+          31
+        ],
+        [
+          31,
+          29,
+          29
+        ],
+        [
+          31,
+          25,
+          29
+        ],
+        [
+          31,
+          25,
+          25
+        ],
+        [
+          31,
+          17,
+          25
+        ],
+        [
+          31,
+          17,
+          17
+        ],
+        [
+          31,
+          1,
+          17
+        ],
+        [
+          31,
+          1,
+          1
+        ]
+      ],
+      "q": 1,
+      "receiver_leaf_counts": [
+        2,
+        3,
+        4
+      ],
+      "receiver_masks": [
+        19,
+        23,
+        31
+      ]
+    },
+    "C_deletion": {
+      "archived_row_zero_based": 1196,
+      "end": [
+        15,
+        17,
+        1
+      ],
+      "identity": [
+        "R",
+        3,
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "moves": 14,
+      "own_write_indices": [
+        2,
+        4,
+        13
+      ],
+      "path": [
+        [
+          19,
+          3,
+          29
+        ],
+        [
+          19,
+          3,
+          31
+        ],
+        [
+          23,
+          3,
+          31
+        ],
+        [
+          23,
+          7,
+          31
+        ],
+        [
+          31,
+          7,
+          31
+        ],
+        [
+          31,
+          15,
+          31
+        ],
+        [
+          31,
+          31,
+          31
+        ],
+        [
+          31,
+          29,
+          31
+        ],
+        [
+          31,
+          29,
+          29
+        ],
+        [
+          31,
+          25,
+          29
+        ],
+        [
+          31,
+          25,
+          25
+        ],
+        [
+          31,
+          17,
+          25
+        ],
+        [
+          31,
+          17,
+          17
+        ],
+        [
+          15,
+          17,
+          17
+        ],
+        [
+          15,
+          17,
+          1
+        ]
+      ],
+      "q": 2,
+      "receiver_leaf_counts": [
+        2,
+        3,
+        4,
+        3
+      ],
+      "receiver_masks": [
+        19,
+        23,
+        31,
+        15
+      ]
+    },
+    "equal_incidence_indices_after_source": [
+      1,
+      12
+    ],
+    "later_common_counting": {
+      "both_grades": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "no_event": {
+      "archived_row_zero_based": 2568,
+      "end": [
+        31,
+        1,
+        1
+      ],
+      "identity": [
+        "R",
+        3,
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "moves": 13,
+      "own_write_indices": [
+        1,
+        3
+      ],
+      "path": [
+        [
+          19,
+          3,
+          31
+        ],
+        [
+          23,
+          3,
+          31
+        ],
+        [
+          23,
+          7,
+          31
+        ],
+        [
+          31,
+          7,
+          31
+        ],
+        [
+          31,
+          15,
+          31
+        ],
+        [
+          31,
+          31,
+          31
+        ],
+        [
+          31,
+          29,
+          31
+        ],
+        [
+          31,
+          29,
+          29
+        ],
+        [
+          31,
+          25,
+          29
+        ],
+        [
+          31,
+          25,
+          25
+        ],
+        [
+          31,
+          17,
+          25
+        ],
+        [
+          31,
+          17,
+          17
+        ],
+        [
+          31,
+          1,
+          17
+        ],
+        [
+          31,
+          1,
+          1
+        ]
+      ],
+      "q": 1,
+      "receiver_leaf_counts": [
+        2,
+        3,
+        4
+      ],
+      "receiver_masks": [
+        19,
+        23,
+        31
+      ]
+    },
+    "old_common_A_counting_grade": [
+      3,
+      1,
+      1
+    ],
+    "start": [
+      19,
+      3,
+      31
+    ],
+    "two_universal_labels_control_rows": [
+      1996,
+      1310
+    ]
+  },
+  "star_catalog": {
+    "atoms": 12564,
+    "eligible_two_site_choices": 144,
+    "equal_path_lengths": 24,
+    "receiver_is_first_index": 48,
+    "same_remote_second_write": 40,
+    "triggered": 2708
+  },
+  "two_site_witness": {
+    "alternative_low_counts": [
+      2,
+      3,
+      2,
+      3
+    ],
+    "arms": [
+      {
+        "archived_row_zero_based": 1782,
+        "end": [
+          15,
+          17,
+          1
+        ],
+        "external_leaf_coverage_at_onset": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "identity": [
+          "R",
+          3,
+          [
+            0,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "moves": 14,
+        "own_write_indices": [
+          2,
+          4,
+          13
+        ],
+        "path": [
+          [
+            19,
+            21,
+            11
+          ],
+          [
+            19,
+            23,
+            11
+          ],
+          [
+            23,
+            23,
+            11
+          ],
+          [
+            23,
+            23,
+            15
+          ],
+          [
+            31,
+            23,
+            15
+          ],
+          [
+            31,
+            31,
+            15
+          ],
+          [
+            31,
+            31,
+            31
+          ],
+          [
+            31,
+            29,
+            31
+          ],
+          [
+            31,
+            29,
+            29
+          ],
+          [
+            31,
+            25,
+            29
+          ],
+          [
+            31,
+            25,
+            25
+          ],
+          [
+            31,
+            17,
+            25
+          ],
+          [
+            31,
+            17,
+            17
+          ],
+          [
+            15,
+            17,
+            17
+          ],
+          [
+            15,
+            17,
+            1
+          ]
+        ],
+        "q": 2,
+        "receiver_leaf_counts": [
+          2,
+          3,
+          4,
+          3
+        ],
+        "receiver_masks": [
+          19,
+          23,
+          31,
+          15
+        ],
+        "source_root_increment": 0,
+        "source_site": 1
+      },
+      {
+        "archived_row_zero_based": 2466,
+        "end": [
+          7,
+          9,
+          17
+        ],
+        "external_leaf_coverage_at_onset": [
+          1,
+          2,
+          3
+        ],
+        "identity": [
+          "R",
+          3,
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ]
+        ],
+        "moves": 14,
+        "own_write_indices": [
+          1,
+          4,
+          5,
+          13
+        ],
+        "path": [
+          [
+            19,
+            7,
+            11
+          ],
+          [
+            27,
+            7,
+            11
+          ],
+          [
+            27,
+            23,
+            11
+          ],
+          [
+            27,
+            23,
+            27
+          ],
+          [
+            19,
+            23,
+            27
+          ],
+          [
+            23,
+            23,
+            27
+          ],
+          [
+            23,
+            21,
+            27
+          ],
+          [
+            23,
+            29,
+            27
+          ],
+          [
+            23,
+            29,
+            25
+          ],
+          [
+            23,
+            29,
+            29
+          ],
+          [
+            23,
+            25,
+            29
+          ],
+          [
+            23,
+            25,
+            25
+          ],
+          [
+            23,
+            25,
+            17
+          ],
+          [
+            7,
+            25,
+            17
+          ],
+          [
+            7,
+            9,
+            17
+          ]
+        ],
+        "q": 3,
+        "receiver_leaf_counts": [
+          2,
+          3,
+          2,
+          3,
+          2
+        ],
+        "receiver_masks": [
+          19,
+          27,
+          19,
+          23,
+          7
+        ],
+        "source_root_increment": 1,
+        "source_site": 4
+      }
+    ],
+    "common_counting_after_second_write": {
+      "both_grades": [
+        3,
+        1,
+        1
+      ],
+      "sites": [
+        0,
+        1,
+        4
+      ]
+    },
+    "equally_admitted_alternative_low_path": [
+      [
+        19,
+        21,
+        11
+      ],
+      [
+        27,
+        21,
+        11
+      ],
+      [
+        11,
+        21,
+        11
+      ],
+      [
+        15,
+        21,
+        11
+      ],
+      [
+        15,
+        17,
+        11
+      ],
+      [
+        15,
+        17,
+        9
+      ],
+      [
+        15,
+        17,
+        1
+      ]
+    ],
+    "later_common_counting": {
+      "both_grades": [
+        3,
+        1,
+        1
+      ],
+      "sites": [
+        0,
+        1,
+        2
+      ]
+    },
+    "no_event": {
+      "archived_row_zero_based": 2468,
+      "end": [
+        15,
+        17,
+        1
+      ],
+      "identity": [
+        "R",
+        3,
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "moves": 13,
+      "own_write_indices": [
+        1,
+        3,
+        12
+      ],
+      "path": [
+        [
+          19,
+          23,
+          11
+        ],
+        [
+          23,
+          23,
+          11
+        ],
+        [
+          23,
+          23,
+          15
+        ],
+        [
+          31,
+          23,
+          15
+        ],
+        [
+          31,
+          31,
+          15
+        ],
+        [
+          31,
+          31,
+          31
+        ],
+        [
+          31,
+          29,
+          31
+        ],
+        [
+          31,
+          29,
+          29
+        ],
+        [
+          31,
+          25,
+          29
+        ],
+        [
+          31,
+          25,
+          25
+        ],
+        [
+          31,
+          17,
+          25
+        ],
+        [
+          31,
+          17,
+          17
+        ],
+        [
+          15,
+          17,
+          17
+        ],
+        [
+          15,
+          17,
+          1
+        ]
+      ],
+      "q": 2,
+      "receiver_leaf_counts": [
+        2,
+        3,
+        4,
+        3
+      ],
+      "receiver_masks": [
+        19,
+        23,
+        31,
+        15
+      ]
+    },
+    "receiver": "A",
+    "response_after_second_own_write": [
+      {
+        "fixed_port_potential_on_o_v1_v4": [
+          0,
+          1,
+          0
+        ],
+        "root_degree_and_rank": 4
+      },
+      {
+        "fixed_port_potential_on_o_v1_v4": [
+          0,
+          1,
+          0
+        ],
+        "root_degree_and_rank": 2
+      }
+    ],
+    "source": "B",
+    "start": [
+      19,
+      23,
+      11
+    ]
+  },
+  "unchanged_producer_R_rows_matching": 2507
+}

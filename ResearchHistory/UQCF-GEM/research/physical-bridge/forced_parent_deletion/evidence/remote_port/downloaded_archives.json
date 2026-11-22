@@ -1,0 +1,55 @@
+{
+  "audit": {
+    "artifact_id": 14713846857,
+    "bytes": 1281,
+    "entries": {
+      "publication_audit.json": {
+        "bytes": 2951,
+        "sha256": "ce58336b487ec92d38310f6186086b0124f2b4747faee5882a3dd7564bd8a166"
+      }
+    },
+    "sha256": "f7c0b2034012d011f1036fa9fae36409186a2ad69f6cc34c855acf47625262ec"
+  },
+  "replay": {
+    "artifact_id": 14713797044,
+    "bytes": 1725,
+    "entries": {
+      "replay.json": {
+        "bytes": 10012,
+        "sha256": "d4d44aea1403d97c1ced934b61d5d2f1c8891f1d028ffbfabd9af261756498ec"
+      }
+    },
+    "sha256": "f821848cb64d446989db4b7c5beaca40147182ecb95f67f16e76df5add4ba139"
+  },
+  "review": {
+    "artifact_id": 14713861451,
+    "bytes": 121286,
+    "entries": {
+      "model_metadata.json": {
+        "bytes": 459,
+        "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+      },
+      "prompt.txt": {
+        "bytes": 158418,
+        "sha256": "9b9315acd0523eb2b947ae6ad01cfa49fbb8ca5337ec1471522b18e3f9e0cf7b"
+      },
+      "receipt.json": {
+        "bytes": 2932,
+        "sha256": "b032ca514283368ef4e1297b8fd304f75d2827ea242a0b8ba78af2644860b5d4"
+      },
+      "request.json": {
+        "bytes": 162560,
+        "sha256": "7c778eb98e7d9277b22b4bd25b8ae0c4aacad2bb93969c924856f3f8b4157972"
+      },
+      "response.json": {
+        "bytes": 26175,
+        "sha256": "d9b8843110cf1e85d8a9af54a7f3e7b616941a4cbcde6d1d14c6ad3f7665de47"
+      },
+      "review.txt": {
+        "bytes": 1981,
+        "sha256": "6120a45f4b2dbcb78ffdf9c0b1b967d45eb67ffa6dab7f91af4d09057763f904"
+      }
+    },
+    "sha256": "5d22f6561cf092e857e70fc0301c3171a7189dac2c3dcd2d3c797f661ac35145"
+  }
+}

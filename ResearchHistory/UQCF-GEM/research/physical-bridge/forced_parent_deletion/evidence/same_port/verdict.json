@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": [
+    "The residue matrix is correctly derived from the opposite-roll vector rule $R_i(x,q;\\gamma) = x_i + q_i + \\gamma(x_{i-1} q_i - x_i q_{i+1})$. The difference between two arms with the same left input $x$ and different right inputs $q3, q4$ is $\\Delta J_{ij} = \\gamma(s_i \\delta_{j,i-1} - s_{i+1} \\delta_{j,i})$ where $s = q3 - q4$.",
+    "The balanced fixed-port probe uses $+h$ at coordinate 2 and $-h$ at coordinate 10. The output at coordinate 3 depends only on the input at 2 (since 10 is outside the stencil), yielding a response of $\\gamma q_3$ per unit $h$.",
+    "The unprobed baselines at output 3 are correctly calculated as 42 and 180 for B3 and B4 respectively.",
+    "The signed gains (slopes) at output 3 are $-63$ and $-270$, yielding a difference of $+207$. At output 2, the slopes are $64$ and $271$, yielding a difference of $-207$.",
+    "Exact cancellation is verified: each column of the contrast matrix sums to zero, reflecting the conserved total input.",
+    "Common-inner-gate controls are verified: setting all inner gates to $0, 1/2, 1, -1$ yields response differences at output 3 of $0, 207/4, 207, 207$ respectively.",
+    "Identical-state control is verified: supplying the same effective right operand in both arms yields a zero contrast matrix.",
+    "The rank claim is verified: the exact response difference matrix has rank 10 on the default gates and rank 8 in the matched-unit control.",
+    "The historical program `v1687_16.py` enumerates all five bracketings in `bracket4_all` rather than selecting one as a physical event.",
+    "Single record results are correctly reconstructed: for $\\rho = (I+xX)/2$, the BKM susceptibility is $k = x/\\text{atanh}(x)$. At $x=0.6$, $k \\approx 0.865617025$, and the difference after pinching is $1 - k \\approx 0.134382975$.",
+    "The default v15.16 fixture has a minimum input eigenvalue of $0.00625$ (faithful). The 160 pinched-bit probes yield positive changes ($0.004358008, 0.217265277, 0.169769780, 0.092825992$), while the 160 unpinched-bit probes yield zero change.",
+    "Two-record results are correctly reconstructed: for $\\rho = (I+x X_A X_B)(I+z Z_A Z_B)/4$, the pre-pinch cross susceptibility is $zk$ and post-pinch is $z$. At $x=0.6, z=0.5$, the difference is $0.5 - 0.432808512 = 0.067191488$.",
+    "The parity-sector formula and finite tilt curves are verified: the receiver means are $z h \\tanh(t)/t$ (coherent) and $z \\tanh(h)$ (pinched), where $t = \\sqrt{\\text{atanh}(x)^2 + h^2}$.",
+    "Pinching after a tilt yields a zero increment in the source-to-readout slope, as the tilt preserves the pre-pinch slope.",
+    "The normalized local filter proportional to $\\exp(h Z_A/2)$ yields a zero increment, as its conditional mean is $z \\tanh(h)$ in both arms.",
+    "Both encoded-copy nulls are verified: the joint BKM diagnostic on either single encoded output copy yields a zero increment, as the marginals are already diagonal in the output record basis before pinching.",
+    "The text correctly distinguishes these programmatic responses from physical events, explicitly stating that 'Neither historical caller hands a v15.16 output to v13.27 as an autonomous physical probe' and 'No communication or gravitational detection follows from this conditional response difference.'"
+  ],
+  "native_bridge_status": "OPEN"
+}

@@ -1,0 +1,30 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The completion criterion is a supplied mathematical contract, not an inherited physical selection law.",
+    "The v16.48 normalizer does not execute these constructed paths or consume the event identity.",
+    "The two retention conditions (donor freezing and B-junction retention) are substantive and do not follow automatically from the compact-palette theorem.",
+    "The source-grade read is at the existing root, not a generated common-field increment, mass calibration, physical force, or gravity claim.",
+    "The prior conservative grade theorem is assumed within its reviewed scope; no weaker-grade-prefix theorem is asserted or certified here."
+  ],
+  "proof_checks": {
+    "native_incidence_lower_bound": 14,
+    "saturation_at_14": "Confirmed. High minima: [1, 199, 257, 63] and [257, 199, 1, 63]. Low minimum: [1, 455, 1, 63].",
+    "B199_vs_455": "Confirmed. High minimizers have B=199, low minimizer has B=455.",
+    "root_formula": "g0 + (q0 - 1)g8 confirmed. High (q0=2) root is g0+g8, Low (q0=1) root is g0.",
+    "source_split": "delta8-delta0 confirmed. positive0 vs positive1 shows initial B grades are identical, but minimum root differs by 1 for low and 0 for high.",
+    "exact_profile_paths_and_Hamming_bounds": "High shortest completion is 9, Low is 11.",
+    "donor_fixed_and_retained_junction_hypotheses": "Dropping B-junction retention allows N=14 with B=1. Dropping donor freeze allows N=14 with D=1.",
+    "sharp_15_minimum_when_B7_forbidden": "Confirmed, blind_minimum is 15.",
+    "original_deletion_only_blind_comparison": "Confirmed, ends at N=15 with B=3.",
+    "marked_event_twin_definition_and_covariance": "Confirmed across 48 permutations (24 high, 24 low).",
+    "native_caller_usage": "No inspected native caller uses the twin definition; it is addressability, not an instruction.",
+    "full_universe_constructions": "77 high states, 6377 low states confirmed.",
+    "full_result_byte_SHA_bound": "525209 bytes, SHA256 99145e89948a91a3d92bbc8c0b3f41170f4d7ecf41eed9bf75ae15ee6b928998.",
+    "root_source_grade_vs_grounded_root_potential": "The packet correctly distinguishes these, noting the root potential is zero in the grounded gauge and the common field is fixed along edits."
+  },
+  "native_bridge_status": "OPEN"
+}

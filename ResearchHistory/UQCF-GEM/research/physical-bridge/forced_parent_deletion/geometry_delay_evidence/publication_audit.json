@@ -1,0 +1,28 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "1f080ed4a8d138cd8300224c9d9c2e98e772b499",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "b89099b5a599581fb1d0df5ff55f4bd8bcc78bb6351f3d660f075191c1a25b10",
+  "request_sha256": "0b9997eab45ce9d737d1c2eb1a2dc513458cf439759afcf9ac97073601a4ecf9",
+  "response_sha256": "9d757a8387edc0d80b67d0fa186cc88f2a50acebb1d4c3b7d430f3ef9ff80caf",
+  "run_id": "45045697709",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py": "8163beba8e52bc2a3a6d0c8cf59dd1257222f65c",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py": "df552284c16d43bc876340fbc13fe91eb9ee6a00",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py": "30348d71d366a751932ec2d58d18a9148d81ae83",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py": "5cd286b014bb44025e16832ee91a6e6665291c8c",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_DELAY.md": "29702dfc76d0cec8e07d8a454fae77a8adebcebc",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_DELAY_CHECK_PLAN.md": "b93616e98e0839547f470b3d12a5102849740b26",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_delay.py": "8f079b8fc0150a0f6468661f788099e7db40d0a7",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py": "3324c0b46e09120ae526338444a19070b692d049",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/geometry_delay_witness.json": "c16cb37c282773c9c95c3348b27f67540dd2ee86",
+    "handoff/replay.json": "d6abc32126fc65bde428dea02e0407b1f49c983c"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "1f080ed4a8d138cd8300224c9d9c2e98e772b499"
+}

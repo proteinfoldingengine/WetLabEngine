@@ -1,0 +1,104 @@
+{
+  "artifacts": [
+    {
+      "bytes": 132352,
+      "filename": "review.zip",
+      "id": 14720160430,
+      "members": {
+        "model_metadata.json": {
+          "bytes": 459,
+          "sha256": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438"
+        },
+        "prompt.txt": {
+          "bytes": 184995,
+          "sha256": "eec35ddb7f6faabaa9c7ab4065eecc2c2fe1f9942ed007e6198dd5926114aa50"
+        },
+        "receipt.json": {
+          "bytes": 3548,
+          "sha256": "eff6d2c23a6daac3e225314f194598476ede21c6298f4bafb9f3b04821f6c677"
+        },
+        "request.json": {
+          "bytes": 190791,
+          "sha256": "92d3362f546c3bf59f166eb608b4c260ea3a422762410fdd4100d214cb06cbbf"
+        },
+        "response.json": {
+          "bytes": 19153,
+          "sha256": "75f97b7bd5acda73b0ca16f61badfce4725806fa40e2b6a5b6dabf19294554ba"
+        },
+        "review.txt": {
+          "bytes": 2387,
+          "sha256": "a9ec43a481e42ee5da53efb3f98cb815e6ef444b42b63088720a0983608c263e"
+        }
+      },
+      "name": "minimal-completion-review",
+      "sha256": "079e532e622730af490c97d6e6e725c4ae40412a19277233c6a28dbc71fcae5b",
+      "zip_crc_check": "PASS"
+    },
+    {
+      "bytes": 23553,
+      "filename": "replay.zip",
+      "id": 14719579662,
+      "members": {
+        "minimal.json": {
+          "bytes": 525209,
+          "sha256": "99145e89948a91a3d92bbc8c0b3f41170f4d7ecf41eed9bf75ae15ee6b928998"
+        }
+      },
+      "name": "minimal-completion-replay",
+      "sha256": "7f8d04e819cfb8eb6e5cae4f8f208b25219bfe56a4aa363aca81f994a0a5f60c",
+      "zip_crc_check": "PASS"
+    },
+    {
+      "bytes": 1451,
+      "filename": "publication.zip",
+      "id": 14719549896,
+      "members": {
+        "publication_audit.json": {
+          "bytes": 3567,
+          "sha256": "756f472fdf9d915ddf69297bc640aa1762b202043a7c8951379b202e22692758"
+        }
+      },
+      "name": "minimal-completion-publication",
+      "sha256": "f172a4b97ff3765f125217fb23d0b718239ebd4ec758776a1ea7522d5fef0e84",
+      "zip_crc_check": "PASS"
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 136945444503,
+      "name": "exact-replay",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "id": 136945502865,
+      "name": "argument-review",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "id": 136945657773,
+      "name": "replay-publication",
+      "status": "completed"
+    }
+  ],
+  "logs": {
+    "bytes": 37362,
+    "filename": "workflow_logs.zip",
+    "sha256": "c88bcb03ca5d42064e37f1aa927023da65d908bbdf9d3baed7efc93afa5c1699"
+  },
+  "run_id": 44936913471,
+  "science_sha": "0b9866f5d826c1e9c6560b2d0836cbeae5401a9b",
+  "verification": {
+    "archive_crc": "PASS",
+    "artifact_sizes_and_digests": "PASS",
+    "full_result_bytes": 525209,
+    "full_result_sha256": "99145e89948a91a3d92bbc8c0b3f41170f4d7ecf41eed9bf75ae15ee6b928998",
+    "native_bridge_status": "OPEN",
+    "prompt_request_response_hashes": "PASS",
+    "publication_receipt_equals_raw_review_receipt": "PASS",
+    "replay_identical_to_local_and_frozen_gzip": "PASS",
+    "science_checkout_and_workflow_sha": "PASS"
+  }
+}

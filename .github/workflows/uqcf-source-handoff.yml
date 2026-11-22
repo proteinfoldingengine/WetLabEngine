@@ -1,0 +1,147 @@
+name: Verify the archived root-leaf handoff
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-source-handoff.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  exact-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/THEOREM.md
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Reproduce both source searches and the exact readout amendment
+        run: |
+          python3 -m pip install --disable-pip-version-check sympy==1.14.0
+          mkdir -p handoff
+          python3 "$SCI/check_source_handoff.py" > handoff/census.json
+          python3 "$SCI/check_adjacent_handoff.py" > handoff/adjacent.json
+          python3 "$SCI/check_minimal_completion_exact.py" > handoff/exact_readout.json
+          cmp handoff/census.json "$SCI/evidence/source_handoff/census.json"
+          cmp handoff/adjacent.json "$SCI/evidence/source_handoff/adjacent.json"
+          cmp handoff/exact_readout.json "$SCI/evidence/minimal_completion/exact_readout.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: source-handoff-replay
+          path: handoff
+          if-no-files-found: error
+  argument-review:
+    needs: exact-replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/THEOREM.md
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Independently reconstruct the frozen complete argument
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_source_handoff.py" review handoff_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: source-handoff-review
+          path: handoff_review
+          if-no-files-found: error
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/THEOREM.md
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.28-diamond-attribution-closure/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: source-handoff-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: source-handoff-review
+          path: handoff_review
+      - name: Reproduce deterministic bytes and inspect the returned review
+        run: |
+          python3 -m pip install --disable-pip-version-check sympy==1.14.0
+          mkdir -p handoff
+          python3 "$SCI/check_source_handoff.py" > handoff/census.json
+          python3 "$SCI/check_adjacent_handoff.py" > handoff/adjacent.json
+          python3 "$SCI/check_minimal_completion_exact.py" > handoff/exact_readout.json
+          cmp handoff/census.json "$SCI/evidence/source_handoff/census.json"
+          cmp handoff/adjacent.json "$SCI/evidence/source_handoff/adjacent.json"
+          cmp handoff/exact_readout.json "$SCI/evidence/minimal_completion/exact_readout.json"
+          diff -r earlier handoff
+          python3 "$SCI/review_source_handoff.py" audit handoff_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: source-handoff-publication
+          path: handoff_review/publication_audit.json
+          if-no-files-found: error

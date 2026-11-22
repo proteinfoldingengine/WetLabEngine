@@ -1,0 +1,156 @@
+name: Verify constrained receiver grade and historical metric comparison
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-routed-grade.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  exact-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/evidence/certificates.json.xz
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Reproduce original routed moves and independently check their grade lift
+        run: |
+          python3 -m pip install --disable-pip-version-check sympy==1.14.0
+          python3 "$SCI/check_routed_grade.py" > grade.json
+          echo "GRADE_REPLAY_B64=$(base64 -w0 grade.json)"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: routed-grade-replay
+          path: grade.json
+          if-no-files-found: error
+  argument-review:
+    needs: exact-replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/evidence/certificates.json.xz
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - name: Review the complete constrained transfer and rejecting controls
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_routed_grade.py" review grade_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: routed-grade-review
+          path: grade_review
+          if-no-files-found: error
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/
+            /Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py
+            /ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/evidence/science/scientific/CERTIFICATE.json.gz
+            /ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/evidence/certificates.json.xz
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: routed-grade-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: routed-grade-review
+          path: grade_review
+      - name: Reproduce the identical trace and inspect the raw returned review
+        run: |
+          python3 -m pip install --disable-pip-version-check sympy==1.14.0
+          python3 "$SCI/check_routed_grade.py" > grade.json
+          cmp grade.json earlier/grade.json
+          python3 "$SCI/review_routed_grade.py" audit grade_review
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: routed-grade-publication
+          path: grade_review/publication_audit.json
+          if-no-files-found: error
+  archive-readback:
+    needs: replay-publication
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+      - name: Verify archive bytes and durable export
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 "$SCI/export_grade_archives.py"

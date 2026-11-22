@@ -1,0 +1,70 @@
+{
+  "archives": [
+    {
+      "bytes": 49035,
+      "id": 14726595034,
+      "members": [
+        "model_metadata.json",
+        "prompt.txt",
+        "receipt.json",
+        "request.json",
+        "response.json",
+        "review.txt"
+      ],
+      "name": "v1712-patch-write-review.zip",
+      "sha256": "9edf6e3d7b3ffd1b3f8e941e773fc4393f07b09918e84267c969cfca8f59591b"
+    },
+    {
+      "bytes": 442,
+      "id": 14726147499,
+      "members": [
+        "replay.json"
+      ],
+      "name": "v1712-patch-write-replay.zip",
+      "sha256": "7e95b858ba3334d3b7b58ba7794eb3777b8236c326ca43be6950bbf99b3374a7"
+    },
+    {
+      "bytes": 1348,
+      "id": 14726097868,
+      "members": [
+        "handoff/replay.json",
+        "review_evidence/publication_audit.json"
+      ],
+      "name": "v1712-patch-write-publication.zip",
+      "sha256": "4a7a4023a89290bbe5e7a9a75e3c6bc0c3c0c41d1e52ea68f3ff7c32668b8855"
+    }
+  ],
+  "decoded_job_logs": {
+    "bytes": 38368,
+    "members": {
+      "publication.log": "921d9b80ded39d7361550dc6297808f88bda965147d333f6cde95dee437f6213",
+      "replay.log": "cd96cf8c4555a88086dc248b6715704bac8dc8f18824c6378e353ee7e70d6d52",
+      "review.log": "e6f78fdc5b6bcc9055a42b5f7672ba9b301523e50886c56f06c95a62c49fee52"
+    },
+    "sha256": "05df896d91ae2d35cc06831a13c0bf8cef8bc4831b0c427a341dba7a945c9a94"
+  },
+  "publication_log_readback": "PASS",
+  "replay_byte_comparison": "PASS",
+  "replay_sha256": "004bf389a1d27d67cf34dcea48fb2c31f0cf65b04ff9ff734d96dc8419937800",
+  "review_receipt": {
+    "attempt": "1",
+    "checkout_sha": "3eed004b75346d34ca6b0698cf27f213da4f6733",
+    "model_requested": "gemini-3.1-pro-preview",
+    "model_returned": "gemini-3.1-pro-preview",
+    "prompt_sha256": "11eeeb512d57cc98b6760242aeb530d2c6b86569f33e7c3202d662093bf40fe3",
+    "request_sha256": "b28a8ded5d1c6c857e150f66eadda2156539ae55ee068b014b418c7cbe75c64e",
+    "response_sha256": "6a0388cea8cb9894ce63486b63bc94e9f8bfa379b028b1eb7859a0c588c4a575",
+    "run_id": "44952553649",
+    "source_blobs": {
+      "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1712_PATCH_WRITE.md": "24c93fc4c4ccd869b3efc1f47360202c3b0e7f4d",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1712_patch_write.py": "bca6e31df19a97c28e6df0a76549481857e7f96a",
+      "Tmp/TOE/Einstein 7/v1472_20_uci_candidate_package/v1472_20_uci_incident_adapter.py": "4926407e0694c1e049ca74feab1e5b38cc3c2ad6",
+      "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1712_rg.py": "bc4504edbde3bc35815959f7f52288a57dced81a",
+      "handoff/replay.json": "8282dd9ac055429e09c2d247668df4062e172e3a"
+    },
+    "verdict": "ACCEPTED",
+    "workflow_sha": "3eed004b75346d34ca6b0698cf27f213da4f6733"
+  },
+  "run_id": 44952553649
+}

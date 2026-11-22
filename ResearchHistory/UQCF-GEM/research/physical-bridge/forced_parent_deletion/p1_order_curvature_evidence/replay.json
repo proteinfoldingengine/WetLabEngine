@@ -1,0 +1,126 @@
+{
+  "edge_count": 98,
+  "grade_control": {
+    "all_geometry_equal": true,
+    "post_owner_grade": [
+      4,
+      5
+    ],
+    "pre_owner_grade": [
+      2,
+      2
+    ],
+    "totals": [
+      104,
+      104
+    ]
+  },
+  "held_edge": [
+    [
+      0
+    ],
+    [
+      7
+    ]
+  ],
+  "local_target": [
+    7,
+    1
+  ],
+  "remote_target": [
+    8,
+    3
+  ],
+  "sink_mask_comparison_equal": true,
+  "slice": [
+    [
+      0
+    ],
+    [
+      1
+    ],
+    [
+      2
+    ],
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      13
+    ],
+    [
+      14
+    ],
+    [
+      15
+    ],
+    [
+      16
+    ],
+    [
+      17
+    ]
+  ],
+  "sources": [
+    {
+      "blob": "e95e3e978779164dd91f09b80e3389247e6320c2",
+      "path": "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py",
+      "sha256": "872977a8ef8bd5bd0c3d438ccf2c5309a7fb0600868200a28398aa57b9f4623c"
+    },
+    {
+      "blob": "c8043250f0a61077faabbc029ef7e248905f3f32",
+      "path": "Tmp/TOE/package17_bundle/spatial_graph_curvature_verifier.py",
+      "sha256": "569e6ece297851c12913dbb37e4ea1f6f071ffd2ebdf5c26711bc3be4cccad33"
+    }
+  ],
+  "values": {
+    "fine": {
+      "carrier_size": 52,
+      "changed_edge_proxy_count": 0,
+      "held_edge_forman_proxy": -11.547005383774,
+      "held_edge_weight": 0.577350269189,
+      "scalar_slice_proxy": 0.3062502838
+    },
+    "local": {
+      "carrier_size": 51,
+      "changed_edge_proxy_count": 7,
+      "held_edge_forman_proxy": -14.142135623707,
+      "held_edge_weight": 0.707106781185,
+      "scalar_slice_proxy": 0.304358789456
+    },
+    "remote": {
+      "carrier_size": 51,
+      "changed_edge_proxy_count": 7,
+      "held_edge_forman_proxy": -11.547005383774,
+      "held_edge_weight": 0.577350269189,
+      "scalar_slice_proxy": 0.305480802685
+    }
+  }
+}

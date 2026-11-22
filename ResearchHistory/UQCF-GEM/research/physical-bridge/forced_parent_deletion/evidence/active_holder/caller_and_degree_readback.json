@@ -1,0 +1,103 @@
+{
+  "caller_and_child": {
+    "1782": {
+      "caller_end_labels_at_v3": [
+        0
+      ],
+      "root_cover_before_after_write": [
+        2,
+        1
+      ],
+      "v3_callee_final": {
+        "k": 1,
+        "q": [],
+        "raw": [
+          1
+        ],
+        "returned": [
+          [
+            1
+          ]
+        ]
+      },
+      "v3_callee_initial": {
+        "k": 1,
+        "q": [],
+        "raw": [
+          1
+        ],
+        "returned": [
+          [
+            1
+          ]
+        ]
+      }
+    },
+    "2466": {
+      "caller_end_labels_at_v3": [
+        1
+      ],
+      "root_cover_before_after_write": [
+        2,
+        2
+      ],
+      "v3_callee_final": {
+        "k": 1,
+        "q": [],
+        "raw": [
+          1
+        ],
+        "returned": [
+          [
+            1
+          ]
+        ]
+      },
+      "v3_callee_initial": {
+        "k": 1,
+        "q": [],
+        "raw": [
+          1
+        ],
+        "returned": [
+          [
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "first_palette_receiver_degree_histories": {
+    "2": [
+      {
+        "degrees": [
+          2,
+          3,
+          4,
+          3
+        ],
+        "number": 48
+      }
+    ],
+    "3": [
+      {
+        "degrees": [
+          2,
+          3,
+          2
+        ],
+        "number": 8
+      },
+      {
+        "degrees": [
+          2,
+          3,
+          2,
+          3,
+          2
+        ],
+        "number": 40
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "baseline": {
+    "first_coarse_patch": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_coarse_tensor_norm_squared": "12582771/100000000",
+    "scale_medians": [
+      "0.3547220179",
+      "0.3547220179"
+    ]
+  },
+  "changed": {
+    "first_coarse_patch": [
+      "9133/10000",
+      "5867/5000",
+      "9133/10000",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_coarse_tensor_norm_squared": "1261478972665419/10000000000000000",
+    "scale_medians": [
+      "0.3547220179",
+      "0.3549475352"
+    ]
+  },
+  "parallel": {
+    "first_coarse_patch": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_coarse_tensor_norm_squared": "12582771/100000000",
+    "scale_medians": [
+      "0.3547220179",
+      "0.3547220179"
+    ]
+  },
+  "shifted": {
+    "first_coarse_patch": [
+      "1",
+      "9133/10000",
+      "5867/5000",
+      "9133/10000",
+      "1",
+      "1"
+    ],
+    "first_coarse_tensor_norm_squared": "1261478972665419/10000000000000000",
+    "scale_medians": [
+      "0.3547220179",
+      "0.3549475352"
+    ]
+  },
+  "source_blob": "bc4504edbde3bc35815959f7f52288a57dced81a",
+  "squared_norm_contrast_at_written_patch": "3201872665419/10000000000000000",
+  "zero_coupling": {
+    "first_coarse_patch": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "first_coarse_tensor_norm_squared": "0",
+    "scale_medians": [
+      "0.0000000000",
+      "0.0000000000"
+    ]
+  }
+}

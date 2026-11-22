@@ -1,0 +1,149 @@
+{
+  "dimensions_retained_p1_p1_and_section": {
+    "branching": [
+      7,
+      13,
+      8
+    ],
+    "chain": [
+      5,
+      20,
+      10
+    ],
+    "star": [
+      16,
+      4,
+      4
+    ]
+  },
+  "historical_observations": [
+    {
+      "entry_masks": [
+        23,
+        9
+      ],
+      "initial": [
+        21,
+        11
+      ],
+      "path": [
+        [
+          21,
+          11
+        ],
+        [
+          23,
+          11
+        ],
+        [
+          23,
+          9
+        ],
+        [
+          23,
+          13
+        ],
+        [
+          19,
+          13
+        ],
+        [
+          27,
+          13
+        ],
+        [
+          27,
+          29
+        ]
+      ]
+    },
+    {
+      "entry_masks": [
+        27,
+        13
+      ],
+      "initial": [
+        29,
+        11
+      ],
+      "path": [
+        [
+          29,
+          11
+        ],
+        [
+          29,
+          15
+        ],
+        [
+          25,
+          15
+        ],
+        [
+          27,
+          15
+        ],
+        [
+          27,
+          13
+        ],
+        [
+          27,
+          29
+        ]
+      ]
+    }
+  ],
+  "matched_common_port_control": {
+    "common_vertices": [
+      0,
+      3
+    ],
+    "edge_reads": [
+      [
+        "7",
+        "4"
+      ],
+      [
+        "7",
+        "4"
+      ]
+    ],
+    "subtree_grades": [
+      [
+        [
+          28,
+          7
+        ],
+        [
+          18,
+          4
+        ]
+      ],
+      [
+        [
+          28,
+          7
+        ],
+        [
+          18,
+          4
+        ]
+      ]
+    ]
+  },
+  "patch_write": {
+    "basis_image_rank": 6,
+    "blank_parallel_outputs_equal": true
+  },
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+    "ResearchHistory/UQCF-GEM/demos/v16.41-unit-barrier-dichotomy/producer.py": "0ba44accc8f47359a8e5adfa9b6a5265dc3eb45d",
+    "ResearchHistory/UQCF-GEM/demos/v16.41-unit-barrier-dichotomy/verifier.py": "079b2189d4d06e583eeafd25860c2dba33ede673",
+    "ResearchHistory/UQCF-GEM/demos/v16.42-overlapping-core-repair/producer.py": "980d34ec76370c2f220d29c1650ea8e010ce75a4",
+    "ResearchHistory/UQCF-GEM/demos/v16.42-overlapping-core-repair/verifier.py": "3ed004d6748e36e72f765a22b5533ec187e954f9",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1712_rg.py": "bc4504edbde3bc35815959f7f52288a57dced81a",
+    "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1713_shape_rg.py": "db8828f17a1ae597ac09abc1a8ac23b3eb3b6676"
+  }
+}

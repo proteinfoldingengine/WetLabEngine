@@ -1,0 +1,22 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": [
+    "Reconstructed the theorem on the full matrix space; linearity uniquely extends M_Q from the q>0 region to all matrices.",
+    "Verified that at q=0, the specified probability Tr(M_Q(rho)) = 0 combined with the positivity of M_Q(rho) strictly forces M_Q(rho) = 0.",
+    "Verified that subtracting M_Q(rho) = Q rho Q from C(rho) = Q rho Q + rho_uu pi_p uniquely leaves M_u(rho) = rho_uu pi_p.",
+    "Verified complete positivity (M_u has a single Kraus operator |p><u|) and trace preservation (Q^2 + |u><p|p><u| = Q + pi_u = I).",
+    "Verified all sixteen matrix-unit identities, confirming the linear extension holds for arbitrary valid coherences.",
+    "Verified both canonical preparations: Q probabilities are 3/5 and 4/5, conditional parent populations are 1/3 and 1/4, complementary branch is pi_p, and total P1 parent populations are 3/5 and 2/5.",
+    "Verified all rejecting controls: the original pinching instrument has branch rho_uu pi_u (not pi_p), and changing it requires the u -> p reset action.",
+    "Confirmed no other two-outcome CP instrument satisfies the exact all-input contract due to the strict uniqueness of M_Q and M_u.",
+    "Distinguished the theorem from weaker contracts: more than two outcomes only fixes the sum of complementary branches, and restricted-state equality allows off-diagonal freedom.",
+    "Confirmed the result legitimately removes the requirement that conditioning equal pushforward by demonstrating their compatibility as a joint instrument.",
+    "Verified the text explicitly avoids inserting an event typing, reset action, outcome law, receiver, access relation, or physical probability interpretation, maintaining them as supplied premises."
+  ],
+  "native_bridge_status": "NOT_DERIVED"
+}
+

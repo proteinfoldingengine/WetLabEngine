@@ -1,0 +1,26 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "74bbeec18f91a60f3bb9a68943764e5a59730072",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "fded54c4a34f29a9001bab23374eb26d4770a0ede414c0fc0ab789ae1fb0fc46",
+  "request_sha256": "20ccf146ea28cd4679d3f4b93ea0b18eb00be07f3959e65158549f700a9b1239",
+  "response_sha256": "43a8e0e5fb10e97fd9ea0b8f60d93f8bcf9c942e535b252d93aa1c1fc14a301b",
+  "run_id": "45042380003",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py": "8163beba8e52bc2a3a6d0c8cf59dd1257222f65c",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py": "df552284c16d43bc876340fbc13fe91eb9ee6a00",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py": "30348d71d366a751932ec2d58d18a9148d81ae83",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py": "5cd286b014bb44025e16832ee91a6e6665291c8c",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_REPAIR.md": "a72990e589c016edd0b7eb75567738fb361ae1ac",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_REPAIR_CHECK_PLAN.md": "7f2a78217eac25fe96d15fd8ae7c7a9df413957e",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py": "3324c0b46e09120ae526338444a19070b692d049",
+    "handoff/replay.json": "6a829b27355641b782d2676672ee125079d57930"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "74bbeec18f91a60f3bb9a68943764e5a59730072"
+}

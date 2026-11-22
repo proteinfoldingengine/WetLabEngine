@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1784,
+      "digest": "sha256:1d74522c30696501ac28328caae34cb6b608e38119fe9daa73d4cd7a7a7aa6fe",
+      "id": 14741720666,
+      "name": "fork-profile-write-replay"
+    },
+    {
+      "bytes": 38675,
+      "digest": "sha256:2c554d8b42733ede6dc40479d1027d957abf50f58029f193f8bb66a2326777c7",
+      "id": 14740993385,
+      "name": "fork-profile-write-review"
+    },
+    {
+      "bytes": 1559,
+      "digest": "sha256:f7ede4a7088ce66c95f9b656f79ef9b9efe41653d7e932544cbd160f2d776820",
+      "id": 14740534583,
+      "name": "fork-profile-write-publication"
+    }
+  ],
+  "fork_certificate_sha256": "7f236cdb57e2c2233285dfd9ec7a39d7477b603c4f68ffc68d8071f29cadfd28",
+  "freeze": "181b7fea3c82dfbd8d79457d8862ca046c7daced",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137107813708,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137107855698,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137107964403,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "10fb8e11f02ed8a57f6b1f14bd4bc59a357bb23e62edb6550f295298b6889e32",
+  "raw_review_response_sha256": "ace9ca018515d52d5a1ee964e86b9066f6c74dcd193f77cf11847388373e60b0",
+  "run": 44989685419,
+  "second_ci_replay_and_review_audit": "PASS"
+}

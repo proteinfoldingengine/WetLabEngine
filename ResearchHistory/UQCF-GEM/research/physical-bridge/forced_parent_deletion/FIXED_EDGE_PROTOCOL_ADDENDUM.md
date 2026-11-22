@@ -1,0 +1,3 @@
+# Additional fixed-port test
+
+The analytical pendant-leaf Schur identity was identified after the initial protocol and before executing this additional test. For every C gain and D release in the three archive cases, assemble full chart Laplacians in matching old-vertex order using the native unit-tree operator and verify that eliminating the leaf returns the old operator exactly. Compare all old-port effective resistances as a separate exact calculation and count tested unordered port pairs with multiplicity across charts/cases. Check a load projected to old ports by P1. State the tree and unit-conductance restrictions. This tests susceptibility under existing physics assumptions and does not assign a physical readout.

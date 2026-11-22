@@ -1,0 +1,39 @@
+{
+  "all_meeting_families_compatible_for_balanced_probe": true,
+  "balanced_probe": "delta_2 - delta_3",
+  "basis_replays": 7,
+  "certificate_sha256": "ae934314af6331ab91bf0659a0023c9f6ac22ef5b0b6912101b2dc3b286ddd36",
+  "common_masks": [
+    31,
+    17,
+    113
+  ],
+  "conflicting_indices": [
+    "A",
+    "B"
+  ],
+  "first_conflict_masks": [
+    23,
+    15,
+    115
+  ],
+  "initial_masks": [
+    31,
+    15,
+    113
+  ],
+  "left_leaf_zero_inclusion_conflicts": [
+    3,
+    4,
+    5
+  ],
+  "receiver_root_difference_leaf_minus_junction": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+  ]
+}

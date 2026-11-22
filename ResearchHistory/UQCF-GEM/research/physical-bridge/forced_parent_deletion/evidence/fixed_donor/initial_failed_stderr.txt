@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/b7bc344d0ede/work/fixed_donor/ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_fixed_donor.py", line 228, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "/workspace/scratch/b7bc344d0ede/work/fixed_donor/ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_fixed_donor.py", line 223, in main
+    "helper_blobs":HELPERS,"records":records,"grade":grade_checks(records,sources),
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b7bc344d0ede/work/fixed_donor/ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_fixed_donor.py", line 141, in grade_checks
+    assert sources.push(P,chain.view(state[B]),chain.view(63),family[B])==sources.push(P,X,chain.view(63),source)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/b7bc344d0ede/work/fixed_donor/ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py", line 52, in push
+    if not set(Y)<=set(X):raise ValueError('incompatible pruning endpoints')
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: incompatible pruning endpoints

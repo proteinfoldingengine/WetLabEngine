@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1293,
+      "digest": "sha256:62a642a66296f911055c78d3cde99eca3a48c0f25da770ec4839a702c6d133f3",
+      "id": 14758196611,
+      "name": "root-transfer-replay"
+    },
+    {
+      "bytes": 58659,
+      "digest": "sha256:71b00b697a1c9dc5b8d74a8b676972fc8223da385575aa5e863be0a77d3d9883",
+      "id": 14758047409,
+      "name": "root-transfer-review"
+    },
+    {
+      "bytes": 1290,
+      "digest": "sha256:3c68260fac1fd20fb2059bc70f1aab94ce12c52a55af80261a13c71b5eb855ea",
+      "id": 14757798548,
+      "name": "root-transfer-publication"
+    }
+  ],
+  "freeze": "d4130b376c531cdc3e1bfd1c08e89546ef6cef3f",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137237177802,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137237228078,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137237577063,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "2bff2ab769a8b4d440db6d3f35c3d1f5835801faa3eff27ec3e88aac1737e5c3",
+  "raw_review_response_sha256": "9e568fdce5ea3d1e11f442933c340679841dbf24209c6f4d80da1fba32073539",
+  "run": 45031923905,
+  "second_ci_replay_and_review_audit": "PASS",
+  "transfer_certificate_sha256": "5c5c95ac07aef912cfdb3d165489fb3e195f18ef9f8d45f90d8b189ed1f1a5de"
+}

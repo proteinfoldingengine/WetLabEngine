@@ -1,0 +1,633 @@
+Independently adjudicate this corollary against the pinned V1718 source, the reviewed
+P1-compatible alternating-bilinear classification, and the exact replay. Re-derive the argument
+exchange between V1718 native_T and the cyclic wedge K. Check every basis image, the full-image
+claim, and why an invertible output identification would pull the root total back to a forbidden
+nonzero annihilating covector. Check that independent invertible input changes do not help.
+Independently derive the T(x,0)=T(x,x)=x collision and its quantified consequence for a separately
+additive source grade. Preserve the positive fixed-total source-to-loop result in its archived
+scope. Challenge any extension to noninvertible quotients, restricted domains, event binding,
+physical access, geometry or gravity. The replay is evidence; do not claim you executed it.
+Return one JSON object with exactly these field types:
+{"verdict":"ACCEPTED","findings":[],"missing_assumptions":[],"counterexamples":[],
+"limitations":[],"proof_checks":{},"native_bridge_status":"OPEN"}.
+For ACCEPTED keep the first three issue arrays empty and give substantive calculations as string
+key-value pairs in proof_checks. Use REVISE or FAIL for a real defect.
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1718_P1_INTERFACE.md
+# V1718 at the retained-P1 interface
+
+This checkpoint follows the independently reviewed [V1718 source-to-loop result](V1718_LOOP_REVERSIBILITY_RESULT.md) and the independently reviewed [classification of pruning-compatible alternating-bilinear corrections](PRUNING_COMPATIBLE_PATCH.md). It asks whether the historical V1718 update can be the missing retained extensive-grade interaction. The answer is no under every invertible linear identification of its two inputs and output with grades on one retained tree. The positive source-dependent loop and read remain valid in their archived simulation scope.
+
+## Source boundary
+
+- **INHERITED as historical software:** V1718's `roll`, `native_T`, `loop_drift` and norm read in the pinned source blob `638e68d00762642d6b58f692e7a1747816752232`.
+- **INHERITED mathematics:** FCV P1 extensive-grade pushforward and the reviewed theorem that every same-carrier alternating-bilinear correction commuting with P1 has zero root-total correction. The stronger zero-extension condition further restricts each output subtree coordinate to wedges of that vertex with strict ancestors.
+- **ACCEPTED-CONDITIONAL:** the reviewed V1718 fixed-total loop comparison at coupling (17/100), whose exact determinants are (0.6889) and (0.66) and whose existing norm read returns (0.83) and (1).
+- **SUPPLIED in V1718:** the eight-dimensional cyclic carrier, coupling, independently initialized source vectors, fixed loop and controlled preparations.
+- **ACCEPTED INPUT:** actual atemporal occurrence. It is not used by this proof and is not identified with a V1718 draw.
+
+## 1. The V1718 correction is the classified cyclic wedge
+
+With indices modulo (n), the original function is
+
+[
+T(x,q)_i=x_i+gleft(x_{i-1}q_i-x_iq_{i-1}ight).
+]
+
+Define
+
+[
+K(q,x)_i=q_i x_{i-1}-q_{i-1}x_i.
+]
+
+Then the historical update is exactly (T(x,q)=x+gK(q,x)). This is the same cyclic alternating-bilinear correction classified in the V1712 interface result, with the arguments exchanged and one power of the supplied coupling instead of two.
+
+For every coordinate (i),
+
+[
+K(e_i,e_{i-1})=e_i.
+]
+
+The image of (K) therefore spans the complete (n)-dimensional patch space.
+
+## 2. No invertible linear identification with a P1 extensive-grade correction
+
+Suppose invertible linear maps identify the V1718 source, carried vector and correction output with two extensive grades and an output grade on the same retained carrier. If the correction commutes with every inherited P1 contraction in the reviewed contract, the root total of the identified correction must vanish for every input pair.
+
+Pulling that root-total functional back through the invertible output identification gives a nonzero linear covector on the V1718 patch space that annihilates every value of (K). But the values (K(e_i,e_{i-1})=e_i) span the whole space. No such nonzero covector exists. Therefore no invertible linear changes of input or output coordinates can turn the V1718 cyclic correction into a same-carrier P1-compatible extensive-grade interaction.
+
+The conclusion does not require the stronger zero-extension premise. It does not rule out a noninvertible quotient, a restricted input family, or an additional event record. Each of those would be a new interface requiring its own producing operation and access proof.
+
+## 3. The full update also rejects a separately additive source grade
+
+For every carried state (x),
+
+[
+T(x,0)=x,qquad T(x,x)=x.
+]
+
+Assume scalar grades assigned separately to the output, carried input and source obey
+
+[
+m_{m out}(T(x,q))=m_x(x)+m_q(q)
+]
+
+over the full real patch domain. Comparing (q=0) and (q=x) forces (m_q(x)=m_q(0)) for every (x). Thus the source grade is constant. A nonconstant extensive source amount cannot enter this historical update as a separately additive summand.
+
+The reviewed fixed-total contrast (q=e_0+e_2) versus (q=2e_0) remains a real source-shape sensitivity of the V1718 loop. Equal root totals do not make those vectors equal, and V1718's cyclic stencil reads their coordinate placement. What fails is the proposed identification of that stencil with the inherited P1 grade law.
+
+## 4. Consequence for the operation-first search
+
+V1718 supplies a computed, source-dependent transition, a carried state used on the next edge and an existing norm read. It removes the weaker objection that no archived state writer/read exists. It does **not** trace a P1 retained-source record into that writer:
+
+1. the normal run independently draws (q);
+2. the fixed cyclic carrier is not produced by a retained-tree contraction;
+3. the exact correction is incompatible with same-carrier P1 extensive grades under invertible linear identification;
+4. the host norm read is not shown to be available to a retained physical owner.
+
+Re-entering this route requires specific new source evidence for an inherited event operation that writes a V1718 input or for a noninvertible/restricted interface whose retained record and later read are both produced on the same provenance-bound object. A basis relabeling, equal-total analogy or endpoint-only map is excluded by the proof above.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1718_p1_interface.py
+"""Verify the exact V1718 cyclic correction and its P1-interface obstruction."""
+import ast
+import hashlib
+import json
+from pathlib import Path
+import numpy as np
+
+ORIGINAL=Path("Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1718_complete.py")
+ORIGINAL_BLOB="638e68d00762642d6b58f692e7a1747816752232"
+N=8
+G=0.17
+TOL=1e-12
+
+def load():
+    raw=ORIGINAL.read_bytes()
+    blob=hashlib.sha1(f"blob {len(raw)}\0".encode()+raw).hexdigest()
+    assert blob==ORIGINAL_BLOB
+    tree=ast.parse(raw)
+    nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in {"roll","native_T"}]
+    assert {n.name for n in nodes}=={"roll","native_T"}
+    env={"np":np}
+    exec(compile(ast.Module(body=nodes,type_ignores=[]),str(ORIGINAL),"exec"),env)
+    return env
+
+def K(q,x):
+    return q*np.roll(x,1)-np.roll(q,1)*x
+
+def matrix(native,q,g=G):
+    eye=np.eye(N)
+    return np.column_stack([native(e,q,g) for e in eye])
+
+def main():
+    env=load(); native=env["native_T"]; eye=np.eye(N); zero=np.zeros(N)
+    images=[]
+    for i in range(N):
+        q=eye[i]; x=eye[(i-1)%N]
+        expected=eye[i]
+        np.testing.assert_allclose(K(q,x),expected,rtol=0,atol=TOL)
+        np.testing.assert_allclose(native(x,q,G),x+G*expected,rtol=0,atol=TOL)
+        images.append(K(q,x))
+    image_rank=int(np.linalg.matrix_rank(np.column_stack(images)))
+    assert image_rank==N
+
+    x=np.arange(1.0,N+1)
+    np.testing.assert_allclose(native(x,zero,G),x,rtol=0,atol=TOL)
+    np.testing.assert_allclose(native(x,x,G),x,rtol=0,atol=TOL)
+
+    profiles=(eye[0]+eye[2],2*eye[0])
+    dets=[]; reads=[]
+    for q in profiles:
+        H=matrix(native,q)
+        dets.append(float(np.linalg.det(H)))
+        reads.append(float(np.linalg.norm(H@eye[3])))
+    np.testing.assert_allclose(dets,[0.6889,0.66],rtol=0,atol=TOL)
+    np.testing.assert_allclose(reads,[0.83,1.0],rtol=0,atol=TOL)
+    assert profiles[0].sum()==profiles[1].sum()==2
+
+    result={
+      "original_path":str(ORIGINAL),
+      "original_blob":ORIGINAL_BLOB,
+      "dimension":N,
+      "cyclic_basis_image_rank":image_rank,
+      "basis_images_equal_standard_basis":True,
+      "full_update_collisions":{"T_x_0_equals_x":True,"T_x_x_equals_x":True},
+      "matched_source_totals":[2.0,2.0],
+      "loop_determinants":[round(v,12) for v in dets],
+      "existing_norm_reads":[round(v,12) for v in reads],
+      "conclusion":"no_nonzero_output_covector_annihilates_the_correction_image"
+    }
+    print(json.dumps(result,indent=2,sort_keys=True))
+
+if __name__=="__main__":
+    main()
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/PRUNING_COMPATIBLE_PATCH.md
+# Which patch writes can commute with retained pruning?
+
+This checkpoint continues the V1712 producer search at parent `3f111dc570de0c1c4009c0728794a68aeb103e9e`. It identifies an obstruction that survives changes of patch coordinates and classifies the matching alternating-bilinear laws on inherited tree grades. Native physical receiver delivery remains open.
+
+## Inputs and scope
+
+- INHERITED: the finite additive grade, nearest-retained-ancestor pushforward \(P_{XY}\), supplied zero-extension section \(I_{YX}\) as an available map, and [FCV P1–P2](../../../foundational-closure-verification/PROOFS.md). The [v16.23 proof, §O3](../../../demos/v16.23-overlap-descent/PROOFS.md) gives invertible subtree-sum coordinates. Section O4 gives the existing common-port comparison for the linear Green response.
+- INHERITED in its archived model: V1712 `rg_step` and its next-scale caller. The earlier [frozen proof](V1712_PATCH_WRITE.md) showed that it uses a directed cyclic stencil on a six-component patch. V1713 repeats the stencil and initializes a separate patch list. Both modules import NumPy and construct their initial patch values with their own Gaussian draws.
+- INHERITED in the historical software: the v16.42 normalizer reads membership, changes masks and returns a path. Its producer converts that path to graph state indices. Its verifier checks those indices, the cover budget and individual edits. The fixed \(q\) of this producer is a minimum-cover target, not an extensive source or patch field. The inspected caller and verifier do not pass a distinct intermediate mask into V1712 or V1713.
+- SUPPLIED for the mathematical comparison: two signed real grades on one common rooted carrier, an alternating-bilinear correction \(B\), and commutation with the indicated pruning and section maps. This is a test of a candidate compatibility condition for the V1712 identification. It is not a proposal to fit coefficients or adopt a physical interaction. Actual atemporal occurrence is ACCEPTED INPUT and unused in the proof.
+
+## 1. Exact form of a commuting correction
+
+Let \(a,b\) be grades on a finite rooted tree \(X\). For a vertex \(v\), let \(c_v(a)\) be its subtree sum, with \(c_o(a)\) the total at the root. The inverse subtracts the sums of the immediate child subtrees. The coordinates are simply restricted along \(P_{XY}\), as every removed descendant of a retained vertex retracts to a retained ancestor still in that vertex's subtree. Along \(I_{YX}\), the coordinates in \(Y\) are unchanged and those outside \(Y\) are zero, since \(Y\) is prefix closed.
+
+Suppose alternating-bilinear \(B_X(a,b)\) is a grade on the same carrier, and members of this family satisfy
+
+\[
+P_{XY} B_X(a,b)=B_Y(P_{XY}a,P_{XY}b).
+\]
+
+Projecting \(X\) to the root-to-\(v\) chain shows that the output coordinate \(c_v(B_X)\) depends only on the input subtree sums along that chain. Alternation then makes it a linear combination of the wedges of distinct chain coordinates. At the root the chain has one coordinate, so \(c_o(B_X)=0\) on every pair. This root constraint uses P1 alone.
+
+If the family also satisfies \(B_X(I_{YX}a,I_{YX}b)=I_{YX}B_Y(a,b)\), apply it to a strict ancestor chain zero-extended to the chain ending at \(v\). The output at \(v\) must vanish when both input coordinates at \(v\) vanish. All ancestor-ancestor wedge coefficients are therefore zero. For each nonroot \(v\) the complete form is
+
+\[
+c_v(B_X(a,b)) =
+\sum_{u\prec v} \lambda_{vu}
+\big(c_v(a)c_u(b)-c_v(b)c_u(a)\big).
+\]
+
+Here \(u\prec v\) means strict ancestor. Every such family with the same coefficients on retained copies of the same lineage satisfies both identities. For \(v\) retained, all its ancestors and their coordinates survive. For \(v\) outside the zero extension, both its input coordinates vanish. Hence pruning alone permits \(\sum_v {d(v)+1\choose 2}\) independent coefficients on a fixed carrier and all its retained subsets. Pruning with the section permits \(\sum_v d(v)\). These counts concern labeled lineage coordinates with no additional symmetry conditions.
+
+## 2. No additive coordinate identification of the V1712 write
+
+Write the unscaled V1712 correction \(K(a,b)_i=a_i b_{i-1}-a_{i-1}b_i\), with indices modulo six. For each \(i\), \(K(e_i,e_{i-1})=e_i\). The correction therefore spans the whole patch space. For any invertible linear identification of the patch output with a six-coordinate extensive grade, the total defines a nonzero linear covector on that patch. The root constraint in §1 would make that covector annihilate the entire image of \(K\), a contradiction. This obstruction uses only the root projection of P1 and permits independent invertible input changes of coordinates.
+
+There is a separate obstruction to treating the full update \(F(a,b)=a+g^2K(a,b)\) as a two-to-one extensive grade transfer. Even with arbitrary scalar functions \(m_\mathrm{out},m_L,m_R\), the identity \(m_\mathrm{out}(F(a,b))=m_L(a)+m_R(b)\) for all real patches makes \(m_R\) constant. Indeed, \(F(a,0)=F(a,a)=a\) for every \(a\). Comparing these two inputs forces \(m_R(a)=m_R(0)\). A right hand grade capable of distinguishing two right patches cannot satisfy that identity. The claim concerns a separately defined grade on each input and the full real patch domain. It leaves open models in which a separate event first writes a state, or models with additional input restrictions or event-dependent information.
+
+## 3. Before the actual retained histories merge
+
+Use the original v16.42 four-leaf fixture and the already recorded preparations \((A,B)=(21,11)\) and \((29,11)\). At entry to the common second-leaf operation `setleaf(leaves[1], B)`, the respective mask pairs are \((23,9)\) and \((27,13)\). Leaf 2 is absent and present, respectively, in B. The original routine tests that bit. Both histories later reach \((27,29)\).
+
+At this common invocation the B carriers intersect in \(\{o,3\}\). They hold \(c_o\) and \(c_3\) of each input if both preparations are restrictions of the same two ambient grades. Under this stated matched-source condition, every correction in §1 gives the same result on the common carrier by P1. In particular, B's extra transient leaf cannot by itself change the shared root–3 edge in the existing Green read, which uses the shared subtree grade. This is a conditional common-port test using the inherited response and comparison. A transient bit can distinguish these software histories while that shared source-geometric read stays equal. Any claimed contrast on the common carrier needs a difference in its pruning-visible grade inputs or a producing operation outside this commuting grade class. Access by a physical receiver is a further open premise.
+
+## Frozen replay
+
+Re-execute the two exact historical paths and observe the bit-read call before it mutates the mask. Validate the original selected four-leaf family with the historical verifier. For the separate common-port control, fix the two ambient grades to \((2,3,5,7,11)\) and \((3,1,2,4,8)\) in vertex order. Project each into B and apply the published v16.22 grounded Laplacian as a diagnostic. The root–3 edge reads 7 and 4 respectively for these two grades, in each history.
+
+Independently build rational coefficient constraints from the archived `Pruning.aggregate` on every prefix-closed subset of three fixed five-vertex trees. Use the rooted star, the tree with parents \((-1,0,1,1,3)\), and the rooted chain. The respective predictions are 16, 7 and 5 retained subsets, P1-only dimensions 4, 13 and 20, and P1-plus-section dimensions 4, 8 and 10. Distinct dimensions on the two deeper trees check the effect of the section requirement. Finally replay the six oriented basis pairs in the original V1712 write using exact rational arrays and verify full rank, the two right-insensitive inputs in §2 and preservation of their left patch. Pin all original source bytes. Any disagreement with these predictions is a failed check. These finite checks audit the proof within their stated mathematical and software scope.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/PRUNING_COMPATIBLE_PATCH_REVIEW.md
+# Independent review of pruning compatibility and the patch write
+
+Gemini 3.1 Pro Preview accepted the [frozen proof](PRUNING_COMPATIBLE_PATCH.md) on the first attempt. Physical event binding and receiver access remain open. The reviewer reconstructed both directions of the classification, the exact dimensions, the cyclic basis calculation and the common-carrier comparison. [GitHub Actions run 44956883528](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44956883528)
+
+## Result
+
+For an alternating-bilinear grade correction on the same retained tree, commuting with P1 forces the correction at each vertex, expressed in subtree sums, to depend only on the lineage from the root to that vertex. Requiring the available zero-extension sections to commute too leaves only terms pairing the vertex with one of its strict ancestors. The root must have zero correction under either contract. V1712's cyclic term produces each of the six basis vectors in turn, which rules out any invertible linear reidentification that would give it the required zero root correction.
+
+On the full real patch domain the V1712 write gives the same result for right inputs zero and a copy of the left, for every left patch. Thus a scalar grade on the right cannot enter this write as a separate, nonconstant extensive summand. The raw review's phrase “erases the right grade” refers to this collision and its consequence for additive grades. The earlier [patch replay](V1712_PATCH_WRITE_REVIEW.md) demonstrates the write's sensitivity to other right-patch distinctions.
+
+The original v16.42 verifier accepted 50 normalizations on the four-leaf fixture. At the shared leaf-2 occupancy call, the two historical B masks are 9 and 13. With a fixed pair of ambient source preparations in the diagnostic, the original grounded-tree equations return the same root–leaf-3 responses, 7 and 4 respectively, in both histories. The finite test uses the exact archived code and a matched-source comparison. Access to these grades by an actual receiver and identification of a gravity signal remain open.
+
+| Fixed tree | Retained subsets | Free coefficients under P1 | Free coefficients under P1 and sections |
+|---|---:|---:|---:|
+| Star | 16 | 4 | 4 |
+| Branching | 7 | 13 | 8 |
+| Chain | 5 | 20 | 10 |
+
+## Verification
+
+Both the workflow and scientific checkout were `659081b4974741d0ed441863bc51597d4d9a5680`. Raw model response SHA-256 is `2f3df7b4056ea414e4e6ba686025d4c36916ead1a5554007ff13e743a78c5f16`. The local result and both GitHub replays agreed byte for byte. All three original Actions ZIPs passed exact byte count, SHA-256 and member CRC checks. The publication log payloads independently matched the raw review and publication receipt. [Replay](evidence/pruning_compatible_patch/replay.json) · [Verdict](evidence/pruning_compatible_patch/review_verdict.json) · [Readback](evidence/pruning_compatible_patch/readback.json)
+
+- [Initial replay archive](evidence/pruning_compatible_patch/pruning-compatible-patch-replay.zip)
+- [Independent review and raw response](evidence/pruning_compatible_patch/pruning-compatible-patch-review.zip)
+- [Publication replay and audit archive](evidence/pruning_compatible_patch/pruning-compatible-patch-publication.zip)
+- [All workflow job logs](evidence/pruning_compatible_patch/pruning-compatible-patch-logs.zip)
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1718_LOOP_REVERSIBILITY.md
+# Source-dependent loops and reversibility in V1718
+
+This is an open Path-A source and calculation checkpoint. It follows the [earlier V1698 source-to-geometry trace](V1698_SOURCE_TO_GEOMETRY.md) and uses the same outstanding test of a source distinction reaching an actual geometric calculation. The exact target is the [historical V1718 implementation](https://github.com/proteinfoldingengine/WetLabEngine/blob/6909feacd82e72ea1c7d67096a5ab3093de8b4fc/Tmp/TOE/Einstein_13_V1720%20retained_bridge_core/v1718_complete.py), Git blob `638e68d00762642d6b58f692e7a1747816752232`. Thread T-301 through T-307 already checked generic invertibility of the same kernel at an earlier version. This checkpoint asks what V1718's **actual loop and reverse readers** establish and gives a fixed-total contrast alongside matched reversing controls.
+
+The V1718 routines are INHERITED as historical simulation code. Their eight-dimensional carrier, cyclic shift, coupling and Gaussian source initializer are SUPPLIED mathematical inputs. Scripted source values below are controlled inputs to those routines. Actual atemporal occurrence is ACCEPTED INPUT and is unused in the calculations. The P1 pruning of the retained tree is a separate operation from the vocabulary used in the archive. The calculations below use ordered updates and no physical time parameter.
+
+## 1. The source does update a carried vector and a loop
+
+`native_T` (lines 5–6) maps the carried vector \(x\) through \(M(q)=I+gA(q)\), where
+
+\[
+ (A(q)x)_i=q_i x_{i-1}-q_{i-1}x_i
+\]
+
+with indices modulo the dimension. `loop_drift` (lines 36–42) draws a vector and one source state at each of three vertices, then replaces `x` by `transport(x, nodes[(k+1)%nloop])` on every step. The next edge consumes the changed vector. A loop with the saved states \((q_0,q_1,q_2)\) reads the norm of \(H x\) with \(H=M(q_0)M(q_2)M(q_1)\). The later `trajectories` caller also updates and reads the carried vector, drawing a new Gaussian `q` per step (lines 52–64).
+
+Hold \(q_0=q_2=0\), set \(g=17/100\), and change just \(q_1\) from \(e_0+e_2\) to \(2e_0\), using zero-based coordinates. Both supplied source totals equal 2. For the first state the only altered diagonal entries of \(H\) are at 1 and 3, each \(1-g\). For the second only entry 1 changes, to \(1-2g\). In dimension 8, a matrix whose only possible entries are diagonal or in the cyclic predecessor column has only the identity and full-cycle determinant terms. In this case at least one predecessor entry vanishes, so only the diagonal term contributes. Hence
+
+\[
+\det H(e_0+e_2)=(1-g)^2=0.6889,
+\qquad \det H(2e_0)=1-2g=0.66.
+\]
+
+For \(x=e_3\), the norm returned by the original loop routine is respectively \(0.83\) and \(1\). Both loop maps are invertible and their different determinants preclude similarity, including any simultaneous change of basis at the base vertex. These are exact predictions for a fixed-total source-dependent closed-path operator. Here the source numbers reach the loop through the transported state, where a direct read in V1698.75 reached only the signed boundary calculation. The V1718 contrast is on its supplied synthetic carrier.
+
+## 2. What the reverse and loop controls measure
+
+For fixed \(g\), \(\det M(q)\) is a polynomial in \(q\) with value 1 at zero. Its zero set has Lebesgue measure zero and each independent Gaussian draw therefore gives an invertible map almost surely in exact arithmetic. This can also be seen by expanding the determinant into the two terms above. Specially chosen non-Gaussian values can give singular maps, for example \(q=e_0/g\) for \(g\ne0\), which annihilates \(e_1\). The finite-action claim is about the sampled fixed-\(q\) operation and the intended continuous Gaussian law. It does not assert uniqueness of the prior vector when the realized source is unknown or an inverse is inaccessible.
+
+`fwd_rev` (lines 20–26) returns the relative error after \(M(q_i)M(q_j)x\), with separately drawn endpoint values. Invertibility of the forward map says that \(M(q_j)^{-1}M(q_j)x=x\). The code does not compare to this inverse. Feed \(x=e_1\), \(q_i=q_j=e_0\) through the original routine. Its forward factor is \(0.83\) and its error is \(1-0.83^2=0.3111\). Solving against the same forward matrix gives zero reconstruction error in exact arithmetic. Thus a nonzero reported reverse error is possible under an ordinary invertible update, even with the two endpoint values held equal.
+
+The unpruned control (lines 7–13) exponentiates the skew part of \(A(q)\). Norm 1 for this control follows from orthogonality. For the same loop slots, use \(q_0=q_2=0, q_1=e_0\). The skew generator has the single plane \((e_0,e_7)\) with off-diagonal entries \(\pm g/2\), hence gives a nonidentity rotation by magnitude \(0.085\) radians in that plane. The loop reader returns norm 1 on \(e_0\). Direct multiplication on that vector gives a change of \(2\sin(0.085/2)>0\) in Euclidean distance. Norm preservation here cannot test equality of the returned vector or identity of the vertex loop operator.
+
+## 3. The independently sampled trajectory has a norm signal without a pruning event
+
+In the simulated model let the coordinates of a fresh \(q\) have zero mean and identity covariance, independent of the current deterministic or conditioned vector \(x\). Then
+
+\[
+\begin{aligned}
+E[M(q)x\mid x] &= x,\\
+E[\|M(q)x\|^2\mid x] &= \|x\|^2+g^2\sum_i(x_{i-1}^2+x_i^2)
+= (1+2g^2)\|x\|^2.
+\end{aligned}
+\]
+
+The mixed terms vanish by the stipulated moments and distinct coordinates. Iterating for \(L\) independent draws gives \((1+2g^2)^L\) multiplying the initial squared norm. V1718's closed walk uses each of its independently drawn source values once, so the formula applies also to its three-edge loop conditional on the initial vector. The one-step factor at the archived coupling is \(1.0578\). The reported sample mean of the norm is a different statistic from the expected squared norm. The raw vector, conditional on a known deterministic input, also has mean equal to that input even when the source draw is hidden. This last statement concerns equality of distributions and gives no single-trajectory recovery rule or receiver readout.
+
+## Frozen reconstruction and disposition
+
+Pin the byte-identical original source and execute only its original `roll`, `native_T`, `Jgen`, `invertible_T`, `fwd_rev` and `loop_drift` definitions. The other runner code and original random campaign are outside the replay. Prescribe the draws strictly in caller order and reconstruct each matrix and determinant independently from the diagonal and predecessor entries. Compare the full matrices as well as the original scalar reads. Check repeated forward versus true inverse. Use a singular control and a dense full-cycle determinant control to discriminate a broken reverse test from actual rank loss. Check the orthogonal loop's nonidentity by its independently derived rotation. Verify the moment statements on the 16-point symmetric source sample \(\{\pm\sqrt 8 e_i\}\), which has the stipulated first two moments. No Gaussian sample-mean test is required or authorized by this checkpoint. Thresholds, specific vectors, analytic predictions and the source dataflow were known from inspection before freezing. Numerical execution and review follow the freeze.
+
+The retained tree would have to determine an actual state or edge input in this writer, and a retained receiver would have to have justified access to its consequence. In V1718 `q` enters as an independent draw, the vector lives in a supplied fixed dimension, and the loop norm is computed by the host routine. The positive numerical source-to-loop route is established within this simulation. Its loop and reverse comparisons cannot justify the archive's pruning attribution. Native delivery and the identification of a pre-time gravity signal remain open.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1718_LOOP_REVERSIBILITY_RESULT.md
+# V1718 source-to-loop result
+
+November 21, 2026. The [frozen argument and reconstruction](V1718_LOOP_REVERSIBILITY.md) were exercised at commit `498a08fd3619b755aab1543f65810904d8218438`. The [GitHub run](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44960357330) passed the original-source replay, independent Gemini argument review, and byte-for-byte publication replay.
+
+| Comparison | Result |
+| --- | --- |
+| Two source states with the same total on the same three-edge loop | Full loop determinants 0.6889 and 0.66. The historical reader returned norms 0.83 and 1.00 on the same vector. |
+| Historical reverse attempt at equal endpoints | Error 0.3111 after two applications of the forward map. |
+| Inverse of the actual forward map | Reconstruction error 0 in the matched example. |
+| Orthogonal control around the same loop | Norm 1 with a Euclidean displacement of 0.084974413769. |
+| Separately chosen rank-loss control | Rank 7 in dimension 8. The full-cycle determinant control yielded −1. |
+| Symmetric moment control and analytic independent-draw model | The one-step squared-norm factor was 1.0578. The analytic three-step factor is 1.183615620552. |
+
+Both fixed-total loop operators are invertible. Their different determinants survive any common basis change at the base vertex. The loop response uses actual source numbers through the carried vector. The reverse test repeats a forward update, and the orthogonal control can preserve the norm while rotating the vector. The exact expected squared-norm growth comes from the independent draws and the update formula. These distinctions resolve what these particular tests show about reversibility and loop response.
+
+The inputs in the replay are controlled toy preparations. In its normal run, the historical routine draws its source states independently and updates an eight-dimensional vector. Identifying a genuine P1 event output with a state or edge input and establishing a retained receiver's access to the resulting contrast remain necessary for a native signal claim.
+
+[Replay and exact matrices](v1718_loop_evidence/replay.json), [Gemini verdict](v1718_loop_evidence/review_verdict.json), [publication replay](v1718_loop_evidence/publication_audit.json), and [artifact and log verification](v1718_loop_evidence/readback.json). The archives alongside these files contain the original source, raw argument review, fresh replay, and complete logs. GitHub issued a runtime deprecation warning for the pinned Actions helpers and ran them on Node.js 24.
+
+END EXACT FILE
+
+BEGIN EXACT FILE Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1718_complete.py
+# V1718 (complete) - close the gaps: (1) genuine forward/reverse asymmetry, (4) loop irreversibility,
+# (3) rigorous monotonicity. Test 2 (pruning dependence) already clean; re-confirm alongside.
+import numpy as np
+from scipy.linalg import expm
+def roll(v): return np.roll(v,1)
+def native_T(dx,q,g=0.17): return dx+g*(roll(dx)*q - dx*roll(q))
+def Jgen(q,g=0.17):
+    n=len(q); J=np.zeros((n,n))
+    for a in range(n):
+        e=np.zeros(n);e[a]=1.0; J[:,a]=(native_T(e,q,g)-e)/g
+    return J
+def invertible_T(dx,q,g=0.17):   # un-pruned control: skew-only -> exactly invertible/unitary
+    return expm(g*0.5*(Jgen(q,g)-Jgen(q,g).T))@dx
+def assoc_T(dx,q,g=0.17): return dx + g*(dx+dx)*0  # associative/flat: identity-like (no recombination)
+DIM=8; rng=np.random.default_rng(7)
+
+# ---- TEST 1: GENUINE forward/reverse asymmetry ----
+# forward q_i->q_j via native; reverse q_j->q_i via the BEST native attempt (transport back with q_i).
+# unitary/invertible: reverse undoes forward. pruning: it does not.
+def fwd_rev(transport):
+    dx=rng.normal(size=DIM); dx/=np.linalg.norm(dx)
+    qi=rng.normal(size=DIM); qj=rng.normal(size=DIM)
+    fwd=transport(dx,qj)                      # forward recombination
+    rev=transport(fwd,qi)                     # attempt to reverse using the other endpoint
+    recon_err=np.linalg.norm(rev-dx)/np.linalg.norm(dx)
+    return np.linalg.norm(fwd)/np.linalg.norm(dx), recon_err
+print("TEST 1 - forward/reverse asymmetry:")
+for name,tr in [("native(pruning)",native_T),("invertible(un-pruned)",invertible_T)]:
+    fs=[];re=[]
+    for _ in range(200):
+        f,r=fwd_rev(tr); fs.append(f); re.append(r)
+    print(f"  {name:>22}: fwd norm ratio={np.mean(fs):.3f}  reconstruction error={np.mean(re):.3f}")
+print("  (native: reverse does NOT undo forward => retained-order direction is real)")
+
+# ---- TEST 4: LOOP irreversibility A->B->C->A ----
+def loop_drift(transport, nloop=3):
+    dx=rng.normal(size=DIM); dx/=np.linalg.norm(dx); n0=1.0
+    nodes=[rng.normal(size=DIM) for _ in range(nloop)]
+    x=dx
+    for k in range(nloop):
+        x=transport(x,nodes[(k+1)%nloop])     # traverse the closed loop
+    return np.linalg.norm(x)/n0
+print("\nTEST 4 - loop irreversibility (A->B->C->A norm drift):")
+for name,tr in [("native(pruning)",native_T),("invertible(un-pruned)",invertible_T)]:
+    d=[loop_drift(tr) for _ in range(300)]
+    d=np.array(d)
+    print(f"  {name:>22}: loop norm = {d.mean():.3f} +/- {d.std():.3f}  (1.0 = closes; !=1 = drifts)")
+print("  (native loop drifts from 1.0 => dissipative; invertible returns to 1.0 => no drift)")
+
+# ---- TEST 3: rigorous monotonicity - is there a LYAPUNOV-like monotone under forward steps? ----
+# Test multiple candidate monotones; a real arrow needs one that moves consistently one direction.
+def trajectories(steps=30,n=200):
+    norms=[];ents=[];conc=[]
+    for _ in range(n):
+        dx=rng.normal(size=DIM); dx/=np.linalg.norm(dx)
+        Ns=[];Es=[];Cs=[]
+        for _ in range(steps):
+            q=rng.normal(size=DIM); dx=native_T(dx,q)
+            p=np.abs(dx)**2; p=p/p.sum()
+            Ns.append(np.linalg.norm(dx))
+            Es.append(-np.sum(p*np.log(p+1e-12)))      # participation entropy
+            Cs.append(np.max(p))                        # concentration (max weight)
+        norms.append(Ns);ents.append(Es);conc.append(Cs)
+    return np.array(norms),np.array(ents),np.array(conc)
+N,E,C=trajectories()
+print("\nTEST 3 - monotonicity of candidate arrows (fraction of steps moving one direction):")
+for nm,arr,d in [("log-norm",np.log(N),+1),("entropy",E,-1),("concentration(max p)",C,+1)]:
+    diffs=np.diff(arr.mean(axis=0))
+    frac=np.mean(np.sign(diffs)==d)
+    print(f"  {nm:>22}: {frac:.0%} of steps move {'up' if d>0 else 'down'}  | net {arr.mean(axis=0)[0]:.3f}->{arr.mean(axis=0)[-1]:.3f}")
+print("  (a near-100% one-directional candidate = a real monotone/Lyapunov arrow)")
+
+print("\n"+"="*58)
+print("VERDICT:")
+# recompute key numbers
+nat_loop=np.mean([loop_drift(native_T) for _ in range(300)])
+inv_loop=np.mean([loop_drift(invertible_T) for _ in range(300)])
+nat_recon=np.mean([fwd_rev(native_T)[1] for _ in range(200)])
+inv_recon=np.mean([fwd_rev(invertible_T)[1] for _ in range(200)])
+conc_frac=np.mean(np.sign(np.diff(C.mean(axis=0)))==+1)
+print(f"forward/reverse: native recon err {nat_recon:.2f} vs invertible {inv_recon:.2f}")
+print(f"loop drift: native {nat_loop:.2f} vs invertible {inv_loop:.2f}")
+print(f"concentration monotonicity: {conc_frac:.0%}")
+if nat_recon>0.5 and inv_recon<0.2 and abs(nat_loop-1)>0.1 and abs(inv_loop-1)<0.05:
+    print("\nARROW CONFIRMED: forward/reverse asymmetric (native irreversible, invertible reverses),")
+    print("loop drifts for native but closes for invertible. Non-unitarity is DIRECTIONAL and")
+    print("PRUNING-SOURCED - the amplitude-level expression of the retained-order arrow.")
+else:
+    print("\nPartial - inspect which condition is borderline.")
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+# FCV-1 — Proofs for retained closure, descent and comparison
+
+Written before the new adjudication implementation. Review status: self-reviewed mathematical arguments; finite checks and deliberate-defect tests have separate receipts. A future GREEN does not prove these theorems by itself. All references to source and response objects use TYPE_LEDGER.md. This document corrects the broad missing-splitting/transport interpretation, not the historical program outputs.
+
+## P0 — Scalar structure and linearity
+
+For a finite set X and a specified commutative additive monoid M, finite additivity says mu(A)=sum_{x in A} mu({x}); fiber pushforward is meaningful and additive. No subtraction or vector-space kernel follows for a general M.
+
+For F-valued signed measures with F=Q or R, singleton evaluation is a bijection to F^X: define mu_x(A)=sum_{v in A}x_v, and evaluate singleton sets for the inverse. Pointwise addition and scalar multiplication agree under this bijection. Therefore a finite fiber sum, zero extension, function restriction and pullback are F-linear. This is the explicit linear representation used in the inherited rational diagnostic, not a claim that every signed vector is a physically preparable grade. The symbolic proofs below hold over Q/R. Rational bounded tests check implementations; they are not a density argument for real universality.
+
+## P1 — Admissibility, fiber composition and cumulative kernels
+
+Let X superset Y superset Z be nonempty finite prefix-closed sets with one common Genesis/root. Define r_XY(x) as its longest prefix in Y. Every prefix of x in Z is a prefix of r_XY(x), and conversely a Z-prefix of r_XY(x) is a Z-prefix of x. Their longest elements are equal. Thus r_YZ r_XY=r_XZ. This proves composition from addresses, including identities and repeated pruning.
+
+For z in Z the disjoint fiber identity is
+
+    {x:r_XZ(x)=z} = disjoint union_{y:r_YZ(y)=z} {x:r_XY(x)=y}.
+
+Finite additivity gives (P_YZ P_XY x)_z=sum_{r_XZ(v)=z}x_v=P_XZ x. The matrix product is a representation of this argument, not its premise. Summing over all fibers preserves total grade. In particular each K_j=ker P_0j lies in S_X0, and composition implies K_{j-1} subset K_j. No coarse recentering is substituted.
+
+## P2 — Supplied source section and split loss sequence
+
+Define I_YX on atoms by e_y -> e_{i(y)}; in singleton coordinates it is zero extension. Since r_XY i_YX=id_Y, P_XY I_YX=id_{F_Y}; both preserve total sum. These maps commute with every admissible relabeling because atom inclusion and ancestral fibers do. Hence
+
+    F_X = ker P_XY direct-sum I_YX(F_Y),
+    S_X = ker P_XY direct-sum I_YX(S_Y),
+    x = (x-I_YX P_XY x) + I_YX P_XY x.
+
+The first term is in ker P; the intersection is zero because PI=id. This is a section supplied by retention, not an arbitrary vector-space splitting. It is not claimed unique among all linear sections.
+
+For X0->X_{j-1}->X_j, let P_a=P_0,j-1 and P_b=P_j-1,j. Restriction of P_a gives the exact sequence
+
+    0 -> K_{j-1} -> K_j -> ker P_b -> 0.
+
+Indeed P_b P_a x=0 for x in K_j. Its kernel is K_{j-1}. Given y in ker P_b, I_0,j-1 y belongs to K_j and P_a I_0,j-1 y=y, proving surjectivity and giving the section. All domains refer to actual nested sets, not equal cardinalities.
+
+For cumulative E_j=I_0j P_0j on F_X0 (E_0=id), E_j^2=E_j and, for i<=j, E_i E_j=E_j E_i=E_j. To see this, I_0j factors through I_0i, and restricting ancestral pruning to X_i is its own X_i->X_j retraction. These address identities establish both products. Therefore D_j=E_{j-1}-E_j is idempotent, D_i D_j=0 for i!=j, and
+
+    K_j = direct-sum_{l=1..j} im D_l,
+    im D_j = I_0,j-1(ker P_j-1,j),
+    sum_{l=a+1..b} D_l = E_a-E_b.
+
+These are algebraically complementary projectors, not an assertion of orthogonality in a physical metric. Inserting an intermediate retained subset refines the decomposition by the last telescoping identity. Different factorizations with the same endpoints have the same total lost part, though their individual layer labels need not agree.
+
+## P3 — Bare-filtration naturality obstruction (NOT a retained no-go)
+
+Category: finite-dimensional F-vector spaces with fixed-length filtrations 0=K_0 subset ... subset K_m, with all filtration-preserving linear maps. The functors gr_j=K_j/K_{j-1} act by induced quotient maps.
+
+Any natural family of linear maps tau:gr_j -> gr_{j+1} is zero. At any object choose vector-space complements solely to exhibit an automorphism a that acts by 2 on gr_j and identity on gr_{j+1}, preserving the whole flag. Naturality requires tau composed with 2id = id composed with tau, so tau=0 (F=Q/R). This addresses every natural transformation in the declared class; it is stronger than observing that the inclusion becomes zero. Trivial grades are covered automatically.
+
+There is likewise no section of every bare extension 0->A->B->B/A->0 natural under all filtered linear maps when A and B/A are both nonzero. In temporary coordinates B=A direct-sum C, each shear a_u(a,c)=(a+u(c),c) is identity on A and B/A. A natural section s would satisfy a_u s=s for every u:C->A, impossible for a class c with u(c)!=0. A complement is used to exhibit symmetries in the proof, not selected as retained data.
+
+P2 does not conflict: the retained category carries actual atoms, inclusions and retractions and excludes those arbitrary shears as structural relabelings. The external associated graded exists in both categories; a natural reconstruction of representatives depends on which data and morphisms are retained.
+
+## P4 — Actual inherited response: quotient and invertibility
+
+For finite connected prefix tree X, form L_X from unweighted parent-child incidence. Its row and column sums are zero. For real a,
+
+    a^t L_X a = sum_{parent-child edges} (a_child-a_parent)^2.
+
+This vanishes exactly for constants by connectivity. Over Q the same follows by embedding in R; the rooted reduced matrix has a nonzero rational determinant. Thus L_X induces an isomorphism l_X:W_X=F_X/F1 -> S_X. Put Z_X=id-11^t/n and U_X=11^t/n. L_X+U_X is invertible, and G_X=(L_X+U_X)^(-1)-U_X satisfies LG=GL=Z, G1=0, and ZG=G. These identities follow by decomposing into constants and S_X; no new inverse or inner-product selection is introduced beyond the inherited unweighted diagnostic.
+
+T_X=q_X G_X|S_X is inverse to l_X. Its zero-mean representative is G_X x; its root-zero representative is G_X x-(G_X x)_root 1. They represent the SAME quotient class, not an identity of sources and potentials. For a root-only carrier S_X=W_X=0 and G_X=0, so the statements remain meaningful.
+
+Every K_j lies in S_X0. Therefore the actual cumulative O_0j=T_X0|K_j is injective, with rank dim K_j. Its restriction to K_{j-1} has rank dim K_{j-1}. This predicts the mathematical restriction law; the independent verifier must still reconstruct and check actual matrices and admissible witnesses.
+
+## P5 — Fixed-target descent, witness, and the distinct response quotient
+
+For any linear T:K_j->W, the rule [x]->Tx with codomain W is representative independent iff T(K_{j-1})=0: necessity compares k and 0; sufficiency compares x+k and x. For the actual T_X0 restriction, P4 proves that this holds iff K_{j-1}=0. Once a previous pruning is nontrivial, fixed-target descent fails; identity stages after an earlier loss do not magically restore it.
+
+An explicit admissible witness uses X0={(),(0),(0,0)}, X1={(),(0)}, X2={()}. In this listed order,
+
+    L0 = [[1,-1,0],[-1,2,-1],[0,-1,1]],
+    P01 = [[1,0,0],[0,1,1]],
+    k = [0,-1,1],
+    G0 k = [-1/3,-1/3,2/3].
+
+P01 k=0, sum k=0, L0(G0 k)=k and sum(G0 k)=0. The output is not constant (last minus root equals 1), hence q0 G0 k !=0. k and 0 are the same class in K2/K1 but have different W0 outputs. k is a difference of two positive unit atoms within one admissible fiber; it is a formal signed source distinction in the inherited linear domain. No new physical source law is inferred.
+
+Alternative, explicitly different codomain: F_j=T_X0(K_j) subset W0 is nested. The map
+
+    bar O_j:K_j/K_{j-1} -> W0/F_{j-1}, [x]->[T_X0 x]
+
+is well defined since representatives differ by a vector whose image is in F_{j-1}. It is injective because T_X0 is injective, and its image is F_j/F_{j-1}. It discards exactly the response subspace of previously lost sources; it does not recover that response unchanged. Quotient projections W0/F_i -> W0/F_j for i<=j compose canonically. P6-P7 are still needed to compare the different native stage carriers W_Xj.
+
+## P6 — Already-earned boundary comparison and derived response lift
+
+For actual retained inclusion define S_XY:F_X->F_Y by potential restriction. It sends constants to constants and induces R_XY:W_X->W_Y. From retraction define h_YX:F_Y->F_X by h psi=psi composed with r_XY; it induces H_YX:W_Y->W_X. These are typed differently from source P and I. In coordinates S=I^t and h=P^t, but their definitions use set maps, not an added physical metric.
+
+On a prefix tree, a retraction fiber has exactly one retained vertex. Every edge crossing fibers is an original edge between retained vertices. Summing L_X phi over a fiber cancels internal edges and leaves precisely L_Y S phi. Hence
+
+    P_XY L_X = L_Y S_XY.
+
+This is the inherited corrected boundary theorem. Also h psi is constant along every internal fiber edge. At a discarded vertex L_X h psi=0, while at a retained vertex its value is L_Y psi. Thus independently
+
+    L_X h_YX = I_YX L_Y.
+
+It follows on the typed zero-sum sources that
+
+    R_XY T_X = T_Y P_XY,
+    T_X I_YX = H_YX T_Y,
+    R_XY H_YX = id_WY.
+
+On arbitrary raw source arrays the first equation instead has the necessary centering: Z_Y S_XY G_X=G_Y P_XY Z_X. Do not remove Z_X or replace P_XY Z_X by Z_Y P_XY. No arbitrary historical A_r is used: R is actual restriction, H is ancestral pullback, and the intertwining has just been proved from the existing tree.
+
+Both comparisons commute with parent-preserving relabelings. R_YZ R_XY=R_XZ and H_YX H_ZY=H_ZX because the underlying set maps compose. For a general graph or a non-prefix retained subset the crossing-edge proof may fail. No theorem for those classes is asserted.
+
+## P7 — Cumulative/stage obstruction compatibility without redefining either
+
+Let X0->X1->X2, x in K2=ker P02. Then u=P01 x is in ker P12, z=x-I10 u is in K1, and x=z+I10 u. Linearity and P6 give the exact identity in ONE explicit codomain W0:
+
+    O02(x) = O01(z) + H10 O12(u),
+    z=x-I10 P01 x, u=P01 x.
+
+Here O02:K2->W0 and O01:K1->W0 are cumulative/fine obstructions, O12:ker P12->W1 is the native stage obstruction, and H10:W1->W0 is the earned comparison. The stage pullback O12 P01 kills K1, but its lift is only the NEW component. It equals O02 only after the old component O01(z) is subtracted. Thus no tautological substitution certifies fixed-target descent.
+
+Define response cumulative projectors E'_j=H_j0 R_0j on W0. P6 implies T0 E_j=E'_j T0 on S0. They are nested commuting idempotents, and D'_j=E'_{j-1}-E'_j gives T0 D_j=D'_j T0. Therefore the source splitting of P2 has a compatible response splitting in this SPECIFIC inherited finite-tree response, not merely from a source section alone.
+
+For three or more stages, expand each source as its D_l components plus E_final and apply T0. Associativity follows from ordinary linear addition, P/I/R/H composition, and the already-proved telescoping projectors. Inserting an intermediate legal pruning replaces E_a-E_c by (E_a-E_b)+(E_b-E_c); applying T0 yields the exact corresponding response refinement. Different factorizations with the same endpoints have identical cumulative lost response, not literally identical individually indexed grades.
+
+The selected representative on a new source grade is E_{j-1}x for x in K_j. It is independent of adding k in K_{j-1}. T0 E_{j-1}x realizes the quotient response in the supplied complement. This is NOT T0 x in general; the difference is the explicitly removed old response T0(Id-E_{j-1})x.
+
+## Corrections and limits
+
+The bare-filtration obstruction in P3 is real, but it does not prove a retained no-go once literal inclusion is restored. The full retained source splitting and the prefix-tree response comparison in P2/P6/P7 are contrary to the earlier broad missing-transport interpretation. The .15F non-descent computation is compatible with these results: fixed-target descent fails because the fixed full-fine response is injective, while canonical layer decomposition and quotient descent are different, available constructions. This is not evidence by itself of a new dynamical memory mechanism.
+
+What is closed here: the algebra of the specified finite prefix-tree pruning, formal signed-source split sequences, and the already-fixed Green-response comparisons. What is not closed: selection of a physical response law, realizability of every formal source vector, arbitrary graph/refinement classes, independent Genesis identification, the quantum leg, or any metric/connection/curvature/gravity claim. Time remains pruning / ordered recoverability update.
+
+## Mathematical context (no novelty claim)
+
+Split exact sequences and quotient factorization are standard algebra: Stacks Project, Definition 12.5.9, https://stacks.math.columbia.edu/tag/010F . Graph boundary elimination is standard; see Dörfler and Bullo, Kron Reduction of Graphs with Applications to Electrical Networks, arXiv:1102.2950, https://arxiv.org/abs/1102.2950 . The direct prefix-tree arguments above are complete and do not assume an external geometric model or borrow a general graph theorem without checking its hypotheses.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md
+# v16.23 — Overlapping retained views: proofs before computation
+
+Status: written mathematical arguments, self-reviewed, not machine-formalized. The new computational verification has separate evidence. No geometric target or physical response law is selected. The parent is v16.22 at a02202bc218adb4080489c54dd37a1f9e5ec77d1. Types are fixed in TYPE_LEDGER.md.
+
+## O1 — The existing retained subsets form a lattice
+
+Fix one finite common-Genesis prefix tree X. All carriers here are actual nonempty root-containing prefix-closed subsets of X. For Y,Z let U=Y union Z and J=Y intersection Z. Both are admissible. We do not assert a common carrier for unrelated Genesis objects. For each vertex v, the retained ancestors in Y and Z are two initial segments of its one ancestor chain. Their longest elements are comparable; the shallower is r_J(v), the deeper is r_U(v). Hence r_Y r_Z=r_Z r_Y=r_J, using the literal inclusions into X between the retractions. This is not an invented rerooting or depth-shifting arrow.
+
+On formal signed sources F_X=Q^X define E_Y=I_YX P_XY. Applying these maps to every atom delta_v gives
+
+    E_Y E_Z=E_J,     E_Y+E_Z-E_J=E_U.
+
+The difference on the right is derived in the signed space, not claimed meaningful in every additive monoid. On response classes W_X=Q^X/Q1 use F_Y=H_YX R_XY. Evaluation on the ancestor chain proves the same meet/join identities. These maps are algebraic idempotents, not a physical metric projection.
+
+## O2 — Signed source gluing and its universal property
+
+For x_Y in F_Y, x_Z in F_Z suppose P_YJ x_Y=P_ZJ x_Z=c. Define the source on the UNION, not on all of X, by
+
+    x_U=I_YU x_Y+I_ZU x_Z-I_JU c.                       (G)
+
+Here I is literal atom inclusion/zero extension. The mixed relation P_UY I_ZU=I_JY P_ZJ follows by sending a Z atom to its longest ancestor in Y, which lies in J. Similarly in the other direction. Therefore P_UY x_U=x_Y and P_UZ x_U=x_Z. Conversely, (O1) on U gives (G) for any x_U, proving uniqueness. Thus
+
+    F_U -> F_Y x_(F_J) F_Z
+
+is an isomorphism, with the fiber product defined by the ACTUAL source pushforwards. Equivalently 0 -> F_U -> F_Y direct-sum F_Z -> F_J -> 0 is exact, the last map being (P_YJ,-P_ZJ). Surjectivity follows by inserting any c into Y and taking zero in Z. The same proof applies to balanced source spaces S (total zero), since all P/I preserve total and (G) then has total zero.
+
+For views inside a larger X, the joint-readout kernel is exactly ker P_XU, not necessarily zero. Indeed E_Y x=E_Z x=0 implies E_U x=0 by O1, and the converse follows by retraction composition. Gluing does not reconstruct discarded information outside U.
+
+## O3 — Finite covers, associativity, and information coordinates
+
+There is an invertible source coordinate map already available from the lineage: c_root=sum_X x and c_v=sum_{u descendant of v} x_u for each nonroot v. The inverse is x_v=c_v-sum_{children w}c_w, with the same formula for the root. Subtree sums telescope. Under admissible pruning these coordinates are simply restricted to the retained vertices: every retained subtree collects exactly its former descendant sources. Thus pairwise matching on overlaps means the c coordinates agree wherever views overlap. They glue uniquely on the union for any finite cover. Balanced sources set c_root=0; no physical scalar attainability is inferred.
+
+This gives a general proof of finite-cover descent independent of matrix rank samples. Repeated views and different parenthesizations of the binary operation (G) give the same unique c and hence the same x. For three views the inclusion-exclusion expression is the sum of three included local sources minus the three included pair-overlap sources plus the included triple-overlap source. It equals either binary parenthesization. Refining a cover without changing its union does not change the reconstructed source. All statements commute with consistent root/parent-preserving lineage relabelings. The coordinate choice is a computational representation, not extra information.
+
+## O4 — Response gluing and v16.22's depth freedom
+
+Potential restriction preserves constants. For classes phi_Y in W_Y and phi_Z in W_Z with equal restrictions to W_J, choose their unique root-zero representatives. Because the SAME retained root belongs to J, equality as classes on J is then equality of representatives. Their values glue on U uniquely; changing either original representative by a constant does not change the resulting class. This uses a shared retained identity, not external frame alignment.
+
+Equivalently, in classes,
+
+    phi_U=H_YU phi_Y+H_ZU phi_Z-H_JU phi_J.
+
+To check the formula, at a vertex in Y the Z retraction and the J retraction agree unless that vertex is also in Z, where all compatible values agree; similarly on Z. The response exact sequence is 0 -> W_U -> W_Y direct-sum W_Z -> W_J -> 0. The last map is the difference of restrictions; a class on J can be extended through its ancestral pullback into Y.
+
+Let T be ANY v16.22 comparison-compatible linear family, not only the fixed Green inverse. Naturality makes T_Y x_Y and T_Z x_Z compatible, and T_U applied to (G) has precisely those response restrictions. Uniqueness of response gluing proves
+
+    T_U glue_source(x_Y,x_Z)=glue_response(T_Y x_Y,T_Z x_Z).
+
+The same holds for all finite covers by O3. Therefore imposing these overlap-gluing relations on the already classified comparison family adds NO depth-selection condition: every scalar sequence a_depth remains compatible. This is a logical-consequence theorem, not a claim that no other earned relation can constrain depth. C+INV still fixes all a_depth=1. The bounded verifier tests the FULL certified four-dimensional parent solution basis, not only two hand-picked sequences.
+
+## O5 — Nonnegative sources are a different category
+
+For nonnegative rational source vectors, all pushforwards and zero extensions are available, but subtraction is not an internal operation. Finite additivity alone did not earn arbitrary negative physical amounts. Given compatible nonnegative x_Y,x_Z, there is at most one nonnegative global source because O2 establishes uniqueness in the containing signed space. Its signed candidate (G) is nonnegative outside J automatically. At each v in J its value is
+
+    x_U(v)=x_Y(v)+x_Z(v)-c(v).
+
+Consequently a nonnegative global source exists IFF x_Y(v)+x_Z(v)>=c(v) for EVERY v in J. This is an exact membership criterion for the declared rational cone, not a fitted threshold or a new source law. A failure means these formal nonnegative local data do not jointly realize one nonnegative source on U; it does not mean the local data are invalid individually.
+
+Explicit two-view counterexample: X={root,a,b}, Y={root,a}, Z={root,b}; local vectors (0,1) and (0,1). Both have total 1 and agree after pruning to the shared root. The unique signed gluing is (-1,1,1). No nonnegative gluing exists. Adding a constant to this source is NOT a gauge transformation: it changes its pushforward and total. Potential gauge freedom cannot repair source negativity.
+
+## O6 — Pairwise nonnegative realizability need not be global
+
+Take the four-node rooted star X={root,a,b,c}, and views {root,a}, {root,b}, {root,c}. Each local source is (1,1), total 2. All overlap sources are the root source 2. Every pair has the nonnegative gluing (0,1,1), total 2. But all three have the unique signed gluing (-1,1,1,1), so there is no global nonnegative source. This example satisfies all actual prefix/Genesis conditions and is inside the preregistered size bound.
+
+More generally finite-cover gluing in O3 determines c at each union vertex. Nonnegative membership is exactly c_v>=sum_{children in U}c_child at every vertex (including leaves and root). A family of views can satisfy the inequalities separately, or on each pair, and fail an inequality after the full union is assembled. These are extensive aggregation constraints, not quantum contextuality, a new physical mechanism, or evidence of geometry/gravity.
+
+## O7 — Scope, evidence and correction discipline
+
+O1-O4 close overlapping-view comparison in the SAME finite prefix-tree/formal signed category used in v16.21-v16.22. They do not supply rerooting, identify independent origins, alter the fixed inverse, or remove the known cumulative fine-response obstruction. O5-O6 classify one explicitly declared nonnegative rational subcategory; they do not establish which positive sources nature can prepare. Positivity of potential representatives is not an invariant notion in W and is not imposed on response selection.
+
+Every universal statement above has a constructive argument; finite exact checks audit implementations and reject false certificates. The computational bound is not a physical cutoff. The governing requirements are WORKER_ASSIGNMENT.md in the parent campaign. No original report or executable is rewritten.
+
+The gluing/equalizer terminology is standard mathematics, not a novelty claim. Background definition: Stacks Project, Sheaves, tag 00VL, https://stacks.math.columbia.edu/tag/00VL . We do not assume a spacetime/topological geometry to prove any identity here.
+
+Time is pruning / ordered recoverabi…515 tokens truncated….md\n# V1718 at the retained-P1 interface\n\nThis checkpoint follows the independently reviewed [V1718 source-to-loop result](V1718_LOOP_REVERSIBILITY_RESULT.md) and the independently reviewed [classification of pruning-compatible alternating-bilinear corrections](PRUNING_COMPATIBLE_PATCH.md). It asks whether the historical V1718 update can be the missing retained extensive-grade interaction. The answer is no under every invertible linear identification of its two inputs and output with grades on one retained tree. The positive source-dependent loop and read remain valid in their archived simulation scope.\n\n## Source boundary\n\n- **INHERITED as historical software:** V1718's `roll`, `native_T`, `loop_drift` and norm read in the pinned source blob `638e68d00762642d6b58f692e7a1747816752232`.\n- **INHERITED mathematics:** FCV P1 extensive-grade pushforward and the reviewed theorem that every same-carrier alternating-bilinear correction commuting with P1 has zero root-total correction. The stronger zero-extension condition further restricts each output subtree coordinate to wedges of that vertex with strict ancestors.\n- **ACCEPTED-CONDITIONAL:** the reviewed V1718 fixed-total loop comparison at coupling (17/100), whose exact determinants are (0.6889) and (0.66) and whose existing norm read returns (0.83) and (1).\n- **SUPPLIED in V1718:** the eight-dimensional cyclic carrier, coupling, independently initialized source vectors, fixed loop and controlled preparations.\n- **ACCEPTED INPUT:** actual atemporal occurrence. It is not used by this proof and is not identified with a V1718 draw.\n\n## 1. The V1718 correction is the classified cyclic wedge\n\nWith indices modulo (n), the original function is\n\n[\nT(x,q)_i=x_i+gleft(x_{i-1}q_i-x_iq_{i-1}\right).\n]\n\nDefine\n\n[\nK(q,x)_i=q_i x_{i-1}-q_{i-1}x_i.\n]\n\nThen the historical update is exactly (T(x,q)=x+gK(q,x)). This is the same cyclic alternating-bilinear correction classified in the V1712 interface result, with the arguments exchanged and one power of the supplied coupling instead of two.\n\nFor every coordinate (i),\n\n[\nK(e_i,e_{i-1})=e_i.\n]\n\nThe image of (K) therefore spans the complete (n)-dimensional patch space.\n\n## 2. No invertible linear identification with a P1 extensive-grade correction\n\nSuppose invertible linear maps identify the V1718 source, carried vector and correction output with two extensive grades and an output grade on the same retained carrier. If the correction commutes with every inherited P1 contraction in the reviewed contract, the root total of the identified correction must vanish for every input pair.\n\nPulling that root-total functional back through the invertible output identification gives a nonzero linear covector on the V1718 patch space that annihilates every value of (K). But the values (K(e_i,e_{i-1})=e_i) span the whole space. No such nonzero covector exists. Therefore no invertible linear changes of input or output coordinates can turn the V1718 cyclic correction into a same-carrier P1-compatible extensive-grade interaction.\n\nThe conclusion does not require the stronger zero-extension premise. It does not rule out a noninvertible quotient, a restricted input family, or an additional event record. Each of those would be a new interface requiring its own producing operation and access proof.\n\n## 3. The full update also rejects a separately additive source grade\n\nFor every carried state (x),\n\n[\nT(x,0)=x,qquad T(x,x)=x.\n]\n\nAssume scalar grades assigned separately to the output, carried input and source obey\n\n[\nm_{\rm out}(T(x,q))=m_x(x)+m_q(q)\n]\n\nover the full real patch domain. Comparing (q=0) and (q=x) forces (m_q(x)=m_q(0)) for every (x). Thus the source grade is constant. A nonconstant extensive source amount cannot enter this historical update as a separately additive summand.\n\nThe reviewed fixed-total contrast (q=e_0+e_2) versus (q=2e_0) remains a real source-shape sensitivity of the V1718 loop. Equal root totals do not make those vectors equal, and V1718's cyclic stencil reads their coordinate placement. What fails is the proposed identification of that stencil with the inherited P1 grade law.\n\n## 4. Consequence for the operation-first search\n\nV1718 supplies a computed, source-dependent transition, a carried state used on the next edge and an existing norm read. It removes the weaker objection that no archived state writer/read exists. It does **not** trace a P1 retained-source record into that writer:\n\n1. the normal run independently draws (q);\n2. the fixed cyclic carrier is not produced by a retained-tree contraction;\n3. the exact correction is incompatible with same-carrier P1 extensive grades under invertible linear identification;\n4. the host norm read is not shown to be available to a retained physical owner.\n\nRe-entering this route requires specific new source evidence for an inherited event operation that writes a V1718 input or for a noninvertible/restricted interface whose retained record and later read are both produced on the same provenance-bound object. A basis relabeling, equal-total analogy or endpoint-only map is excluded by the proof above.\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1718_p1_interface.py\n\"\"\"Verify the exact V1718 cyclic correction and its P1-interface obstruction.\"\"\"\nimport ast\nimport hashlib\nimport json\nfrom pathlib import Path\nimport numpy as np\n\nORIGINAL=Path(\"Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1718_complete.py\")\nORIGINAL_BLOB=\"638e68d00762642d6b58f692e7a1747816752232\"\nN=8\nG=0.17\nTOL=1e-12\n\ndef load():\n    raw=ORIGINAL.read_bytes()\n    blob=hashlib.sha1(f\"blob {len(raw)}\\0\".encode()+raw).hexdigest()\n    assert blob==ORIGINAL_BLOB\n    tree=ast.parse(raw)\n    nodes=[n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name in {\"roll\",\"native_T\"}]\n    assert {n.name for n in nodes}=={\"roll\",\"native_T\"}\n    env={\"np\":np}\n    exec(compile(ast.Module(body=nodes,type_ignores=[]),str(ORIGINAL),\"exec\"),env)\n    return env\n\ndef K(q,x):\n    return q*np.roll(x,1)-np.roll(q,1)*x\n\ndef matrix(native,q,g=G):\n    eye=np.eye(N)\n    return np.column_stack([native(e,q,g) for e in eye])\n\ndef main():\n    env=load(); native=env[\"native_T\"]; eye=np.eye(N); zero=np.zeros(N)\n    images=[]\n    for i in range(N):\n        q=eye[i]; x=eye[(i-1)%N]\n        expected=eye[i]\n        np.testing.assert_allclose(K(q,x),expected,rtol=0,atol=TOL)\n        np.testing.assert_allclose(native(x,q,G),x+G*expected,rtol=0,atol=TOL)\n        images.append(K(q,x))\n    image_rank=int(np.linalg.matrix_rank(np.column_stack(images)))\n    assert image_rank==N\n\n    x=np.arange(1.0,N+1)\n    np.testing.assert_allclose(native(x,zero,G),x,rtol=0,atol=TOL)\n    np.testing.assert_allclose(native(x,x,G),x,rtol=0,atol=TOL)\n\n    profiles=(eye[0]+eye[2],2*eye[0])\n    dets=[]; reads=[]\n    for q in profiles:\n        H=matrix(native,q)\n        dets.append(float(np.linalg.det(H)))\n        reads.append(float(np.linalg.norm(H@eye[3])))\n    np.testing.assert_allclose(dets,[0.6889,0.66],rtol=0,atol=TOL)\n    np.testing.assert_allclose(reads,[0.83,1.0],rtol=0,atol=TOL)\n    assert profiles[0].sum()==profiles[1].sum()==2\n\n    result={\n      \"original_path\":str(ORIGINAL),\n      \"original_blob\":ORIGINAL_BLOB,\n      \"dimension\":N,\n      \"cyclic_basis_image_rank\":image_rank,\n      \"basis_images_equal_standard_basis\":True,\n      \"full_update_collisions\":{\"T_x_0_equals_x\":True,\"T_x_x_equals_x\":True},\n      \"matched_source_totals\":[2.0,2.0],\n      \"loop_determinants\":[round(v,12) for v in dets],\n      \"existing_norm_reads\":[round(v,12) for v in reads],\n      \"conclusion\":\"no_nonzero_output_covector_annihilates_the_correction_image\"\n    }\n    print(json.dumps(result,indent=2,sort_keys=True))\n\nif __name__==\"__main__\":\n    main()\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/PRUNING_COMPATIBLE_PATCH.md\n# Which patch writes can commute with retained pruning?\n\nThis checkpoint continues the V1712 producer search at parent `3f111dc570de0c1c4009c0728794a68aeb103e9e`. It identifies an obstruction that survives changes of patch coordinates and classifies the matching alternating-bilinear laws on inherited tree grades. Native physical receiver delivery remains open.\n\n## Inputs and scope\n\n- INHERITED: the finite additive grade, nearest-retained-ancestor pushforward \\(P_{XY}\\), supplied zero-extension section \\(I_{YX}\\) as an available map, and [FCV P1–P2](../../../foundational-closure-verification/PROOFS.md). The [v16.23 proof, §O3](../../../demos/v16.23-overlap-descent/PROOFS.md) gives invertible subtree-sum coordinates. Section O4 gives the existing common-port comparison for the linear Green response.\n- INHERITED in its archived model: V1712 `rg_step` and its next-scale caller. The earlier [frozen proof](V1712_PATCH_WRITE.md) showed that it uses a directed cyclic stencil on a six-component patch. V1713 repeats the stencil and initializes a separate patch list. Both modules import NumPy and construct their initial patch values with their own Gaussian draws.\n- INHERITED in the historical software: the v16.42 normalizer reads membership, changes masks and returns a path. Its producer converts that path to graph state indices. Its verifier checks those indices, the cover budget and individual edits. The fixed \\(q\\) of this producer is a minimum-cover target, not an extensive source or patch field. The inspected caller and verifier do not pass a distinct intermediate mask into V1712 or V1713.\n- SUPPLIED for the mathematical comparison: two signed real grades on one common rooted carrier, an alternating-bilinear correction \\(B\\), and commutation with the indicated pruning and section maps. This is a test of a candidate compatibility condition for the V1712 identification. It is not a proposal to fit coefficients or adopt a physical interaction. Actual atemporal occurrence is ACCEPTED INPUT and unused in the proof.\n\n## 1. Exact form of a commuting correction\n\nLet \\(a,b\\) be grades on a finite rooted tree \\(X\\). For a vertex \\(v\\), let \\(c_v(a)\\) be its subtree sum, with \\(c_o(a)\\) the total at the root. The inverse subtracts the sums of the immediate child subtrees. The coordinates are simply restricted along \\(P_{XY}\\), as every removed descendant of a retained vertex retracts to a retained ancestor still in that vertex's subtree. Along \\(I_{YX}\\), the coordinates in \\(Y\\) are unchanged and those outside \\(Y\\) are zero, since \\(Y\\) is prefix closed.\n\nSuppose alternating-bilinear \\(B_X(a,b)\\) is a grade on the same carrier, and members of this family satisfy\n\n\\[\nP_{XY} B_X(a,b)=B_Y(P_{XY}a,P_{XY}b).\n\\]\n\nProjecting \\(X\\) to the root-to-\\(v\\) chain shows that the output coordinate \\(c_v(B_X)\\) depends only on the input subtree sums along that chain. Alternation then makes it a linear combination of the wedges of distinct chain coordinates. At the root the chain has one coordinate, so \\(c_o(B_X)=0\\) on every pair. This root constraint uses P1 alone.\n\nIf the family also satisfies \\(B_X(I_{YX}a,I_{YX}b)=I_{YX}B_Y(a,b)\\), apply it to a strict ancestor chain zero-extended to the chain ending at \\(v\\). The output at \\(v\\) must vanish when both input coordinates at \\(v\\) vanish. All ancestor-ancestor wedge coefficients are therefore zero. For each nonroot \\(v\\) the complete form is\n\n\\[\nc_v(B_X(a,b)) =\n\\sum_{u\\prec v} \\lambda_{vu}\n\\big(c_v(a)c_u(b)-c_v(b)c_u(a)\\big).\n\\]\n\nHere \\(u\\prec v\\) means strict ancestor. Every such family with the same coefficients on retained copies of the same lineage satisfies both identities. For \\(v\\) retained, all its ancestors and their coordinates survive. For \\(v\\) outside the zero extension, both its input coordinates vanish. Hence pruning alone permits \\(\\sum_v {d(v)+1\\choose 2}\\) independent coefficients on a fixed carrier and all its retained subsets. Pruning with the section permits \\(\\sum_v d(v)\\). These counts concern labeled lineage coordinates with no additional symmetry conditions.\n\n## 2. No additive coordinate identification of the V1712 write\n\nWrite the unscaled V1712 correction \\(K(a,b)_i=a_i b_{i-1}-a_{i-1}b_i\\), with indices modulo six. For each \\(i\\), \\(K(e_i,e_{i-1})=e_i\\). The correction therefore spans the whole patch space. For any invertible linear identification of the patch output with a six-coordinate extensive grade, the total defines a nonzero linear covector on that patch. The root constraint in §1 would make that covector annihilate the entire image of \\(K\\), a contradiction. This obstruction uses only the root projection of P1 and permits independent invertible input changes of coordinates.\n\nThere is a separate obstruction to treating the full update \\(F(a,b)=a+g^2K(a,b)\\) as a two-to-one extensive grade transfer. Even with arbitrary scalar functions \\(m_\\mathrm{out},m_L,m_R\\), the identity \\(m_\\mathrm{out}(F(a,b))=m_L(a)+m_R(b)\\) for all real patches makes \\(m_R\\) constant. Indeed, \\(F(a,0)=F(a,a)=a\\) for every \\(a\\). Comparing these two inputs forces \\(m_R(a)=m_R(0)\\). A right hand grade capable of distinguishing two right patches cannot satisfy that identity. The claim concerns a separately defined grade on each input and the full real patch domain. It leaves open models in which a separate event first writes a state, or models with additional input restrictions or event-dependent information.\n\n## 3. Before the actual retained histories merge\n\nUse the original v16.42 four-leaf fixture and the already recorded preparations \\((A,B)=(21,11)\\) and \\((29,11)\\). At entry to the common second-leaf operation `setleaf(leaves[1], B)`, the respective mask pairs are \\((23,9)\\) and \\((27,13)\\). Leaf 2 is absent and present, respectively, in B. The original routine tests that bit. Both histories later reach \\((27,29)\\).\n\nAt this common invocation the B carriers intersect in \\(\\{o,3\\}\\). They hold \\(c_o\\) and \\(c_3\\) of each input if both preparations are restrictions of the same two ambient grades. Under this stated matched-source condition, every correction in §1 gives the same result on the common carrier by P1. In particular, B's extra transient leaf cannot by itself change the shared root–3 edge in the existing Green read, which uses the shared subtree grade. This is a conditional common-port test using the inherited response and comparison. A transient bit can distinguish these software histories while that shared source-geometric read stays equal. Any claimed contrast on the common carrier needs a difference in its pruning-visible grade inputs or a producing operation outside this commuting grade class. Access by a physical receiver is a further open premise.\n\n## Frozen replay\n\nRe-execute the two exact historical paths and observe the bit-read call before it mutates the mask. Validate the original selected four-leaf family with the historical verifier. For the separate common-port control, fix the two ambient grades to \\((2,3,5,7,11)\\) and \\((3,1,2,4,8)\\) in vertex order. Project each into B and apply the published v16.22 grounded Laplacian as a diagnostic. The root–3 edge reads 7 and 4 respectively for these two grades, in each history.\n\nIndependently build rational coefficient constraints from the archived `Pruning.aggregate` on every prefix-closed subset of three fixed five-vertex trees. Use the rooted star, the tree with parents \\((-1,0,1,1,3)\\), and the rooted chain. The respective predictions are 16, 7 and 5 retained subsets, P1-only dimensions 4, 13 and 20, and P1-plus-section dimensions 4, 8 and 10. Distinct dimensions on the two deeper trees check the effect of the section requirement. Finally replay the six oriented basis pairs in the original V1712 write using exact rational arrays and verify full rank, the two right-insensitive inputs in §2 and preservation of their left patch. Pin all original source bytes. Any disagreement with these predictions is a failed check. These finite checks audit the proof within their stated mathematical and software scope.\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/PRUNING_COMPATIBLE_PATCH_REVIEW.md\n# Independent review of pruning compatibility and the patch write\n\nGemini 3.1 Pro Preview accepted the [frozen proof](PRUNING_COMPATIBLE_PATCH.md) on the first attempt. Physical event binding and receiver access remain open. The reviewer reconstructed both directions of the classification, the exact dimensions, the cyclic basis calculation and the common-carrier comparison. [GitHub Actions run 44956883528](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44956883528)\n\n## Result\n\nFor an alternating-bilinear grade correction on the same retained tree, commuting with P1 forces the correction at each vertex, expressed in subtree sums, to depend only on the lineage from the root to that vertex. Requiring the available zero-extension sections to commute too leaves only terms pairing the vertex with one of its strict ancestors. The root must have zero correction under either contract. V1712's cyclic term produces each of the six basis vectors in turn, which rules out any invertible linear reidentification that would give it the required zero root correction.\n\nOn the full real patch domain the V1712 write gives the same result for right inputs zero and a copy of the left, for every left patch. Thus a scalar grade on the right cannot enter this write as a separate, nonconstant extensive summand. The raw review's phrase “erases the right grade” refers to this collision and its consequence for additive grades. The earlier [patch replay](V1712_PATCH_WRITE_REVIEW.md) demonstrates the write's sensitivity to other right-patch distinctions.\n\nThe original v16.42 verifier accepted 50 normalizations on the four-leaf fixture. At the shared leaf-2 occupancy call, the two historical B masks are 9 and 13. With a fixed pair of ambient source preparations in the diagnostic, the original grounded-tree equations return the same root–leaf-3 responses, 7 and 4 respectively, in both histories. The finite test uses the exact archived code and a matched-source comparison. Access to these grades by an actual receiver and identification of a gravity signal remain open.\n\n| Fixed tree | Retained subsets | Free coefficients under P1 | Free coefficients under P1 and sections |\n|---|---:|---:|---:|\n| Star | 16 | 4 | 4 |\n| Branching | 7 | 13 | 8 |\n| Chain | 5 | 20 | 10 |\n\n## Verification\n\nBoth the workflow and scientific checkout were `659081b4974741d0ed441863bc51597d4d9a5680`. Raw model response SHA-256 is `2f3df7b4056ea414e4e6ba686025d4c36916ead1a5554007ff13e743a78c5f16`. The local result and both GitHub replays agreed byte for byte. All three original Actions ZIPs passed exact byte count, SHA-256 and member CRC checks. The publication log payloads independently matched the raw review and publication receipt. [Replay](evidence/pruning_compatible_patch/replay.json) · [Verdict](evidence/pruning_compatible_patch/review_verdict.json) · [Readback](evidence/pruning_compatible_patch/readback.json)\n\n- [Initial replay archive](evidence/pruning_compatible_patch/pruning-compatible-patch-replay.zip)\n- [Independent review and raw response](evidence/pruning_compatible_patch/pruning-compatible-patch-review.zip)\n- [Publication replay and audit archive](evidence/pruning_compatible_patch/pruning-compatible-patch-publication.zip)\n- [All workflow job logs](evidence/pruning_compatible_patch/pruning-compatible-patch-logs.zip)\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1718_LOOP_REVERSIBILITY.md\n# Source-dependent loops and reversibility in V1718\n\nThis is an open Path-A source and calculation checkpoint. It follows the [earlier V1698 source-to-geometry trace](V1698_SOURCE_TO_GEOMETRY.md) and uses the same outstanding test of a source distinction reaching an actual geometric calculation. The exact target is the [historical V1718 implementation](https://github.com/proteinfoldingengine/WetLabEngine/blob/6909feacd82e72ea1c7d67096a5ab3093de8b4fc/Tmp/TOE/Einstein_13_V1720%20retained_bridge_core/v1718_complete.py), Git blob `638e68d00762642d6b58f692e7a1747816752232`. Thread T-301 through T-307 already checked generic invertibility of the same kernel at an earlier version. This checkpoint asks what V1718's **actual loop and reverse readers** establish and gives a fixed-total contrast alongside matched reversing controls.\n\nThe V1718 routines are INHERITED as historical simulation code. Their eight-dimensional carrier, cyclic shift, coupling and Gaussian source initializer are SUPPLIED mathematical inputs. Scripted source values below are controlled inputs to those routines. Actual atemporal occurrence is ACCEPTED INPUT and is unused in the calculations. The P1 pruning of the retained tree is a separate operation from the vocabulary used in the archive. The calculations below use ordered updates and no physical time parameter.\n\n## 1. The source does update a carried vector and a loop\n\n`native_T` (lines 5–6) maps the carried vector \\(x\\) through \\(M(q)=I+gA(q)\\), where\n\n\\[\n (A(q)x)_i=q_i x_{i-1}-q_{i-1}x_i\n\\]\n\nwith indices modulo the dimension. `loop_drift` (lines 36–42) draws a vector and one source state at each of three vertices, then replaces `x` by `transport(x, nodes[(k+1)%nloop])` on every step. The next edge consumes the changed vector. A loop with the saved states \\((q_0,q_1,q_2)\\) reads the norm of \\(H x\\) with \\(H=M(q_0)M(q_2)M(q_1)\\). The later `trajectories` caller also updates and reads the carried vector, drawing a new Gaussian `q` per step (lines 52–64).\n\nHold \\(q_0=q_2=0\\), set \\(g=17/100\\), and change just \\(q_1\\) from \\(e_0+e_2\\) to \\(2e_0\\), using zero-based coordinates. Both supplied source totals equal 2. For the first state the only altered diagonal entries of \\(H\\) are at 1 and 3, each \\(1-g\\). For the second only entry 1 changes, to \\(1-2g\\). In dimension 8, a matrix whose only possible entries are diagonal or in the cyclic predecessor column has only the identity and full-cycle determinant terms. In this case at least one predecessor entry vanishes, so only the diagonal term contributes. Hence\n\n\\[\n\\det H(e_0+e_2)=(1-g)^2=0.6889,\n\\qquad \\det H(2e_0)=1-2g=0.66.\n\\]\n\nFor \\(x=e_3\\), the norm returned by the original loop routine is respectively \\(0.83\\) and \\(1\\). Both loop maps are invertible and their different determinants preclude similarity, including any simultaneous change of basis at the base vertex. These are exact predictions for a fixed-total source-dependent closed-path operator. Here the source numbers reach the loop through the transported state, where a direct read in V1698.75 reached only the signed boundary calculation. The V1718 contrast is on its supplied synthetic carrier.\n\n## 2. What the reverse and loop controls measure\n\nFor fixed \\(g\\), \\(\\det M(q)\\) is a polynomial in \\(q\\) with value 1 at zero. Its zero set has Lebesgue measure zero and each independent Gaussian draw therefore gives an invertible map almost surely in exact arithmetic. This can also be seen by expanding the determinant into the two terms above. Specially chosen non-Gaussian values can give singular maps, for example \\(q=e_0/g\\) for \\(g\\ne0\\), which annihilates \\(e_1\\). The finite-action claim is about the sampled fixed-\\(q\\) operation and the intended continuous Gaussian law. It does not assert uniqueness of the prior vector when the realized source is unknown or an inverse is inaccessible.\n\n`fwd_rev` (lines 20–26) returns the relative error after \\(M(q_i)M(q_j)x\\), with separately drawn endpoint values. Invertibility of the forward map says that \\(M(q_j)^{-1}M(q_j)x=x\\). The code does not compare to this inverse. Feed \\(x=e_1\\), \\(q_i=q_j=e_0\\) through the original routine. Its forward factor is \\(0.83\\) and its error is \\(1-0.83^2=0.3111\\). Solving against the same forward matrix gives zero reconstruction error in exact arithmetic. Thus a nonzero reported reverse error is possible under an ordinary invertible update, even with the two endpoint values held equal.\n\nThe unpruned control (lines 7–13) exponentiates the skew part of \\(A(q)\\). Norm 1 for this control follows from orthogonality. For the same loop slots, use \\(q_0=q_2=0, q_1=e_0\\). The skew generator has the single plane \\((e_0,e_7)\\) with off-diagonal entries \\(\\pm g/2\\), hence gives a nonidentity rotation by magnitude \\(0.085\\) radians in that plane. The loop reader returns norm 1 on \\(e_0\\). Direct multiplication on that vector gives a change of \\(2\\sin(0.085/2)>0\\) in Euclidean distance. Norm preservation here cannot test equality of the returned vector or identity of the vertex loop operator.\n\n## 3. The independently sampled trajectory has a norm signal without a pruning event\n\nIn the simulated model let the coordinates of a fresh \\(q\\) have zero mean and identity covariance, independent of the current deterministic or conditioned vector \\(x\\). Then\n\n\\[\n\\begin{aligned}\nE[M(q)x\\mid x] &= x,\\\\\nE[\\|M(q)x\\|^2\\mid x] &= \\|x\\|^2+g^2\\sum_i(x_{i-1}^2+x_i^2)\n= (1+2g^2)\\|x\\|^2.\n\\end{aligned}\n\\]\n\nThe mixed terms vanish by the stipulated moments and distinct coordinates. Iterating for \\(L\\) independent draws gives \\((1+2g^2)^L\\) multiplying the initial squared norm. V1718's closed walk uses each of its independently drawn source values once, so the formula applies also to its three-edge loop conditional on the initial vector. The one-step factor at the archived coupling is \\(1.0578\\). The reported sample mean of the norm is a different statistic from the expected squared norm. The raw vector, conditional on a known deterministic input, also has mean equal to that input even when the source draw is hidden. This last statement concerns equality of distributions and gives no single-trajectory recovery rule or receiver readout.\n\n## Frozen reconstruction and disposition\n\nPin the byte-identical original source and execute only its original `roll`, `native_T`, `Jgen`, `invertible_T`, `fwd_rev` and `loop_drift` definitions. The other runner code and original random campaign are outside the replay. Prescribe the draws strictly in caller order and reconstruct each matrix and determinant independently from the diagonal and predecessor entries. Compare the full matrices as well as the original scalar reads. Check repeated forward versus true inverse. Use a singular control and a dense full-cycle determinant control to discriminate a broken reverse test from actual rank loss. Check the orthogonal loop's nonidentity by its independently derived rotation. Verify the moment statements on the 16-point symmetric source sample \\(\\{\\pm\\sqrt 8 e_i\\}\\), which has the stipulated first two moments. No Gaussian sample-mean test is required or authorized by this checkpoint. Thresholds, specific vectors, analytic predictions and the source dataflow were known from inspection before freezing. Numerical execution and review follow the freeze.\n\nThe retained tree would have to determine an actual state or edge input in this writer, and a retained receiver would have to have justified access to its consequence. In V1718 `q` enters as an independent draw, the vector lives in a supplied fixed dimension, and the loop norm is computed by the host routine. The positive numerical source-to-loop route is established within this simulation. Its loop and reverse comparisons cannot justify the archive's pruning attribution. Native delivery and the identification of a pre-time gravity signal remain open.\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1718_LOOP_REVERSIBILITY_RESULT.md\n# V1718 source-to-loop result\n\nNovember 21, 2026. The [frozen argument and reconstruction](V1718_LOOP_REVERSIBILITY.md) were exercised at commit `498a08fd3619b755aab1543f65810904d8218438`. The [GitHub run](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/44960357330) passed the original-source replay, independent Gemini argument review, and byte-for-byte publication replay.\n\n| Comparison | Result |\n| --- | --- |\n| Two source states with the same total on the same three-edge loop | Full loop determinants 0.6889 and 0.66. The historical reader returned norms 0.83 and 1.00 on the same vector. |\n| Historical reverse attempt at equal endpoints | Error 0.3111 after two applications of the forward map. |\n| Inverse of the actual forward map | Reconstruction error 0 in the matched example. |\n| Orthogonal control around the same loop | Norm 1 with a Euclidean displacement of 0.084974413769. |\n| Separately chosen rank-loss control | Rank 7 in dimension 8. The full-cycle determinant control yielded −1. |\n| Symmetric moment control and analytic independent-draw model | The one-step squared-norm factor was 1.0578. The analytic three-step factor is 1.183615620552. |\n\nBoth fixed-total loop operators are invertible. Their different determinants survive any common basis change at the base vertex. The loop response uses actual source numbers through the carried vector. The reverse test repeats a forward update, and the orthogonal control can preserve the norm while rotating the vector. The exact expected squared-norm growth comes from the independent draws and the update formula. These distinctions resolve what these particular tests show about reversibility and loop response.\n\nThe inputs in the replay are controlled toy preparations. In its normal run, the historical routine draws its source states independently and updates an eight-dimensional vector. Identifying a genuine P1 event output with a state or edge input and establishing a retained receiver's access to the resulting contrast remain necessary for a native signal claim.\n\n[Replay and exact matrices](v1718_loop_evidence/replay.json), [Gemini verdict](v1718_loop_evidence/review_verdict.json), [publication replay](v1718_loop_evidence/publication_audit.json), and [artifact and log verification](v1718_loop_evidence/readback.json). The archives alongside these files contain the original source, raw argument review, fresh replay, and complete logs. GitHub issued a runtime deprecation warning for the pinned Actions helpers and ran them on Node.js 24.\n\nEND EXACT FILE\n\nBEGIN EXACT FILE Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1718_complete.py\n# V1718 (complete) - close the gaps: (1) genuine forward/reverse asymmetry, (4) loop irreversibility,\n# (3) rigorous monotonicity. Test 2 (pruning dependence) already clean; re-confirm alongside.\nimport numpy as np\nfrom scipy.linalg import expm\ndef roll(v): return np.roll(v,1)\ndef native_T(dx,q,g=0.17): return dx+g*(roll(dx)*q - dx*roll(q))\ndef Jgen(q,g=0.17):\n    n=len(q); J=np.zeros((n,n))\n    for a in range(n):\n        e=np.zeros(n);e[a]=1.0; J[:,a]=(native_T(e,q,g)-e)/g\n    return J\ndef invertible_T(dx,q,g=0.17):   # un-pruned control: skew-only -> exactly invertible/unitary\n    return expm(g*0.5*(Jgen(q,g)-Jgen(q,g).T))@dx\ndef assoc_T(dx,q,g=0.17): return dx + g*(dx+dx)*0  # associative/flat: identity-like (no recombination)\nDIM=8; rng=np.random.default_rng(7)\n\n# ---- TEST 1: GENUINE forward/reverse asymmetry ----\n# forward q_i->q_j via native; reverse q_j->q_i via the BEST native attempt (transport back with q_i).\n# unitary/invertible: reverse undoes forward. pruning: it does not.\ndef fwd_rev(transport):\n    dx=rng.normal(size=DIM); dx/=np.linalg.norm(dx)\n    qi=rng.normal(size=DIM); qj=rng.normal(size=DIM)\n    fwd=transport(dx,qj)                      # forward recombination\n    rev=transport(fwd,qi)                     # attempt to reverse using the other endpoint\n    recon_err=np.linalg.norm(rev-dx)/np.linalg.norm(dx)\n    return np.linalg.norm(fwd)/np.linalg.norm(dx), recon_err\nprint(\"TEST 1 - forward/reverse asymmetry:\")\nfor name,tr in [(\"native(pruning)\",native_T),(\"invertible(un-pruned)\",invertible_T)]:\n    fs=[];re=[]\n    for _ in range(200):\n        f,r=fwd_rev(tr); fs.append(f); re.append(r)\n    print(f\"  {name:>22}: fwd norm ratio={np.mean(fs):.3f}  reconstruction error={np.mean(re):.3f}\")\nprint(\"  (native: reverse does NOT undo forward => retained-order direction is real)\")\n\n# ---- TEST 4: LOOP irreversibility A->B->C->A ----\ndef loop_drift(transport, nloop=3):\n    dx=rng.normal(size=DIM); dx/=np.linalg.norm(dx); n0=1.0\n    nodes=[rng.normal(size=DIM) for _ in range(nloop)]\n    x=dx\n    for k in range(nloop):\n        x=transport(x,nodes[(k+1)%nloop])     # traverse the closed loop\n    return np.linalg.norm(x)/n0\nprint(\"\\nTEST 4 - loop irreversibility (A->B->C->A norm drift):\")\nfor name,tr in [(\"native(pruning)\",native_T),(\"invertible(un-pruned)\",invertible_T)]:\n    d=[loop_drift(tr) for _ in range(300)]\n    d=np.array(d)\n    print(f\"  {name:>22}: loop norm = {d.mean():.3f} +/- {d.std():.3f}  (1.0 = closes; !=1 = drifts)\")\nprint(\"  (native loop drifts from 1.0 => dissipative; invertible returns to 1.0 => no drift)\")\n\n# ---- TEST 3: rigorous monotonicity - is there a LYAPUNOV-like monotone under forward steps? ----\n# Test multiple candidate monotones; a real arrow needs one that moves consistently one direction.\ndef trajectories(steps=30,n=200):\n    norms=[];ents=[];conc=[]\n    for _ in range(n):\n        dx=rng.normal(size=DIM); dx/=np.linalg.norm(dx)\n        Ns=[];Es=[];Cs=[]\n        for _ in range(steps):\n            q=rng.normal(size=DIM); dx=native_T(dx,q)\n            p=np.abs(dx)**2; p=p/p.sum()\n            Ns.append(np.linalg.norm(dx))\n            Es.append(-np.sum(p*np.log(p+1e-12)))      # participation entropy\n            Cs.append(np.max(p))                        # concentration (max weight)\n        norms.append(Ns);ents.append(Es);conc.append(Cs)\n    return np.array(norms),np.array(ents),np.array(conc)\nN,E,C=trajectories()\nprint(\"\\nTEST 3 - monotonicity of candidate arrows (fraction of steps moving one direction):\")\nfor nm,arr,d in [(\"log-norm\",np.log(N),+1),(\"entropy\",E,-1),(\"concentration(max p)\",C,+1)]:\n    diffs=np.diff(arr.mean(axis=0))\n    frac=np.mean(np.sign(diffs)==d)\n    print(f\"  {nm:>22}: {frac:.0%} of steps move {'up' if d>0 else 'down'}  | net {arr.mean(axis=0)[0]:.3f}->{arr.mean(axis=0)[-1]:.3f}\")\nprint(\"  (a near-100% one-directional candidate = a real monotone/Lyapunov arrow)\")\n\nprint(\"\\n\"+\"=\"*58)\nprint(\"VERDICT:\")\n# recompute key numbers\nnat_loop=np.mean([loop_drift(native_T) for _ in range(300)])\ninv_loop=np.mean([loop_drift(invertible_T) for _ in range(300)])\nnat_recon=np.mean([fwd_rev(native_T)[1] for _ in range(200)])\ninv_recon=np.mean([fwd_rev(invertible_T)[1] for _ in range(200)])\nconc_frac=np.mean(np.sign(np.diff(C.mean(axis=0)))==+1)\nprint(f\"forward/reverse: native recon err {nat_recon:.2f} vs invertible {inv_recon:.2f}\")\nprint(f\"loop drift: native {nat_loop:.2f} vs invertible {inv_loop:.2f}\")\nprint(f\"concentration monotonicity: {conc_frac:.0%}\")\nif nat_recon>0.5 and inv_recon<0.2 and abs(nat_loop-1)>0.1 and abs(inv_loop-1)<0.05:\n    print(\"\\nARROW CONFIRMED: forward/reverse asymmetric (native irreversible, invertible reverses),\")\n    print(\"loop drifts for native but closes for invertible. Non-unitarity is DIRECTIONAL and\")\n    print(\"PRUNING-SOURCED - the amplitude-level expression of the retained-order arrow.\")\nelse:\n    print(\"\\nPartial - inspect which condition is borderline.\")\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md\n# FCV-1 — Proofs for retained closure, descent and comparison\n\nWritten before the new adjudication implementation. Review status: self-reviewed mathematical arguments; finite checks and deliberate-defect tests have separate receipts. A future GREEN does not prove these theorems by itself. All references to source and response objects use TYPE_LEDGER.md. This document corrects the broad missing-splitting/transport interpretation, not the historical program outputs.\n\n## P0 — Scalar structure and linearity\n\nFor a finite set X and a specified commutative additive monoid M, finite additivity says mu(A)=sum_{x in A} mu({x}); fiber pushforward is meaningful and additive. No subtraction or vector-space kernel follows for a general M.\n\nFor F-valued signed measures with F=Q or R, singleton evaluation is a bijection to F^X: define mu_x(A)=sum_{v in A}x_v, and evaluate singleton sets for the inverse. Pointwise addition and scalar multiplication agree under this bijection. Therefore a finite fiber sum, zero extension, function restriction and pullback are F-linear. This is the explicit linear representation used in the inherited rational diagnostic, not a claim that every signed vector is a physically preparable grade. The symbolic proofs below hold over Q/R. Rational bounded tests check implementations; they are not a density argument for real universality.\n\n## P1 — Admissibility, fiber composition and cumulative kernels\n\nLet X superset Y superset Z be nonempty finite prefix-closed sets with one common Genesis/root. Define r_XY(x) as its longest prefix in Y. Every prefix of x in Z is a prefix of r_XY(x), and conversely a Z-prefix of r_XY(x) is a Z-prefix of x. Their longest elements are equal. Thus r_YZ r_XY=r_XZ. This proves composition from addresses, including identities and repeated pruning.\n\nFor z in Z the disjoint fiber identity is\n\n    {x:r_XZ(x)=z} = disjoint union_{y:r_YZ(y)=z} {x:r_XY(x)=y}.\n\nFinite additivity gives (P_YZ P_XY x)_z=sum_{r_XZ(v)=z}x_v=P_XZ x. The matrix product is a representation of this argument, not its premise. Summing over all fibers preserves total grade. In particular each K_j=ker P_0j lies in S_X0, and composition implies K_{j-1} subset K_j. No coarse recentering is substituted.\n\n## P2 — Supplied source section and split loss sequence\n\nDefine I_YX on atoms by e_y -> e_{i(y)}; in singleton coordinates it is zero extension. Since r_XY i_YX=id_Y, P_XY I_YX=id_{F_Y}; both preserve total sum. These maps commute with every admissible relabeling because atom inclusion and ancestral fibers do. Hence\n\n    F_X = ker P_XY direct-sum I_YX(F_Y),\n    S_X = ker P_XY direct-sum I_YX(S_Y),\n    x = (x-I_YX P_XY x) + I_YX P_XY x.\n\nThe first term is in ker P; the intersection is zero because PI=id. This is a section supplied by retention, not an arbitrary vector-space splitting. It is not claimed unique among all linear sections.\n\nFor X0->X_{j-1}->X_j, let P_a=P_0,j-1 and P_b=P_j-1,j. Restriction of P_a gives the exact sequence\n\n    0 -> K_{j-1} -> K_j -> ker P_b -> 0.\n\nIndeed P_b P_a x=0 for x in K_j. Its kernel is K_{j-1}. Given y in ker P_b, I_0,j-1 y belongs to K_j and P_a I_0,j-1 y=y, proving surjectivity and giving the section. All domains refer to actual nested sets, not equal cardinalities.\n\nFor cumulative E_j=I_0j P_0j on F_X0 (E_0=id), E_j^2=E_j and, for i<=j, E_i E_j=E_j E_i=E_j. To see this, I_0j factors through I_0i, and restricting ancestral pruning to X_i is its own X_i->X_j retraction. These address identities establish both products. Therefore D_j=E_{j-1}-E_j is idempotent, D_i D_j=0 for i!=j, and\n\n    K_j = direct-sum_{l=1..j} im D_l,\n    im D_j = I_0,j-1(ker P_j-1,j),\n    sum_{l=a+1..b} D_l = E_a-E_b.\n\nThese are algebraically complementary projectors, not an assertion of orthogonality in a physical metric. Inserting an intermediate retained subset refines the decomposition by the last telescoping identity. Different factorizations with the same endpoints have the same total lost part, though their individual layer labels need not agree.\n\n## P3 — Bare-filtration naturality obstruction (NOT a retained no-go)\n\nCategory: finite-dimensional F-vector spaces with fixed-length filtrations 0=K_0 subset ... subset K_m, with all filtration-preserving linear maps. The functors gr_j=K_j/K_{j-1} act by induced quotient maps.\n\nAny natural family of linear maps tau:gr_j -> gr_{j+1} is zero. At any object choose vector-space complements solely to exhibit an automorphism a that acts by 2 on gr_j and identity on gr_{j+1}, preserving the whole flag. Naturality requires tau composed with 2id = id composed with tau, so tau=0 (F=Q/R). This addresses every natural transformation in the declared class; it is stronger than observing that the inclusion becomes zero. Trivial grades are covered automatically.\n\nThere is likewise no section of every bare extension 0->A->B->B/A->0 natural under all filtered linear maps when A and B/A are both nonzero. In temporary coordinates B=A direct-sum C, each shear a_u(a,c)=(a+u(c),c) is identity on A and B/A. A natural section s would satisfy a_u s=s for every u:C->A, impossible for a class c with u(c)!=0. A complement is used to exhibit symmetries in the proof, not selected as retained data.\n\nP2 does not conflict: the retained category carries actual atoms, inclusions and retractions and excludes those arbitrary shears as structural relabelings. The external associated graded exists in both categories; a natural reconstruction of representatives depends on which data and morphisms are retained.\n\n## P4 — Actual inherited response: quotient and invertibility\n\nFor finite connected prefix tree X, form L_X from unweighted parent-child incidence. Its row and column sums are zero. For real a,\n\n    a^t L_X a = sum_{parent-child edges} (a_child-a_parent)^2.\n\nThis vanishes exactly for constants by connectivity. Over Q the same follows by embedding in R; the rooted reduced matrix has a nonzero rational determinant. Thus L_X induces an isomorphism l_X:W_X=F_X/F1 -> S_X. Put Z_X=id-11^t/n and U_X=11^t/n. L_X+U_X is invertible, and G_X=(L_X+U_X)^(-1)-U_X satisfies LG=GL=Z, G1=0, and ZG=G. These identities follow by decomposing into constants and S_X; no new inverse or inner-product selection is introduced beyond the inherited unweighted diagnostic.\n\nT_X=q_X G_X|S_X is inverse to l_X. Its zero-mean representative is G_X x; its root-zero representative is G_X x-(G_X x)_root 1. They represent the SAME quotient class, not an identity of sources and potentials. For a root-only carrier S_X=W_X=0 and G_X=0, so the statements remain meaningful.\n\nEvery K_j lies in S_X0. Therefore the actual cumulative O_0j=T_X0|K_j is injective, with rank dim K_j. Its restriction to K_{j-1} has rank dim K_{j-1}. This predicts the mathematical restriction law; the independent verifier must still reconstruct and check actual matrices and admissible witnesses.\n\n## P5 — Fixed-target descent, witness, and the distinct response quotient\n\nFor any linear T:K_j->W, the rule [x]->Tx with codomain W is representative independent iff T(K_{j-1})=0: necessity compares k and 0; sufficiency compares x+k and x. For the actual T_X0 restriction, P4 proves that this holds iff K_{j-1}=0. Once a previous pruning is nontrivial, fixed-target descent fails; identity stages after an earlier loss do not magically restore it.\n\nAn explicit admissible witness uses X0={(),(0),(0,0)}, X1={(),(0)}, X2={()}. In this listed order,\n\n    L0 = [[1,-1,0],[-1,2,-1],[0,-1,1]],\n    P01 = [[1,0,0],[0,1,1]],\n    k = [0,-1,1],\n    G0 k = [-1/3,-1/3,2/3].\n\nP01 k=0, sum k=0, L0(G0 k)=k and sum(G0 k)=0. The output is not constant (last minus root equals 1), hence q0 G0 k !=0. k and 0 are the same class in K2/K1 but have different W0 outputs. k is a difference of two positive unit atoms within one admissible fiber; it is a formal signed source distinction in the inherited linear domain. No new physical source law is inferred.\n\nAlternative, explicitly different codomain: F_j=T_X0(K_j) subset W0 is nested. The map\n\n    bar O_j:K_j/K_{j-1} -> W0/F_{j-1}, [x]->[T_X0 x]\n\nis well defined since representatives differ by a vector whose image is in F_{j-1}. It is injective because T_X0 is injective, and its image is F_j/F_{j-1}. It discards exactly the response subspace of previously lost sources; it does not recover that response unchanged. Quotient projections W0/F_i -> W0/F_j for i<=j compose canonically. P6-P7 are still needed to compare the different native stage carriers W_Xj.\n\n## P6 — Already-earned boundary comparison and derived response lift\n\nFor actual retained inclusion define S_XY:F_X->F_Y by potential restriction. It sends constants to constants and induces R_XY:W_X->W_Y. From retraction define h_YX:F_Y->F_X by h psi=psi composed with r_XY; it induces H_YX:W_Y->W_X. These are typed differently from source P and I. In coordinates S=I^t and h=P^t, but their definitions use set maps, not an added physical metric.\n\nOn a prefix tree, a retraction fiber has exactly one retained vertex. Every edge crossing fibers is an original edge between retained vertices. Summing L_X phi over a fiber cancels internal edges and leaves precisely L_Y S phi. Hence\n\n    P_XY L_X = L_Y S_XY.\n\nThis is the inherited corrected boundary theorem. Also h psi is constant along every internal fiber edge. At a discarded vertex L_X h psi=0, while at a retained vertex its value is L_Y psi. Thus independently\n\n    L_X h_YX = I_YX L_Y.\n\nIt follows on the typed zero-sum sources that\n\n    R_XY T_X = T_Y P_XY,\n    T_X I_YX = H_YX T_Y,\n    R_XY H_YX = id_WY.\n\nOn arbitrary raw source arrays the first equation instead has the necessary centering: Z_Y S_XY G_X=G_Y P_XY Z_X. Do not remove Z_X or replace P_XY Z_X by Z_Y P_XY. No arbitrary historical A_r is used: R is actual restriction, H is ancestral pullback, and the intertwining has just been proved from the existing tree.\n\nBoth comparisons commute with parent-preserving relabelings. R_YZ R_XY=R_XZ and H_YX H_ZY=H_ZX because the underlying set maps compose. For a general graph or a non-prefix retained subset the crossing-edge proof may fail. No theorem for those classes is asserted.\n\n## P7 — Cumulative/stage obstruction compatibility without redefining either\n\nLet X0->X1->X2, x in K2=ker P02. Then u=P01 x is in ker P12, z=x-I10 u is in K1, and x=z+I10 u. Linearity and P6 give the exact identity in ONE explicit codomain W0:\n\n    O02(x) = O01(z) + H10 O12(u),\n    z=x-I10 P01 x, u=P01 x.\n\nHere O02:K2->W0 and O01:K1->W0 are cumulative/fine obstructions, O12:ker P12->W1 is the native stage obstruction, and H10:W1->W0 is the earned comparison. The stage pullback O12 P01 kills K1, but its lift is only the NEW component. It equals O02 only after the old component O01(z) is subtracted. Thus no tautological substitution certifies fixed-target descent.\n\nDefine response cumulative projectors E'_j=H_j0 R_0j on W0. P6 implies T0 E_j=E'_j T0 on S0. They are nested commuting idempotents, and D'_j=E'_{j-1}-E'_j gives T0 D_j=D'_j T0. Therefore the source splitting of P2 has a compatible response splitting in this SPECIFIC inherited finite-tree response, not merely from a source section alone.\n\nFor three or more stages, expand each source as its D_l components plus E_final and apply T0. Associativity follows from ordinary linear addition, P/I/R/H composition, and the already-proved telescoping projectors. Inserting an intermediate legal pruning replaces E_a-E_c by (E_a-E_b)+(E_b-E_c); applying T0 yields the exact corresponding response refinement. Different factorizations with the same endpoints have identical cumulative lost response, not literally identical individually indexed grades.\n\nThe selected representative on a new source grade is E_{j-1}x for x in K_j. It is independent of adding k in K_{j-1}. T0 E_{j-1}x realizes the quotient response in the supplied complement. This is NOT T0 x in general; the difference is the explicitly removed old response T0(Id-E_{j-1})x.\n\n## Corrections and limits\n\nThe bare-filtration obstruction in P3 is real, but it does not prove a retained no-go once literal inclusion is restored. The full retained source splitting and the prefix-tree response comparison in P2/P6/P7 are contrary to the earlier broad missing-transport interpretation. The .15F non-descent computation is compatible with these results: fixed-target descent fails because the fixed full-fine response is injective, while canonical layer decomposition and quotient descent are different, available constructions. This is not evidence by itself of a new dynamical memory mechanism.\n\nWhat is closed here: the algebra of the specified finite prefix-tree pruning, formal signed-source split sequences, and the already-fixed Green-response comparisons. What is not closed: selection of a physical response law, realizability of every formal source vector, arbitrary graph/refinement classes, independent Genesis identification, the quantum leg, or any metric/connection/curvature/gravity claim. Time remains pruning / ordered recoverability update.\n\n## Mathematical context (no novelty claim)\n\nSplit exact sequences and quotient factorization are standard algebra: Stacks Project, Definition 12.5.9, https://stacks.math.columbia.edu/tag/010F . Graph boundary elimination is standard; see Dörfler and Bullo, Kron Reduction of Graphs with Applications to Electrical Networks, arXiv:1102.2950, https://arxiv.org/abs/1102.2950 . The direct prefix-tree arguments above are complete and do not assume an external geometric model or borrow a general graph theorem without checking its hypotheses.\n\nEND EXACT FILE\n\nBEGIN EXACT FILE ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md\n# v16.23 — Overlapping retained views: proofs before computation\n\nStatus: written mathematical arguments, self-reviewed, not machine-formalized. The new computational verification has separate evidence. No geometric target or physical response law is selected. The parent is v16.22 at a02202bc218adb4080489c54dd37a1f9e5ec77d1. Types are fixed in TYPE_LEDGER.md.\n\n## O1 — The existing retained subsets form a lattice\n\nFix one finite common-Genesis prefix tree X. All carriers here are actual nonempty root-containing prefix-closed subsets of X. For Y,Z let U=Y union Z and J=Y intersection Z. Both are admissible. We do not assert a common carrier for unrelated Genesis objects. For each vertex v, the retained ancestors in Y and Z are two initial segments of its one ancestor chain. Their longest elements are comparable; the shallower is r_J(v), the deeper is r_U(v). Hence r_Y r_Z=r_Z r_Y=r_J, using the literal inclusions into X between the retractions. This is not an invented rerooting or depth-shifting arrow.\n\nOn formal signed sources F_X=Q^X define E_Y=I_YX P_XY. Applying these maps to every atom delta_v gives\n\n    E_Y E_Z=E_J,     E_Y+E_Z-E_J=E_U.\n\nThe difference on the right is derived in the signed space, not claimed meaningful in every additive monoid. On response classes W_X=Q^X/Q1 use F_Y=H_YX R_XY. Evaluation on the ancestor chain proves the same meet/join identities. These maps are algebraic idempotents, not a physical metric projection.\n\n## O2 — Signed source gluing and its universal property\n\nFor x_Y in F_Y, x_Z in F_Z suppose P_YJ x_Y=P_ZJ x_Z=c. Define the source on the UNION, not on all of X, by\n\n    x_U=I_YU x_Y+I_ZU x_Z-I_JU c.                       (G)\n\nHere I is literal atom inclusion/zero extension. The mixed relation P_UY I_ZU=I_JY P_ZJ follows by sending a Z atom to its longest ancestor in Y, which lies in J. Similarly in the other direction. Therefore P_UY x_U=x_Y and P_UZ x_U=x_Z. Conversely, (O1) on U gives (G) for any x_U, proving uniqueness. Thus\n\n    F_U -> F_Y x_(F_J) F_Z\n\nis an isomorphism, with the fiber product defined by the ACTUAL source pushforwards. Equivalently 0 -> F_U -> F_Y direct-sum F_Z -> F_J -> 0 is exact, the last map being (P_YJ,-P_ZJ). Surjectivity follows by inserting any c into Y and taking zero in Z. The same proof applies to balanced source spaces S (total zero), since all P/I preserve total and (G) then has total zero.\n\nFor views inside a larger X, the joint-readout kernel is exactly ker P_XU, not necessarily zero. Indeed E_Y x=E_Z x=0 implies E_U x=0 by O1, and the converse follows by retraction composition. Gluing does not reconstruct discarded information outside U.\n\n## O3 — Finite covers, associativity, and information coordinates\n\nThere is an invertible source coordinate map already available from the lineage: c_root=sum_X x and c_v=sum_{u descendant of v} x_u for each nonroot v. The inverse is x_v=c_v-sum_{children w}c_w, with the same formula for the root. Subtree sums telescope. Under admissible pruning these coordinates are simply restricted to the retained vertices: every retained subtree collects exactly its former descendant sources. Thus pairwise matching on overlaps means the c coordinates agree wherever views overlap. They glue uniquely on the union for any finite cover. Balanced sources set c_root=0; no physical scalar attainability is inferred.\n\nThis gives a general proof of finite-cover descent independent of matrix rank samples. Repeated views and different parenthesizations of the binary operation (G) give the same unique c and hence the same x. For three views the inclusion-exclusion expression is the sum of three included local sources minus the three included pair-overlap sources plus the included triple-overlap source. It equals either binary parenthesization. Refining a cover without changing its union does not change the reconstructed source. All statements commute with consistent root/parent-preserving lineage relabelings. The coordinate choice is a computational representation, not extra information.\n\n## O4 — Response gluing and v16.22's depth freedom\n\nPotential restriction preserves constants. For classes phi_Y in W_Y and phi_Z in W_Z with equal restrictions to W_J, choose their unique root-zero representatives. Because the SAME retained root belongs to J, equality as classes on J is then equality of representatives. Their values glue on U uniquely; changing either original representative by a constant does not change the resulting class. This uses a shared retained identity, not external frame alignment.\n\nEquivalently, in classes,\n\n    phi_U=H_YU phi_Y+H_ZU phi_Z-H_JU phi_J.\n\nTo check the formula, at a vertex in Y the Z retraction and the J retraction agree unless that vertex is also in Z, where all compatible values agree; similarly on Z. The response exact sequence is 0 -> W_U -> W_Y direct-sum W_Z -> W_J -> 0. The last map is the difference of restrictions; a class on J can be extended through its ancestral pullback into Y.\n\nLet T be ANY v16.22 comparison-compatible linear family, not only the fixed Green inverse. Naturality makes T_Y x_Y and T_Z x_Z compatible, and T_U applied to (G) has precisely those response restrictions. Uniqueness of response gluing proves\n\n    T_U glue_source(x_Y,x_Z)=glue_response(T_Y x_Y,T_Z x_Z).\n\nThe same holds for all finite covers by O3. Therefore imposing these overlap-gluing relations on the already classified comparison family adds NO depth-selection condition: every scalar sequence a_depth remains compatible. This is a logical-consequence theorem, not a claim that no other earned relation can constrain depth. C+INV still fixes all a_depth=1. The bounded verifier tests the FULL certified four-dimensional parent solution basis, not only two hand-picked sequences.\n\n## O5 — Nonnegative sources are a different category\n\nFor nonnegative rational source vectors, all pushforwards and zero extensions are available, but subtraction is not an internal operation. Finite additivity alone did not earn arbitrary negative physical amounts. Given compatible nonnegative x_Y,x_Z, there is at most one nonnegative global source because O2 establishes uniqueness in the containing signed space. Its signed candidate (G) is nonnegative outside J automatically. At each v in J its value is\n\n    x_U(v)=x_Y(v)+x_Z(v)-c(v).\n\nConsequently a nonnegative global source exists IFF x_Y(v)+x_Z(v)>=c(v) for EVERY v in J. This is an exact membership criterion for the declared rational cone, not a fitted threshold or a new source law. A failure means these formal nonnegative local data do not jointly realize one nonnegative source on U; it does not mean the local data are invalid individually.\n\nExplicit two-view counterexample: X={root,a,b}, Y={root,a}, Z={root,b}; local vectors (0,1) and (0,1). Both have total 1 and agree after pruning to the shared root. The unique signed gluing is (-1,1,1). No nonnegative gluing exists. Adding a constant to this source is NOT a gauge transformation: it changes its pushforward and total. Potential gauge freedom cannot repair source negativity.\n\n## O6 — Pairwise nonnegative realizability need not be global\n\nTake the four-node rooted star X={root,a,b,c}, and views {root,a}, {root,b}, {root,c}. Each local source is (1,1), total 2. All overlap sources are the root source 2. Every pair has the nonnegative gluing (0,1,1), total 2. But all three have the unique signed gluing (-1,1,1,1), so there is no global nonnegative source. This example satisfies all actual prefix/Genesis conditions and is inside the preregistered size bound.\n\nMore generally finite-cover gluing in O3 determines c at each union vertex. Nonnegative membership is exactly c_v>=sum_{children in U}c_child at every vertex (including leaves and root). A family of views can satisfy the inequalities separately, or on each pair, and fail an inequality after the full union is assembled. These are extensive aggregation constraints, not quantum contextuality, a new physical mechanism, or evidence of geometry/gravity.\n\n## O7 — Scope, evidence and correction discipline\n\nO1-O4 close overlapping-view comparison in the SAME finite prefix-tree/formal signed category used in v16.21-v16.22. They do not supply rerooting, identify independent origins, alter the fixed inverse, or remove the known cumulative fine-response obstruction. O5-O6 classify one explicitly declared nonnegative rational subcategory; they do not establish which positive sources nature can prepare. Positivity of potential representatives is not an invariant notion in W and is not imposed on response selection.\n\nEvery universal statement above has a constructive argument; finite exact checks audit implementations and reject false certificates. The computational bound is not a physical cutoff. The governing requirements are WORKER_ASSIGNMENT.md in the parent campaign. No original report or executable is rewritten.\n\nThe gluing/equalizer terminology is standard mathematics, not a novelty claim. Background definition: Stacks Project, Sheaves, tag 00VL, https://stacks.math.columbia.edu/tag/00VL . We do not assume a spacetime/topological geometry to prove any identity here.\n\nTime is pruning / ordered recoverability update.\n\nEND EXACT FILE\n\nBEGIN EXACT FILE handoff/replay.json\n{\n  \"basis_images_equal_standard_basis\": true,\n  \"conclusion\": \"no_nonzero_output_covector_annihilates_the_correction_image\",\n  \"cyclic_basis_image_rank\": 8,\n  \"dimension\": 8,\n  \"existing_norm_reads\": [\n    0.83,\n    1.0\n  ],\n  \"full_update_collisions\": {\n    \"T_x_0_equals_x\": true,\n    \"T_x_x_equals_x\": true\n  },\n  \"loop_determinants\": [\n    0.6889,\n    0.66\n  ],\n  \"matched_source_totals\": [\n    2.0,\n    2.0\n  ],\n  \"original_blob\": \"638e68d00762642d6b58f692e7a1747816752232\",\n  \"original_path\": \"Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1718_complete.py\"\n}\n\nEND EXACT FILE\n"}], "role": "user"}], "generationConfig": {"maxOutputTokens": 32768, "responseMimeType": "application/json", "temperature": 0}}

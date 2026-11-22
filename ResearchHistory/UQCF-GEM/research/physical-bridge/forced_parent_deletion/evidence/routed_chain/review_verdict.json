@@ -1,0 +1,19 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": [
+    "Reconstructed original source atoms and root/child hitting numbers on the nine-vertex tree using the provided parent array [-1,0,1,2,3,3,2,1,0].",
+    "Verified the actual original graph and producer perform target computation and both parent calls, confirming the archived calls 2 and 33 correspond to states 8 and 14725.",
+    "Inspected the independent replay code (check_routed_chain.py) and compared the complete masks, confirming the child palettes [1,31,99] and [31,99].",
+    "Reconstructed equal local q [1,2,1], first B update, final persistent B(v7) (ending at 199 in the high branch), coalescing state (low[2] == high[0]), and recomputed restart.",
+    "Verified that the no-deletion state (14730) was present in the graph but was not one of the selected normalizations.",
+    "Tested the opposing passive and common-field controls, confirming the sign and exact cancellation of the secondary B dipole on the v1-v7 edge via the inclusion-exclusion identity.",
+    "Checked that unchanged ambient signed drives cannot change the shared field, as the overlap term exactly cancels the dipole increment.",
+    "Verified exactly which physical or activation premises were supplied, confirming the mathematical shared-field null concerns the specified response law and common loads.",
+    "Compared historical v16.52 and v16.53 without treating different versions as stages of one physical run, acknowledging the bounded comparison is exploratory."
+  ],
+  "native_bridge_status": "OPEN"
+}

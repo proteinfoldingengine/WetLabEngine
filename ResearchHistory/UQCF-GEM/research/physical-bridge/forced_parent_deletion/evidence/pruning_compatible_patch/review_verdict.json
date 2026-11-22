@@ -1,0 +1,17 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "P1_necessity_and_converse": "P_XY B_X = B_Y P_XY restricts c_v(B_X) to depend only on the root-to-v chain. Alternation forces it to be a linear combination of wedges of distinct chain coordinates. Converse: Any such family with invariant coefficients on retained lineages satisfies the identity.",
+    "P1_plus_section_necessity_and_converse": "B_X(I_YX a, I_YX b) = I_YX B_Y(a, b) applied to a strict ancestor chain zero-extended to v forces output at v to vanish when both inputs at v vanish, so ancestor-ancestor wedge coefficients are zero. Converse: The restricted form c_v(B_X) = sum_{u < v} lambda_{vu} (c_v(a)c_u(b) - c_v(b)c_u(a)) satisfies both identities.",
+    "parameter_counts": "Star (depths 0,1,1,1,1): P1 = 0 + 4*1 = 4; P1+sec = 0 + 4*1 = 4. Branching (depths 0,1,2,2,3): P1 = 0 + 1 + 3 + 3 + 6 = 13; P1+sec = 0 + 1 + 2 + 2 + 3 = 8. Chain (depths 0,1,2,3,4): P1 = 0 + 1 + 3 + 6 + 10 = 20; P1+sec = 0 + 1 + 2 + 3 + 4 = 10.",
+    "basis_image_and_erasure": "K(a,b)_i = a_i b_{i-1} - a_{i-1} b_i. K(e_i, e_{i-1}) = e_i, so the image spans the 6D patch space. F(a,b) = a + g^2 K(a,b). F(a,0) = a + 0 = a. F(a,a) = a + 0 = a. This erases the right grade.",
+    "historical_software_audit": "The v16.42 normalizer uses q as a minimum-cover target, not an extensive source. The caller and verifier do not pass a distinct intermediate mask into V1712/V1713. The fixture is a matched common-port diagnostic, not an original geometry caller. Physical coupling and receiver access are open premises, not established by the software.",
+    "matched_source_projections": "Ambient grades (2,3,5,7,11) and (3,1,2,4,8) on common carrier {0,3} project to subtree sums [[28, 7], [18, 4]].",
+    "edge_reads": "The root-3 edge reads are ['7', '4'] for both histories, confirming the shared source-geometric read stays equal."
+  },
+  "native_bridge_status": "OPEN"
+}

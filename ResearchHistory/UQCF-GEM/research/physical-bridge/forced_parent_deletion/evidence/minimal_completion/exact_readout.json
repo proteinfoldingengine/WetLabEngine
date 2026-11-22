@@ -1,0 +1,181 @@
+{
+  "additional_rejections": {
+    "in_domain_nonminimum": "endpoint is not minimal",
+    "legacy_truncated_fraction": "incorrect exact root",
+    "minimum_wrong_integer_root": "incorrect exact root"
+  },
+  "archived_rejection_controls": [
+    "high:missing",
+    "high:duplicate",
+    "high:substituted",
+    "low:missing",
+    "low:duplicate",
+    "low:substituted",
+    "changed_original_source"
+  ],
+  "domain_sizes": {
+    "high": 77,
+    "low": 6377
+  },
+  "frozen_checker_blob": "5e2d136c0e1bb092d9d92fcf187c0f792a717631",
+  "integer_root_values_recomputed_exactly": {
+    "high": 85,
+    "low": 90
+  },
+  "legacy_positive_half": {
+    "contrast": 0,
+    "high": 1,
+    "low": 1
+  },
+  "minimum_incidence": {
+    "high": 14,
+    "low": 14
+  },
+  "native_bridge": "OPEN",
+  "rational_cases": {
+    "positive_zero_contrast": {
+      "contrast": 0,
+      "roots": {
+        "high": [
+          {
+            "root": "1/7",
+            "state": [
+              1,
+              199,
+              257,
+              63
+            ]
+          },
+          {
+            "root": "1/7",
+            "state": [
+              257,
+              199,
+              1,
+              63
+            ]
+          }
+        ],
+        "low": [
+          {
+            "root": "1/7",
+            "state": [
+              1,
+              455,
+              1,
+              63
+            ]
+          }
+        ]
+      },
+      "source": [
+        "1/7",
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0
+      ]
+    },
+    "reviewer_positive_half": {
+      "contrast": "1/2",
+      "roots": {
+        "high": [
+          {
+            "root": "3/2",
+            "state": [
+              1,
+              199,
+              257,
+              63
+            ]
+          },
+          {
+            "root": "3/2",
+            "state": [
+              257,
+              199,
+              1,
+              63
+            ]
+          }
+        ],
+        "low": [
+          {
+            "root": 1,
+            "state": [
+              1,
+              455,
+              1,
+              63
+            ]
+          }
+        ]
+      },
+      "source": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        "1/2"
+      ]
+    },
+    "signed_fractional": {
+      "contrast": "3/5",
+      "roots": {
+        "high": [
+          {
+            "root": "-1/15",
+            "state": [
+              1,
+              199,
+              257,
+              63
+            ]
+          },
+          {
+            "root": "-1/15",
+            "state": [
+              257,
+              199,
+              1,
+              63
+            ]
+          }
+        ],
+        "low": [
+          {
+            "root": "-2/3",
+            "state": [
+              1,
+              455,
+              1,
+              63
+            ]
+          }
+        ]
+      },
+      "source": [
+        "-2/3",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "3/5"
+      ]
+    }
+  },
+  "validation": "PASS",
+  "verified_frozen_result_bytes": 525209,
+  "verified_frozen_result_sha256": "99145e89948a91a3d92bbc8c0b3f41170f4d7ecf41eed9bf75ae15ee6b928998"
+}

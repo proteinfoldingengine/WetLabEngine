@@ -1,0 +1,35 @@
+{
+  "artifacts": [
+    {
+      "digest": "sha256:20bf15406f663aae3f033de9524d873cb0884fc0a9df22d67370bd9f6b850704",
+      "id": 14737986092,
+      "name": "p1-meet-work-catalog-publication",
+      "size_in_bytes": 3645
+    },
+    {
+      "digest": "sha256:968cda410f8cdbc2b718e9d5494406b156da95081b66f53830cf0b813dd9a10f",
+      "id": 14737652453,
+      "name": "p1-meet-work-catalog-replay",
+      "size_in_bytes": 18367
+    },
+    {
+      "digest": "sha256:95137b1a17c6b6499991920aa26931f92dd24c4e4776c43b556739d175fa2230",
+      "id": 14737223342,
+      "name": "p1-meet-work-catalog-review",
+      "size_in_bytes": 73929
+    }
+  ],
+  "jobs": {
+    "argument_review": 137080656304,
+    "replay": 137080577066,
+    "replay_publication": 137080848110
+  },
+  "local_replay_and_originals_equal": true,
+  "logs_sha256": "8daf704b5a5a3ee9ca4fd5cbba52be43715b57156749e3f824fe69214c0533a2",
+  "publication_replay_equal": true,
+  "raw_response_and_audit_match_log": true,
+  "run_attempt": 1,
+  "source_commit": "96692632c89a4caa069e4a815befac2812ec04ac",
+  "workflow_diff_success": true,
+  "workflow_run_id": 44980778646
+}

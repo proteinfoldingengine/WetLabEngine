@@ -1,0 +1,21 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The original program generates and consumes a numerical response, but the two-prune branch input is absent from its actual construction.",
+    "The later audit call is an enumerated internal consumption and does not establish receiver ownership or physical activation.",
+    "A physical theory connecting an event to the response still needs an inherited operation that writes the relevant grade vector or selects the history."
+  ],
+  "proof_checks": {
+    "seed_constraints": "J1[0] = -9 forces 5(s+3)+14 ≡ 5 mod 29, yielding s ≡ 1 mod 29. Outer gate ratio 3 gives numerator/denominator pairs (9,3) and (12,4), yielding (s%11, (s+34)%7) in ((1,0), (4,1)).",
+    "residue_classes": "The congruences yield exactly two residue classes modulo 2233: 1 and 1654.",
+    "archived_two_port_pairs": "Seed 1 B3 (-63, 0), Seed 1 B4 (-270, -60), Seed 1654 B3 (-48, -8), Seed 1654 B4 (-2941/8, -741/8).",
+    "two_prune_mask_failures": "The six B4 scalar matches change support conditions, rejected by the input mask at every seed. Mismatches occur at slots like [3,3], [3,4], [3,9], and [4,9] for the specific edit pairs.",
+    "later_audit_calls": "algebra_generator_audit consumes the built arrays, appending all five brackets and visiting every unordered pair of the 15 vectors (105 pairs).",
+    "projection_argument": "H4_residual_projection subtracts the H4 residual direction. If nonzero, it is orthogonal to original branches; if zero, the direction is zero. The projection fixes input branches in exact arithmetic.",
+    "event_binding_distinction": "The later audit call is an enumerated internal consumption of states for aggregate diagnostics, which does not establish receiver ownership or physical activation."
+  },
+  "native_bridge_status": "OPEN"
+}

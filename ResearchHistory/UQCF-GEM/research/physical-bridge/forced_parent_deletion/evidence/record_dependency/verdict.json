@@ -1,0 +1,19 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The demonstrated dependency is purely software data flow and does not establish a physical pre-time gravity signal.",
+    "The V1700.2 chain fields are unread metadata, meaning their breakage does not affect the computation."
+  ],
+  "proof_checks": {
+    "reconstruct_exponent_pairs": "Source intervention: diff1 = 0.75 - 0.1 = 0.65, diff1^2 = 169/400. diff2 = 0.75 - 0.2 = 0.55, diff2^2 = 121/400. Prior intervention: original edges (0.65, 0.15, -0.35) -> mean sq = 227/1200. altered edges (0.65, 0.15, -0.20) -> mean sq = 97/600. Exponents match exactly.",
+    "downstream_input_fixed": "The trace checker deepcopies the original trace and only modifies the first event's entropy_after/state_delta or the fourth event's prior_dependency. All other fields and downstream events are strictly identical.",
+    "rejected_inputs_write": "In V1472.3 process_event, validation failures append to failure_reasons but do not return early. The method proceeds to add the event_id to active_event_ids and writes entropy_after to entropy_after_by_event, confirming the write persists.",
+    "v1700_2_read_paths": "In V1700.2, charts() generates 'event' and 'prior' fields, but integrity(), J(), B(), and transport() only read 'source', 'source_witness', 'order_witness', 'support_witness', and 'idx'. The chain fields are never read.",
+    "order_shuffle_distinction": "The order_shuffle control shifts the 'order_witness' field, which is actively consumed by the weight() function, altering the current_node and transport matrices, thereby changing the numerical output q.",
+    "physical_receiver_delivery": "The event values and predecessors are supplied from a synthetic software trace. The receiver is a Python class (CausalGovernor). This is a data flow dependency in software, not a physical signal or physical receiver delivery."
+  },
+  "native_bridge_status": "OPEN"
+}

@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Physical preparability, event identification, and an owned available effect remain open.",
+    "No fundamental clock is used.",
+    "The program provides no lineage map from the chosen lattice cell to P1's retained parent.",
+    "There is no operation assigning the chosen cell's value to branch B's own available record.",
+    "The unit-valued destination reading cannot by itself distinguish transfer from duplication in this executable.",
+    "No physical signal, curvature law, or gravitational force is inferred."
+  ],
+  "proof_checks": [
+    "Verified the Git blob identity (b780961cebf14a5bff0153d109e2855c878090ec) of the V1686.35 program.",
+    "Reconstructed the positive example and rejecting controls directly from the actual function.",
+    "Verified the use of variable pointwise gates and opposite roll directions in the native kernel.",
+    "Verified the new array construction, all compared coordinates, and both source totals.",
+    "Verified input branch immutability and fresh composite identity.",
+    "Verified that the nested caller successfully reuses the first composite.",
+    "Confirmed that the tied-order control cancels the nonlinear correction.",
+    "Checked that an already nominated owner does not actually acquire a record (native owner access remains NOT_DERIVED).",
+    "Compared the control with the P1 source channel, confirming the exact contrast match at beta=4, eta=1.",
+    "Verified that the assessment contains no circular assumptions and explicitly disclaims overstated conservation or gravity claims."
+  ],
+  "native_bridge_status": "NOT_DERIVED"
+}

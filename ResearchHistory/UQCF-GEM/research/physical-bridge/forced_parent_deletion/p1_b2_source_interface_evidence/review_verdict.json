@@ -1,0 +1,17 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "positive_reading": "The exact replay confirms that the closed face delta is a B2 column, B1 delta is zero, the higher-incidence kappa channel is nonnull, and the construction is additive and reversible across all tested sizes.",
+    "source_axiom_status": "The v15.39 ledger confirms that source_axiom_derived_from_frozen_ontology is false, source_axiom_user_approved_before_execution is true, and uses_pruning is false.",
+    "coarse_vertex_channel": "The exact replay confirms that the coarse vertex q channel for the closed face is identically zero.",
+    "v1540_v1543_acquisition": "Code inspection confirms that v15.40 constructs centered face sources independently and v15.43 acquisition imports these without consuming a P1 carrier, a P1 contraction, or a retained vertex-grade record.",
+    "published_status": "The v15.43 README confirms that source correspondence is NOT_EVALUATED, and the P1 proof explicitly supplies the periodic address catalog, four-corner grade preparation, and label association.",
+    "dependency_closure": "The audit correctly concludes that the inspected dependency closure lacks an inherited provenance-preserving map from a retained P1 vertex-grade record to the B2/periodic source.",
+    "conditional_result_preserved": "The conditional P1 work-to-connection result remains valid and is preserved, while physical event binding, receiver ownership, and access remain open."
+  },
+  "native_bridge_status": "OPEN"
+}

@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 46545,
+      "digest": "sha256:c825a380e86659d190a3d2b525fcf39a57001f0715b0bcb5e7c5ef2c59f64935",
+      "id": 14762005475,
+      "name": "star-order-review"
+    },
+    {
+      "bytes": 2435,
+      "digest": "sha256:9df169e577c68dd0658b1fb81f5f1d862fa2d2482d80dc507053b5e9d1839267",
+      "id": 14761806538,
+      "name": "star-order-replay"
+    },
+    {
+      "bytes": 1347,
+      "digest": "sha256:ff8534a16ae3a14047697ec874404e4505d0a885cace5fdd77b73cd331ad1264",
+      "id": 14761527612,
+      "name": "star-order-publication"
+    }
+  ],
+  "freeze": "78f10593c9d9bfaf19461266d03e0aab18391b26",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137264300987,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137264382557,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137264546955,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "0b4701060626b0409ead894d74726f10dfc5be265aa32390e0e382751c00bdd3",
+  "raw_review_response_sha256": "98b074e6d3971f45018da7fa86f5111608ee5520db7fe0e91761aa627349762c",
+  "run": 45040711800,
+  "second_ci_replay_and_review_audit": "PASS",
+  "star_order_certificate_sha256": "361c3cf6f5efcd8ed67506ab450c22fcb12c66ba5b7ee626227918bb93285a10"
+}

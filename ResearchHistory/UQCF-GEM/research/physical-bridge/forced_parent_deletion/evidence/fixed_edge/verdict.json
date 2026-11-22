@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "forced_on_edge_9": "W1/W2 and the earlier D-to-B overlap fix B's grade there to its initial amount g9. After the gain, C and B agree there, forcing the grade on the unedited charts.",
+    "zero_baseline_subtracted_change": "The model potential differences across B's edge are exactly the same before and after C gains it. The event-induced change in that contrast, measured at B, is zero.",
+    "dipole_distinguished": "A positive source perturbation (+1/2 at 9, -1/2 at 0) gives a difference of 1/2 on this edge. The model potential differences across B's edge are 2 and 5/2 both immediately before and immediately after C gains it.",
+    "quadratic_edge_term": "The normalized Dirichlet term F9^2/2 gives 2 and 25/8 for base and shifted inputs. Zero and signed controls give 0 and 1/2.",
+    "ungrounded_schur_argument": "Lplus = [[L + ee^T, -e], [-e^T, 1]]. Eliminating the leaf from the field equations gives L as the old-site operator exactly: reduced = full[:-1,:-1] - full[:-1,-1:] * full[-1:,:-1] / full[-1,-1] == full_laplacian(p, coarse).",
+    "balanced_load_push": "A balanced arbitrary load is handled linearly: rhs = sp.Matrix(load[:-1]) - full[:-1,-1:] * load[-1] / full[-1,-1] == sp.Matrix(folded).",
+    "susceptibilities_and_resistances": "All effective resistances between old sites and the entire response matrix to probes on them are identical: resistance(fine_green, i, j) == resistance(coarse_green, i, j). 66 unordered old-port pair comparisons passed (24, 24, 18).",
+    "altered_loads_vs_coupling": "Any extension between finite connected prefix-closed charts of one fixed unit tree consists of such pendant additions. Repeated elimination proves the fixed-port result on their common retained chart. A change in static coupling must supply some operation outside this restriction.",
+    "w1_w2_rational_increment_space": "The exact unrestricted increment ranks at C's gain were 3, 4 and 2. The free edges were {4,6,7}, {3,4,5,6} and {4,6}.",
+    "energy_kick_counterexample": "A second history changes the ambient source at C's gain by -(delta4-delta3)-(delta6-delta2). The total ambient quadratic energy changes by 0 or -3. C's total quadratic energy changes by +2 or -1, although C gains exactly g9=2 in both.",
+    "occupancy_read": "The original outer-star recoloring calls support and obtains C as holder at state 8. It writes +A9 and then -C9.",
+    "protected_relay_to_A": "C and A overlap at leaf 9 for one state, so W1/W2 force A(9)=g9 through the C release. C's root grade returns to g0+g10+g9.",
+    "end_of_protection_and_continuations": "At the next edit, +A1, A is the only chart holding 9. Two compatible histories with the same original all-2 source can have A(9)=2 or 5/2 at state 11.",
+    "challenge_inference": "No chart visibility assumption makes the potential or these quadratic quantities physically observable. Support-address use by the controller leaves the grade magnitude unconsumed in the inspected caller. Counting the energy term at the newly available edge alone cannot establish a unique total field-energy impulse."
+  },
+  "native_bridge_status": "OPEN"
+}

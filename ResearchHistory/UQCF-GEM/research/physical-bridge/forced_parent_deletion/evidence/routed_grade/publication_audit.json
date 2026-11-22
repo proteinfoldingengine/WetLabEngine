@@ -1,0 +1,31 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "646c5830ff23d66ca822f0cc0c91945a47f77438",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "0a55fbdba8fb23d34adf83639fdb07e19445e5b4f0cec5d68c99bc4d0f514714",
+  "request_sha256": "9098cabc84f01379ac17c879ac9624f797702f96d3d1d7b84e1025316174cf2e",
+  "response_sha256": "b2a6675d8d75905a0fb7b3feeded162b3f51ce076fe033dac11e450999143fc3",
+  "run_id": "44927158087",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md": "0c8223367caf4d81dd1fe5a33a4e94d092f1aac4",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py": "7c4f65714d6b9ccda7f4bb0fc378b0daef957fff",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/produce_certificates.py": "a056d636900db6ab8f9a7775dd75e7dd190e6fe8",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/HISTORICAL_METRIC_CONTEXT.md": "2dccd08b712aab2248883f226f7cb540b1beaf34",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/LOSS_SUPPORT.md": "3e25e54be68c827bc9d945ca976d06a043fe1354",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/ROUTED_CHAIN.md": "1bc6ee43c3e91ef46dddecb2dec025f7df289c45",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/ROUTED_GRADE.md": "14cf866d326a4fece8484f1baa08258598aaeeb3",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_routed_chain.py": "29bf8ba4c5cdda5b824f4ad51563fccd617789e4",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_routed_grade.py": "4c16f2f6243f4be4f0d34bd9a9e5f24a8c1e4133",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/evidence/routed_grade/metric.json": "72f19c1155b53b720795fe9605e29381bf968323",
+    "Tmp/TOE/v498_retained_geometry_formal_report_package/v498_retained_geometry_proof.py": "1b30d2f5f501e85020e0071544a9126dad074aaa"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "646c5830ff23d66ca822f0cc0c91945a47f77438"
+}

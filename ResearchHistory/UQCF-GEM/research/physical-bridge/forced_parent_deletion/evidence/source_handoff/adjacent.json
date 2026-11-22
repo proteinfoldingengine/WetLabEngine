@@ -1,0 +1,443 @@
+{
+  "archive_blob": "ff8244239fb5ce092b07cbe775382593018b256d",
+  "counts": {
+    "corpus_edits": 5698,
+    "corpus_paths": 210,
+    "graph_edits": 1428,
+    "graph_paths": 106
+  },
+  "directed_hits": [
+    {
+      "caller_trace": [
+        [
+          "normalize",
+          19,
+          0,
+          2,
+          true
+        ],
+        [
+          "normalize",
+          20,
+          2,
+          2,
+          false
+        ],
+        [
+          "normalize",
+          19,
+          1,
+          1,
+          true
+        ],
+        [
+          "normalize",
+          20,
+          3,
+          1,
+          false
+        ],
+        [
+          "recolor",
+          24,
+          2,
+          1,
+          true
+        ],
+        [
+          "recolor",
+          24,
+          1,
+          1,
+          false
+        ]
+      ],
+      "final_receiver_mask": 47,
+      "index": 178,
+      "spec": {
+        "degrees": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "k": 4,
+        "permutation": "reversal",
+        "q": [
+          2,
+          2,
+          1,
+          2
+        ]
+      },
+      "states": [
+        [
+          1,
+          47,
+          1247,
+          771
+        ],
+        [
+          1025,
+          47,
+          1247,
+          771
+        ],
+        [
+          1025,
+          47,
+          223,
+          771
+        ],
+        [
+          1025,
+          559,
+          223,
+          771
+        ],
+        [
+          1025,
+          559,
+          223,
+          259
+        ],
+        [
+          1025,
+          559,
+          735,
+          259
+        ],
+        [
+          1025,
+          47,
+          735,
+          259
+        ]
+      ],
+      "steps": [
+        3,
+        4
+      ],
+      "w1_w2": {
+        "ambient_unknowns": 77,
+        "constraint_rows": 80,
+        "forced_identities": [
+          "anchor_leaf_from_initial_source",
+          "donor_root_increment",
+          "receiver_root_increment",
+          "receiver_source_leaf",
+          "receiver_source_after_relay_exit",
+          "receiver_root_before_gain",
+          "receiver_root_after_gain"
+        ],
+        "positive_pair_receiver_roots": [
+          [
+            6,
+            6
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "pre_gain_unconstrained_receiver_coordinates": [
+          2,
+          3,
+          4,
+          6,
+          7
+        ],
+        "rank": 57
+      }
+    },
+    {
+      "caller_trace": [
+        [
+          "normalize",
+          19,
+          0,
+          2,
+          true
+        ],
+        [
+          "normalize",
+          20,
+          2,
+          2,
+          false
+        ],
+        [
+          "normalize",
+          19,
+          1,
+          1,
+          true
+        ],
+        [
+          "normalize",
+          20,
+          3,
+          1,
+          false
+        ],
+        [
+          "recolor",
+          24,
+          2,
+          1,
+          true
+        ],
+        [
+          "recolor",
+          24,
+          1,
+          1,
+          false
+        ]
+      ],
+      "final_receiver_mask": 135,
+      "index": 184,
+      "spec": {
+        "degrees": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "k": 4,
+        "permutation": "reversal",
+        "q": [
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      "states": [
+        [
+          1,
+          135,
+          1151,
+          771
+        ],
+        [
+          1025,
+          135,
+          1151,
+          771
+        ],
+        [
+          1025,
+          135,
+          127,
+          771
+        ],
+        [
+          1025,
+          647,
+          127,
+          771
+        ],
+        [
+          1025,
+          647,
+          127,
+          259
+        ],
+        [
+          1025,
+          647,
+          639,
+          259
+        ],
+        [
+          1025,
+          135,
+          639,
+          259
+        ]
+      ],
+      "steps": [
+        3,
+        4
+      ],
+      "w1_w2": {
+        "ambient_unknowns": 77,
+        "constraint_rows": 76,
+        "forced_identities": [
+          "anchor_leaf_from_initial_source",
+          "donor_root_increment",
+          "receiver_root_increment",
+          "receiver_source_leaf",
+          "receiver_source_after_relay_exit",
+          "receiver_root_before_gain",
+          "receiver_root_after_gain"
+        ],
+        "positive_pair_receiver_roots": [
+          [
+            6,
+            6
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "pre_gain_unconstrained_receiver_coordinates": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "rank": 55
+      }
+    },
+    {
+      "caller_trace": [
+        [
+          "normalize",
+          19,
+          0,
+          2,
+          true
+        ],
+        [
+          "normalize",
+          20,
+          2,
+          2,
+          false
+        ],
+        [
+          "normalize",
+          19,
+          1,
+          1,
+          true
+        ],
+        [
+          "normalize",
+          20,
+          3,
+          1,
+          false
+        ],
+        [
+          "recolor",
+          24,
+          2,
+          1,
+          true
+        ],
+        [
+          "recolor",
+          24,
+          1,
+          1,
+          false
+        ]
+      ],
+      "final_receiver_mask": 175,
+      "index": 190,
+      "spec": {
+        "degrees": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "k": 4,
+        "permutation": "reversal",
+        "q": [
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "states": [
+        [
+          1,
+          175,
+          1119,
+          771
+        ],
+        [
+          1025,
+          175,
+          1119,
+          771
+        ],
+        [
+          1025,
+          175,
+          95,
+          771
+        ],
+        [
+          1025,
+          687,
+          95,
+          771
+        ],
+        [
+          1025,
+          687,
+          95,
+          259
+        ],
+        [
+          1025,
+          687,
+          607,
+          259
+        ],
+        [
+          1025,
+          175,
+          607,
+          259
+        ]
+      ],
+      "steps": [
+        3,
+        4
+      ],
+      "w1_w2": {
+        "ambient_unknowns": 77,
+        "constraint_rows": 80,
+        "forced_identities": [
+          "anchor_leaf_from_initial_source",
+          "donor_root_increment",
+          "receiver_root_increment",
+          "receiver_source_leaf",
+          "receiver_source_after_relay_exit",
+          "receiver_root_before_gain",
+          "receiver_root_after_gain"
+        ],
+        "positive_pair_receiver_roots": [
+          [
+            6,
+            6
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "pre_gain_unconstrained_receiver_coordinates": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "rank": 57
+      }
+    }
+  ],
+  "graph_hits": [],
+  "physical_binding_and_access": "OPEN",
+  "same_atom_terminal_factor": true,
+  "search": "All root leaves; adjacent loss then gain by another chart. Exploratory extension beyond the registered source definition."
+}

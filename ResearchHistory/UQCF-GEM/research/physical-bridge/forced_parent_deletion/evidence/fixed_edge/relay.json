@@ -1,0 +1,143 @@
+{
+  "archive": "ff8244239fb5ce092b07cbe775382593018b256d",
+  "cases": [
+    {
+      "case": 178,
+      "exact_w1_w2": {
+        "A9_free_at_state": 11,
+        "ambient_unknowns": 132,
+        "protected": [
+          "C9_state5",
+          "C9_state6",
+          "C9_state7",
+          "C9_state8",
+          "C9_state9",
+          "A9_state9",
+          "A9_state10",
+          "Croot_before_gain",
+          "Croot_after_gain",
+          "Croot_after_release"
+        ],
+        "rank": 107,
+        "rows": 154
+      },
+      "ownership_read": {
+        "caller": "recolor:23",
+        "subsequent_global_edits": [
+          "+A9",
+          "-C9"
+        ],
+        "support_return_at_state10": [
+          0
+        ],
+        "support_return_at_state8": [
+          2
+        ]
+      },
+      "same_initial_source_A9_at_states_9_10_11": [
+        [
+          "2",
+          "2",
+          "2"
+        ],
+        [
+          "2",
+          "2",
+          "5/2"
+        ]
+      ]
+    },
+    {
+      "case": 184,
+      "exact_w1_w2": {
+        "A9_free_at_state": 11,
+        "ambient_unknowns": 132,
+        "protected": [
+          "C9_state5",
+          "C9_state6",
+          "C9_state7",
+          "C9_state8",
+          "C9_state9",
+          "A9_state9",
+          "A9_state10",
+          "Croot_before_gain",
+          "Croot_after_gain",
+          "Croot_after_release"
+        ],
+        "rank": 104,
+        "rows": 146
+      },
+      "ownership_read": {
+        "caller": "recolor:23",
+        "subsequent_global_edits": [
+          "+A9",
+          "-C9"
+        ],
+        "support_return_at_state10": [
+          0
+        ],
+        "support_return_at_state8": [
+          2
+        ]
+      },
+      "same_initial_source_A9_at_states_9_10_11": [
+        [
+          "2",
+          "2",
+          "2"
+        ],
+        [
+          "2",
+          "2",
+          "5/2"
+        ]
+      ]
+    },
+    {
+      "case": 190,
+      "exact_w1_w2": {
+        "A9_free_at_state": 11,
+        "ambient_unknowns": 132,
+        "protected": [
+          "C9_state5",
+          "C9_state6",
+          "C9_state7",
+          "C9_state8",
+          "C9_state9",
+          "A9_state9",
+          "A9_state10",
+          "Croot_before_gain",
+          "Croot_after_gain",
+          "Croot_after_release"
+        ],
+        "rank": 107,
+        "rows": 154
+      },
+      "ownership_read": {
+        "caller": "recolor:23",
+        "subsequent_global_edits": [
+          "+A9",
+          "-C9"
+        ],
+        "support_return_at_state10": [
+          0
+        ],
+        "support_return_at_state8": [
+          2
+        ]
+      },
+      "same_initial_source_A9_at_states_9_10_11": [
+        [
+          "2",
+          "2",
+          "2"
+        ],
+        [
+          "2",
+          "2",
+          "5/2"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The physical occurrence of the program, accessibility of the record, and any connection to gravity remain open.",
+    "No inherited reader located at B has been shown to receive R's state or to produce this number there.",
+    "The historical palette still selects occurrence, and its leaf order affects which first writes are distinguishable."
+  ],
+  "native_bridge_status": "OPEN",
+  "proof_checks": {
+    "copy": "The structural choice of donor and recipient is determined by the palette order of the blank B relative to the two occupied views A and R. When B is in the first two positions, the last index (A) acts as the donor, transferring its private leaves to B, while R remains fixed. The algebraic work gap is verified by comparing the original transfer to a control where the shared leaf u is restored in A before the snapshot. The extra copied u decreases the work between B and R by w_u at its insertion, resulting in the original work exceeding the control work by exactly w_u at the completion of the addition loop, independent of grades or leaf enumeration.",
+    "orders": "The first-change test evaluates all six permutations of the three views (masks 1, 7, 13). The original trajectory is compared against a control that restores the actual first editor's cleared leaf. Out of the 3 original A deletions, 2 result in a first nonzero work increase between B and R. The remaining 1 original A deletion, all 3 original R deletions, and all 6 controls result in a decrease or remain silent. Thus, a first increase uniquely identifies an actual deletion at A followed by a B write (2 of 3 active cases, 0 of 9 others). This one-sided test holds for all positive grade choices and is not invalidated by the hidden palette order, though the historical leaf priority determines which writes are distinguishable.",
+    "blind": "In row 232, the alternate source assignment demonstrates that a transfer can be completely hidden from the two other views. With A holding {1,2}, R holding {2,3}, and B blank, the ordered pairs of B and R masks progress through the exact same sequence [(1,13), (3,13), (7,13), (7,9), (7,11), (5,11)] in both the original and the restored control. The original acquires leaf 2 at B during later recoloring, whereas the control copies it there directly. This identical projection means that no deterministic function of the B and R sequence—including pair work at local updates with arbitrary fixed grades—can distinguish the true phase-boundary work gap from the two projected histories.",
+    "scope": "The findings are strictly scoped to the exercised software interactions and uncalibrated geometric signs. The mathematical relation is reconstructed from the views, but no inherited reader at B has been shown to receive R's state or autonomously compute this metric. The historical palette still governs occurrence, and the physical occurrence of the program, accessibility of the record, and any connection to gravity remain open and unproven."
+  }
+}

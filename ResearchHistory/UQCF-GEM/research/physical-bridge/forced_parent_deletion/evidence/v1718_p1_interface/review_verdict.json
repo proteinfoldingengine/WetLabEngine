@@ -1,0 +1,17 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "argument_exchange": "The V1718 update is `native_T(x,q) = x + g*(roll(x)*q - x*roll(q))`. In modulo-n coordinates, the correction term is `g*(x_{i-1}q_i - x_iq_{i-1})`. Defining `K(q,x)_i = q_ix_{i-1} - q_{i-1}x_i`, the correction is exactly `g*K(q,x)`. This is the V1712 cyclic wedge with arguments exchanged and scaled by `g`.",
+    "basis_images": "Evaluating `K(e_i, e_{i-1})` yields a vector where the j-th component is `\\delta_{i,j}\\delta_{i-1,j-1} - \\delta_{i-1,j}\\delta_{i,j-1}`. This is 1 when `j=i` and 0 otherwise, so `K(e_i, e_{i-1}) = e_i`. Since this holds for all `i`, the image of `K` spans the entire n-dimensional patch space.",
+    "invertible_output_identification": "Commutation with P1 requires the root total of the correction to vanish. If an invertible linear map identifies the patch output with a retained extensive grade, the root total acts as a non-zero covector on the grade space. Pulling it back yields a non-zero covector on the patch space that must annihilate the image of `K`. Since `K` is surjective, this is impossible.",
+    "invertible_input_changes": "Applying independent invertible linear transformations to the inputs `q` and `x` only changes the preimages of the correction, not the span of its image. The surjectivity of the modified `K` remains, so the covector obstruction is unaffected.",
+    "full_update_collision": "For any `x`, `T(x,0) = x` and `T(x,x) = x + g*(x_{i-1}x_i - x_ix_{i-1}) = x`. If a separately additive grade law `m_out(T(x,q)) = m_x(x) + m_q(q)` holds over the full domain, then `m_x(x) + m_q(0) = m_x(x) + m_q(x)`. This forces `m_q(x) = m_q(0)` for all `x`, proving the source grade `m_q` must be constant and cannot represent an extensive amount.",
+    "archived_loop_result": "The V1718 loop contrast for fixed-total sources `q = e_0 + e_2` and `q = 2e_0` produces distinct loop determinants (0.6889 and 0.66) and norm reads (0.83 and 1.0). This confirms a valid source-shape sensitivity within the archived simulation, independent of the P1-compatibility failure.",
+    "extensions_challenged": "The proof strictly rules out invertible linear identifications on the full domain. It does not mathematically exclude noninvertible quotients, restricted input domains, or separate event records. However, any extension claiming physical event binding, receiver access, geometry, or gravity requires a new producing operation and access proof, which are not provided here."
+  },
+  "native_bridge_status": "OPEN"
+}

@@ -1,0 +1,77 @@
+{
+  "archives": [
+    {
+      "artifact_id": 14728321033,
+      "bytes": 2142,
+      "members": [
+        "handoff/replay.json",
+        "review_evidence/publication_audit.json"
+      ],
+      "name": "pruning-compatible-patch-publication.zip",
+      "sha256": "eb71bc265063c8495ab41bd2cdebf335ebf317a82e4ac204715db34b5004f128"
+    },
+    {
+      "artifact_id": 14728116482,
+      "bytes": 78143,
+      "members": [
+        "model_metadata.json",
+        "prompt.txt",
+        "receipt.json",
+        "request.json",
+        "response.json",
+        "review.txt"
+      ],
+      "name": "pruning-compatible-patch-review.zip",
+      "sha256": "1e476d6ffd261b964258a5112227bcb76d7a1063248be86d0178a93dd0211f1c"
+    },
+    {
+      "artifact_id": 14727552224,
+      "bytes": 963,
+      "members": [
+        "replay.json"
+      ],
+      "name": "pruning-compatible-patch-replay.zip",
+      "sha256": "64907b85ae6eca2fa31aae758e2da9822a68d260fa36540f00327afb13ae1f04"
+    }
+  ],
+  "decoded_job_logs": {
+    "bytes": 37566,
+    "members": {
+      "publication.log": "ac367885e0c0fb8fba7d88d1a95b3121fbfebcf050f4615477f842de1ffc1e9f",
+      "replay.log": "50410af91ae1b3b66dc1ef34facaf36e506995f2dfa5129f7616e070a97bc61e",
+      "review.log": "15671273a57c62a4a93d10bcbbb76373625b3c819d446d1fbe38881734979528"
+    },
+    "sha256": "5e47aa9c85d03d4773b05a0996bcf4390fd696bd63e479ecd2a174c3d8397203"
+  },
+  "publication_log_readback": "PASS",
+  "replay_byte_comparison": "PASS",
+  "replay_sha256": "930dfb0ca35a96d29309723b335f3767d61dc7b4dcfa38524ce43268bc2d138a",
+  "review_receipt": {
+    "attempt": "1",
+    "checkout_sha": "659081b4974741d0ed441863bc51597d4d9a5680",
+    "model_requested": "gemini-3.1-pro-preview",
+    "model_returned": "gemini-3.1-pro-preview",
+    "prompt_sha256": "9a20cd59c08df51c06927505339c9220a0ef751ad6a3a4471a7aea2048a367df",
+    "request_sha256": "a7023d9d98c8770a8f83f5e3e249dda317581e384db24af71dec43853705965b",
+    "response_sha256": "2f3df7b4056ea414e4e6ba686025d4c36916ead1a5554007ff13e743a78c5f16",
+    "run_id": "44956883528",
+    "source_blobs": {
+      "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+      "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/PROOFS.md": "0c8223367caf4d81dd1fe5a33a4e94d092f1aac4",
+      "ResearchHistory/UQCF-GEM/demos/v16.41-unit-barrier-dichotomy/producer.py": "0ba44accc8f47359a8e5adfa9b6a5265dc3eb45d",
+      "ResearchHistory/UQCF-GEM/demos/v16.41-unit-barrier-dichotomy/verifier.py": "079b2189d4d06e583eeafd25860c2dba33ede673",
+      "ResearchHistory/UQCF-GEM/demos/v16.42-overlapping-core-repair/producer.py": "980d34ec76370c2f220d29c1650ea8e010ce75a4",
+      "ResearchHistory/UQCF-GEM/demos/v16.42-overlapping-core-repair/verifier.py": "3ed004d6748e36e72f765a22b5533ec187e954f9",
+      "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+      "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/PRUNING_COMPATIBLE_PATCH.md": "4b8735068ed36396f64c6e2188606304fcaa7ed7",
+      "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_pruning_compatible_patch.py": "e578f59f1d7ab93eceb169cf6d2b97e0fb982b4e",
+      "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1712_rg.py": "bc4504edbde3bc35815959f7f52288a57dced81a",
+      "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1713_shape_rg.py": "db8828f17a1ae597ac09abc1a8ac23b3eb3b6676",
+      "handoff/replay.json": "8c358cbeff86a3c5446f2888080a924d992b2ee6"
+    },
+    "verdict": "ACCEPTED",
+    "workflow_sha": "659081b4974741d0ed441863bc51597d4d9a5680"
+  },
+  "run_id": 44956883528
+}

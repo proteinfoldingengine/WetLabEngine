@@ -1,0 +1,15 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "tree_metric_one_address": "Verified. For a tree metric, the four-point condition dictates that for any four points, the three opposite-pair distance sums must have their two largest values equal. If a chordless 4-cycle existed with all four edges equal to the global minimum m, the sums would be 2m, 2m, and D_13 + D_24. Because it is chordless, the diagonals D_13 and D_24 must be strictly greater than m, making D_13 + D_24 > 2m. This results in a unique maximum sum, which contradicts the four-point condition. Coinciding sites yield zero off-diagonal distances, forming cliques and similarly precluding chordless 4-cycles.",
+    "k5_control": "Verified. A star graph with 5 leaves produces a complete graph K_5 on its leaves. While it satisfies the degree-four requirement, K_5 contains no chordless 4-cycles (every 4-cycle has chords). The historical constructor correctly rejects this at the `edge_cycle_count` test, as confirmed by the bounded replay.",
+    "grade_families_and_work": "Verified. The work formula W_ij = |S_i \\triangle S_j| + (a_i - a_j)^2 accurately captures the tree metric on the 25-star plus the active child edge. Deleting u in family A retracts the source difference to the parent p, eliminating the second term and restoring the pure square graph (50 edges). In family B, u carried only the background, so the difference remains on v, leaving the 8 boundary edges of the 2x2 neighborhood of p elevated in weight (42 minimum edges). Both fine payloads and the post-event B payload are correctly rejected for `degree_not_four`.",
+    "invariant_reconstruction": "Verified. On the fixed face (0,1,6,5) using the field for square label (0,0), the centered derivative yields opposite-neighbor differences of magnitude 1/2. The antisymmetric transport term (\\bar{q}_y d_x - \\bar{q}_x d_y)/2 evaluates to 1/4 on each of the four directed edges. Telescoping around the face sums these to 1, which squares to 1 in the archived convention. A constant field yields zero differences and a zero invariant, matching the replay's `constant_zero_count` of 25.",
+    "gate_behavior_distinction": "Verified. The text explicitly scopes the supplied four-corner preparation, fixed deletion event, and retained label association as a test of the archived numerical interface. It correctly distinguishes this exact mathematical enablement from the open questions of native source preparation, physical receiver identity, and atemporal occurrence."
+  },
+  "native_bridge_status": "OPEN"
+}

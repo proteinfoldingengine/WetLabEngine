@@ -1,0 +1,23 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "326509374b803d32d7e89b97f6e204b4ef391f2c",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "a0120573d7c3bfd2658fc1385f3c7f582ed861137c81c7571b27348e4c9d8e90",
+  "request_sha256": "eab9ecc696afbfbdd6ad9cc5166849fb337bf76fa466134545cd18b1972624e0",
+  "response_sha256": "cd16a5050c6edd654135e30a5093f25ed93674fcde81239f341e6fc4005f55e1",
+  "run_id": "45048629395",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.52-recursive-ternary-composition/producer.py": "90108c926299ca7cb66dca6acc4530bafcdb4a7e",
+    "ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py": "0501a1b32c0a660646ff95ecbb8a37a8f2e04b80",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/NATIVE_WRITER_PHASE.md": "01eb0cf44125a834abfb7fdf2ddc02b014def90e",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/NATIVE_WRITER_PHASE_CHECK_PLAN.md": "19ca626e2b2a2d963110c9ae686a41528288e537",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_native_writer_phase.py": "969b8a5769096ebc745f1435a5d68ca1dd223771",
+    "handoff/replay.json": "507e5ee063fcaa9dbf5667b6bd763e122da34e5f"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "326509374b803d32d7e89b97f6e204b4ef391f2c"
+}

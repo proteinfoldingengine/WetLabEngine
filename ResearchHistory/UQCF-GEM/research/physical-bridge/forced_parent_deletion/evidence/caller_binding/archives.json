@@ -1,0 +1,61 @@
+{
+  "archives": [
+    {
+      "bytes": 894,
+      "id": 14724480942,
+      "members": {
+        "publication_audit.json": "67691d22454be500000524e91710f045f0673765b96e22aa4349b16f39b36c6b"
+      },
+      "name": "publication",
+      "sha256": "b4e9c5b17ea7629e7170ec802a1511b8c8fba59d70ce470e6e0f21a6286577c8"
+    },
+    {
+      "bytes": 731,
+      "id": 14724297987,
+      "members": {
+        "result.json": "b18523c665cd964bed1c29cc7346c6cf5f51ea303c38ba0c54c2ebc14879247a"
+      },
+      "name": "replay",
+      "sha256": "fbef8529584a1197a232a430e25bcb0f1207c3de83d0c233264e415928e63ad2"
+    },
+    {
+      "bytes": 35052,
+      "id": 14724183596,
+      "members": {
+        "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "prompt.txt": "c6f293b8c7fa8c626a405b61dd2c124208d48cc69566fa4566e7134388b53326",
+        "receipt.json": "ae85d80535efd33f1d47ba787ed2df431801fb0ba3b995fb3be2807c442be7f4",
+        "request.json": "6c6196559e5bfe17bcb93f483cb009c14e024327a20b3003a50bd471ff5083e4",
+        "response.json": "3c5672c5a0b654e430bf068c0e262b307d90b911b0dd666d29ff70677dec0d3d",
+        "review.txt": "2f927ac6552ceccd048cdacb9a36208bbd45bf455a5db8483e0fa2a5fc51c0d8"
+      },
+      "name": "review",
+      "sha256": "e211ddd542c9e6e1389cae2584769206274d8adfd00f667cc2036fc229281dec"
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 136978585820,
+      "name": "exact-replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 136978661762,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 136978782724,
+      "name": "replay-publication"
+    }
+  ],
+  "logs": {
+    "argument-review": "a7c343e61ca6254fa6b3bb46e85183fb6271fba728980e19706beb71512403fe",
+    "exact-replay": "525e258516890d24016555111e1c2fc8472da9b633ece86c13e3092737bce932",
+    "replay-publication": "d9dbf6b4f15f52dc82b4b307cc920f7edf2d286b143fafbadc7df8a508d54b06"
+  },
+  "logs_sha256": "8fab56b9c4b82f13d13845ea6b56b1ee8daae56fd5b07052771272acd19ddb02",
+  "run": 44947714160,
+  "sha": "120c56a7ffd576d6d6c2f56b2145932836f150db"
+}

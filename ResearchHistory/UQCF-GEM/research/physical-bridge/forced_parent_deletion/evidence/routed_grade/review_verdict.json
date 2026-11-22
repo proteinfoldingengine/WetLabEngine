@@ -1,0 +1,22 @@
+{
+  "verdict": "ACCEPTED",
+  "proof_checks": [
+    "Reconstructed unique compatible grade evolution on a finite rooted cover. When an indexed view Y is edited to Y' and other views/grades are fixed, the new grade b' on Y' is uniquely determined by gluing the old grade b on Y and the pushforward P_(C,J') c from an unchanged view C, where J'=Y'∩C. This relies on v16.23 O2. Multiple unchanged holders yield the same result. If the global source is nonnegative, local grades are nonnegative, but local nonnegativity doesn't guarantee global nonnegativity (O5). Zero-extension fails if c(h) is nonzero. If C is allowed to move its share, it can preserve B's old grade and compatibility while erasing the contrast, showing that stability of unchanged sources is a necessary hypothesis.",
+    "Verified the inherited constrained continuation at the v1-v7 coarsening/refinement. For the two positive preparations (unit and shifted), the pre-event B chart is completely blind to the contrast. The readouts for B's grade at v1 are 4,4 (low path, A releases v8) versus 2,1 (high path, C releases v8), and at v7 absent versus 2,3. The high path leaves B as the sole holder of v7; the low path leaves A as the sole holder. The unit-grade check confirms B's edge drops remain 7 and 5, with an additional outgoing drop of 1 on the high path accounting for the v1 junction sum drop from 2 to 1. The historic v16.48 normalizer does not handle a source-grade vector. The old h amount is provided by C. The fixed old port and joint field are blind because comparing the potential on the unchanged common carrier gives zero contrast.",
+    "Checked FCV old record types and the 22/15 versus 2/3 contrast. On the chart K={o,v1,v2,v7} (FCV instance 7), rows 11 and 13 persist junction values 22/15 and 2/3, differing by 4/5. The local Kirchhoff calculation (discrete divergence at v1) matches v16.22 and P6, returning exactly the current B grade at v1. This old FCV operation is not an automatic receiver-owned callback in v16.48; the v16.48 child reads its own palette and does not produce a B-local grade receipt.",
+    "Reconstructed the scenario where the same C event certificate appears inside the low run and as high input. The incidence transition [257,63,455] to [257,63,199] occurs in both. The competing next edits are +A(v1) (running target-one) and +B(v7) (fresh target-two). The grade-family comparison matches across both histories. The saved target distinguishes the invocations. The normalizer writes bits rather than dispatching a v16.26 certificate. The accepted occurrence of an actual pruning event does not provide episode information, meaning the source event alone cannot select the historical continuation without a new gain or reader.",
+    "Verified the supplemental historical V498 weights and simultaneous B/C incompatible assignments. B's weight during A-removal is 101/52, and during C-removal is 157/84. C's weight at the C-removal endpoint is 101/52. Since B and C assign different weights to the identical edge under the same background fields, they cannot be restrictions of one common metric. Inspected rows 2, 29, 31, 33 in metric.json, confirming the target and B7 edit differences. The v16.48 child palette read, FCV pruning/grade output, and V498 numerical function are distinct operations. The weighted tree cut identity shows the formal source dipole at v8 has zero subtree load on o-v1. The supplemental finite replay tests the formula on an explicitly supplied calibration, not an inherited route."
+  ],
+  "limitations": [
+    "The archived v16.48 routine does not pass or store a grade.",
+    "The argument does not turn the separate quantum receiver-location example into a statement about these classical indexed grades.",
+    "A physical gravitational signal would require a measurable change of the shared field or an independently justified physical mapping of B's local junction measurement.",
+    "The accepted occurrence of an actual pruning event does not provide this episode information.",
+    "The project has not identified these dimensionless graph weights with a physical conductance or gravitational observable.",
+    "The mathematical shared-field null concerns the specified response law and common loads."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "native_bridge_status": "OPEN"
+}

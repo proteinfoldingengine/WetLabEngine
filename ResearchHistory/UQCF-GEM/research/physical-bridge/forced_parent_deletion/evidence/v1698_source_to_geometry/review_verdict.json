@@ -1,0 +1,16 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "source_independence_of_transport": "In the historical emitter, `build_edges` computes transport matrices `T_pq` using seed, support, and order, but strictly excludes source values. Changing source values alters edge `source_delta` and signed boundary pairing (`build_signed_boundary_pairing`), but leaves transport, R2, and R3 matrices identical.",
+    "same_seed_label_intervention": "Running the emitter for 'valid' and 'source_shuffle' modes at the same seed yields identical C0-W3 geometry tables. The reported curvature rates (1.0 vs 0.5) are hardcoded in `build_gate_checks` based on the mode string, not derived from numerical differences.",
+    "direct_transport_control": "Directly modifying a transport matrix correctly propagates to the F3 matrix, but the reported Bianchi norm remains 0.0 because `build_bianchi` hardcodes `B_R_norm` to 0.0 and `JR` to 'zero_source_current_matrix'.",
+    "raw_vs_merged_ledger": "Archived raw open cases use distinct seeds (169876 and 169976) to generate distinct 12-node source vectors. In contrast, the merged ledger uses a simplified 2-node graph with hardcoded source values (0,1) and identity transport matrices.",
+    "directional_caveats": "The merged ledger's R2 and R3 tables list cycles (e.g., n0 -> n1 -> n0) but only provide the forward edge e01 in `ordered_edge_ids`. The return leg is omitted, which fails to form a closed directed cycle under the emitter's contract.",
+    "validator_recomputation": "The historical validator (`v1698_75_validator.py`) verifies schema, referential integrity, and threshold satisfaction by reading `gate_checks.csv`. It does not recompute curvature rates from raw data, nor does it verify the geometric closure of R2/R3 paths."
+  },
+  "native_bridge_status": "OPEN"
+}

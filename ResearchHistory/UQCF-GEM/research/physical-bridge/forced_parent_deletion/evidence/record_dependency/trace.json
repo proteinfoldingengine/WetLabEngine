@@ -1,0 +1,76 @@
+{
+  "changed_valid_prior_test": {
+    "original_repair_record": {
+      "admissible": true,
+      "closure": 0.413824276887,
+      "event_id": "e3_repair",
+      "failures": 0,
+      "read": 0.827648553773
+    },
+    "redirected_repair_record": {
+      "admissible": true,
+      "closure": 0.425362366097,
+      "event_id": "e3_repair",
+      "failures": 0,
+      "read": 0.850724732194
+    }
+  },
+  "file_order_control_matches": true,
+  "matched_source_test": [
+    {
+      "e1_record": {
+        "admissible": true,
+        "closure": 0.0,
+        "event_id": "e1_disruption",
+        "failures": 0,
+        "read": 0.655406254327
+      },
+      "final_record": {
+        "admissible": true,
+        "closure": 0.873820763888,
+        "event_id": "e5_closure",
+        "failures": 0,
+        "read": 0.873820763888
+      },
+      "same_e1_entropy": 0.75,
+      "written_entropy_at_e0": 0.1
+    },
+    {
+      "e1_record": {
+        "admissible": true,
+        "closure": 0.0,
+        "event_id": "e1_disruption",
+        "failures": 0,
+        "read": 0.738968488259
+      },
+      "final_record": {
+        "admissible": true,
+        "closure": 0.895046148023,
+        "event_id": "e5_closure",
+        "failures": 0,
+        "read": 0.895046148023
+      },
+      "same_e1_entropy": 0.75,
+      "written_entropy_at_e0": 0.2
+    }
+  ],
+  "rejecting_controls": [
+    {
+      "altered_field": "prior_dependency",
+      "failure_reasons": [
+        "missing_prior_event_dependency:e1_disruption->missing"
+      ],
+      "numeric_write_persists": true,
+      "read_available": false
+    },
+    {
+      "altered_field": "provenance_id",
+      "failure_reasons": [
+        "provenance_lineage_violation:e1_disruption:P1"
+      ],
+      "numeric_write_persists": true,
+      "read_available": false
+    }
+  ],
+  "source_blob": "797951f651014ce4b5bf753bb478dedfc0c0cabe"
+}

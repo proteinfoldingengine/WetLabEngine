@@ -1,0 +1,21 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "3eed004b75346d34ca6b0698cf27f213da4f6733",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "11eeeb512d57cc98b6760242aeb530d2c6b86569f33e7c3202d662093bf40fe3",
+  "request_sha256": "b28a8ded5d1c6c857e150f66eadda2156539ae55ee068b014b418c7cbe75c64e",
+  "response_sha256": "6a0388cea8cb9894ce63486b63bc94e9f8bfa379b028b1eb7859a0c588c4a575",
+  "run_id": "44952553649",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md": "a21acad73c80cb748f2e42c244f6db53146c2bf2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/V1712_PATCH_WRITE.md": "24c93fc4c4ccd869b3efc1f47360202c3b0e7f4d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_v1712_patch_write.py": "bca6e31df19a97c28e6df0a76549481857e7f96a",
+    "Tmp/TOE/Einstein 7/v1472_20_uci_candidate_package/v1472_20_uci_incident_adapter.py": "4926407e0694c1e049ca74feab1e5b38cc3c2ad6",
+    "Tmp/TOE/Einstein_13_V1720 retained_bridge_core/v1712_rg.py": "bc4504edbde3bc35815959f7f52288a57dced81a",
+    "handoff/replay.json": "8282dd9ac055429e09c2d247668df4062e172e3a"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "3eed004b75346d34ca6b0698cf27f213da4f6733"
+}

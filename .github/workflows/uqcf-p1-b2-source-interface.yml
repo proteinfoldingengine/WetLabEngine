@@ -1,0 +1,130 @@
+name: Verify P1 versus B2 source interface
+on:
+  push:
+    branches: [gpt/v1686-recombination-audit-20261118]
+    paths: ['.github/workflows/uqcf-p1-b2-source-interface.yml']
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_b2_source_interface.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md
+            /ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py
+            /ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+      - name: Replay exact source-interface audit
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          mkdir -p handoff
+          python3 "$SCI/check_p1_b2_source_interface.py" handoff > handoff/replay.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: p1-b2-source-interface-replay
+          path: handoff
+          if-no-files-found: error
+
+  argument-review:
+    needs: replay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_b2_source_interface.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_B2_SOURCE_INTERFACE.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_p1_b2_source_interface.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py
+            /ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: p1-b2-source-interface-replay
+          path: handoff
+      - name: Independently adjudicate the complete source-interface claim
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_p1_b2_source_interface.py" review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: p1-b2-source-interface-review
+          path: review_evidence
+          if-no-files-found: error
+
+  replay-publication:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_b2_source_interface.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_B2_SOURCE_INTERFACE.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_WORK_CONNECTION_RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_p1_b2_source_interface.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/review_common_field.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/source_axiom_canary.py
+            /ResearchHistory/UQCF-GEM/demos/v15.39-higher-incidence-source-axioms/docs/RESULTS.json
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/README.md
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/PROOFS.md
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: p1-b2-source-interface-replay
+          path: earlier
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: p1-b2-source-interface-review
+          path: review_evidence
+      - name: Verify exact replay and independently audit the raw review
+        run: |
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          mkdir -p handoff
+          python3 "$SCI/check_p1_b2_source_interface.py" handoff > handoff/replay.json
+          diff -r earlier handoff
+          python3 "$SCI/review_p1_b2_source_interface.py" audit review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: p1-b2-source-interface-publication
+          path: |
+            handoff/replay.json
+            review_evidence/publication_audit.json
+          if-no-files-found: error

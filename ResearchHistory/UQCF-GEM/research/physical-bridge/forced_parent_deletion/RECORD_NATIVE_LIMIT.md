@@ -1,0 +1,29 @@
+# Existing record operations and the fresh logarithmic probe
+
+This follow-up answers the read stage of the [conditional logical-record result](SAME_PORT_RESPONSE.md). The cross response increase was obtained by applying a fresh normalized logarithmic tilt to the logical state. We checked whether the existing adaptive record program can read that increase or implement its exact dependence on the supplied coherence. Its entire original record law is preserved by the pinching. A bounded-copy instrument without classical access to the unknown coherence has a stronger exact obstruction on the declared logical family.
+
+## The actual record controller
+
+In v15.14 adaptive.py, advance constructs the chosen instrument from already realized record values. The B2 computation consumes A1 and B1 through the declared dependency. In v15.15 coherent_records.py, controller_gate acts block diagonally on already written record bits and copy_gate writes the next bit. In v15.16 recoverability.py, basis checks the sharp full-history form \(K_r=|r\rangle\langle b_r|\) of the completed encoding. These operations occur in the original model. The schedule, realized branch values in advance and mask are supplied there. The code enumerates the legal histories and does not derive an outcome law beyond the model instrument.
+
+For a fixed legal schedule and any prefix \(p\), the prefix effect is \(\sum_{r\succeq p}K_r^\dagger K_r\), by completeness of the remaining adaptive branch operations. Each summand is the rank-one projector in the completed record basis. The partial pinch fixes all these effects. Consequently every prefix and complete-string probability is identical before and after pinching, and so is each next-outcome conditional probability on positive-weight prefixes. Each complete unnormalized branch state \(K_r\rho K_r^\dagger\) is identical as well. Different intermediate conditional densities are compatible with this proof. For a pinch on already written memory registers during the coherent version, the block-diagonal later controls and fresh writes commute with that pinch, giving the same law for the subsequent record reads. A controller that depends only on those records cannot distinguish this pinch through its existing record distribution. This is an application of the sharp code to the specific later consumer, preserving the all-complete-read result already in the v15.16 README.
+
+## Exact response from an unknown preparation with a finite copy bound
+
+Take the same faithful family \(\rho(x)\) with the parity parameter fixed at \(0<|z|<1\) and \(x\) unknown on a nonempty open interval in \((-1,1)\). Its entries are affine in \(x\). The pre-pinch cross susceptibility to the fresh normalized logarithmic tilt is
+\[
+\chi(x)=z\,x/\operatorname{atanh}(x),
+\]
+with its continuous value \(z\) at zero. The post-pinch slope is \(z\).
+
+Fix an arbitrary uniform bound \(n\) on the number of independent copies used per experiment. At probe setting \(h\), the entire state-independent instrument, including finite-copy feedforward, fixed ancillas and summing the successes, defines a linear unnormalized read on \(\rho(x)^{\otimes n}\). Unused copies can be ignored. Finite means and success probabilities are polynomials of degree at most \(n\) in \(x\). Conditioning on positive success gives a quotient of such polynomials. This is the standard fixed-copy polynomial expansion, also described in [Brun, §II](https://arxiv.org/html/quant-ph/0401067v2#S2). A selected branch is allowed, with positive success on the interval of evaluation. The apparatus can depend on \(h\) and \(z\), but receives no classical description of \(x\).
+
+This bounds the degree even if the desired response is specified as a derivative. Difference quotients of the conditioned mean at \(h\) and \(0\) are rational of numerator and denominator degrees at most \(2n\). Suppose the derivative exists and is finite at each \(x\) in the interval. Choose \(h_k\to0\), normalize each numerator/denominator pair jointly to unit coefficient norm, and extract a convergent coefficient subsequence. If the limit is \((P,Q)\), pointwise convergence to the derivative \(f(x)\) gives \(P(x)=Q(x)f(x)\). If \(Q\) were identically zero, \(P\) would vanish on the interval and also be zero, violating normalization. Therefore the derivative agrees with a rational function away from finitely many zeros of \(Q\). This argument needs no assumption of differentiable instrument coefficients.
+
+For the candidate slope, real analyticity of \(P-Q\chi\) extends vanishing from the observed interval throughout \((-1,1)\). As \(x\to1^-\),
+\[
+\chi(x)\sim\frac{2z}{\log(2/(1-x))}.
+\]
+A nonzero rational function tending to zero there has an integer-order zero and decays at least linearly in \(1-x\) after cancellation. The logarithmic law contradicts that behavior. Thus no fixed uniform copy bound implements the exact \(\chi(x)\) in this sense. The same reasoning applies to the difference of two bounded-copy response functions, whose finite difference quotients still have bounded degree. Hence it also excludes exact realization of the slope increment \(z-\chi(x)\). At \(x=0\) or \(z=0\) the specific increment vanishes. Finite calibration points, state-dependent programming, approximation, an unbounded number of copies, or an actual separately justified joint-drive law fall outside the proof.
+
+The earlier [single-copy all-input operation theorem](../exponential_operation_bridge/RESULT.md) tested the whole tilted state. This proof concerns the earlier proposed fixed scalar read on its specific affine family, including conditioning and any uniform finite copy bound. Its assumptions are supplied operational constraints for this candidate test, and it does not add an instrument or establish a physical geometry. The fresh log tilt remains a mathematically defined response, with its physical implementation to be supplied or independently derived.

@@ -1,0 +1,63 @@
+{
+  "archives": [
+    {
+      "bytes": 64657,
+      "id": 14722710837,
+      "members": {
+        "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "prompt.txt": "3a78c08eeab9efd54284f555176005db69e869fe9858e36988bc0952a2d6c0a5",
+        "receipt.json": "c246d4c871a39c1ff9c393b5a06e9a698b9e573e21efda95ec74bd81969e6198",
+        "request.json": "02a9a85d518827a897658c979c257817fb53867f0650e18092755a3fd9cf5854",
+        "response.json": "f093897eb4ab6a79cd78beaad1526ab56e0cd2819670af0715b9d59f9021c6d8",
+        "review.txt": "847e5ae6c5e2ab1edbabe80d1ee246d97890af1d84795f775cb9c18292d98839"
+      },
+      "name": "review",
+      "sha256": "edd9a50075d6a4c4dbfdac4ce69d8e547c60b13ce2f55b321e9c37eb81f50a5a"
+    },
+    {
+      "bytes": 1189,
+      "id": 14722122519,
+      "members": {
+        "publication_audit.json": "03c4b9cfcd47dbd66aad19e996530d893590281b2c8cc36fe6da8e7acfe6b59d"
+      },
+      "name": "publication",
+      "sha256": "36b7cc148787af5a0bde189dc035b3235016396604156d87f5b459083dd2b932"
+    },
+    {
+      "bytes": 3100,
+      "id": 14722009375,
+      "members": {
+        "bracket.json": "caa0e03ca9ae64cbfb401d9ceddfce14fdeae9fe9a2b6636bb575b08cf895b4e",
+        "paired.json": "eaf475d110253e6c6971a036b5949ff709e8df4d1b57a026d03ca89d4c4ee654",
+        "single.json": "ed30d626004f98a849c322ac4c04ed00bedbafd809e80baaebc2e49c2f7df95e"
+      },
+      "name": "replay",
+      "sha256": "78cea886c344450677931a302a4a1d1ff60da178428b8f4e6775609dbe0c2f72"
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 136963777411,
+      "name": "exact-replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 136963890776,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 136964051034,
+      "name": "replay-publication"
+    }
+  ],
+  "logs": {
+    "argument-review": "1e318c6140d63f94709aea2ae4d12e9ec7a6893893ade0aee07ba2f34d463240",
+    "exact-replay": "1a3426cf9a9754923e969a76eb5af3a52512054a469aa837db30361afb15412c",
+    "replay-publication": "c2b9deb66881984161a497a6b81baaed9bf4c9e98a7ec59c1c03dc4ca068b8da"
+  },
+  "logs_sha256": "000646f256c45ecf09b62daefb0a01c4184a1564d800b1c9b6a5a77034a56feb",
+  "run": 44942894826,
+  "sha": "d43533a3abc69995f54731377c98a6a8c01aba58"
+}

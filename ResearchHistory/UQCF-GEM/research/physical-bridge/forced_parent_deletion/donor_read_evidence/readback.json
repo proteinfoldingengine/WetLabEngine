@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 1305,
+      "digest": "sha256:0e9e5bf8b75fd99dea641678d8bbdd127d0d2f4d722b9f9eb3cd6c6491a34e4d",
+      "id": 14760118604,
+      "name": "donor-read-publication"
+    },
+    {
+      "bytes": 1441,
+      "digest": "sha256:30b427830472d4e64ebc7d172c12f3c2d38cb18f5b55699e8e290c5111528276",
+      "id": 14759899432,
+      "name": "donor-read-replay"
+    },
+    {
+      "bytes": 48749,
+      "digest": "sha256:8d5ccff8c990c54bdde7f8299559532e8515f0bbeb676e1c9c6f4b080eb6592e",
+      "id": 14759184499,
+      "name": "donor-read-review"
+    }
+  ],
+  "donor_read_certificate_sha256": "0ec64b116a1326138757dc0b441a3e8288443c319d7ac2ff4162a83b90ac9916",
+  "freeze": "95d6c7f65285b369cd479a1ad094c907bd2ca78e",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 137254157466,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 137254198116,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 137254359627,
+      "name": "replay-publication"
+    }
+  ],
+  "local_replay_matches_entire_ci_replay": true,
+  "logged_response_and_audit_match_artifact_bytes": true,
+  "logs_zip_sha256": "74b0a49ca42768d4df0116167a9f3379048122ed11d16968e98b44397c2a546a",
+  "raw_review_response_sha256": "9f316e204197f3bbef5bd1bbb4daaeb9bced1e6c2acc5ae9ea55531de4932c84",
+  "run": 45037421841,
+  "second_ci_replay_and_review_audit": "PASS"
+}

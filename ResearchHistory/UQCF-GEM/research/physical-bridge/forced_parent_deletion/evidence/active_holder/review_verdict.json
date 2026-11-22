@@ -1,0 +1,20 @@
+{
+  "counterexamples": [],
+  "findings": [],
+  "limitations": [
+    "The finite archive counts (12,564 atoms, 2,708 triggers, 144 two-site choices) enumerate a fixed catalogue and do not imply physical frequencies or probabilities.",
+    "The entry points do not subscribe the receiver R to real pruning events; there is no native runtime subscription connecting the source atom to the receiver.",
+    "The actual event law that enforces the distinguishing route or its sufficient local conditions remains unknown.",
+    "The physical system that retains and can use the resulting change is not identified; the physical readout boundary is open.",
+    "Bare admissibility permits the opposite sign in the low branch (e.g., the 6-move alternative route), meaning the specific signature relies on the actual low-branch expansion algorithm rather than just the target and exact profile."
+  ],
+  "missing_assumptions": [],
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Classified 144 cases: 3! label permutations * 4! leaf assignments. R is uniquely identified as the index lacking a private leaf. S has a private leaf and shares one with R. T has a private leaf and shares one with S and R. The second true receiver edit yields +1 (t=2) and -1 (t=3) leaf count changes. The high-branch band consequence (\u03c4=1 forbidden) is distinct from the complement cover algorithm which forces the second edit to be a removal. The claims are strictly bounded to the archived four-label inputs and do not extend to arbitrary routes or physical events.",
+    "Rebuilt star examples 1782/2466: S=B, R=A, T=C. Initial state [19,23,11]. B deletes at v1 (1782, t=2) or v4 (2466, t=3). A's first write adds v2 (mask 23) or v3 (mask 27). Second write adds v3 (mask 31) or removes v3 (mask 19). The remote write at the second own index is signed (+v3 vs -v3). Both paths have 14 moves, with the second write at global move 4. The alternate 6-move route [19,21,11] -> [27,21,11] -> [11,21,11] -> [15,21,11] -> [15,17,11] -> [15,17,9] -> [15,17,1] is exactly admissible and yields the opposite sign in the low branch. Terminal bit stability and common-carrier unit Green blind-port control (potential 0,1,0) are verified.",
+    "Rebuilt 1196/1882: Same source site v1, equal loss, equal bare receiver interface. Paths coincide up to position 12 [31,17,17]. The saved target t=2 vs t=1 causes branch-specific writes at position 13. The t=1 A-only trace is a prefix of the t=2 trace, lacking two-sided discrimination.",
+    "Derived first-role degree law: degree_first(N(after)) - degree_first(N(before)) = -1[trigger fires]. The actual R producer uses complement cover, bit-writes, and recursive leaf remapping. The October profile writer is credited for the stateful R writer and retained target; the present work improves this by providing a structurally identifiable holder, authentic source atoms, two-sided discrimination, and same-site controls. The source-atom result matches historic R inputs, but lacks a native runtime subscription. The mathematical observables are confirmed, while the actual physical event law and readout mechanism remain unknown."
+  ],
+  "verdict": "ACCEPTED"
+}

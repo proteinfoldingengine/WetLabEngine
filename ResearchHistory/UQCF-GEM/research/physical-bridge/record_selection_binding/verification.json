@@ -1,0 +1,117 @@
+{
+  "absolute_tolerance": 1e-14,
+  "basis": [
+    "o",
+    "p",
+    "u",
+    "v"
+  ],
+  "benchmark_identity_diagonal": [
+    1,
+    2,
+    0,
+    1
+  ],
+  "cases": {
+    "canonical_minus": {
+      "benchmark_diagonal": [
+        "1/5",
+        "2/5",
+        "0",
+        "2/5"
+      ],
+      "maximum_absolute_errors": {
+        "benchmark": 0.0,
+        "pinch": 0.0,
+        "selected": 0.0
+      },
+      "operators_agree": false,
+      "record_probability": "4/5",
+      "selected_diagonal": [
+        "1/4",
+        "1/4",
+        "0",
+        "1/2"
+      ]
+    },
+    "canonical_plus": {
+      "benchmark_diagonal": [
+        "1/5",
+        "3/5",
+        "0",
+        "1/5"
+      ],
+      "maximum_absolute_errors": {
+        "benchmark": 1.1102230246251565e-16,
+        "pinch": 0.0,
+        "selected": 0.0
+      },
+      "operators_agree": false,
+      "record_probability": "3/5",
+      "selected_diagonal": [
+        "1/3",
+        "1/3",
+        "0",
+        "1/3"
+      ]
+    },
+    "no_removed_population": {
+      "benchmark_diagonal": [
+        "1/5",
+        "3/10",
+        "0",
+        "1/2"
+      ],
+      "maximum_absolute_errors": {
+        "benchmark": 0.0,
+        "pinch": 0.0,
+        "selected": 0.0
+      },
+      "operators_agree": true,
+      "record_probability": "1",
+      "selected_diagonal": [
+        "1/5",
+        "3/10",
+        "0",
+        "1/2"
+      ]
+    },
+    "retained_parent_only": {
+      "benchmark_diagonal": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "maximum_absolute_errors": {
+        "benchmark": 0.0,
+        "pinch": 0.0,
+        "selected": 0.0
+      },
+      "operators_agree": true,
+      "record_probability": "2/5",
+      "selected_diagonal": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "independent_review": "NOT_REQUESTED",
+  "native_event_binding": "NOT_DERIVED",
+  "numpy": "2.3.5",
+  "parent_contrasts": {
+    "benchmark": "1/5",
+    "nonselective": "0",
+    "selected": "1/12"
+  },
+  "rejected_requests": {
+    "missing_record": "one record must be supplied explicitly; actuality is not derived",
+    "zero_record_weight": "a positive-weight record is required"
+  },
+  "scope": "local bounded source replay",
+  "source": "ResearchHistory/UQCF-GEM/v15/v15.11/ontology_continuity_audit.py",
+  "source_blob": "8871e50f19322adbb62f34ea3837ba8e6cb16c8b",
+  "status": "PASS"
+}

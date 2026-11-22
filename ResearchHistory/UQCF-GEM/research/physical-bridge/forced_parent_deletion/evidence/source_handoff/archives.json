@@ -1,0 +1,63 @@
+{
+  "archives": [
+    {
+      "bytes": 1608,
+      "id": 14721342781,
+      "members": {
+        "publication_audit.json": "db701b0737a53c11ab1aa1c3b5308dcc990227f3c0381cfd68fe9aa514d661a0"
+      },
+      "name": "publication",
+      "sha256": "e8d011b9bd68a095da987380e873bb08412062864f3d5b1c6754b48f3a55cc04"
+    },
+    {
+      "bytes": 4872,
+      "id": 14721078504,
+      "members": {
+        "adjacent.json": "b8502ebfb002ad43a614e177d78d1698d1042d6137c1828c8475c5a0d9295b83",
+        "census.json": "024815696994b7987788817ee8f9ff144d99d40915cb66ace86cbacfb60e5b40",
+        "exact_readout.json": "fce31464f9fe34d6aa2f9af938c11e58e4fce638202d50a94b924eb35c789972"
+      },
+      "name": "replay",
+      "sha256": "c9ffbdee1cfc29d226519ea393bf7f96280b8effcd55f77dbf26b8530320d06d"
+    },
+    {
+      "bytes": 146101,
+      "id": 14720619533,
+      "members": {
+        "model_metadata.json": "17d64c787b64bfac601dc803c5dd3d3d678126f77707bd65126493b35bcd8438",
+        "prompt.txt": "20a38fdf08eecc756a443bf5417749b3decee77952bd27d76d7dee82b78e2c80",
+        "receipt.json": "cad99318e426570fedeebe7271cc94bb7f9bb920c47fcc6ea771903da60793d3",
+        "request.json": "a101a53e018cbf29c9db6ec5475af994ae57b4abc73678b96f74b896f4a302a5",
+        "response.json": "40b30cce9b2c5a19aa360b585074fe43da040a602eaa00b774337e90c8d8d4e6",
+        "review.txt": "d0877c4947d205edfcae424a78c835e66819f3b060f5143217062d61f512b1c7"
+      },
+      "name": "review",
+      "sha256": "8d4f129f1a66144c792302c7cfea8d7e6eafea56f1273db059e2f5aaa332d737"
+    }
+  ],
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 136957094499,
+      "name": "exact-replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 136957184727,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 136957450357,
+      "name": "replay-publication"
+    }
+  ],
+  "logs": {
+    "argument-review": "b3101dbc3e8d0fb6c40067e22b0acf5dc69b52bfca4baa509a8d3f0975969f60",
+    "exact-replay": "ba8b1937c6fbb00f85346e70e175fcd7e358d3beb48cf965e41fad4f99d36343",
+    "replay-publication": "9f1ede3607dbf3f02d0aa28008d1d22d6d951eda72a34ca0c55a3579016434a9"
+  },
+  "logs_sha256": "f10376e1a157300546ddcf0f82814db8c287d96f44f91fcf755f03405a49aade",
+  "run": 44940725076,
+  "sha": "77c1956704ae2514bfbed4b8b063cc59ac2dadd9"
+}

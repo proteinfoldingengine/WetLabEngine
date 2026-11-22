@@ -1,0 +1,20 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "7545053edc9418848231635b7717aca46928d003",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "b2c48eac807bb89db00637ed96fe8662b04198f4bbf7ae737591934be834302d",
+  "request_sha256": "eabbd02011739d08c095a03d0b02544e2706389977461a4fa9fd67259e59815a",
+  "response_sha256": "d3c6cbb2176d4cf6dbdff3afab6f5a23f8135ccdc03ee8b7eacce41538eeb762",
+  "run_id": "44973935842",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/P1_ORDER_CURVATURE.md": "f5b3d260a2e0dc49f5efa8f9337278166f6f54e3",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_p1_order_curvature.py": "34587438136b2cd39fce7bf019d76b244a6f4347",
+    "handoff/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2",
+    "handoff/replay.json": "8fd0023232fdc9b508c0bde7cf7aab57cb0b4951",
+    "handoff/spatial_graph_curvature_verifier.py": "c8043250f0a61077faabbc029ef7e248905f3f32"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "7545053edc9418848231635b7717aca46928d003"
+}

@@ -1,0 +1,21 @@
+{
+  "verdict": "ACCEPTED",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "substantive_proof_checks": [
+    "The text correctly calculates the initial incidence after the source edit as 1453 (25 roots + 25*4 corners + 50*23 edges + 3 marked + 25*7 internal nonroot parents).",
+    "The text correctly identifies the fixed terminal incidence contribution of 102 from the 25 roots and 77 global leaves.",
+    "The text correctly bounds the terminal holders for the 5 row parents between 15 and 25.",
+    "The text correctly bounds the terminal holders for the edge parent between 2 and 25.",
+    "The text correctly identifies the marked parent terminal holders as 1 (both to b) or 2 (split).",
+    "The text correctly computes the four extremal lengths: 1299, 1300, 1332, and 1333, matching the table.",
+    "The text correctly computes the endpoint counts K = 4^25 * 23^50, which matches the large integer 137369900626569127919715942598229385418793943383832182092025785413140781304303845376.",
+    "The text correctly distinguishes incidence minimization (which counts total deletions) from fewest deletions (which corresponds to maximum terminal incidence).",
+    "The text correctly checks that the nonroot fork forces an actual b write on every shortest complete run, but notes that the existence of this graph function alone does not make it a law of motion, leaving the physical selection principle open.",
+    "The text correctly compares the enumerated scopes (small cases up to 4 vertices) and analytic scopes (the 85-vertex fixture).",
+    "The checker code is reviewed and its operations (small_cases, fixture, terminal_refusals) align with the text's claims without claiming execution."
+  ],
+  "native_bridge_status": "OPEN"
+}

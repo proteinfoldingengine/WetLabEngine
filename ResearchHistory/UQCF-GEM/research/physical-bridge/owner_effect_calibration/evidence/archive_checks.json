@@ -1,0 +1,31 @@
+{
+  "owner-calibration-publication-readback": {
+    "artifact_id": 14459838031,
+    "members": [
+      "publication_audit.json"
+    ],
+    "sha256": "15a0090bb8a13b1cce6c93bedd5f210b21fb1812a0624d5cf42c3adff88ec680",
+    "size_bytes": 938
+  },
+  "owner-calibration-source-replay": {
+    "artifact_id": 14459478333,
+    "members": [
+      "replay.json"
+    ],
+    "sha256": "d8e39e5e83b2d86a085b3365f7dedd9da79de923e959d6bea014db8e16b5bd3d",
+    "size_bytes": 623
+  },
+  "owner-calibration-whole-argument-review": {
+    "artifact_id": 14459388449,
+    "members": [
+      "model_metadata.json",
+      "prompt.txt",
+      "receipt.json",
+      "request.json",
+      "response.json",
+      "review.txt"
+    ],
+    "sha256": "84778ef9e6f08adc6d1421ecd865f8bd808f231e405b72f37583ee55b5dfc360",
+    "size_bytes": 86952
+  }
+}

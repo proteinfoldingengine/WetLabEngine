@@ -1,0 +1,26 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "dd5380e08589ade1865d7ab2e690a01a3498ad46",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "e18e42988bed228cbf8056341a30934b0f9deaf2c98d5d018d3a7542cbad246c",
+  "request_sha256": "fc656bc43953694a4fa06725ef07ccbd00a8d04228ed7e46ab0e48d31af95fad",
+  "response_sha256": "56f9155369f2468e64f026bf80e58abd92da272d4b14e97732cddaf6b05c50d4",
+  "run_id": "44922606347",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v16.22-response-selection-closure/engine.py": "9b71ce47bbef83132f00270f8a9a19e7721864d6",
+    "ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/graph_producer.py": "6c8eca570cda82b64c0d06775672f33977be430a",
+    "ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/producer.py": "7c4f65714d6b9ccda7f4bb0fc378b0daef957fff",
+    "ResearchHistory/UQCF-GEM/demos/v16.48-recursive-chain-repair/star_normalize.py": "d58cc9d1168d219b2869affd2d4ede889ebe579b",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/REMOTE_PORT.md": "158b806478df2dbf06d56e2d13d58926dac324b2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/ROUTED_CHAIN.md": "1bc6ee43c3e91ef46dddecb2dec025f7df289c45",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/TERNARY_CHILD.md": "a0ea3822b94f4c3b90b0c98d17fd7f0d13b263bf",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_routed_chain.py": "29bf8ba4c5cdda5b824f4ad51563fccd617789e4"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "dd5380e08589ade1865d7ab2e690a01a3498ad46"
+}
