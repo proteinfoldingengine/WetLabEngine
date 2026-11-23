@@ -1,4 +1,4 @@
-name: Review four-edit recovery exclusion and retained parity
+name: Recheck editing cases and parity scope for geometry recovery
 on:
   push:
     branches: [gpt/geometry-depth-two-proof]
@@ -39,7 +39,7 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
             /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
             /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
-      - name: Request five worked analytical checks
+      - name: Request the whole argument and four explicit scope checks
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/review_recovery_constraints.py review review_evidence
