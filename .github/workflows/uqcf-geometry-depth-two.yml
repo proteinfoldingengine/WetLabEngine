@@ -1,0 +1,87 @@
+name: Review analytic two-edit geometry recovery proof
+on:
+  push:
+    branches: [gpt/geometry-depth-two-proof]
+    paths: [".github/workflows/uqcf-geometry-depth-two.yml"]
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  argument-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_REPAIR.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_DELAY.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
+      - name: Request five worked analytical checks
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/review_depth_two.py review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: depth-two-review
+          path: review_evidence
+          if-no-files-found: error
+  publication-audit:
+    needs: argument-review
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_REPAIR.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/GEOMETRY_DELAY.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: depth-two-review
+          path: review_evidence
+      - name: Reconstruct the prompt and verify exact review bytes
+        run: python3 ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/review_depth_two.py audit review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: depth-two-publication-audit
+          path: review_evidence/publication_audit.json
+          if-no-files-found: error
