@@ -42,7 +42,7 @@ scoped proof passes. Use REVISE or FAIL with specific objections otherwise.
 Enumerate worked checks even if the verdict is adverse.
 """
 
-def main():
+def run_review(question, documents, topics):
     raw_driver = (ROOT / DRIVER).read_bytes()
     header = f"blob {len(raw_driver)}\0".encode()
     if hashlib.sha1(header + raw_driver).hexdigest() != DRIVER_BLOB:
@@ -51,13 +51,12 @@ def main():
     review = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(review)
     review.ROOT = ROOT
-    review.DOCUMENTS = DOCUMENTS
-    review.QUESTION = QUESTION
+    review.DOCUMENTS = documents
+    review.QUESTION = question
     review.main()
 
     output = Path(sys.argv[2])
     verdict = json.loads((output / "review.txt").read_bytes())
-    topics = {"minimum", "fixture", "same_view", "different_views", "scope"}
     checks = verdict.get("proof_checks")
     if (
         not isinstance(checks, dict)
@@ -70,4 +69,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run_review(QUESTION, DOCUMENTS, {"minimum", "fixture", "same_view", "different_views", "scope"})
