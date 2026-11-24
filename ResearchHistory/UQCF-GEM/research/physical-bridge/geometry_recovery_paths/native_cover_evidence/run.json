@@ -1,0 +1,57 @@
+{
+  "run_id": 45328135077,
+  "attempt": 1,
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45328135077",
+  "head": "e933ddbd43af5b4bfb8e8d390e094bd843134cd3",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "conclusion": "success",
+  "artifact_prefix": "native-cover",
+  "jobs": [
+    {
+      "name": "replay",
+      "id": 138222561896,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138222562245,
+      "conclusion": "success"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138222562302,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 138224584491,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "native-cover-replay",
+      "id": 14890956879,
+      "digest": "sha256:247c62db4d72d172ad750897cf3f650c5dd7395555d38315ef239a5b70108aae",
+      "size": 31000
+    },
+    {
+      "name": "native-cover-publication",
+      "id": 14890537961,
+      "digest": "sha256:c8e3c60c1d6ce012d64a48445e291bc4c28334e01f2452454938b480783f1f29",
+      "size": 7001
+    },
+    {
+      "name": "native-cover-review",
+      "id": 14890397584,
+      "digest": "sha256:a9b9a13222fc5309d92dec1e76a879cddab29be203ac3cc07434ca15c017c6d4",
+      "size": 114314
+    },
+    {
+      "name": "native-cover-foundation",
+      "id": 14889709490,
+      "digest": "sha256:414fb035901ca54aed9e47362c58efe62c6a10478dd7759434ba0caa67c91b6b",
+      "size": 306985
+    }
+  ]
+}
