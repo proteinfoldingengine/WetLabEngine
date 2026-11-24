@@ -1,0 +1,430 @@
+{
+  "archive_sha": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "cases": {
+    "archive": {
+      "admitted": [
+        [
+          12,
+          2
+        ]
+      ],
+      "after_work_sha256": "23cf69a87212a224aa1187f2850931c7ab15fe2b492ae852c391ca007c7c450c",
+      "degree_eligible": [
+        [
+          12,
+          2
+        ]
+      ],
+      "domain_sha256": "fcfd1b91f8f32090b9a83f1d7be40870972e53f3758c510b9e8c8d005eb08fe6",
+      "grades": [
+        "2",
+        "2",
+        "1"
+      ],
+      "minimum": "1984",
+      "source_gain": "2",
+      "source_root": [
+        "241",
+        "243"
+      ],
+      "trace": {
+        "aggregate_before_second": 0,
+        "available": 32575,
+        "calls": [
+          [
+            0,
+            1
+          ],
+          [
+            12,
+            2
+          ]
+        ],
+        "candidate_return": [
+          [
+            12,
+            2
+          ]
+        ],
+        "exit": "completed",
+        "face_invariant": [
+          "1/64",
+          "0"
+        ],
+        "minimum_seen": "1984",
+        "raw_source_event_sha256": "6a93b54d7c8c1a94473250f32846ca0545e39580d4244a02493cbb34781331f6",
+        "receiver_root": [
+          "242",
+          "244"
+        ],
+        "same_work_object": true,
+        "verified": [
+          [
+            0,
+            1
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      "typed_source_sha256": "ff58eb24b4a81ea55fee3c0a44d6237bc446fde297c0caba89f6149596f64b3c"
+    },
+    "high17": {
+      "admitted": [],
+      "after_work_sha256": "e067a131100bc8dbe51fa2821a8048858497ec4bd5ff4d2e0b605123e911c105",
+      "degree_eligible": [],
+      "domain_sha256": "2d5f116a850deaa71bad5f61d141c0f8c64a6fedfb3a1bbb5ae989362139814e",
+      "grades": [
+        "46/17",
+        "14/17",
+        "25/17"
+      ],
+      "minimum": "572416/289",
+      "source_gain": "46/17",
+      "source_root": [
+        "4085/17",
+        "243"
+      ],
+      "trace": {
+        "aggregate_before_second": 0,
+        "calls": [
+          [
+            0,
+            1
+          ]
+        ],
+        "exit": "minimum guard",
+        "minimum_seen": "572416/289",
+        "raw_source_event_sha256": "6a93b54d7c8c1a94473250f32846ca0545e39580d4244a02493cbb34781331f6",
+        "same_work_object": true,
+        "verified": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "typed_source_sha256": "ff58eb24b4a81ea55fee3c0a44d6237bc446fde297c0caba89f6149596f64b3c"
+    },
+    "high5": {
+      "admitted": [],
+      "after_work_sha256": "ab884c2a301dce1e245159cbcf4db0f39dae03dea8baa9cd86f311cd18d00e55",
+      "degree_eligible": [],
+      "domain_sha256": "36843504fa724989b6fbff862510905cf1360c7f4a5f885a51b801993c71af22",
+      "grades": [
+        "14/5",
+        "2/5",
+        "9/5"
+      ],
+      "minimum": "49504/25",
+      "source_gain": "14/5",
+      "source_root": [
+        "1201/5",
+        "243"
+      ],
+      "trace": {
+        "aggregate_before_second": 0,
+        "calls": [
+          [
+            0,
+            1
+          ]
+        ],
+        "exit": "minimum guard",
+        "minimum_seen": "49504/25",
+        "raw_source_event_sha256": "6a93b54d7c8c1a94473250f32846ca0545e39580d4244a02493cbb34781331f6",
+        "same_work_object": true,
+        "verified": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "typed_source_sha256": "ff58eb24b4a81ea55fee3c0a44d6237bc446fde297c0caba89f6149596f64b3c"
+    },
+    "low17": {
+      "admitted": [],
+      "after_work_sha256": "a8f09b012e304048d0d84cc494e279afffe816ba131c61163a504929db03b797",
+      "degree_eligible": [],
+      "domain_sha256": "9f56c5c4014b621840a707689c5e516b3de232b5744dcd4bd7a5d2e82cecd01b",
+      "grades": [
+        "14/17",
+        "46/17",
+        "25/17"
+      ],
+      "minimum": "1984",
+      "source_gain": "14/17",
+      "source_root": [
+        "4117/17",
+        "243"
+      ],
+      "trace": {
+        "aggregate_before_second": 0,
+        "available": 32575,
+        "calls": [
+          [
+            0,
+            1
+          ]
+        ],
+        "candidate_return": [],
+        "exit": "singleton guard",
+        "minimum_seen": "1984",
+        "raw_source_event_sha256": "6a93b54d7c8c1a94473250f32846ca0545e39580d4244a02493cbb34781331f6",
+        "same_work_object": true,
+        "verified": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "typed_source_sha256": "ff58eb24b4a81ea55fee3c0a44d6237bc446fde297c0caba89f6149596f64b3c"
+    },
+    "low5": {
+      "admitted": [],
+      "after_work_sha256": "3db65f1b915d7720af3b404a4af299f2a861fdd95dff62df8f53c6ef16a47903",
+      "degree_eligible": [],
+      "domain_sha256": "a267b9cdc941c919e22e6f05a2dacea0a6b1d0e643dc3fd1007f68a86c0aa00e",
+      "grades": [
+        "2/5",
+        "14/5",
+        "9/5"
+      ],
+      "minimum": "1984",
+      "source_gain": "2/5",
+      "source_root": [
+        "1213/5",
+        "243"
+      ],
+      "trace": {
+        "aggregate_before_second": 0,
+        "available": 32575,
+        "calls": [
+          [
+            0,
+            1
+          ]
+        ],
+        "candidate_return": [],
+        "exit": "singleton guard",
+        "minimum_seen": "1984",
+        "raw_source_event_sha256": "6a93b54d7c8c1a94473250f32846ca0545e39580d4244a02493cbb34781331f6",
+        "same_work_object": true,
+        "verified": [
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "typed_source_sha256": "ff58eb24b4a81ea55fee3c0a44d6237bc446fde297c0caba89f6149596f64b3c"
+    },
+    "root_only": {
+      "admitted": [
+        [
+          12,
+          2
+        ]
+      ],
+      "after_work_sha256": "23cf69a87212a224aa1187f2850931c7ab15fe2b492ae852c391ca007c7c450c",
+      "degree_eligible": [
+        [
+          12,
+          2
+        ]
+      ],
+      "domain_sha256": "fcfd1b91f8f32090b9a83f1d7be40870972e53f3758c510b9e8c8d005eb08fe6",
+      "grades": [
+        "2",
+        "2",
+        "2"
+      ],
+      "minimum": "1984",
+      "source_gain": "2",
+      "source_root": [
+        "242",
+        "244"
+      ],
+      "trace": {
+        "aggregate_before_second": 0,
+        "available": 32575,
+        "calls": [
+          [
+            0,
+            1
+          ],
+          [
+            12,
+            2
+          ]
+        ],
+        "candidate_return": [
+          [
+            12,
+            2
+          ]
+        ],
+        "exit": "completed",
+        "face_invariant": [
+          "1/64",
+          "0"
+        ],
+        "minimum_seen": "1984",
+        "raw_source_event_sha256": "6a93b54d7c8c1a94473250f32846ca0545e39580d4244a02493cbb34781331f6",
+        "receiver_root": [
+          "243",
+          "245"
+        ],
+        "same_work_object": true,
+        "verified": [
+          [
+            0,
+            1
+          ],
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      "typed_source_sha256": "4cafa7aedbe86aa0dd1748c2498c8e362fa88f87ad9fc7e663a4d18e1dbd0d4b"
+    }
+  },
+  "charts": 25,
+  "holder_signs": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      -1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      9,
+      1
+    ],
+    [
+      10,
+      1
+    ],
+    [
+      11,
+      -1
+    ],
+    [
+      12,
+      -1
+    ],
+    [
+      13,
+      -1
+    ],
+    [
+      14,
+      1
+    ],
+    [
+      15,
+      1
+    ],
+    [
+      16,
+      1
+    ],
+    [
+      17,
+      -1
+    ],
+    [
+      18,
+      1
+    ],
+    [
+      19,
+      1
+    ],
+    [
+      20,
+      1
+    ],
+    [
+      21,
+      1
+    ],
+    [
+      22,
+      1
+    ],
+    [
+      23,
+      1
+    ],
+    [
+      24,
+      1
+    ]
+  ],
+  "initial_rows_sha256": "f2fab8412f25d525c0fe1152546412d5bbdfc5954042718f4c73b606157b8b58",
+  "legal": 32575,
+  "legal_sha256": "3bfd9504c7e6fc99e0ef6b8fb531b4f21efcc84942ee08369154bb23212aee6b",
+  "obstruction": {
+    "complement_neighbors": [
+      7,
+      11,
+      13,
+      17
+    ],
+    "gap_to_b": 14,
+    "gap_to_neighbors": 4,
+    "max_missing_old_neighbors": 2,
+    "old_a_neighbors": [
+      1,
+      4,
+      5,
+      20
+    ],
+    "untouched_minimum_edges_at_least": 42
+  },
+  "old_work_sha256": "6008c83d8bebcb08f398fbe323527b186943eb77b6341872c8e4a58ebb0906fe",
+  "rejecting_controls": {
+    "duplicated_menu": true,
+    "false_gain": true,
+    "false_post_object_equality": true,
+    "false_receiver_execution": true,
+    "missing_menu": true,
+    "substituted_menu": true,
+    "wrong_holder_sign": true
+  },
+  "source_rows_sha256": "4ffbbc2f1ac44532457a7a53d738dbdaee9a178bb92b104bfd816b30ab1376d1",
+  "universe_sha256": "a351562b6eb26d23797e7a4ccd4643b037dfbfa9b1d19011e1b86729f6364e59",
+  "vertices": 1416
+}
