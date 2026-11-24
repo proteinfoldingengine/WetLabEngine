@@ -1,0 +1,57 @@
+{
+  "archives": [
+    {
+      "digest": "sha256:147c127973acba79a21853dada1bb116757e54f668af6916247d0ea1d1cb615e",
+      "id": 14943296564,
+      "name": "cover-member-replay",
+      "size": 93558
+    },
+    {
+      "digest": "sha256:b438d3c8df56a20e50f395b2ed4f032e9f9f572a843de28658c1c9b9d64e91ba",
+      "id": 14943291616,
+      "name": "cover-member-review",
+      "size": 70726
+    },
+    {
+      "digest": "sha256:5aa7c5434b23866f7907147a9b5d7cc39703cc696f89d250056f95e9c70775e7",
+      "id": 14943151965,
+      "name": "cover-member-publication",
+      "size": 54867
+    },
+    {
+      "digest": "sha256:908d8284d084ac855aa332c63752e1739bb6c3c8e9ec7cf3b0cb60dc19c95d07",
+      "id": 14941699176,
+      "name": "cover-member-foundation",
+      "size": 306987
+    }
+  ],
+  "artifact_prefix": "cover-member",
+  "conclusion": "success",
+  "head": "64f5de5eb33b82bc4a20b2bf3679cf514059cce6",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "jobs": [
+    {
+      "conclusion": "success",
+      "id": 138607134178,
+      "name": "replay"
+    },
+    {
+      "conclusion": "success",
+      "id": 138607134369,
+      "name": "argument-review"
+    },
+    {
+      "conclusion": "success",
+      "id": 138607134377,
+      "name": "foundational-regression"
+    },
+    {
+      "conclusion": "success",
+      "id": 138607819732,
+      "name": "publication"
+    }
+  ],
+  "run_id": 45439717352,
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45439717352",
+  "workflow_sha": "64f5de5eb33b82bc4a20b2bf3679cf514059cce6"
+}
