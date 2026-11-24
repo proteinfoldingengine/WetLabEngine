@@ -63,10 +63,12 @@ jobs:
           (cd review_sources && python3 ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py ../handoff/original) | tee handoff/original-comparator.log
           timeout 720s python3 "$SCI/check_odd_source.py" review_sources handoff/odd_source_certificate.json | tee handoff/odd-replay.log
           cmp "$SCI/odd_source_certificate.json" handoff/odd_source_certificate.json
-          cp "$SCI/check_odd_source.py" "$SCI/ODD_SOURCE_CHECK_PLAN.md" "$SCI/ODD_SOURCE_ROOT_RECORD.md" handoff/
+          python3 "$SCI/check_work_partition.py" handoff/original/geometry_repair_certificate.json handoff/odd_source_certificate.json handoff/WORK_PAIR_READBACK.json
+          cmp "$SCI/WORK_PAIR_READBACK.json" handoff/WORK_PAIR_READBACK.json
+          cp "$SCI/check_work_partition.py" "$SCI/check_odd_source.py" "$SCI/ODD_SOURCE_CHECK_PLAN.md" "$SCI/ODD_SOURCE_ROOT_RECORD.md" handoff/
           git rev-parse HEAD > handoff/science-head.txt
           git -C review_sources rev-parse HEAD > handoff/inherited-head.txt
-          (cd handoff && sha256sum odd_source_certificate.json original/geometry_repair_certificate.json check_odd_source.py ODD_SOURCE_CHECK_PLAN.md ODD_SOURCE_ROOT_RECORD.md > SHA256SUMS)
+          (cd handoff && sha256sum odd_source_certificate.json WORK_PAIR_READBACK.json check_work_partition.py original/geometry_repair_certificate.json check_odd_source.py ODD_SOURCE_CHECK_PLAN.md ODD_SOURCE_ROOT_RECORD.md > SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -219,6 +221,9 @@ jobs:
           timeout 720s python3 "$SCI/check_odd_source.py" review_sources publication/odd_source_certificate.json | tee publication/fresh-replay.log
           cmp handoff/odd_source_certificate.json publication/odd_source_certificate.json
           cmp "$SCI/odd_source_certificate.json" publication/odd_source_certificate.json
+          python3 "$SCI/check_work_partition.py" handoff/original/geometry_repair_certificate.json publication/odd_source_certificate.json publication/WORK_PAIR_READBACK.json
+          cmp handoff/WORK_PAIR_READBACK.json publication/WORK_PAIR_READBACK.json
+          cmp "$SCI/WORK_PAIR_READBACK.json" publication/WORK_PAIR_READBACK.json
           python3 "$SCI/review_odd_source.py" audit review_evidence
           cp review_evidence/publication_audit.json foundation/VERIFICATION.json publication/
           echo "$UQCF_WORKFLOW_SHA" > publication/workflow-head.txt

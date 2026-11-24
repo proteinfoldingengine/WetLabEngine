@@ -1,8 +1,14 @@
 """Challenge the preregistered odd-source endpoint proof and its causal controls."""
+import json
+from pathlib import Path
+import sys
+
 from review_depth_two import run_review
 
 DOCUMENTS = {
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/ODD_SOURCE_ROOT_RECORD.md": "55239e96cd43ccd5d290573b8a525d7339035751",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_work_partition.py": "076980bd4f1d51963623dca0177f3b8ddcc5985e",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/WORK_PAIR_READBACK.json": "b4d4c363d04519cadcd6fefec08f2cfc7140943f",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/ODD_SOURCE_ROOT_RECORD.md": "c5d7c525cdf8d5fd0cd0300fbb58bdc37e384bca",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/ODD_SOURCE_CHECK_PLAN.md": "58cec3ab747f5dd1530e4f85df7dccd60f3d766c",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_odd_source.py": "a1a0706b7d9687ae9c1b57d82a888b62b42adf8c",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/odd_source_certificate.json": "42de12480f4cff0a06906914d974eb7f63f54f77",
@@ -43,8 +49,20 @@ the downstream edits identical. Selecting admitted endpoints is a different comp
 Evaluate whether the manuscript distinguishes these operations and whether either predicts
 a source-dependent local update without conditioning. If the shortest-depth bound is
 valid, give the reason for *all* paths, as well as the witness. Give verdict REVISE or
-FAIL whenever warranted. Return the requested object, with no text outside it.
+FAIL whenever warranted. Also return an object pair_checks with exactly the structure and
+integer values of WORK_PAIR_READBACK.json IF your independent reconstruction agrees.
+Otherwise return your computed values and name the defect. Rebuild the gain classes from
+the ordered cuts and the initial torus. In prose distinguish all four intersections of
+old minimum membership with gain 0 or 2, check the examples (0,1) and (0,7), and reconcile
+them with the new minimum. Explain why W_0,12 changes immediately while the local root
+stays fixed, using the memberships of each source leaf. Confirm the universal lower bound
+only under odd total source loss at the recovered endpoint. Give the causal limitations.
+Return the requested object with no text outside it.
 """
 
 if __name__ == "__main__":
     run_review(QUESTION, DOCUMENTS, TOPICS)
+    expected = json.loads(Path(__file__).with_name("WORK_PAIR_READBACK.json").read_bytes())
+    answer = json.loads((Path(sys.argv[2]) / "review.txt").read_bytes())
+    if json.dumps(answer.get("pair_checks"), sort_keys=True) != json.dumps(expected, sort_keys=True):
+        raise ValueError("The reviewer and exact pair-partition readback disagree")
