@@ -1,0 +1,19 @@
+# Fixed-pair root after a native source cut
+
+This checkpoint precedes numerical execution. Historical algorithms are pinned to `e61d5b0e827f7b412824ad46021e2ad6cc6f7875`. The preceding cover-return proof is at `60e985d1d541fa1d5145fb4666d3aa5ebbe4069e`.
+
+## Question
+
+Can the original pair of charts detect loss of an existing grade measurement after a source cut? Does fidelity to that one reading constrain where a repair must go, irrespective of how long it takes? Does the archived gluing operation actually request or perform the write?
+
+Use only same-Genesis prefix views, the existing v16.26 legal duplicate-leaf deletion, extensive P1 grade restriction, and v16.23 positive gluing. For star witnesses the original resolved root atom and the conserved total are separate measured quantities. Keep the underlying fine grade and the starting receiver fixed across histories. Select the original pair from the pre-event configuration whenever claiming uniqueness.
+
+## Falsifiable predictions and controls
+
+1. On a star, the unmodified binary positive gluing function on fixed charts R,S reports the fine root grade plus the grades of all leaves absent from their current union. For a full prior union and a strictly positive grade, exact equality to its old resolved root is equivalent to full current pair coverage. If S permanently drops j, such equality forces j into R at every endpoint, without a supplied cover number or edit budget. Check helper-only bypass, restoration of S, direct repair, and identical final R records reached by adding both candidate leaves.
+2. At equal transferred grades compare two legal cuts by the same S from the same state, one leaf already shared with R, the other held by a helper outside R. Test whether both local root numbers match between arms while the numerical root returned by the fixed pair differs. Include two equally graded exclusive siblings as a null control. Compare all-chart gluing, root-only restriction and the complete receiver-local record in both arms.
+3. On arbitrary finite rooted trees jointly observing two views distinguishes exactly the fine-grade modes preserved by their union. Test the proposed factor criterion between pairs using exact ranks of the stacked native pushforward, independent subtree coordinates, and two strictly positive indistinguishable grade assignments for missing modes. At a single lost leaf, the surviving parent gains its grade in the union. A deeper cut can leave the root unchanged. An unobserved zero leaf can hide even a star loss. Signed cancellation is a separate control outside the positive hypothesis.
+4. Execute all 1,296 four-leaf, three-chart star preparations where the fixed pair R=0 and S=1 covers every leaf (helper 2). Examine every legal S cut, every unordered pair of such cuts at matched unit leaf grade, and separately all 2,401 globally covering three-chart endpoints on that star. On every ordered-parent-array tree through five vertices, enumerate every pair of prefix views and compare joint kernels across their distinct unions. Preserve row identities and exact results. Add the explicit prior-unique original pair example with two marked leaves, a fixed-pair repair, a helper bypass, masking and the controls above. Replay real historical code; the second implementation must independently enumerate identities and reconstruct answers.
+5. Trace whether the archived deletion and gluing themselves modify the other chart or enforce comparison of the prior resolved root. Distinguish family consistency, a changed joint observable, a receiver-local write and a cross-event obligation. A single admissible stationary receiver with positive coherent data defeats an unconditional delivery claim. No claim about physical gravity follows from this test.
+
+Publish the source, arguments, identity-level results, fresh independent verification, foundation checks, provider review disposition, and original workflow artifacts.
