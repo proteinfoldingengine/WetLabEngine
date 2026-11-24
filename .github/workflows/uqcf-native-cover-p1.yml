@@ -1,0 +1,90 @@
+name: Verify the P1 grades on the native covering event
+on:
+  push:
+    branches: [gpt/geometry-depth-two-proof]
+    paths:
+      - ".github/workflows/uqcf-native-cover-p1.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/review_native_cover_p1.py"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_native_cover_p1.py"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/NATIVE_COVER_P1.md"
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+env:
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths
+  HIST: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  P: ResearchHistory/UQCF-GEM/foundational-closure-verification
+jobs:
+  p1-check-and-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/exact_algebra.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/protocol_types.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/holonomy.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/projection.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.25-pruning-refinement-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure/producer.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/first_response_sector_review/RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/pruning_saturation/RESULT.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/COUPLED_C3_REACTIVE_RESULT.md
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/geometry_specificity_gate.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/incidence_target.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_generation.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/coverage_protected_record/RESULT.md
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/evaluate.py
+      - name: Reproduce both complete P1 vectors and the two grade perturbations
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          mkdir p1_evidence
+          python3 "$SCI/check_native_cover_p1.py" review_sources "$SCI/geometry_selected_record_certificate.json" "$SCI/native_cover_increment_certificate.json" p1_evidence/native_cover_p1_certificate.json | tee p1_evidence/replay.log
+          cmp "$SCI/native_cover_p1_certificate.json" p1_evidence/native_cover_p1_certificate.json
+      - name: Challenge numerical P1 delivery and same-object provenance
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_native_cover_p1.py" review p1_evidence
+      - name: Audit original model request and returned bytes against the frozen objects
+        run: |
+          set -euo pipefail
+          python3 "$SCI/review_native_cover_p1.py" audit p1_evidence
+          echo "$UQCF_WORKFLOW_SHA" > p1_evidence/workflow-head.txt
+          (cd p1_evidence && sha256sum *.json *.txt *.log > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: native-cover-p1-review
+          path: p1_evidence
+          if-no-files-found: error

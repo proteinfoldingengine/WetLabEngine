@@ -1,0 +1,175 @@
+{
+  "arms": {
+    "718": {
+      "historical_after_sha256": "b26cb083c550bf448ba11955dc2078c36b61c2288b82908e7cbd7ea9ebb3cb9a",
+      "historical_before_sha256": "f1ca50ae6319be820f24e134e255f3e11115394a42d30183d375616f26475242",
+      "receiver_event": [
+        12,
+        719
+      ],
+      "source_event": [
+        0,
+        718
+      ],
+      "typed_cross_composition": "incompatible composition endpoints",
+      "variations": {
+        "archived": {
+          "fine_weights": [
+            1,
+            1
+          ],
+          "gains": [
+            1,
+            1
+          ],
+          "retained_x_at_b": [
+            1,
+            1
+          ],
+          "root_a": [
+            245,
+            246
+          ],
+          "root_b": [
+            244,
+            245
+          ]
+        },
+        "complement_plus_one": {
+          "fine_weights": [
+            1,
+            2
+          ],
+          "gains": [
+            1,
+            2
+          ],
+          "retained_x_at_b": [
+            1,
+            1
+          ],
+          "root_a": [
+            245,
+            246
+          ],
+          "root_b": [
+            244,
+            246
+          ]
+        },
+        "source_plus_one": {
+          "fine_weights": [
+            2,
+            1
+          ],
+          "gains": [
+            2,
+            1
+          ],
+          "retained_x_at_b": [
+            2,
+            2
+          ],
+          "root_a": [
+            245,
+            247
+          ],
+          "root_b": [
+            244,
+            245
+          ]
+        }
+      }
+    },
+    "719": {
+      "historical_after_sha256": "7c6163e37f8fbf2b7ff28e800ae81373a7b767082be51b296cd7ebff06a1fd09",
+      "historical_before_sha256": "41989f6e06d3b4de4bdd6a42d490aa66358bb4db83319694fb208250ca7e94b4",
+      "receiver_event": [
+        12,
+        718
+      ],
+      "source_event": [
+        0,
+        719
+      ],
+      "typed_cross_composition": "incompatible composition endpoints",
+      "variations": {
+        "archived": {
+          "fine_weights": [
+            1,
+            1
+          ],
+          "gains": [
+            1,
+            1
+          ],
+          "retained_x_at_b": [
+            1,
+            1
+          ],
+          "root_a": [
+            245,
+            246
+          ],
+          "root_b": [
+            244,
+            245
+          ]
+        },
+        "complement_plus_one": {
+          "fine_weights": [
+            1,
+            2
+          ],
+          "gains": [
+            1,
+            2
+          ],
+          "retained_x_at_b": [
+            1,
+            1
+          ],
+          "root_a": [
+            245,
+            246
+          ],
+          "root_b": [
+            244,
+            246
+          ]
+        },
+        "source_plus_one": {
+          "fine_weights": [
+            2,
+            1
+          ],
+          "gains": [
+            2,
+            1
+          ],
+          "retained_x_at_b": [
+            2,
+            2
+          ],
+          "root_a": [
+            245,
+            247
+          ],
+          "root_b": [
+            244,
+            245
+          ]
+        }
+      }
+    }
+  },
+  "atom_parameters": [
+    "raw",
+    "before",
+    "index",
+    "leaf"
+  ],
+  "common_rows_sha256": "5e5163d7e8dab6f636e11897dfdb4d99675c40fbb9aa98e9a631a5d52b49b600",
+  "genesis": "v16.26-common-genesis",
+  "parents_sha256": "be3a03c8bc9525c060694c247249e7d4b4224445ca92954629d02fdc6a83e765"
+}
