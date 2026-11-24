@@ -1,4 +1,4 @@
-name: Verify fixed-pair grade fidelity and cover-matched readings
+name: Verify joint readings and source-matched receiver-local writes
 on:
   push:
     branches: [gpt/geometry-depth-two-proof]
@@ -6,6 +6,8 @@ on:
       - '.github/workflows/uqcf-fixed-pair-fidelity.yml'
       - 'ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/*fixed_pair*.py'
       - 'ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/FIXED_PAIR_FIDELITY.md'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/*receiver_turn*.py'
+      - 'ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/RECEIVER_TURN.md'
 permissions:
   contents: read
 defaults:
@@ -33,6 +35,8 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/*.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/FIXED_PAIR*.md
             /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/fixed_pair*
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/RECEIVER_TURN*.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_turn*
       - &history_checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -59,17 +63,21 @@ jobs:
           python "$SCI/verify_fixed_pair.py" replay | tee replay/independent.log
           python "$SCI/check_fixed_pair_match.py" review_sources replay | tee replay/matched.log
           python "$SCI/verify_fixed_pair_match.py" replay | tee replay/matched_independent.log
+          python "$SCI/check_receiver_turn.py" review_sources replay | tee replay/receiver.log
+          python "$SCI/verify_receiver_turn.py" replay | tee replay/receiver_independent.log
           cmp "$SCI/fixed_pair_matched.json.xz" replay/fixed_pair_matched.json.xz
           cmp "$SCI/fixed_pair_universe.json.xz" replay/fixed_pair_universe.json.xz
           cmp "$SCI/fixed_pair_certificate.json" replay/fixed_pair_certificate.json
-          cp "$SCI"/{FIXED_PAIR*.md,*fixed_pair*.py} replay/
+          cmp "$SCI/receiver_turn_universe.json.xz" replay/receiver_turn_universe.json.xz
+          cmp "$SCI/receiver_turn_certificate.json" replay/receiver_turn_certificate.json
+          cp "$SCI"/{FIXED_PAIR*.md,*fixed_pair*.py,RECEIVER_TURN*.md,*receiver_turn*.py} replay/
           git rev-parse HEAD > replay/science-head.txt
           git -C review_sources rev-parse HEAD > replay/historical-head.txt
           (cd replay && sha256sum *.py *.md *.json *.xz *.log *.txt > SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: fixed-pair-replay
+          name: receiver-turn-replay
           path: replay
           if-no-files-found: error
   argument-review:
@@ -81,11 +89,11 @@ jobs:
       - name: Independently challenge the frozen argument
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 "$SCI/review_fixed_pair.py" review review_evidence
+        run: python3 "$SCI/review_receiver_turn.py" review review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: fixed-pair-review
+          name: receiver-turn-review
           path: review_evidence
           if-no-files-found: error
   foundational-regression:
@@ -125,7 +133,7 @@ jobs:
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: fixed-pair-foundation
+          name: receiver-turn-foundation
           path: foundation
           if-no-files-found: error
   publication:
@@ -139,15 +147,15 @@ jobs:
       - *setup_python
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: fixed-pair-replay
+          name: receiver-turn-replay
           path: replay
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: fixed-pair-foundation
+          name: receiver-turn-foundation
           path: foundation
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
-          name: fixed-pair-review
+          name: receiver-turn-review
           path: review_evidence
       - name: Reproduce scientific bytes and read back the exact external review status
         run: |
@@ -162,16 +170,20 @@ jobs:
           python "$SCI/verify_fixed_pair.py" publication | tee publication/independent.log
           python "$SCI/check_fixed_pair_match.py" review_sources publication | tee publication/matched.log
           python "$SCI/verify_fixed_pair_match.py" publication | tee publication/matched_independent.log
+          python "$SCI/check_receiver_turn.py" review_sources publication | tee publication/receiver.log
+          python "$SCI/verify_receiver_turn.py" publication | tee publication/receiver_independent.log
           cmp replay/fixed_pair_matched.json.xz publication/fixed_pair_matched.json.xz
           cmp replay/fixed_pair_universe.json.xz publication/fixed_pair_universe.json.xz
           cmp replay/fixed_pair_certificate.json publication/fixed_pair_certificate.json
-          python "$SCI/review_fixed_pair.py" audit review_evidence
+          cmp replay/receiver_turn_certificate.json publication/receiver_turn_certificate.json
+          cmp replay/receiver_turn_universe.json.xz publication/receiver_turn_universe.json.xz
+          python "$SCI/review_receiver_turn.py" audit review_evidence
           cp review_evidence/publication_audit.json foundation/VERIFICATION.json publication/
           echo "$UQCF_WORKFLOW_SHA" > publication/workflow-head.txt
           (cd publication && sha256sum *.json *.xz *.log *.txt > SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: fixed-pair-publication
+          name: receiver-turn-publication
           path: publication
           if-no-files-found: error

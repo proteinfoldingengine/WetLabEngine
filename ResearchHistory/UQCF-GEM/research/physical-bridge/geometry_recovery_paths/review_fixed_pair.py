@@ -66,7 +66,7 @@ def validate(verdict):
         raise ValueError("worked numerical claims do not match")
 
 
-def main(mode, out):
+def main(mode, out, *, sources=DOCS, make_prompt=prompt, check_reply=validate):
     if mode not in ("review", "audit"):
         raise ValueError("mode")
     out.mkdir(exist_ok=True, parents=True)
@@ -75,11 +75,11 @@ def main(mode, out):
         raise ValueError("frozen-revision mismatch")
     checked(".github/scripts/uqcf_preparability_review.py", "4c8029da503ed57f404e4424ecc243eb3c609347")
     checked(".github/scripts/uqcf_preparability_integrity.py", "50b1043cda14b18b962f7930cf6a4391067a2a96")
-    question = prompt()
+    question = make_prompt()
     request = wire(dict(contents=[dict(role="user", parts=[dict(text=question.decode())])],
                         generationConfig=dict(temperature=0, maxOutputTokens=6144, responseMimeType="application/json")))
     binding = dict(checkout_sha=head, workflow_sha=head, run_id=os.environ["GITHUB_RUN_ID"],
-                   attempt=os.environ["GITHUB_RUN_ATTEMPT"], model_requested=MODEL, source_blobs=DOCS,
+                   attempt=os.environ["GITHUB_RUN_ATTEMPT"], model_requested=MODEL, source_blobs=sources,
                    prompt_sha256=digest(question), request_sha256=digest(request))
     endpoint = "https://generativelanguage.googleapis.com/v1beta/models/" + MODEL
     if mode == "review":
@@ -123,13 +123,13 @@ def main(mode, out):
         if mode == "review":
             (out / "review.txt").write_bytes(answer)
             (out / "receipt.json").write_bytes(wire(receipt))
-            validate(verdict)
+            check_reply(verdict)
             print("External verdict", verdict["verdict"])
             return
         if (out / "review.txt").read_bytes() != answer or json.loads((out / "receipt.json").read_bytes()) != receipt:
             raise ValueError("response readback")
         try:
-            validate(verdict)
+            check_reply(verdict)
             outcome = "PASS"
         except ValueError:
             outcome = "REVIEW_REQUIRES_ADJUDICATION"
