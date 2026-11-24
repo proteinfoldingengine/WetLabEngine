@@ -1,0 +1,934 @@
+{
+  "arms": {
+    "even_source_B_U": {
+      "B_root": 244,
+      "accepted": true,
+      "depth_moments": [
+        2935,
+        2939,
+        2947,
+        2941,
+        2937,
+        2939,
+        2939,
+        2957,
+        2939,
+        2927,
+        2947,
+        2957,
+        2933,
+        2957,
+        2945,
+        2941,
+        2939,
+        2957,
+        2939,
+        2927,
+        2937,
+        2927,
+        2945,
+        2927,
+        2925
+      ],
+      "increments": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum": 1984,
+      "receipt": {
+        "baseline_reason": null,
+        "baseline_status": "IDENTIFIABLE",
+        "complex_reason": null,
+        "flat": true,
+        "gauge_orbit_count": 1,
+        "status": "IDENTIFIABLE",
+        "tangent_rank": 2
+      },
+      "root_grades": [
+        243,
+        238,
+        230,
+        236,
+        240,
+        238,
+        238,
+        220,
+        238,
+        250,
+        230,
+        220,
+        244,
+        220,
+        232,
+        236,
+        238,
+        220,
+        238,
+        250,
+        240,
+        250,
+        232,
+        250,
+        252
+      ],
+      "work_sha256": "3e66c3d9592d4b7b2ce47c6bd013275f1a8d2003e7c592ba14e369689e5aeafa"
+    },
+    "even_source_unit_schedule": {
+      "B_root": 243,
+      "accepted": false,
+      "depth_moments": [
+        2935,
+        2938,
+        2946,
+        2940,
+        2936,
+        2938,
+        2938,
+        2956,
+        2938,
+        2926,
+        2946,
+        2956,
+        2934,
+        2956,
+        2944,
+        2940,
+        2938,
+        2956,
+        2938,
+        2926,
+        2936,
+        2926,
+        2944,
+        2926,
+        2924
+      ],
+      "increments": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum": 1985,
+      "reason": "degree_not_four",
+      "root_grades": [
+        243,
+        239,
+        231,
+        237,
+        241,
+        239,
+        239,
+        221,
+        239,
+        251,
+        231,
+        221,
+        243,
+        221,
+        233,
+        237,
+        239,
+        221,
+        239,
+        251,
+        241,
+        251,
+        233,
+        251,
+        253
+      ],
+      "work_sha256": "54717926c531c1696185a4893eea554a00c4650f2b2781b82a8a4045130c9e07"
+    },
+    "odd_source_B_U": {
+      "B_root": 244,
+      "accepted": false,
+      "depth_moments": [
+        2936,
+        2939,
+        2947,
+        2941,
+        2937,
+        2939,
+        2939,
+        2957,
+        2939,
+        2927,
+        2947,
+        2957,
+        2933,
+        2957,
+        2945,
+        2941,
+        2939,
+        2957,
+        2939,
+        2927,
+        2937,
+        2927,
+        2945,
+        2927,
+        2925
+      ],
+      "increments": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "root_grades": [
+        242,
+        238,
+        230,
+        236,
+        240,
+        238,
+        238,
+        220,
+        238,
+        250,
+        230,
+        220,
+        244,
+        220,
+        232,
+        236,
+        238,
+        220,
+        238,
+        250,
+        240,
+        250,
+        232,
+        250,
+        252
+      ],
+      "work_sha256": "13f03523fd09c6253174aadffd80731dbe48712cbd71b813ecdbcb0a9c6e163b"
+    },
+    "odd_source_unit_schedule": {
+      "B_root": 243,
+      "accepted": true,
+      "depth_moments": [
+        2936,
+        2938,
+        2946,
+        2940,
+        2936,
+        2938,
+        2938,
+        2956,
+        2938,
+        2926,
+        2946,
+        2956,
+        2934,
+        2956,
+        2944,
+        2940,
+        2938,
+        2956,
+        2938,
+        2926,
+        2936,
+        2926,
+        2944,
+        2926,
+        2924
+      ],
+      "increments": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum": 1986,
+      "receipt": {
+        "baseline_reason": null,
+        "baseline_status": "IDENTIFIABLE",
+        "complex_reason": null,
+        "flat": true,
+        "gauge_orbit_count": 1,
+        "status": "IDENTIFIABLE",
+        "tangent_rank": 2
+      },
+      "root_grades": [
+        242,
+        239,
+        231,
+        237,
+        241,
+        239,
+        239,
+        221,
+        239,
+        251,
+        231,
+        221,
+        243,
+        221,
+        233,
+        237,
+        239,
+        221,
+        239,
+        251,
+        241,
+        251,
+        233,
+        251,
+        253
+      ],
+      "work_sha256": "b664261f48ebd74777cfbfcedc2ff29f1f12abee5d27a1ab46f9d9fc4bbeda39"
+    }
+  },
+  "corrupted_site_lists_rejected": [
+    "missing",
+    "duplicate",
+    "swapped"
+  ],
+  "first_return_further_edits": 24,
+  "fixture_blob": "3324c0b46e09120ae526338444a19070b692d049",
+  "initial": {
+    "B_root": 242,
+    "accepted": true,
+    "depth_moments": [
+      2937,
+      2939,
+      2947,
+      2941,
+      2937,
+      2939,
+      2939,
+      2957,
+      2939,
+      2927,
+      2947,
+      2957,
+      2935,
+      2957,
+      2945,
+      2941,
+      2939,
+      2957,
+      2939,
+      2927,
+      2937,
+      2927,
+      2945,
+      2927,
+      2925
+    ],
+    "increments": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "minimum": 1984,
+    "receipt": {
+      "baseline_reason": null,
+      "baseline_status": "IDENTIFIABLE",
+      "complex_reason": null,
+      "flat": true,
+      "gauge_orbit_count": 1,
+      "status": "IDENTIFIABLE",
+      "tangent_rank": 2
+    },
+    "root_grades": [
+      241,
+      238,
+      230,
+      236,
+      240,
+      238,
+      238,
+      220,
+      238,
+      250,
+      230,
+      220,
+      242,
+      220,
+      232,
+      236,
+      238,
+      220,
+      238,
+      250,
+      240,
+      250,
+      232,
+      250,
+      252
+    ],
+    "work_sha256": "6008c83d8bebcb08f398fbe323527b186943eb77b6341872c8e4a58ebb0906fe"
+  },
+  "odd_path_prefixes": [
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 1
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 2
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 3
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 4
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 5
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 6
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 7
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 8
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 9
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 10
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 11
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 12
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 13
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 14
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 15
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 16
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 17
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 18
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 19
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 20
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 21
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 22
+    },
+    {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four",
+      "total_edits": 23
+    },
+    {
+      "accepted": false,
+      "minimum": 1985,
+      "reason": "degree_not_four",
+      "total_edits": 24
+    },
+    {
+      "accepted": true,
+      "minimum": 1986,
+      "receipt": {
+        "baseline_reason": null,
+        "baseline_status": "IDENTIFIABLE",
+        "complex_reason": null,
+        "flat": true,
+        "gauge_orbit_count": 1,
+        "status": "IDENTIFIABLE",
+        "tangent_rank": 2
+      },
+      "total_edits": 25
+    }
+  ],
+  "pairs": 300,
+  "pairwise_work_changes": {
+    "0": 50,
+    "2": 250
+  },
+  "permanent_rejection": {
+    "A_B_frozen": true,
+    "deletion_counts": [
+      1299,
+      1298
+    ],
+    "gate": {
+      "accepted": false,
+      "minimum": 0,
+      "reason": "work_off_diagonal"
+    },
+    "native_representatives": [
+      [
+        1,
+        1415
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        1415
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "rows": [
+      1,
+      4
+    ],
+    "work_1_4": 0
+  },
+  "schema": "odd-source-root/1",
+  "science_blobs": {
+    "ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py": "9128c24b695c1b539ac60dc93aeaf0bd4795c57b",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/exact_algebra.py": "c67ea42b61321469f7735ce589f2e729b241666a",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/holonomy.py": "bad3f06b291bb448a903b4f48344a9e54a633f68",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py": "8163beba8e52bc2a3a6d0c8cf59dd1257222f65c",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/protocol_types.py": "e90a98d17baa6028f0d50a165f0b9d0046de13a2",
+    "ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py": "df552284c16d43bc876340fbc13fe91eb9ee6a00",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py": "30348d71d366a751932ec2d58d18a9148d81ae83",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py": "5cd286b014bb44025e16832ee91a6e6665291c8c",
+    "ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/projection.py": "f857f2cf1cd4c265c193121236af8e441b1f01dc",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py": "e95e3e978779164dd91f09b80e3389247e6320c2"
+  },
+  "sites": [
+    {
+      "absent_from": [
+        7,
+        12
+      ],
+      "cut_mass": 35,
+      "raw_leaf": 662,
+      "view": 0
+    },
+    {
+      "absent_from": [
+        8,
+        13
+      ],
+      "cut_mass": 38,
+      "raw_leaf": 718,
+      "view": 1
+    },
+    {
+      "absent_from": [
+        9,
+        14
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 782,
+      "view": 2
+    },
+    {
+      "absent_from": [
+        5,
+        10
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 508,
+      "view": 3
+    },
+    {
+      "absent_from": [
+        6,
+        11
+      ],
+      "cut_mass": 38,
+      "raw_leaf": 590,
+      "view": 4
+    },
+    {
+      "absent_from": [
+        12,
+        17
+      ],
+      "cut_mass": 35,
+      "raw_leaf": 947,
+      "view": 5
+    },
+    {
+      "absent_from": [
+        13,
+        18
+      ],
+      "cut_mass": 38,
+      "raw_leaf": 999,
+      "view": 6
+    },
+    {
+      "absent_from": [
+        14,
+        19
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 1030,
+      "view": 7
+    },
+    {
+      "absent_from": [
+        10,
+        15
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 850,
+      "view": 8
+    },
+    {
+      "absent_from": [
+        11,
+        16
+      ],
+      "cut_mass": 38,
+      "raw_leaf": 911,
+      "view": 9
+    },
+    {
+      "absent_from": [
+        17,
+        22
+      ],
+      "cut_mass": 38,
+      "raw_leaf": 1162,
+      "view": 10
+    },
+    {
+      "absent_from": [
+        18,
+        23
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 1189,
+      "view": 11
+    },
+    {
+      "absent_from": [
+        19,
+        24
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 1217,
+      "view": 12
+    },
+    {
+      "absent_from": [
+        15,
+        20
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 1088,
+      "view": 13
+    },
+    {
+      "absent_from": [
+        16,
+        21
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 1131,
+      "view": 14
+    },
+    {
+      "absent_from": [
+        2,
+        22
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 290,
+      "view": 15
+    },
+    {
+      "absent_from": [
+        3,
+        23
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 384,
+      "view": 16
+    },
+    {
+      "absent_from": [
+        4,
+        24
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 473,
+      "view": 17
+    },
+    {
+      "absent_from": [
+        0,
+        20
+      ],
+      "cut_mass": 35,
+      "raw_leaf": 85,
+      "view": 18
+    },
+    {
+      "absent_from": [
+        1,
+        21
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 195,
+      "view": 19
+    },
+    {
+      "absent_from": [
+        2,
+        7
+      ],
+      "cut_mass": 38,
+      "raw_leaf": 238,
+      "view": 20
+    },
+    {
+      "absent_from": [
+        3,
+        8
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 324,
+      "view": 21
+    },
+    {
+      "absent_from": [
+        4,
+        9
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 410,
+      "view": 22
+    },
+    {
+      "absent_from": [
+        0,
+        5
+      ],
+      "cut_mass": 35,
+      "raw_leaf": 16,
+      "view": 23
+    },
+    {
+      "absent_from": [
+        1,
+        6
+      ],
+      "cut_mass": 32,
+      "raw_leaf": 135,
+      "view": 24
+    }
+  ],
+  "source_correction": {
+    "B_untouched": true,
+    "gate": {
+      "accepted": false,
+      "minimum": 1984,
+      "reason": "degree_not_four"
+    },
+    "leaf": 109,
+    "source_loss": 2
+  },
+  "source_omitted": {
+    "accepted": false,
+    "minimum": 1985,
+    "reason": "degree_not_four"
+  },
+  "unit_path_graph_directions_baseline_identical": true,
+  "vertices": 1416
+}

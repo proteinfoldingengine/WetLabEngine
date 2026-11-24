@@ -1,0 +1,227 @@
+name: Verify odd source recovery and the retained root grade
+on:
+  push:
+    branches: [gpt/geometry-depth-two-proof]
+    paths: [".github/workflows/uqcf-odd-source-root.yml"]
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+env:
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths
+  HIST: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  P: ResearchHistory/UQCF-GEM/foundational-closure-verification
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/exact_algebra.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/protocol_types.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/holonomy.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/projection.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/evaluate.py
+      - name: Replay the archived comparator and the frozen odd-source predictions
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          mkdir -p handoff/original
+          (cd review_sources && python3 ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py ../handoff/original) | tee handoff/original-comparator.log
+          timeout 720s python3 "$SCI/check_odd_source.py" review_sources handoff/odd_source_certificate.json | tee handoff/odd-replay.log
+          cmp "$SCI/odd_source_certificate.json" handoff/odd_source_certificate.json
+          cp "$SCI/check_odd_source.py" "$SCI/ODD_SOURCE_CHECK_PLAN.md" "$SCI/ODD_SOURCE_ROOT_RECORD.md" handoff/
+          git rev-parse HEAD > handoff/science-head.txt
+          git -C review_sources rev-parse HEAD > handoff/inherited-head.txt
+          (cd handoff && sha256sum odd_source_certificate.json original/geometry_repair_certificate.json check_odd_source.py ODD_SOURCE_CHECK_PLAN.md ODD_SOURCE_ROOT_RECORD.md > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: odd-source-replay
+          path: handoff
+          if-no-files-found: error
+  argument-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/exact_algebra.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/protocol_types.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/holonomy.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/projection.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/evaluate.py
+      - name: Challenge the full argument and its four comparison arms
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 "$SCI/review_odd_source.py" review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: odd-source-review
+          path: review_evidence
+          if-no-files-found: error
+  foundational-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/
+            /ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/
+            /ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reproduce the inherited foundational tests and complete certificate family
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$HIST"
+          mkdir -p foundation
+          python -m pip install sympy==1.13.3 mpmath==1.3.0 > foundation/install.log
+          git rev-parse HEAD > foundation/inherited-head.txt
+          echo "$GITHUB_SHA" > foundation/workflow-head.txt
+          python --version > foundation/python-version.txt
+          (cd "$P" && python tests/test_fcv.py) 2>&1 | tee foundation/tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) 2>&1 | tee foundation/parent-tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent && python -m unittest -v && python gate.py) 2>&1 | tee foundation/historical.log
+          cp ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/result.json "$P/evidence/REPRODUCED_1615F.json"
+          (cd "$P" && python produce_certificates.py) 2>&1 | tee foundation/producer.log
+          (cd "$P" && python verify_certificates.py) 2>&1 | tee foundation/verifier.log
+          cp "$P"/evidence/{PRODUCTION,VERIFICATION,TEST_RECEIPT,REPRODUCED_1615F}.json "$P/evidence/certificates.json.xz" foundation/
+          test "$(xz -dc foundation/certificates.json.xz | sha256sum | cut -d' ' -f1)" = 21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6
+          (cd foundation && sha256sum *.json *.xz *.log *.txt > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: odd-source-foundation
+          path: foundation
+          if-no-files-found: error
+  publication-audit:
+    needs: [replay, argument-review, foundational-regression]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/exact_algebra.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/operational_complex.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/protocol_types.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/transport.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/holonomy.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/projection.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/carriers.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/application.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/acquire.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/evaluate.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: odd-source-review
+          path: review_evidence
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: odd-source-replay
+          path: handoff
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: odd-source-foundation
+          path: foundation
+      - name: Reproduce the scientific bytes and verify the submitted and returned review
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          (cd handoff && sha256sum -c SHA256SUMS)
+          (cd foundation && sha256sum -c SHA256SUMS)
+          mkdir -p publication
+          timeout 720s python3 "$SCI/check_odd_source.py" review_sources publication/odd_source_certificate.json | tee publication/fresh-replay.log
+          cmp handoff/odd_source_certificate.json publication/odd_source_certificate.json
+          cmp "$SCI/odd_source_certificate.json" publication/odd_source_certificate.json
+          python3 "$SCI/review_odd_source.py" audit review_evidence
+          cp review_evidence/publication_audit.json foundation/VERIFICATION.json publication/
+          echo "$UQCF_WORKFLOW_SHA" > publication/workflow-head.txt
+          (cd publication && sha256sum *.json *.log *.txt > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: odd-source-publication
+          path: publication
+          if-no-files-found: error
