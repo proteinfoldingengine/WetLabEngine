@@ -1,0 +1,60 @@
+{
+  "run_id": 45481943700,
+  "head": "e0173362bc94a3d8818f717dd48b6542936e9e41",
+  "workflow_head": "e0173362bc94a3d8818f717dd48b6542936e9e41",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "preregistration": "952c0b28cf8862bd729c4fb1bbec3f739427cd3a",
+  "parent": "0b30b0d19f02c2e5787cdfa05df34c065ce5d8e8",
+  "artifact_prefix": "flat-cover",
+  "conclusion": "success",
+  "attempt": 1,
+  "jobs": [
+    {
+      "id": 138757116582,
+      "name": "replay",
+      "conclusion": "success"
+    },
+    {
+      "id": 138757116924,
+      "name": "foundational-regression",
+      "conclusion": "success"
+    },
+    {
+      "id": 138757117147,
+      "name": "argument-review",
+      "conclusion": "success"
+    },
+    {
+      "id": 138757711006,
+      "name": "publication",
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14962335920,
+      "name": "flat-cover-replay",
+      "size": 65331,
+      "digest": "sha256:2e57eb4507cb2d1af0727eb462e3b6f4bd3e6ef18022fc4e225224dcee263932"
+    },
+    {
+      "id": 14962331009,
+      "name": "flat-cover-review",
+      "size": 55333,
+      "digest": "sha256:2d5e4d9f110676d9cce6dc274ae69fa51cb0562bfaf66c3071118c0d8626c121"
+    },
+    {
+      "id": 14962023016,
+      "name": "flat-cover-publication",
+      "size": 21872,
+      "digest": "sha256:93bb2d4a217800ce04f36795946b700d7f2254f08aa9fd1daa6cb6ae64a46251"
+    },
+    {
+      "id": 14960144794,
+      "name": "flat-cover-foundation",
+      "size": 306986,
+      "digest": "sha256:82a85a6a72060d423271d0703f4b505544bdb4824127b0a25fa8c79b822c8b7d"
+    }
+  ]
+}
+
