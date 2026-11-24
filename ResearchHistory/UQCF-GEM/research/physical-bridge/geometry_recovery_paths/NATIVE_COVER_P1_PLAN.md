@@ -1,0 +1,5 @@
+# P1 provenance control for the isolated strict successor
+
+In response to the thread adjudication on #156, test the existing lineage.Pruning.aggregate on the same prepared raw rows used by the 32,388-command census. Keep the calibrated preparation and indexed source/receiver cuts fixed. For each source x and its complement y, reconstruct valid full, source-chart and receiver-chart Carriers in one Genesis domain. Compute both two-stage local pushforwards and their direct full-to-endpoint compositions. Record the actual root values and the surviving receiver key before and after each event.
+
+Perturb the fine grade at x only, then at y only, retaining positive integer grades. Test the hypothesis that the source root gain depends on g_x, the receiver root gain depends on g_y, and the grade at the surviving x on chart 12 was already there. These are sensitivity controls on a fixed legal history. No preservation of the work table under grade perturbations is assumed. Inspect the historical atomic call for any numerical output passed from A's pushforward into B's update. A positive cross-response or a new same-object consumer would change the interpretation.
