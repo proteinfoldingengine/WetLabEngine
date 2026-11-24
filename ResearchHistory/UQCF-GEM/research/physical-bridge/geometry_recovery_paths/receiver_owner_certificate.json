@@ -1,0 +1,315 @@
+{
+  "comparisons": {
+    "balanced": {
+      "1": {
+        "lost_commands": [],
+        "magnitude": 4,
+        "negative_labels": [
+          7,
+          11,
+          12,
+          13,
+          17
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "662": {
+        "lost_commands": [],
+        "magnitude": 1,
+        "negative_labels": [
+          7,
+          12
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "718": {
+        "lost_commands": [
+          [
+            12,
+            718
+          ]
+        ],
+        "magnitude": 1,
+        "negative_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "positive_labels": [
+          12
+        ]
+      }
+    },
+    "isolated": {
+      "1": {
+        "lost_commands": [],
+        "magnitude": 4,
+        "negative_labels": [
+          7,
+          11,
+          12,
+          13,
+          17
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "662": {
+        "lost_commands": [],
+        "magnitude": 1,
+        "negative_labels": [
+          7,
+          12
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "718": {
+        "lost_commands": [
+          [
+            12,
+            718
+          ]
+        ],
+        "magnitude": 1,
+        "negative_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "positive_labels": [
+          12
+        ]
+      }
+    },
+    "original": {
+      "1": {
+        "lost_commands": [],
+        "magnitude": 4,
+        "negative_labels": [
+          7,
+          11,
+          12,
+          13,
+          17
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "662": {
+        "lost_commands": [],
+        "magnitude": 1,
+        "negative_labels": [
+          7,
+          12
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      },
+      "718": {
+        "lost_commands": [],
+        "magnitude": 1,
+        "negative_labels": [
+          8,
+          13
+        ],
+        "positive_labels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ]
+      }
+    }
+  },
+  "controls": [
+    "missing_row_entry",
+    "reversed_signs",
+    "spurious_lost_command"
+  ],
+  "nonsource_menus_compared": 216,
+  "schema": "work-row-coverage/1"
+}
