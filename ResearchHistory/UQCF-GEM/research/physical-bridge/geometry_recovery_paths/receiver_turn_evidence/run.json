@@ -1,0 +1,60 @@
+{
+  "run_id": 45500142168,
+  "head": "0fb69f10600916f80cf56ca4fe846720ac940ae5",
+  "workflow_head": "0fb69f10600916f80cf56ca4fe846720ac940ae5",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "preregistration": "cc04e488d556c7fd6dd16037d6170e839293612a",
+  "preceding_science": "7e6eaf568eb0077dbffce9c2bdefecbe0cb93874",
+  "preceding_evidence": "2904d3855476b4fc4bde720a3b10c47af2353119",
+  "attempt": 1,
+  "artifact_prefix": "receiver-turn",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "name": "argument-review",
+      "id": 138820927347,
+      "conclusion": "failure"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138820927940,
+      "conclusion": "success"
+    },
+    {
+      "name": "replay",
+      "id": 138820928062,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication",
+      "id": 138821629322,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14971071382,
+      "name": "receiver-turn-review",
+      "size": 17908,
+      "digest": "sha256:88d7f02354e85359c998aeb2ba0c26500fccb132395ea778b7c4b500d837d993"
+    },
+    {
+      "id": 14971056784,
+      "name": "receiver-turn-publication",
+      "size": 32888,
+      "digest": "sha256:99463982475622a2e1b98b8fe22b508738762878b452a144f8eabb60df18938e"
+    },
+    {
+      "id": 14970932394,
+      "name": "receiver-turn-foundation",
+      "size": 306986,
+      "digest": "sha256:7f7e69cba1f0ac5dc5bb38ae4be80b3a5bb12487e8c5d497c51626955c6be4ef"
+    },
+    {
+      "id": 14968868952,
+      "name": "receiver-turn-replay",
+      "size": 64142,
+      "digest": "sha256:a1cc4cc216d68224fdf61c4a425942d4d034d2a529373eb786a17074bd04ce0a"
+    }
+  ]
+}

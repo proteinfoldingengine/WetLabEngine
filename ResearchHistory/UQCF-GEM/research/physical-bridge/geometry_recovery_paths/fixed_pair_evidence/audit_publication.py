@@ -30,13 +30,15 @@ def manifest(z):
         need(sha256(z.read(name)).hexdigest() == hashed, name)
 
 
-def main():
-    info = json.loads((HERE / "run.json").read_bytes())
-    prefix = "fixed-pair-"
+def main(directory=HERE, *, receiver=False):
+    info = json.loads((directory / "run.json").read_bytes())
+    science = directory.parent
+    prefix = "receiver-turn-" if receiver else "fixed-pair-"
+    outputs = OUTPUTS + ("receiver_turn_certificate.json", "receiver_turn_universe.json.xz") if receiver else OUTPUTS
     expected = {prefix + k for k in ("replay", "foundation", "review", "publication")}
     need({a["name"] for a in info["archives"]} == expected and len(info["archives"]) == 4, "four original ZIPs")
     for item in info["archives"]:
-        data = (HERE / (item["name"] + ".zip")).read_bytes()
+        data = (directory / (item["name"] + ".zip")).read_bytes()
         need(len(data) == item["size"] and "sha256:" + sha256(data).hexdigest() == item["digest"], item["name"])
     jobs = {j["name"]: j["conclusion"] for j in info["jobs"]}
     need(all(jobs[k] == "success" for k in ("replay", "publication", "foundational-regression")), "scientific jobs")
@@ -44,31 +46,37 @@ def main():
          "source revisions")
     byte_sets = {}
     for job, headfile in (("replay", "science-head.txt"), ("publication", "workflow-head.txt")):
-        with ZipFile(HERE / (prefix + job + ".zip")) as z:
+        with ZipFile(directory / (prefix + job + ".zip")) as z:
             manifest(z)
             need(z.read(headfile).decode().strip() == info["head"], job + " head")
-            for name in OUTPUTS:
+            for name in outputs:
                 contents = z.read(name)
-                need(contents == (SCI / name).read_bytes(), "fresh scientific bytes " + name)
+                need(contents == (science / name).read_bytes(), "fresh scientific bytes " + name)
                 byte_sets[name] = sha256(contents).hexdigest()
             first, second = (object_(z, f) for f in ("independent.log", "matched_independent.log"))
             need(first["status"] == second["status"] == "PASS" and first["rejecting_controls"] == 10 and
                  first["star_preparations"] == 1296 and first["source_deletions"] == 2592 and first["view_pairs"] == 2551 and
                  first["distinguished_joint_root"] == 864 and second["equal_cover_and_contrast"] == 816 and
                  second["equal_cover_contrast_unique_partner"] == 216 and second["pairs"] == 1944, "complete enumerations")
+            if receiver:
+                rt = object_(z, "receiver_independent.log")
+                need(rt == dict(status="PASS", rejecting_controls=9, parent_arrays=42, source_role_pairs=84,
+                     histories=168, distinct_parent_pairs=76, sibling_pairs=8, distinguished_receiver_parent=76,
+                     matched_source_and_receiver_cover=84, candidate_trials=920, positive_receiver_moves=168),
+                     "complete receiver reconstruction")
             if job == "replay":
                 need(z.read("historical-head.txt").decode().strip() == info["inherited"], "history")
                 for name in z.namelist():
-                    if name == "review_fixed_pair.py":
+                    if name == "review_fixed_pair.py" and not receiver:
                         data = z.read(name)
                         need(sha1(f"blob {len(data)}\0".encode() + data).hexdigest() ==
                              "63a7f1a41f75c5a024f4e5547af118fb4e3b4df4", "original frozen reviewer")
                     elif name.endswith((".md", ".py")):
-                        need(z.read(name) == (SCI / name).read_bytes(), "archived source " + name)
+                        need(z.read(name) == (science / name).read_bytes(), "archived source " + name)
             else:
                 audit_bytes = z.read("publication_audit.json")
                 verification = z.read("VERIFICATION.json")
-    with ZipFile(HERE / (prefix + "foundation.zip")) as z:
+    with ZipFile(directory / (prefix + "foundation.zip")) as z:
         manifest(z)
         need(z.read("inherited-head.txt").decode().strip() == info["inherited"] and
              z.read("workflow-head.txt").decode().strip() == info["head"], "foundation")
@@ -81,7 +89,7 @@ def main():
             content = z.read(file).decode()
             need(re.search(r"Ran " + str(n) + r" tests? in ", content) and "\nOK" in content, file)
     audit = json.loads(audit_bytes)
-    with ZipFile(HERE / (prefix + "review.zip")) as z:
+    with ZipFile(directory / (prefix + "review.zip")) as z:
         request = z.read("request.json")
         prompt = z.read("prompt.txt")
         need(json.loads(request)["contents"][0]["parts"][0]["text"].encode() == prompt and
@@ -118,13 +126,17 @@ def main():
             metadata = object_(z, "model_metadata.json")
             need(metadata["name"] == "models/" + audit["model_requested"] and
                  "generateContent" in metadata["supportedGenerationMethods"], "model binding")
-        echoed = dict(row.split("_B64=", 1) for row in (HERE / "publication_readback.log").read_text().splitlines())
+        echoed = dict(row.split("_B64=", 1) for row in (directory / "publication_readback.log").read_text().splitlines())
         need(set(echoed) == {marker, "publication_audit.json"} and
              base64.b64decode(echoed[marker], validate=True) == z.read(marker) and
              base64.b64decode(echoed["publication_audit.json"], validate=True) == audit_bytes, "original publication output")
-    return dict(run=info["run_id"], science_head=info["head"], scientific_replay="PASS", fresh_publication="PASS",
+    result = dict(run=info["run_id"], science_head=info["head"], scientific_replay="PASS", fresh_publication="PASS",
                 external_review=status, foundation_instances=21, certificate_hashes_sha256=byte_sets,
                 matched_comparisons=1944, equal_cover_different_joint_root=816, unique_source_partner=216)
+    if receiver:
+        result.update(receiver_histories=168, receiver_parent_contrasts=76, sibling_parent_nulls=8,
+                      receiver_turn_is_supplied=True)
+    return result
 
 
 if __name__ == "__main__":
