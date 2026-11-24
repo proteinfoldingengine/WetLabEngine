@@ -1,0 +1,57 @@
+{
+  "run_id": 45321784230,
+  "attempt": 1,
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45321784230",
+  "head": "55c1a911124f1732fe1d787356ee65345254a5aa",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "conclusion": "success",
+  "artifact_prefix": "geometry-selected",
+  "jobs": [
+    {
+      "name": "foundational-regression",
+      "id": 138201794781,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138201795103,
+      "conclusion": "success"
+    },
+    {
+      "name": "replay",
+      "id": 138201795156,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 138202960464,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "geometry-selected-foundation",
+      "id": 14887612482,
+      "digest": "sha256:d4d132230cafdded348e2b1213c5c71e95c9ad6ee2bcd5fafa9f51abfb9c91f2",
+      "size": 306985
+    },
+    {
+      "name": "geometry-selected-publication",
+      "id": 14888795038,
+      "digest": "sha256:9b96d6657e6a57af5833d12155849d9175cc8b3170eefa42d720093cfce05015",
+      "size": 7976
+    },
+    {
+      "name": "geometry-selected-replay",
+      "id": 14887448173,
+      "digest": "sha256:c8221be8ab43a1723620dea436916dd9ee3047538b1dc80c9a54865444853ae2",
+      "size": 31671
+    },
+    {
+      "name": "geometry-selected-review",
+      "id": 14888640089,
+      "digest": "sha256:c6ca290d2a3c6bc5833c4d685422e79d2a97dbd44e705e2335c27a7c4d08f335",
+      "size": 76014
+    }
+  ]
+}

@@ -29,6 +29,8 @@ def check(directory, science):
         "receiver-command": ["receiver_command_certificate.json"],
         "native-veto": ["native_receiver_veto_certificate.json","receiver_owner_certificate.json"],
         "receiver-record": ["reachable_receiver_certificate.json"],
+        "geometry-selected": ["geometry_selected_record_certificate.json"],
+        "single-view-return": ["single_view_returns_certificate.json"],
     }[prefix]
     with ZipFile(directory / (prefix+"-replay.zip")) as replay:
         check_manifest(replay)
