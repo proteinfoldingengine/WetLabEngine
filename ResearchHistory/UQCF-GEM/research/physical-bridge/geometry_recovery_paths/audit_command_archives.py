@@ -77,6 +77,7 @@ def check(directory, science):
         "single-view-return": ["single_view_returns_certificate.json"],
         "native-cover": ["native_cover_increment_certificate.json"],
         "source-gain": ["fixed_geometry_source_gain_certificate.json","fixed_geometry_source_gain_universe.json.xz"],
+        "receiver-prior": ["receiver_prior_certificate.json","receiver_prior_universe.json.xz"],
     }[prefix]
     with ZipFile(directory / (prefix+"-replay.zip")) as replay:
         check_manifest(replay)
@@ -129,6 +130,27 @@ def check(directory, science):
         domain=lzma.decompress((science/names[1]).read_bytes())
         assert digest(domain)==cert["universe_sha256"]
         result["field"] = check_supplement(directory,science,"field","source_gain_field_certificate.json")
+    if prefix == "receiver-prior":
+        cert=json.loads((science/names[0]).read_bytes())
+        domain=lzma.decompress((science/names[1]).read_bytes())
+        assert digest(domain)==cert["universe_sha256"]
+        with ZipFile(directory/(prefix+"-replay.zip")) as primary, ZipFile(directory/(prefix+"-publication.zip")) as comparison:
+            for archive in (primary,comparison):
+                errors=json.loads(archive.read("receiver_prior_numeric.log"))
+                assert set(errors)=={"archive","swapped","factor_2_1"}
+                assert all(0<=x<1e-8 for x in errors.values())
+        failed=json.loads((directory/"original_failed_run.json").read_bytes())
+        assert failed["conclusion"]=="failure"
+        old=failed["original_archive"]
+        previous=directory/old["local_name"]
+        assert old["size"]==previous.stat().st_size and old["digest"]=="sha256:"+digest(previous.read_bytes())
+        with ZipFile(previous) as failed_review:
+            old_receipt=json.loads(failed_review.read("receipt.json"))
+            assert old_receipt["checkout_sha"]==failed["head"]
+            assert old_receipt["response_sha256"]==digest(failed_review.read("response.json"))
+            old_checks=json.loads(failed_review.read("review.txt"))["exact_checks"]
+            assert old_checks["eligible_next_per_case"]!=cert["legal"]
+        result["preserved_failed_review"]=failed["run_id"]
     return result
 
 

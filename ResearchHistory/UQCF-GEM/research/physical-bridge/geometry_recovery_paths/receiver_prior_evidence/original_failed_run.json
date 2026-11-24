@@ -1,0 +1,35 @@
+{
+  "run_id": 45400194526,
+  "head": "bb9cfc417c37c91e58cd554c9d4ad425b2e63c2e",
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45400194526",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "name": "replay",
+      "id": 138466438447,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138466438939,
+      "conclusion": "failure"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138466438991,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 138467254532,
+      "conclusion": "skipped"
+    }
+  ],
+  "original_archive": {
+    "id": 14922623464,
+    "digest": "sha256:a7fffdee6faf9534da0e1c6cfb7f86eaba90538aa16563734c44c474ad2f2b28",
+    "size": 73052,
+    "local_name": "original-review-count-mismatch.zip"
+  },
+  "reason": "Original independent numerical reconstruction confused raw eligible commands with passing repairs and used a string for a JSON integer; model agreement did not pass the enforced readback."
+}
