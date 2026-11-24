@@ -77,6 +77,7 @@ def check(directory, science):
         "single-view-return": ["single_view_returns_certificate.json"],
         "native-cover": ["native_cover_increment_certificate.json"],
         "source-gain": ["fixed_geometry_source_gain_certificate.json","fixed_geometry_source_gain_universe.json.xz"],
+        "matched-source": ["matched_source_certificate.json","matched_source_universe.json.xz"],
         "receiver-prior": ["receiver_prior_certificate.json","receiver_prior_universe.json.xz"],
     }[prefix]
     with ZipFile(directory / (prefix+"-replay.zip")) as replay:
@@ -130,6 +131,10 @@ def check(directory, science):
         domain=lzma.decompress((science/names[1]).read_bytes())
         assert digest(domain)==cert["universe_sha256"]
         result["field"] = check_supplement(directory,science,"field","source_gain_field_certificate.json")
+    if prefix == "matched-source":
+        cert = json.loads((science/names[0]).read_bytes())
+        assert digest(lzma.decompress((science/names[1]).read_bytes())) == cert["universe_sha256"]
+        assert cert["star_domain"]["separating_pairs"] == 96
     if prefix == "receiver-prior":
         cert=json.loads((science/names[0]).read_bytes())
         domain=lzma.decompress((science/names[1]).read_bytes())
