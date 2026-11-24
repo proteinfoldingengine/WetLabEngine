@@ -5,6 +5,7 @@ import sys
 from review_depth_two import run_review
 
 DOCUMENTS = {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/SINGLE_VIEW_REVIEW_CLARIFICATION.md": "8c95848bf607ae4ceaf84414771724455afaf9af",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/SINGLE_VIEW_EXACT_RETURN.md": "00786d6d59fb5eef657d45e56935650c1ff802dd",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/SINGLE_VIEW_EXACT_RETURN_PLAN.md": "550f17b11a90f6ccbd1ad39f2e54337a82992005",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/SINGLE_VIEW_SOURCE_PLAN.md": "c7ef429e8994743863e3f1ad93d915f2641f0128",
@@ -42,7 +43,26 @@ admitted_single_changes (integer number of passing j among the tested 17),
 sample_changed_pair (two chart labels of the representative 593 control),
 sample_work (two integers giving the before and after value there).
 Use limitations to record supplied event occurrence, work conservation and physical
-address readout. No numerical fit, physical clock or general impossibility is claimed."""
+address readout. No numerical fit, physical clock or general impossibility is claimed.
+
+Adjudicate the two conflicts in SINGLE_VIEW_REVIEW_CLARIFICATION.md by inspecting the
+actual source and target states. In proof_checks.source, write out BOTH traces with
+explicit raw address IDs. Distinguish the first source deletion, the remaining source
+deletion(s), the distinguished address still held at view 0, and the later receiver
+deletion. Explain the two different scalar budgets, the available complement count and
+why longer source paths do or do not work. In all_editors reconstruct the two ordinary
+editor cases as well as the two exceptional ones with the exact signed bounds. In
+admission_control specify whether the altered table equals the original and whether it
+passes the constructor. Separately return transition_checks with keys "718","719".
+For each use exactly the keys remaining_source_calls (an ordered array of [editor,leaf]
+pairs after the stipulated first source deletion until restoration), distinguished_at_A
+(array present at A immediately after restoration), distinguished_at_B (array present
+at B immediately after restoration), distinguishing_B_call (single [editor,leaf] pair
+mandatory in every recording refinement), present_at_B_after (array of distinguished
+addresses at the recording endpoint). Use the raw address identities in all arrays.
+Return admission_check with exactly passes_gate and equals_original_work (booleans)
+for the 593 blind control. Numerical acceptance alone is insufficient. If the historical
+input or proof fails the tracing challenge return REVISE or FAIL with the reason."""
 
 if __name__ == "__main__":
     run_review(QUESTION, DOCUMENTS, TOPICS)
@@ -57,3 +77,15 @@ if __name__ == "__main__":
     verdict = json.loads((Path(sys.argv[2]) / "review.txt").read_bytes())
     if json.dumps(verdict.get("numeric_checks"),sort_keys=True) != json.dumps(expected,sort_keys=True):
         raise ValueError("All-view reviewer values differ from the evidence")
+    trace = {}
+    reference = json.loads(Path(__file__).with_name("geometry_selected_record_certificate.json").read_bytes())
+    for x,y in ((718,719),(719,718)):
+        arm = reference["arms"][str(x)]
+        trace[str(x)] = {"remaining_source_calls":arm["source"][1:],
+                         "distinguished_at_A":[y],"distinguished_at_B":[718,719],
+                         "distinguishing_B_call":[arm["minimal_returns"][0][0],y],
+                         "present_at_B_after":arm["witnesses"][0]["q_present"]}
+    if verdict.get("transition_checks") != trace:
+        raise ValueError("Independent actor and address trace disagrees")
+    if verdict.get("admission_check") != {"passes_gate":True,"equals_original_work":False}:
+        raise ValueError("Independent control mixes up work equality and geometry admission")
