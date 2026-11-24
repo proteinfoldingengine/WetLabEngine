@@ -1,0 +1,59 @@
+{
+  "run_id": 45505283081,
+  "head": "c5e0fe3798a2a069610826aeade206b5cae1924c",
+  "workflow_head": "c5e0fe3798a2a069610826aeade206b5cae1924c",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "prior_evidence": "95227ed0ce33f4091418e64e3bcd313ebdbee133",
+  "preregistration": "ddd9dcf39c7c7ca0f2e71c8cf64f8aa9bb19245d",
+  "caller_registration": "2ebb2401977344069bc16c27f9b9d9dfdd245bfc",
+  "attempt": 1,
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "name": "argument-review",
+      "id": 138838777479,
+      "conclusion": "failure"
+    },
+    {
+      "name": "replay",
+      "id": 138838777902,
+      "conclusion": "success"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138838777921,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication",
+      "id": 138839286639,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14973552526,
+      "name": "fork-trigger-foundation",
+      "size": 306986,
+      "digest": "sha256:d8d0097ad2f06141dbf1fe21de200e3a5502e481fbb874c0037e6aa3f1857400"
+    },
+    {
+      "id": 14973386405,
+      "name": "fork-trigger-publication",
+      "size": 26550,
+      "digest": "sha256:3aef4b4d5ccc15b27cc560df6c6ee86ea1f992a21c065ad1fa6cdbafa2fd97c9"
+    },
+    {
+      "id": 14973266346,
+      "name": "fork-trigger-replay",
+      "size": 47562,
+      "digest": "sha256:e610556a606c4f275aa5249f0504ced98d09f7fdedc48601828d3915e32d6546"
+    },
+    {
+      "id": 14972403324,
+      "name": "fork-trigger-review",
+      "size": 21029,
+      "digest": "sha256:1b1fe5799b0da5ec487f26f77dc0b3aac414f9adc9fd6d9b9ee0aae300f2572f"
+    }
+  ]
+}
