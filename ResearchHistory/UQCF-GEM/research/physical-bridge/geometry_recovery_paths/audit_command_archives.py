@@ -78,6 +78,7 @@ def check(directory, science):
         "native-cover": ["native_cover_increment_certificate.json"],
         "source-gain": ["fixed_geometry_source_gain_certificate.json","fixed_geometry_source_gain_universe.json.xz"],
         "matched-source": ["matched_source_certificate.json","matched_source_universe.json.xz"],
+        "receiver-spare": ["receiver_spare_certificate.json","receiver_spare_universe.json.xz"],
         "protected-work": ["protected_work_certificate.json","protected_work_universe.json.xz"],
         "flat-cover": ["flat_cover_certificate.json","flat_cover_universe.json.xz"],
         "cover-member": ["cover_member_certificate.json","cover_member_universe.json.xz"],
@@ -86,7 +87,7 @@ def check(directory, science):
     with ZipFile(directory / (prefix+"-replay.zip")) as replay:
         check_manifest(replay)
         assert replay.read("science-head.txt").decode().strip() == info["head"]
-        if prefix in {"cover-member", "flat-cover", "protected-work"}:
+        if prefix in {"cover-member", "flat-cover", "protected-work", "receiver-spare"}:
             assert replay.read("historical-head.txt").decode().strip() == info["inherited"]
         else:
             assert replay.read("inherited-head.txt").decode().strip() == info["inherited"]
@@ -147,6 +148,12 @@ def check(directory, science):
         assert (cert["counts"]["equal_cover_separating"], cert["counts"]["pairs"]) == (108,2646)
         result["foundational_instances"] = evidence["coverage"]["instances"]
         result["archived_star_certificate_sha256"] = cert["archive_sha256"]
+    if prefix == "receiver-spare":
+        cert = json.loads((science/names[0]).read_bytes())
+        assert digest(lzma.decompress((science/names[1]).read_bytes())) == cert["raw_sha256"]
+        assert cert["priors"] == 8640 and cert["paired_histories"] == 25920
+        result["foundational_instances"] = evidence["coverage"]["instances"]
+        result["paired_histories"] = cert["paired_histories"]
     if prefix == "protected-work":
         cert = json.loads((science/names[0]).read_bytes())
         assert digest(lzma.decompress((science/names[1]).read_bytes())) == cert["raw_universe_sha256"]
