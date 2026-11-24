@@ -85,7 +85,7 @@ jobs:
       - name: Independently challenge the frozen argument
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 "$SCI/review_cover_return.py" review review_evidence
+        run: python3 "$SCI/review_cover_return_compact.py" review review_evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -134,6 +134,7 @@ jobs:
           if-no-files-found: error
   publication:
     needs: [replay, argument-review, foundational-regression]
+    if: ${{ always() && needs.replay.result == 'success' && needs.foundational-regression.result == 'success' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -152,7 +153,7 @@ jobs:
         with:
           name: cover-return-review
           path: review_evidence
-      - name: Reproduce scientific bytes and read back the raw model reply
+      - name: Reproduce scientific bytes and read back the exact external review status
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
@@ -164,7 +165,7 @@ jobs:
           python "$SCI/verify_cover_return.py" review_sources publication | tee publication/independent.log
           cmp replay/cover_return_universe.json.xz publication/cover_return_universe.json.xz
           cmp replay/cover_return_certificate.json publication/cover_return_certificate.json
-          python "$SCI/review_cover_return.py" audit review_evidence
+          python "$SCI/review_cover_return_compact.py" audit review_evidence
           cp review_evidence/publication_audit.json foundation/VERIFICATION.json publication/
           echo "$UQCF_WORKFLOW_SHA" > publication/workflow-head.txt
           (cd publication && sha256sum *.json *.xz *.log *.txt > SHA256SUMS)

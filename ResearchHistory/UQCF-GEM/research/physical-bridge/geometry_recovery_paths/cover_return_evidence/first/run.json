@@ -1,0 +1,53 @@
+{
+  "run_id": 45495339040,
+  "head": "f50d0bcd266662a0420b4dca66f0d16cb90f7a2d",
+  "workflow_head": "f50d0bcd266662a0420b4dca66f0d16cb90f7a2d",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "preregistration": "a8e0a0d432425d61de1efbd2ee660c259cc3b258",
+  "supplement": "0d70836a262c51e9c63f920c6bd6e311599186d1",
+  "artifact_prefix": "cover-return",
+  "attempt": 1,
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": 138804208401,
+      "name": "argument-review",
+      "conclusion": "failure"
+    },
+    {
+      "id": 138804209060,
+      "name": "foundational-regression",
+      "conclusion": "success"
+    },
+    {
+      "id": 138804209114,
+      "name": "replay",
+      "conclusion": "success"
+    },
+    {
+      "id": 138804825990,
+      "name": "publication",
+      "conclusion": "skipped"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14968910047,
+      "name": "cover-return-replay",
+      "size": 120118,
+      "digest": "sha256:8e3d0191364a259a3a7d30cc40d18f8306baefab1aaa589b40a6fafad1c46cd0"
+    },
+    {
+      "id": 14967568436,
+      "name": "cover-return-foundation",
+      "size": 306986,
+      "digest": "sha256:41fe3a59abb129f1052bd21b55511d76cf47958e820e2c6e3a9c9bed9ab531ed"
+    },
+    {
+      "id": 14966474739,
+      "name": "cover-return-review",
+      "size": 71083,
+      "digest": "sha256:ff7448880402dd091261e155afdbe56b64923c2b4a4e302e2a6f5ddf79c59c6f"
+    }
+  ]
+}
