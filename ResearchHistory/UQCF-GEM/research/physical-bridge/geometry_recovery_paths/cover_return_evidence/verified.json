@@ -1,0 +1,24 @@
+{
+  "budget_arms": 81,
+  "external_review": "PENDING_HTTP_402",
+  "first_attempt": {
+    "external_review": "NO_MODEL_VERDICT",
+    "head": "f50d0bcd266662a0420b4dca66f0d16cb90f7a2d",
+    "http_status": 402,
+    "prompt_sha256": "129955f335bcc81e1ea9e1d33f4c13b3d075009a381aa7ff872d91360f28aa25",
+    "request_sha256": "fea1f1d67dee46e9d71c285c41ea656c6dfed36cba6eacc8eef3dba648afcf13",
+    "run": 45495339040
+  },
+  "foundational_instances": 21,
+  "fresh_publication": "PASS",
+  "primary_arms": 2112,
+  "scientific_replay": "PASS",
+  "second_attempt": {
+    "external_review": "NO_MODEL_VERDICT",
+    "head": "6e5c4d85ce36284aa5338a72d216b6a40d4856aa",
+    "http_status": 402,
+    "prompt_sha256": "17559421a34921967582bea85a0e2cc973549ed3229133476e88ef4b5ffe6b25",
+    "request_sha256": "59093aedb9aef8f55ce8ddc9d2082af66cd72c2a8e16d237ad116ddb9fec9f68",
+    "run": 45495892100
+  }
+}
