@@ -34,7 +34,16 @@ Separate any genuine error in the manuscript from an alternative with different 
 Check raw identifiers and numbers against the certificate. State any unexplained residual or
 counterexample. Do not presume acceptance. Return JSON with verdict ACCEPTED, REVISE or FAIL,
 arrays findings, missing_assumptions, counterexamples, limitations, the object proof_checks,
-and native_bridge_status. Accept with empty defect arrays only when the scoped argument passes.
+and native_bridge_status. Use the literal string "OPEN" for native_bridge_status if the
+physical bridge is open. The three defect arrays findings, missing_assumptions and
+counterexamples contain only unresolved objections. On acceptance these must each be [].
+Put successful checks in proof_checks, and scope conditions in limitations. Do not turn a
+substantive objection into a limitation. A fixed schedule compares the two sources holding
+the downstream edits identical. Selecting admitted endpoints is a different comparison.
+Evaluate whether the manuscript distinguishes these operations and whether either predicts
+a source-dependent local update without conditioning. If the shortest-depth bound is
+valid, give the reason for *all* paths, as well as the witness. Give verdict REVISE or
+FAIL whenever warranted. Return the requested object, with no text outside it.
 """
 
 if __name__ == "__main__":

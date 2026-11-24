@@ -2,7 +2,11 @@ name: Verify odd source recovery and the retained root grade
 on:
   push:
     branches: [gpt/geometry-depth-two-proof]
-    paths: [".github/workflows/uqcf-odd-source-root.yml"]
+    paths:
+      - ".github/workflows/uqcf-odd-source-root.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/review_odd_source.py"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_odd_source.py"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/ODD_SOURCE_ROOT_RECORD.md"
 permissions:
   contents: read
 defaults:
