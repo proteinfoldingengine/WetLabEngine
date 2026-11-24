@@ -1,0 +1,57 @@
+{
+  "run_id": 45317776943,
+  "attempt": 1,
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45317776943",
+  "head": "27a26264f0c48a3e6def3a9e40e573ae9138d558",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "conclusion": "success",
+  "artifact_prefix": "native-veto",
+  "jobs": [
+    {
+      "name": "replay",
+      "id": 138188679112,
+      "conclusion": "success"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138188679397,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138188679585,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 138190210885,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "native-veto-foundation",
+      "id": 14886621468,
+      "digest": "sha256:2f21c154dbfc00733fcb824d1ab38413d73f19d84a3d8be7975814889df73e02",
+      "size": 306986
+    },
+    {
+      "name": "native-veto-publication",
+      "id": 14886268346,
+      "digest": "sha256:2815a752be90e99dcf377d97c2318b29bea11349a5375ed6e34066d8f9bd75f1",
+      "size": 7813
+    },
+    {
+      "name": "native-veto-replay",
+      "id": 14886096854,
+      "digest": "sha256:5a928b8204c1a2c324149b0fb68597d364ce7b31fcffe2962e06a5199e12611d",
+      "size": 33720
+    },
+    {
+      "name": "native-veto-review",
+      "id": 14886485956,
+      "digest": "sha256:4d30392d7f7f8bce7150e07d1e76d156e91e654d363b09077a806babe141a6d4",
+      "size": 101032
+    }
+  ]
+}

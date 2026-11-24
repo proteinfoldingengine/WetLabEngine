@@ -25,8 +25,11 @@ def check(directory, science):
     for item in info["archives"]:
         data = (directory / (item["name"] + ".zip")).read_bytes()
         assert len(data) == item["size"] and "sha256:"+digest(data) == item["digest"]
-    names = ["receiver_command_certificate.json"] if prefix == "receiver-command" else [
-             "native_receiver_veto_certificate.json","receiver_owner_certificate.json"]
+    names = {
+        "receiver-command": ["receiver_command_certificate.json"],
+        "native-veto": ["native_receiver_veto_certificate.json","receiver_owner_certificate.json"],
+        "receiver-record": ["reachable_receiver_certificate.json"],
+    }[prefix]
     with ZipFile(directory / (prefix+"-replay.zip")) as replay:
         check_manifest(replay)
         assert replay.read("science-head.txt").decode().strip() == info["head"]
