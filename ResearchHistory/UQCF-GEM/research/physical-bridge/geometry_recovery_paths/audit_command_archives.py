@@ -18,8 +18,8 @@ def check_manifest(archive):
         assert digest(archive.read(name)) == expected, name
 
 
-def check_cover_p1(directory, science):
-    info = json.loads((directory/"p1_run.json").read_bytes())
+def check_supplement(directory, science, label, certificate):
+    info = json.loads((directory/(label+"_run.json")).read_bytes())
     assert info["conclusion"]=="success" and all(j["conclusion"]=="success" for j in info["jobs"])
     item, = info["archives"]
     archive = directory/(item["name"]+".zip")
@@ -27,8 +27,8 @@ def check_cover_p1(directory, science):
     with ZipFile(archive) as z:
         check_manifest(z)
         assert z.read("workflow-head.txt").decode().strip()==info["head"]
-        cert = z.read("native_cover_p1_certificate.json")
-        assert cert==(science/"native_cover_p1_certificate.json").read_bytes()
+        cert = z.read(certificate)
+        assert cert==(science/certificate).read_bytes()
         raw = z.read("response.json")
         parts = json.loads(raw)["candidates"][0]["content"]["parts"]
         reply = json.loads("".join(p.get("text","") for p in parts if not p.get("thought",False)))
@@ -43,12 +43,23 @@ def check_cover_p1(directory, science):
             assert digest(z.read(f+suffix))==receipt[f+"_sha256"]
         assert json.loads(z.read("request.json"))["contents"][0]["parts"][0]["text"].encode()==z.read("prompt.txt")
         assert json.loads(z.read("publication_audit.json"))=={"audit":"PASS",**receipt}
-        markers=dict(l.split("_B64=",1) for l in (directory/"p1_publication_readback.log").read_text().splitlines())
+        markers=dict(l.split("_B64=",1) for l in (directory/(label+"_publication_readback.log")).read_text().splitlines())
         assert set(markers)=={"response.json","publication_audit.json"}
         for name, value in markers.items():
             assert base64.b64decode(value,validate=True)==z.read(name)
-        return dict(status="PASS",run=info["run_id"],head=info["head"],model=receipt["model_returned"],
+        result=dict(status="PASS",run=info["run_id"],head=info["head"],model=receipt["model_returned"],
                     raw_reply_sha256=digest(raw),certificate_sha256=digest(cert))
+        if label=="field":
+            errors=json.loads(z.read("numeric_errors.log"))
+            assert set(errors)==set(json.loads(cert)["cases"])
+            worst=max(value for row in errors.values() for value in row["maximum_absolute_errors"].values())
+            assert worst<float(json.loads(cert)["tolerance"])
+            result["largest_recorded_numeric_error"]=worst
+        return result
+
+
+def check_cover_p1(directory, science):
+    return check_supplement(directory,science,"p1","native_cover_p1_certificate.json")
 
 
 def check(directory, science):
@@ -65,6 +76,7 @@ def check(directory, science):
         "geometry-selected": ["geometry_selected_record_certificate.json"],
         "single-view-return": ["single_view_returns_certificate.json"],
         "native-cover": ["native_cover_increment_certificate.json"],
+        "source-gain": ["fixed_geometry_source_gain_certificate.json","fixed_geometry_source_gain_universe.json.xz"],
     }[prefix]
     with ZipFile(directory / (prefix+"-replay.zip")) as replay:
         check_manifest(replay)
@@ -112,6 +124,11 @@ def check(directory, science):
             "scientific_bytes":{name:digest((science/name).read_bytes()) for name in names}}
     if prefix == "native-cover":
         result["p1"] = check_cover_p1(directory,science)
+    if prefix == "source-gain":
+        cert=json.loads((science/names[0]).read_bytes())
+        domain=lzma.decompress((science/names[1]).read_bytes())
+        assert digest(domain)==cert["universe_sha256"]
+        result["field"] = check_supplement(directory,science,"field","source_gain_field_certificate.json")
     return result
 
 
