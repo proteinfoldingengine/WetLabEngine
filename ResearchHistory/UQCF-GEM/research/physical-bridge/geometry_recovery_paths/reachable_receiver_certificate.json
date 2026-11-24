@@ -1,0 +1,75 @@
+{
+  "balanced_free_exponents": [
+    1305,
+    1304
+  ],
+  "counts_are": "distinct existential memberships",
+  "only_p_if_q_absent_in_balanced_case": true,
+  "preparations": {
+    "balanced": {
+      "arms": {
+        "662": {
+          "fixed": [
+            0,
+            5
+          ],
+          "free": 1305,
+          "free_ids_sha256": "6956b07fe9aef1ce561b941af516f19ad87fa0d6a4578049f22f20a39c215de1",
+          "local_after_q": "fd5d6b02b808ab298d81b44f7a30d43a479d2b8b0e0eef597e593b47cc322f0d",
+          "local_after_q_then_other": "c2a0a8b8c9b9c85a4cb755d305310d9f27fa79a51cfba3c1c336d833a7e7a80d",
+          "witness": "success"
+        },
+        "718": {
+          "fixed": [
+            0,
+            5,
+            718
+          ],
+          "free": 1304,
+          "free_ids_sha256": "711c616a307786dc4ac32d07256e56106e6a772130317fc775672382c7608caf",
+          "witness": "no returned state"
+        }
+      },
+      "common_actual_row_after_unrelated": "448142b9d0c88d3e35011f848fff6d83d9e5adfd3f6df8b002c82949885c0385",
+      "free_only_after_p": [
+        718
+      ],
+      "view_12_size": 1307
+    },
+    "original": {
+      "arms": {
+        "662": {
+          "fixed": [
+            0,
+            5
+          ],
+          "free": 1305,
+          "free_ids_sha256": "6956b07fe9aef1ce561b941af516f19ad87fa0d6a4578049f22f20a39c215de1",
+          "local_after_q": "fd5d6b02b808ab298d81b44f7a30d43a479d2b8b0e0eef597e593b47cc322f0d",
+          "local_after_q_then_other": "c2a0a8b8c9b9c85a4cb755d305310d9f27fa79a51cfba3c1c336d833a7e7a80d",
+          "witness": "success"
+        },
+        "718": {
+          "fixed": [
+            0,
+            5
+          ],
+          "free": 1305,
+          "free_ids_sha256": "6956b07fe9aef1ce561b941af516f19ad87fa0d6a4578049f22f20a39c215de1",
+          "local_after_q": "fd5d6b02b808ab298d81b44f7a30d43a479d2b8b0e0eef597e593b47cc322f0d",
+          "local_after_q_then_other": "c2a0a8b8c9b9c85a4cb755d305310d9f27fa79a51cfba3c1c336d833a7e7a80d",
+          "witness": "success"
+        }
+      },
+      "common_actual_row_after_unrelated": "448142b9d0c88d3e35011f848fff6d83d9e5adfd3f6df8b002c82949885c0385",
+      "free_only_after_p": [],
+      "view_12_size": 1307
+    }
+  },
+  "receiver": 12,
+  "schema": "reachable-B-sets/1",
+  "source_p": 662,
+  "source_q": 718,
+  "uncertain_if_q_present": true,
+  "unrelated_command": 8
+}
