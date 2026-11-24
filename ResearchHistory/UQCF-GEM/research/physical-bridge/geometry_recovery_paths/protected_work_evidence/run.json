@@ -1,0 +1,60 @@
+{
+  "run_id": 45486605263,
+  "head": "62e2e21a8dd7ba10160d93cfad8ef8ebbd17cf35",
+  "workflow_head": "62e2e21a8dd7ba10160d93cfad8ef8ebbd17cf35",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "parent": "5969e40f26d3046eb4a9d5f075862154145d54d4",
+  "preregistration": "0e6d0ffbf1d103d152d0a34ec18638bbc8d1d55e",
+  "supplement": "45498623b0ec65f9b71aa9c4783921698881a3ee",
+  "attempt": 1,
+  "artifact_prefix": "protected-work",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 138773562664,
+      "name": "replay",
+      "conclusion": "success"
+    },
+    {
+      "id": 138773562856,
+      "name": "argument-review",
+      "conclusion": "success"
+    },
+    {
+      "id": 138773564001,
+      "name": "foundational-regression",
+      "conclusion": "success"
+    },
+    {
+      "id": 138774045421,
+      "name": "publication",
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14964467491,
+      "name": "protected-work-review",
+      "size": 61306,
+      "digest": "sha256:e52275c4a582b5204f2f032de679f6ffe1cb1afc05f585edfe00e0f9dae73b2b"
+    },
+    {
+      "id": 14964373110,
+      "name": "protected-work-foundation",
+      "size": 306986,
+      "digest": "sha256:720ec70aa7b36446c93730b6581c286ddbd604828d8d32fb3b9de33344fa8863"
+    },
+    {
+      "id": 14963984238,
+      "name": "protected-work-publication",
+      "size": 219483,
+      "digest": "sha256:0f392d22d71a9fb510cecffd52b9810a36a7d24de09adb4b4a3738f67d3a6099"
+    },
+    {
+      "id": 14962818286,
+      "name": "protected-work-replay",
+      "size": 237219,
+      "digest": "sha256:d0c4a9875c9c112a01ea36379b38e1118515e72191d56a7ddaa29257b3b32686"
+    }
+  ]
+}
