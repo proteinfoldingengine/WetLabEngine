@@ -1,0 +1,2332 @@
+{
+  "archived_record": {
+    "archive": "v16.54-parent-support-connectivity/evidence/validated/run-37075311542-attempt-1/shard-0/original.zip.part0000",
+    "line": 56732,
+    "record_sha256": "5ceda0b05b2a8d1a00c14e6830c7f6c17817262278e5f20fa527aa48a94f4d25",
+    "run": {
+      "first": [
+        1,
+        3,
+        5,
+        9,
+        16,
+        32,
+        1
+      ],
+      "last": [
+        1,
+        2,
+        36,
+        40,
+        48,
+        32,
+        1
+      ],
+      "layers": [
+        {
+          "after": 7,
+          "before": 7,
+          "peak": 6
+        },
+        {
+          "after": 7,
+          "before": 7,
+          "peak": 5
+        },
+        {
+          "after": 7,
+          "before": 7,
+          "peak": 4
+        }
+      ],
+      "legs": [
+        [
+          [
+            0,
+            1,
+            [
+              7
+            ]
+          ],
+          [
+            0,
+            2,
+            [
+              13
+            ]
+          ],
+          [
+            0,
+            3,
+            [
+              19
+            ]
+          ]
+        ],
+        [
+          [
+            5,
+            4,
+            [
+              30
+            ]
+          ],
+          [
+            5,
+            3,
+            [
+              24
+            ]
+          ],
+          [
+            5,
+            2,
+            [
+              18
+            ]
+          ]
+        ]
+      ],
+      "original": [
+        -19,
+        -13,
+        -7,
+        30,
+        24,
+        18
+      ],
+      "returned": [
+        30,
+        -19,
+        24,
+        -13,
+        18,
+        -7
+      ],
+      "returned_tau": [
+        3,
+        2,
+        3,
+        2,
+        3,
+        2,
+        3
+      ],
+      "shadow": [
+        1,
+        3,
+        4,
+        8,
+        16,
+        32,
+        1
+      ]
+    },
+    "zip_sha256": "ace5305518cf102ca15d8e48b0d7b8df4735672d311ad40bfccea339df205b97"
+  },
+  "arms": 2112,
+  "budget": {
+    "arms": 81,
+    "balls": 10,
+    "labeled_vertices": 25162,
+    "priors": 27,
+    "projected": [
+      {
+        "all": [
+          [
+            1
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "source": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "untouched_R": [
+          [],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ]
+      },
+      {
+        "all": [
+          [
+            2
+          ],
+          [
+            0,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "source": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "untouched_R": [
+          [],
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ]
+      },
+      {
+        "all": [
+          [
+            1
+          ],
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "source": [
+          3,
+          1,
+          3,
+          1
+        ],
+        "untouched_R": [
+          [],
+          [],
+          [
+            0
+          ]
+        ]
+      },
+      {
+        "all": [
+          [
+            2
+          ],
+          [
+            2,
+            3,
+            6
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "source": [
+          3,
+          1,
+          3,
+          2
+        ],
+        "untouched_R": [
+          [],
+          [],
+          [
+            0
+          ]
+        ]
+      },
+      {
+        "all": [
+          [
+            4
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "source": [
+          3,
+          1,
+          3,
+          3
+        ],
+        "untouched_R": [
+          [],
+          [],
+          [
+            0
+          ]
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "2_11": {
+      "all_spell_released_leaf": 0,
+      "arms": 48,
+      "forward_one_edit": 32,
+      "forward_single_to_designated_R": 8,
+      "preparations": 24,
+      "unique_with_cut_kept": 0
+    },
+    "2_12": {
+      "all_spell_released_leaf": 48,
+      "arms": 48,
+      "forward_one_edit": 16,
+      "forward_single_to_designated_R": 8,
+      "preparations": 24,
+      "unique_with_cut_kept": 48
+    },
+    "2_21": {
+      "all_spell_released_leaf": 0,
+      "arms": 48,
+      "forward_one_edit": 32,
+      "forward_single_to_designated_R": 8,
+      "preparations": 24,
+      "unique_with_cut_kept": 0
+    },
+    "2_22": {
+      "all_spell_released_leaf": 48,
+      "arms": 48,
+      "forward_one_edit": 16,
+      "forward_single_to_designated_R": 8,
+      "preparations": 24,
+      "unique_with_cut_kept": 48
+    },
+    "3_111": {
+      "all_spell_released_leaf": 0,
+      "arms": 240,
+      "forward_one_edit": 180,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_112": {
+      "all_spell_released_leaf": 0,
+      "arms": 240,
+      "forward_one_edit": 120,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_121": {
+      "all_spell_released_leaf": 0,
+      "arms": 240,
+      "forward_one_edit": 120,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_122": {
+      "all_spell_released_leaf": 240,
+      "arms": 240,
+      "forward_one_edit": 60,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_211": {
+      "all_spell_released_leaf": 0,
+      "arms": 240,
+      "forward_one_edit": 180,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_212": {
+      "all_spell_released_leaf": 0,
+      "arms": 240,
+      "forward_one_edit": 120,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_221": {
+      "all_spell_released_leaf": 0,
+      "arms": 240,
+      "forward_one_edit": 120,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    },
+    "3_222": {
+      "all_spell_released_leaf": 240,
+      "arms": 240,
+      "forward_one_edit": 60,
+      "forward_single_to_designated_R": 20,
+      "preparations": 120,
+      "unique_with_cut_kept": 0
+    }
+  },
+  "named": {
+    "2": {
+      "arms": [
+        {
+          "all_one_step": [
+            1,
+            4
+          ],
+          "both": {
+            "end": [
+              3,
+              13,
+              8,
+              8,
+              1,
+              1
+            ],
+            "q": [
+              3,
+              3,
+              2
+            ],
+            "seq": [
+              5,
+              1
+            ]
+          },
+          "bypass": {
+            "end": [
+              2,
+              12,
+              8,
+              8,
+              3,
+              3
+            ],
+            "q": [
+              3,
+              3,
+              2
+            ],
+            "seq": [
+              18,
+              22
+            ]
+          },
+          "cut_kept": [
+            1
+          ],
+          "cycle": [
+            1,
+            -4,
+            4,
+            -1
+          ],
+          "end": [
+            10,
+            12,
+            8,
+            8,
+            1,
+            1
+          ],
+          "first": [
+            3,
+            12,
+            8,
+            8,
+            1,
+            1
+          ],
+          "forward": [
+            [
+              0,
+              1,
+              [
+                1
+              ]
+            ]
+          ],
+          "idle": {
+            "first": [
+              2,
+              12,
+              8,
+              8,
+              1,
+              1
+            ],
+            "last": [
+              2,
+              12,
+              8,
+              8,
+              1,
+              1
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              3,
+              12,
+              8,
+              8,
+              1,
+              1
+            ]
+          },
+          "leaf": 1,
+          "original": [
+            -1,
+            4
+          ],
+          "receiver_p1": [
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1,
+              1
+            ]
+          ],
+          "returned": [
+            4,
+            -1
+          ],
+          "reverse": [
+            [
+              3,
+              1,
+              [
+                4
+              ]
+            ]
+          ],
+          "source": [
+            2,
+            3,
+            true
+          ],
+          "source_p1": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "all_one_step": [
+            5,
+            8
+          ],
+          "both": {
+            "end": [
+              11,
+              5,
+              8,
+              8,
+              1,
+              1
+            ],
+            "q": [
+              3,
+              3,
+              2
+            ],
+            "seq": [
+              1,
+              5
+            ]
+          },
+          "bypass": {
+            "end": [
+              10,
+              4,
+              8,
+              8,
+              5,
+              5
+            ],
+            "q": [
+              3,
+              3,
+              2
+            ],
+            "seq": [
+              19,
+              23
+            ]
+          },
+          "cut_kept": [
+            5
+          ],
+          "cycle": [
+            5,
+            -8,
+            8,
+            -5
+          ],
+          "end": [
+            10,
+            12,
+            8,
+            8,
+            1,
+            1
+          ],
+          "first": [
+            10,
+            5,
+            8,
+            8,
+            1,
+            1
+          ],
+          "forward": [
+            [
+              0,
+              2,
+              [
+                5
+              ]
+            ]
+          ],
+          "idle": {
+            "first": [
+              10,
+              4,
+              8,
+              8,
+              1,
+              1
+            ],
+            "last": [
+              10,
+              4,
+              8,
+              8,
+              1,
+              1
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              10,
+              5,
+              8,
+              8,
+              1,
+              1
+            ]
+          },
+          "leaf": 2,
+          "original": [
+            -5,
+            8
+          ],
+          "receiver_p1": [
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1,
+              1
+            ]
+          ],
+          "returned": [
+            8,
+            -5
+          ],
+          "reverse": [
+            [
+              3,
+              2,
+              [
+                8
+              ]
+            ]
+          ],
+          "source": [
+            2,
+            3,
+            true
+          ],
+          "source_p1": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "before": [
+        10,
+        12,
+        8,
+        8,
+        1,
+        1
+      ],
+      "prior_run": {
+        "first": [
+          10,
+          12,
+          8,
+          8,
+          1,
+          1
+        ],
+        "last": [
+          10,
+          12,
+          8,
+          8,
+          1,
+          1
+        ],
+        "layers": [],
+        "legs": [
+          [],
+          []
+        ],
+        "original": [],
+        "returned": [],
+        "returned_tau": [
+          2
+        ],
+        "shadow": [
+          11,
+          13,
+          9,
+          9,
+          1,
+          1
+        ]
+      }
+    },
+    "3": {
+      "arms": [
+        {
+          "all_one_step": [
+            1,
+            4,
+            5
+          ],
+          "both": {
+            "end": [
+              3,
+              13,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ],
+            "q": [
+              4,
+              4,
+              3
+            ],
+            "seq": [
+              6,
+              1
+            ]
+          },
+          "bypass": {
+            "end": [
+              2,
+              12,
+              8,
+              8,
+              3,
+              3,
+              16,
+              16
+            ],
+            "q": [
+              4,
+              4,
+              3
+            ],
+            "seq": [
+              22,
+              27
+            ]
+          },
+          "cut_kept": [
+            1,
+            5
+          ],
+          "cycle": [
+            1,
+            -4,
+            4,
+            -1
+          ],
+          "end": [
+            2,
+            28,
+            24,
+            24,
+            1,
+            1,
+            16,
+            16
+          ],
+          "first": [
+            3,
+            12,
+            8,
+            8,
+            1,
+            1,
+            16,
+            16
+          ],
+          "forward": [
+            [
+              0,
+              1,
+              [
+                1
+              ]
+            ]
+          ],
+          "idle": {
+            "first": [
+              2,
+              12,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ],
+            "last": [
+              2,
+              12,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              4
+            ],
+            "shadow": [
+              3,
+              12,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ]
+          },
+          "leaf": 1,
+          "original": [
+            -1,
+            10,
+            15,
+            20
+          ],
+          "receiver_p1": [
+            [
+              7,
+              1,
+              1
+            ],
+            [
+              6,
+              1,
+              1,
+              1
+            ]
+          ],
+          "returned": [
+            10,
+            15,
+            20,
+            -1
+          ],
+          "reverse": [
+            [
+              4,
+              3,
+              [
+                10,
+                15,
+                20
+              ]
+            ]
+          ],
+          "source": [
+            3,
+            4,
+            true
+          ],
+          "source_p1": [
+            [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "all_one_step": [
+            6,
+            9,
+            10
+          ],
+          "both": {
+            "end": [
+              11,
+              5,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ],
+            "q": [
+              4,
+              4,
+              3
+            ],
+            "seq": [
+              1,
+              6
+            ]
+          },
+          "bypass": {
+            "end": [
+              10,
+              4,
+              8,
+              8,
+              5,
+              5,
+              16,
+              16
+            ],
+            "q": [
+              4,
+              4,
+              3
+            ],
+            "seq": [
+              23,
+              28
+            ]
+          },
+          "cut_kept": [
+            6,
+            10
+          ],
+          "cycle": [
+            6,
+            -9,
+            9,
+            -6
+          ],
+          "end": [
+            26,
+            4,
+            24,
+            24,
+            1,
+            1,
+            16,
+            16
+          ],
+          "first": [
+            10,
+            5,
+            8,
+            8,
+            1,
+            1,
+            16,
+            16
+          ],
+          "forward": [
+            [
+              0,
+              2,
+              [
+                6
+              ]
+            ]
+          ],
+          "idle": {
+            "first": [
+              10,
+              4,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ],
+            "last": [
+              10,
+              4,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              4
+            ],
+            "shadow": [
+              10,
+              5,
+              8,
+              8,
+              1,
+              1,
+              16,
+              16
+            ]
+          },
+          "leaf": 2,
+          "original": [
+            -6,
+            5,
+            15,
+            20
+          ],
+          "receiver_p1": [
+            [
+              7,
+              1,
+              1
+            ],
+            [
+              6,
+              1,
+              1,
+              1
+            ]
+          ],
+          "returned": [
+            5,
+            15,
+            20,
+            -6
+          ],
+          "reverse": [
+            [
+              4,
+              3,
+              [
+                5,
+                15,
+                20
+              ]
+            ]
+          ],
+          "source": [
+            3,
+            4,
+            true
+          ],
+          "source_p1": [
+            [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1,
+              1,
+              1
+            ]
+          ]
+        }
+      ],
+      "before": [
+        10,
+        12,
+        8,
+        8,
+        1,
+        1,
+        16,
+        16
+      ],
+      "prior_run": {
+        "first": [
+          10,
+          12,
+          8,
+          8,
+          1,
+          1,
+          16,
+          16
+        ],
+        "last": [
+          10,
+          12,
+          8,
+          8,
+          1,
+          1,
+          16,
+          16
+        ],
+        "layers": [],
+        "legs": [
+          [],
+          []
+        ],
+        "original": [],
+        "returned": [],
+        "returned_tau": [
+          3
+        ],
+        "shadow": [
+          11,
+          13,
+          9,
+          9,
+          1,
+          1,
+          16,
+          16
+        ]
+      }
+    }
+  },
+  "original_m1": {
+    "identity": [
+      "M1",
+      {
+        "a": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "k": 4,
+        "kind": "layers",
+        "q": 3
+      },
+      [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          0
+        ]
+      ],
+      {
+        "peak": 4
+      }
+    ],
+    "run": {
+      "first": [
+        1,
+        3,
+        4,
+        8,
+        1
+      ],
+      "last": [
+        1,
+        2,
+        12,
+        8,
+        1
+      ],
+      "layers": [
+        {
+          "after": 3,
+          "before": 3,
+          "peak": 4
+        }
+      ],
+      "legs": [
+        [
+          [
+            0,
+            1,
+            [
+              5
+            ]
+          ]
+        ],
+        [
+          [
+            3,
+            2,
+            [
+              12
+            ]
+          ]
+        ]
+      ],
+      "original": [
+        -5,
+        12
+      ],
+      "returned": [
+        12,
+        -5
+      ],
+      "returned_tau": [
+        3,
+        2,
+        3
+      ],
+      "shadow": [
+        1,
+        3,
+        4,
+        8,
+        1
+      ]
+    }
+  },
+  "original_six": {
+    "original": {
+      "cuts": [
+        {
+          "actor": 1,
+          "post": [
+            2,
+            4,
+            8,
+            8,
+            9,
+            2
+          ],
+          "run": {
+            "first": [
+              2,
+              4,
+              8,
+              8,
+              9,
+              2
+            ],
+            "last": [
+              2,
+              4,
+              8,
+              8,
+              9,
+              2
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              2,
+              6,
+              8,
+              8,
+              9,
+              2
+            ]
+          },
+          "source": [
+            3,
+            3,
+            false
+          ],
+          "v": 4
+        },
+        {
+          "actor": 3,
+          "post": [
+            2,
+            4,
+            8,
+            2,
+            9,
+            2
+          ],
+          "run": {
+            "first": [
+              2,
+              4,
+              8,
+              2,
+              9,
+              2
+            ],
+            "last": [
+              2,
+              4,
+              8,
+              2,
+              9,
+              2
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              2,
+              6,
+              8,
+              2,
+              9,
+              2
+            ]
+          },
+          "source": [
+            3,
+            3,
+            false
+          ],
+          "v": 4
+        },
+        {
+          "actor": 0,
+          "post": [
+            2,
+            4,
+            8,
+            10,
+            8,
+            2
+          ],
+          "run": {
+            "first": [
+              2,
+              4,
+              8,
+              10,
+              8,
+              2
+            ],
+            "last": [
+              2,
+              4,
+              8,
+              10,
+              8,
+              2
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              2,
+              6,
+              8,
+              10,
+              8,
+              2
+            ]
+          },
+          "source": [
+            3,
+            3,
+            false
+          ],
+          "v": 5
+        },
+        {
+          "actor": 3,
+          "post": [
+            2,
+            4,
+            8,
+            10,
+            1,
+            2
+          ],
+          "run": {
+            "first": [
+              3,
+              4,
+              8,
+              11,
+              1,
+              3
+            ],
+            "last": [
+              2,
+              12,
+              8,
+              10,
+              1,
+              2
+            ],
+            "layers": [
+              {
+                "after": 5,
+                "before": 5,
+                "peak": 4
+              }
+            ],
+            "legs": [
+              [
+                [
+                  0,
+                  1,
+                  [
+                    1,
+                    13,
+                    21
+                  ]
+                ]
+              ],
+              [
+                [
+                  3,
+                  2,
+                  [
+                    8
+                  ]
+                ]
+              ]
+            ],
+            "original": [
+              -21,
+              -13,
+              -1,
+              8
+            ],
+            "returned": [
+              8,
+              -1,
+              -13,
+              -21
+            ],
+            "returned_tau": [
+              3,
+              2,
+              3,
+              3,
+              3
+            ],
+            "shadow": [
+              3,
+              4,
+              8,
+              11,
+              1,
+              3
+            ]
+          },
+          "source": [
+            3,
+            4,
+            true
+          ],
+          "v": 5
+        }
+      ],
+      "prior": [
+        2,
+        4,
+        8,
+        10,
+        9,
+        2
+      ],
+      "prior_run": {
+        "first": [
+          2,
+          4,
+          8,
+          10,
+          9,
+          2
+        ],
+        "last": [
+          2,
+          4,
+          8,
+          10,
+          9,
+          2
+        ],
+        "layers": [],
+        "legs": [
+          [],
+          []
+        ],
+        "original": [],
+        "returned": [],
+        "returned_tau": [
+          3
+        ],
+        "shadow": [
+          2,
+          6,
+          8,
+          10,
+          9,
+          2
+        ]
+      }
+    },
+    "protected_continuations": [
+      {
+        "actor": 1,
+        "cut": null,
+        "run": {
+          "first": [
+            2,
+            4,
+            8,
+            8,
+            9,
+            2
+          ],
+          "last": [
+            2,
+            4,
+            8,
+            8,
+            9,
+            2
+          ],
+          "layers": [],
+          "legs": [
+            [],
+            []
+          ],
+          "original": [],
+          "returned": [],
+          "returned_tau": [
+            3
+          ],
+          "shadow": [
+            2,
+            6,
+            8,
+            8,
+            9,
+            2
+          ]
+        },
+        "state": [
+          2,
+          4,
+          8,
+          8,
+          9,
+          2
+        ]
+      },
+      {
+        "actor": 1,
+        "cut": 0,
+        "run": {
+          "first": [
+            2,
+            4,
+            8,
+            8,
+            8,
+            2
+          ],
+          "last": [
+            2,
+            4,
+            8,
+            8,
+            8,
+            2
+          ],
+          "layers": [],
+          "legs": [
+            [],
+            []
+          ],
+          "original": [],
+          "returned": [],
+          "returned_tau": [
+            3
+          ],
+          "shadow": [
+            2,
+            6,
+            8,
+            8,
+            8,
+            2
+          ]
+        },
+        "state": [
+          2,
+          4,
+          8,
+          8,
+          8,
+          2
+        ]
+      },
+      {
+        "actor": 1,
+        "cut": 3,
+        "receiver_trials": [
+          [
+            1,
+            4,
+            true
+          ],
+          [
+            3,
+            4,
+            true
+          ],
+          [
+            4,
+            4,
+            true
+          ],
+          [
+            5,
+            3,
+            false
+          ],
+          [
+            6,
+            4,
+            true
+          ]
+        ],
+        "run": {
+          "first": [
+            3,
+            4,
+            8,
+            8,
+            1,
+            3
+          ],
+          "last": [
+            2,
+            12,
+            8,
+            8,
+            1,
+            2
+          ],
+          "layers": [
+            {
+              "after": 4,
+              "before": 4,
+              "peak": 4
+            }
+          ],
+          "legs": [
+            [
+              [
+                0,
+                1,
+                [
+                  1,
+                  21
+                ]
+              ]
+            ],
+            [
+              [
+                3,
+                2,
+                [
+                  8
+                ]
+              ]
+            ]
+          ],
+          "original": [
+            -21,
+            -1,
+            8
+          ],
+          "returned": [
+            8,
+            -1,
+            -21
+          ],
+          "returned_tau": [
+            3,
+            2,
+            3,
+            3
+          ],
+          "shadow": [
+            3,
+            4,
+            8,
+            8,
+            1,
+            3
+          ]
+        },
+        "state": [
+          2,
+          4,
+          8,
+          8,
+          1,
+          2
+        ]
+      },
+      {
+        "actor": 3,
+        "cut": null,
+        "run": {
+          "first": [
+            2,
+            4,
+            8,
+            2,
+            9,
+            2
+          ],
+          "last": [
+            2,
+            4,
+            8,
+            2,
+            9,
+            2
+          ],
+          "layers": [],
+          "legs": [
+            [],
+            []
+          ],
+          "original": [],
+          "returned": [],
+          "returned_tau": [
+            3
+          ],
+          "shadow": [
+            2,
+            6,
+            8,
+            2,
+            9,
+            2
+          ]
+        },
+        "state": [
+          2,
+          4,
+          8,
+          2,
+          9,
+          2
+        ]
+      },
+      {
+        "actor": 3,
+        "cut": 0,
+        "run": {
+          "first": [
+            2,
+            4,
+            8,
+            2,
+            8,
+            2
+          ],
+          "last": [
+            2,
+            4,
+            8,
+            2,
+            8,
+            2
+          ],
+          "layers": [],
+          "legs": [
+            [],
+            []
+          ],
+          "original": [],
+          "returned": [],
+          "returned_tau": [
+            3
+          ],
+          "shadow": [
+            2,
+            6,
+            8,
+            2,
+            8,
+            2
+          ]
+        },
+        "state": [
+          2,
+          4,
+          8,
+          2,
+          8,
+          2
+        ]
+      },
+      {
+        "actor": 3,
+        "cut": 3,
+        "receiver_trials": [
+          [
+            1,
+            4,
+            true
+          ],
+          [
+            3,
+            3,
+            false
+          ],
+          [
+            4,
+            4,
+            true
+          ],
+          [
+            5,
+            3,
+            false
+          ],
+          [
+            6,
+            4,
+            true
+          ]
+        ],
+        "run": {
+          "first": [
+            3,
+            4,
+            8,
+            3,
+            1,
+            3
+          ],
+          "last": [
+            2,
+            12,
+            8,
+            2,
+            1,
+            2
+          ],
+          "layers": [
+            {
+              "after": 5,
+              "before": 5,
+              "peak": 4
+            }
+          ],
+          "legs": [
+            [
+              [
+                0,
+                1,
+                [
+                  1,
+                  13,
+                  21
+                ]
+              ]
+            ],
+            [
+              [
+                3,
+                2,
+                [
+                  8
+                ]
+              ]
+            ]
+          ],
+          "original": [
+            -21,
+            -13,
+            -1,
+            8
+          ],
+          "returned": [
+            8,
+            -1,
+            -13,
+            -21
+          ],
+          "returned_tau": [
+            3,
+            2,
+            3,
+            3,
+            3
+          ],
+          "shadow": [
+            3,
+            4,
+            8,
+            3,
+            1,
+            3
+          ]
+        },
+        "state": [
+          2,
+          4,
+          8,
+          2,
+          1,
+          2
+        ]
+      }
+    ],
+    "swap_0_2": {
+      "cuts": [
+        {
+          "actor": 1,
+          "post": [
+            2,
+            1,
+            8,
+            8,
+            12,
+            2
+          ],
+          "run": {
+            "first": [
+              2,
+              1,
+              8,
+              8,
+              12,
+              2
+            ],
+            "last": [
+              2,
+              1,
+              8,
+              8,
+              12,
+              2
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              3,
+              1,
+              8,
+              8,
+              12,
+              3
+            ]
+          },
+          "source": [
+            3,
+            3,
+            false
+          ],
+          "v": 4
+        },
+        {
+          "actor": 3,
+          "post": [
+            2,
+            1,
+            8,
+            2,
+            12,
+            2
+          ],
+          "run": {
+            "first": [
+              2,
+              1,
+              8,
+              2,
+              12,
+              2
+            ],
+            "last": [
+              2,
+              1,
+              8,
+              2,
+              12,
+              2
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              3,
+              1,
+              8,
+              3,
+              12,
+              3
+            ]
+          },
+          "source": [
+            3,
+            3,
+            false
+          ],
+          "v": 4
+        },
+        {
+          "actor": 2,
+          "post": [
+            2,
+            1,
+            8,
+            10,
+            8,
+            2
+          ],
+          "run": {
+            "first": [
+              2,
+              1,
+              8,
+              10,
+              8,
+              2
+            ],
+            "last": [
+              2,
+              1,
+              8,
+              10,
+              8,
+              2
+            ],
+            "layers": [],
+            "legs": [
+              [],
+              []
+            ],
+            "original": [],
+            "returned": [],
+            "returned_tau": [
+              3
+            ],
+            "shadow": [
+              3,
+              1,
+              8,
+              11,
+              8,
+              3
+            ]
+          },
+          "source": [
+            3,
+            3,
+            false
+          ],
+          "v": 5
+        },
+        {
+          "actor": 3,
+          "post": [
+            2,
+            1,
+            8,
+            10,
+            4,
+            2
+          ],
+          "run": {
+            "first": [
+              3,
+              1,
+              8,
+              11,
+              4,
+              3
+            ],
+            "last": [
+              2,
+              1,
+              8,
+              10,
+              12,
+              2
+            ],
+            "layers": [
+              {
+                "after": 5,
+                "before": 5,
+                "peak": 4
+              }
+            ],
+            "legs": [
+              [
+                [
+                  0,
+                  1,
+                  [
+                    1,
+                    13,
+                    21
+                  ]
+                ]
+              ],
+              [
+                [
+                  3,
+                  2,
+                  [
+                    20
+                  ]
+                ]
+              ]
+            ],
+            "original": [
+              -21,
+              -13,
+              -1,
+              20
+            ],
+            "returned": [
+              20,
+              -1,
+              -13,
+              -21
+            ],
+            "returned_tau": [
+              3,
+              2,
+              3,
+              3,
+              3
+            ],
+            "shadow": [
+              3,
+              1,
+              8,
+              11,
+              4,
+              3
+            ]
+          },
+          "source": [
+            3,
+            4,
+            true
+          ],
+          "v": 5
+        }
+      ],
+      "prior": [
+        2,
+        1,
+        8,
+        10,
+        12,
+        2
+      ],
+      "prior_run": {
+        "first": [
+          2,
+          1,
+          8,
+          10,
+          12,
+          2
+        ],
+        "last": [
+          2,
+          1,
+          8,
+          10,
+          12,
+          2
+        ],
+        "layers": [],
+        "legs": [
+          [],
+          []
+        ],
+        "original": [],
+        "returned": [],
+        "returned_tau": [
+          3
+        ],
+        "shadow": [
+          3,
+          1,
+          8,
+          11,
+          12,
+          3
+        ]
+      }
+    }
+  },
+  "preparations": 1056,
+  "raw_sha256": "072359e98bd13fb2017df20cd9890401465175d97521fe3ee4505623f2259c6b",
+  "schema": 1
+}
