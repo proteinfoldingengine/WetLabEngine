@@ -5,6 +5,7 @@ import sys
 from review_depth_two import run_review
 
 DOCUMENTS = {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/RECEIVER_PRIOR_REVIEW_CLARIFICATION.md": "bd43fc51a9e56742cf6fcea1d642ff08de6eac7f",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/RECEIVER_PRIOR_REPAIR.md": "ebe4c4c6e541187a52439bf86d97827873200ab2",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/RECEIVER_PRIOR_REPAIR_PLAN.md": "585bb520e5408ced729719a1e63c09c35844af5c",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/RECEIVER_PRIOR_FACTORIAL_PLAN.md": "5725f5f4eba6fd383f36b52c2677ae0e5ce93e1c",
@@ -33,16 +34,16 @@ only U. Verify the positive integer compensation signs and the equal-post-work c
 well as the difference between a changed source field, writer consumption and receiver
 prediction before a specified event. Try an uncalibrated receiver collision.
 Return exact_checks with these precise keys: reference_quartet (ordered integer array),
-quartet_count, reference_contrast, receiver_terms (integer count of nonzero B terms for
-the reference quartet), eligible_next_per_case, calibrated_cases (integers);
-passing_calls (the complete array of receiver repairs at archive);
+quartet_count (integer), reference_contrast_integer (JSON integer representing the exact signed four-work contrast), receiver_terms (integer count of nonzero B terms for
+the reference quartet), raw_legal_command_count_per_preparation (JSON integer counting the complete raw legal menu BEFORE the geometry filter), calibrated_cases (integer);
+archive_passing_repair_count (integer counting only the degree-four geometry-passing commands in the archived case), passing_calls (their complete array);
 factorial_executions (four arrays of actual repairs, in grade order [2,2],[2,1],[1,2],[1,1]);
 factorial_balances (four integers for D in that order); same_post_work_at_s2 (boolean);
 source_potential_change_on_swap (signed integer for potential at 160 minus potential at 161);
 same_prior_at_B_on_swap (boolean); writer_uses_mean (boolean);
 uncalibrated_true_vs_stale (two integers for the source square computed with actual vs
 historically substituted geometry). Explicitly note that the known prior topology and the
-fixed starting geometry and specified addressed event condition the theorem. Its numerical
+fixed starting geometry and specified addressed event condition the theorem. Also return calibration_check with exactly supplied_prior_geometry, prior_p1_on_chart12 and global_distance_ownership_established (three booleans identifying the supplied prior geometry condition, use of the chart-12 grade, and whether physical ownership of four global distances was established). Give the actual two-bit product expression in your reasoning. Explain where the 15 known terms and the one hidden term enter and how the deleted-star check constrains the editor. A repetition of the request is insufficient. Its numerical
 representation alone does not grant physical access or execute a writer."""
 if __name__=="__main__":
     run_review(QUESTION,DOCUMENTS,TOPICS)
@@ -52,9 +53,9 @@ if __name__=="__main__":
     four=[cases[k] for k in ("archive","factor_2_1","factor_1_2","factor_1_1")]
     control=cases["uncalibrated"]
     expected=dict(reference_quartet=c["reference_quartet"],quartet_count=c["quartet_count"],
-                  reference_contrast=int(c["reference_contrast"]),receiver_terms=len(c["reference_receiver_terms"]),
-                  eligible_next_per_case=c["legal"],calibrated_cases=sum(v["initial_work_matches"] for v in cases.values()),
-                  passing_calls=a["actual"],factorial_executions=[x["actual"] for x in four],
+                  reference_contrast_integer=int(c["reference_contrast"]),receiver_terms=len(c["reference_receiver_terms"]),
+                  raw_legal_command_count_per_preparation=c["legal"],calibrated_cases=sum(v["initial_work_matches"] for v in cases.values()),
+                  archive_passing_repair_count=len(a["actual"]),passing_calls=a["actual"],factorial_executions=[x["actual"] for x in four],
                   factorial_balances=[int(v["ordinary_receiver_balance"]) for v in four],
                   same_post_work_at_s2=(a["post_work_sha256"]==four[1]["post_work_sha256"]),
                   source_potential_change_on_swap=int(c["source_mean_swap_contrast_change"]),
@@ -64,3 +65,6 @@ if __name__=="__main__":
     review=json.loads((Path(sys.argv[2])/"review.txt").read_text())
     if json.dumps(review.get("exact_checks"),sort_keys=True)!=json.dumps(expected,sort_keys=True):
         raise ValueError("Independent reconstruction differs from the pre-event receiver tests")
+
+    if review.get("calibration_check")!={"supplied_prior_geometry":True,"prior_p1_on_chart12":True,"global_distance_ownership_established":False}:
+        raise ValueError("Independent review confuses calibration with a physically owned readout")
