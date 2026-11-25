@@ -1,0 +1,84 @@
+{
+  "controls": [
+    "flipped trigger rejected",
+    "missing edge rejected",
+    "last-copy deletion rejected in both directions"
+  ],
+  "full_evidence_sha256": "f07bee57fdab7405da9d45ae3001389464dc61582405b521cd8578f5eb342359",
+  "full_suffix_certificate_sha256": "587448d49233dc7d4082fdb58afc0ffd85053a62ea47473b30c0e0086f2d8a89",
+  "immediate_race_by_old_bit_and_first_deleter": {
+    "0": {
+      "A": {
+        "B_root": 7,
+        "height_after": 4,
+        "increment": 1,
+        "trigger": true
+      },
+      "B": {
+        "B_root": 8,
+        "height_after": 3,
+        "increment": 0,
+        "trigger": false
+      }
+    },
+    "1": {
+      "A": {
+        "B_root": 7,
+        "height_after": 4,
+        "increment": 0,
+        "trigger": false
+      },
+      "B": {
+        "B_root": 8,
+        "height_after": 4,
+        "increment": 0,
+        "trigger": false
+      }
+    }
+  },
+  "joined_holders": [
+    "X",
+    "EF",
+    "E",
+    "XF",
+    "F",
+    "AB",
+    "X"
+  ],
+  "next_state_field_reads": {
+    "factor": {
+      "after": 24
+    },
+    "paths": {
+      "after": 120
+    }
+  },
+  "prior_bits": [
+    0,
+    1
+  ],
+  "retained_B_root_if_A_keeps_6": 8,
+  "retained_B_root_if_B_keeps_6": 7,
+  "suffix_edges": 54,
+  "suffix_heights": [
+    4
+  ],
+  "suffix_increments": [
+    0
+  ],
+  "suffix_states": 27,
+  "suffix_triggers": [
+    false
+  ],
+  "terminal_path_counts_by_old_bit_and_B_root": {
+    "0": {
+      "7": 24,
+      "8": 24
+    },
+    "1": {
+      "7": 24,
+      "8": 24
+    }
+  },
+  "terminal_states": 8
+}
