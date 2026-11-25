@@ -1,0 +1,45 @@
+{
+  "verdict": "ACCEPTED",
+  "native_bridge_status": "OPEN",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The absence of a B-owned write/read mechanism to natively retain the receipt.",
+    "The absence of an endogenous scheduling rule or time ordering law."
+  ],
+  "proof_checks": {
+    "incidence": "The incidence covers were independently recomputed for all 32 subset states and 80 legal directed edges. The minimum cover families for selected source masks 3 and 12 were confirmed as {BEX, AFX} and {BEX} respectively, exactly matching the claims.",
+    "receiver_restriction": "The receiver restriction claims were tested component by component. B's ordered row, P1 pushforward grade, holder columns on B's own sites, ordinary legal deletion menu, incident work row, and the complete work table all match perfectly at the corresponding steps.",
+    "receipt": "The two B-probe receipts were verified. For mask 3, AFX survives, yielding (0, false). For mask 12, BEX is destroyed and no size-3 cover remains, yielding (1, true). The joint atomic return is correctly indexed by B's edit without being stored at B.",
+    "exhaustion": "All 120 complete orders were evaluated, confirming the 120-order attribution count. The B probe yields a one-unit increment in exactly 60 orders, and zero in the other 60, matching the expected probe increment counts.",
+    "scope": "The scope of the five-chart control was strictly observed. The conclusion was not transferred to the archived 25-chart fixture. The historical verifier and independent checker correctly reject a falsified trigger, confirming the frozen checking contract."
+  },
+  "check_values": {
+    "state_count": 32,
+    "edge_count": 80,
+    "order_count": 120,
+    "selected_masks": [
+      3,
+      12
+    ],
+    "selected_receipts": [
+      [
+        0,
+        false
+      ],
+      [
+        1,
+        true
+      ]
+    ],
+    "surviving_minimum_counts": [
+      2,
+      1
+    ],
+    "probe_increment_counts": [
+      60,
+      60
+    ]
+  }
+}
