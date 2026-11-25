@@ -1,0 +1,63 @@
+{
+  "verdict": "ACCEPTED",
+  "native_bridge_status": "OPEN",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "The supplied five-chart carrier is a specific bounded fixture, not a universal theorem.",
+    "Absence of an endogenous choice or scheduler.",
+    "Absence of a B-owned read of the joint receipt.",
+    "Absence of physical event correspondence."
+  ],
+  "proof_checks": {
+    "immediate": "The immediate four-way extension correctly reconstructs both earlier B-at-5 bits and both possible first deletions at shared tip 6, verifying the later cover increment, trigger, height, B P1 root, and surviving holder.",
+    "post_join": "The post-join comparison independently justifies the full Cartesian holder-state universe, matching it to the native graph with 27 states, 54 edges, eight terminal states, and the complete maximal-path counts.",
+    "local_record": "The last-copy condition makes the B root 7 or 8 stable under all later ordinary deletions, confirming that the local record permanently distinguishes who relinquished tip 6 without relying on the joint receipt.",
+    "consumers": "Inspection of the actual source and checker instrumentation for factor, paths, and event_map distinguishes reading the certificate after-state to advance the joint path from writing the old delta_h into B's P1 state.",
+    "scope": "The bounded result preserves a valid conditional theorem even if physical access remains absent, explicitly acknowledging the limitations of the supplied five-chart carrier and the absence of an endogenous choice or scheduler."
+  },
+  "check_values": {
+    "prior_bits": [
+      0,
+      1
+    ],
+    "immediate_rows": [
+      [0, "A", 1, true, 4, 7],
+      [1, "A", 0, false, 4, 7],
+      [0, "B", 0, false, 3, 8],
+      [1, "B", 0, false, 4, 8]
+    ],
+    "suffix_counts": [
+      27,
+      54,
+      8,
+      48
+    ],
+    "terminal_counts": {
+      "0": {
+        "7": 24,
+        "8": 24
+      },
+      "1": {
+        "7": 24,
+        "8": 24
+      }
+    },
+    "consumer_reads": {
+      "factor": {
+        "after": 24
+      },
+      "paths": {
+        "after": 120
+      }
+    },
+    "suffix_signature": [
+      4,
+      0,
+      false
+    ],
+    "full_suffix_certificate_sha256": "587448d49233dc7d4082fdb58afc0ffd85053a62ea47473b30c0e0086f2d8a89",
+    "full_evidence_sha256": "f07bee57fdab7405da9d45ae3001389464dc61582405b521cd8578f5eb342359"
+  }
+}
