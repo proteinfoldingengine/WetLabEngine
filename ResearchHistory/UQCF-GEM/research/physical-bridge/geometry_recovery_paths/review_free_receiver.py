@@ -5,10 +5,10 @@ import sys
 from review_fixed_pair import DEMOS, SCI, accepted, checked, main
 
 DOCS={
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/FREE_RECEIVER.md": "a6d3075cb742a7aa2c5675e5268973a1323a528c",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/FREE_RECEIVER.md": "2de93ef6bed08b06e8c77be9674d1b9a40788a1d",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/FREE_RECEIVER_PLAN.md": "a4992a07c1f4a9b544bff66ac308ca182d543d8c",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/FREE_RECEIVER_WORD_LENGTH_PLAN.md": "2e6ca1701f51c7245e9b0090f1f6182dd8355da2",
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_free_receiver_caller.py": "c05d77f84903e3927735121bf5d5e645b9695c01",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_free_receiver_caller.py": "d8b4cc9577d30492a2518d261359f35fa367c5f3",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_free_receiver_chart12.py": "bb21d7b33b6e950d1de5d764ad2573248b5cbc9f",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_free_receiver_threshold.py": "55672d8abd305fe31b9455bf011893304e6a6312",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/check_free_receiver_words.py": "b7ab46a21b774d3e5d754640f952b6b51348a7f5",
@@ -21,7 +21,7 @@ DOCS={
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/free_receiver_spectra.json": "8449e5d0e5ee730c817aacf3136b5f74439f1ed8",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/free_receiver_threshold.json.xz": "7030a4b406a527b9daf4d3618c054af5a2cfe6b8",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/free_receiver_words.json.xz": "4000dfb2e2d861a0fc4882d75399674ea2327c93",
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_free_receiver_caller.py": "2f5663eaae03349e7b1f8e725f27208a31597d95",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_free_receiver_caller.py": "0f3f7a222296ce753a9527d9ad2f6f096c06cd97",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_free_receiver_chart12.py": "2c91de1f00ce696cf3b6899b8e568d583efd5a15",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_free_receiver_threshold.py": "e2c0b96511797686d0bb11ae4d5ae311d440f441",
     "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_free_receiver_words.py": "4811c459310fea46aba39330605818c344be0594",

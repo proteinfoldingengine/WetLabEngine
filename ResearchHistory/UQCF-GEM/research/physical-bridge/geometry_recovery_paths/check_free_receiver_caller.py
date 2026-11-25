@@ -12,7 +12,8 @@ def audit_sources(root):
     files={}
     sites=[]
     for directory in sorted((root/DEMOS).glob("v16.*-*")):
-        if not 22<=int(directory.name.split("-")[0].split(".")[1])<=54:
+        version=directory.name.split("-")[0].split(".")[1]
+        if not version.isdecimal() or not 22<=int(version)<=54:
             continue
         for path in sorted(directory.glob("*.py")):
             rel=path.relative_to(root/DEMOS).as_posix()

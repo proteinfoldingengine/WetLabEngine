@@ -108,7 +108,7 @@ def check_inventory(root, audit):
     expected={}
     calls=[]
     for path in sorted((root/DEMOS).glob("v16.*-*/*.py")):
-        if not 22<=int(path.parent.name.split("-")[0][4:])<=54:
+        if not re.fullmatch(r"v16\.(?:2[2-9]|[34][0-9]|5[0-4])-.+",path.parent.name):
             continue
         rel=path.relative_to(root/DEMOS).as_posix()
         raw=path.read_bytes()
