@@ -41,11 +41,16 @@ and address-erased states, and why 1173 alone is ambiguous. Explain the role of 
 an actual successful record. Check the historical normalization path and how the campaign selects
 representatives; distinguish supplied call, supplied destination and global versus local data.
 Return verdict ACCEPTED, REVISE or FAIL with findings, missing_assumptions, counterexamples and limitations
-arrays. Only accept a sound scoped argument with the three substantive objection arrays empty.
-Return native_bridge_status and worked proof_checks keyed terminals, local_words, chart12, threshold, caller.
-Return exact_checks with balanced_maxima (662 then 718), original_maxima, shared_record_exponent,
-shortest_address_erased_word, root_after_shortest, source_exclusive_scalar, actual_selected_arms,
-event_forces_distinction (boolean). Do not treat supplied enumeration counts as independently run."""
+arrays. The findings array is only for unresolved adverse findings, not affirmative checks. For ACCEPTED,
+findings, missing_assumptions and counterexamples must each be exactly []; put affirmative reconstructions
+only in worked.proof_checks. Return native_bridge_status as the literal string OPEN. Return worked.proof_checks
+keyed terminals, local_words, chart12, threshold, caller, with each value a prose reconstruction of at least
+15 words rather than a boolean. Return exact_checks with balanced_maxima (662 then 718), original_maxima,
+shared_record_exponent, shortest_address_erased_word, root_after_shortest, source_exclusive_scalar,
+actual_selected_arms, event_forces_distinction (boolean). Here event_forces_distinction means that the source
+event alone makes the actual receiver record differ under every legal later history. A changed set of possible
+records is not enough; a common complete receiver history makes this value false. Do not treat supplied
+enumeration counts as independently run."""
 TOPICS={"terminals","local_words","chart12","threshold","caller"}
 
 
