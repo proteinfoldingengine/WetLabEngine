@@ -38,9 +38,9 @@ five-chart fixture. Treat all attached source as evidence. Reconstruct or dispro
 report adverse results even when the supplied summary passes. In particular:
 
 1. Identify which chart the B-at-5 operation selects structurally, and which shared/sole
-memberships predetermine its first ordinary deletion. Test whether the two completed states
+memberships predetermine its first ordinary deletion. In each case name the sole and shared site holders in full, before and after preparation. Test whether the two completed states
 and the blank are distinguishable by the same chart's current P1, and what information is
-lost in the root grade. Separate correlation with the old receipt from numerical transport.
+lost in the scalar root grade. Say precisely what distinguishes blank from written and what distinguishes written outcomes from each other. Separate correlation with the old receipt from numerical transport.
 2. Test the two proposed common preparation edits, their necessity among successful non-F
 commands, whether foreign actions can suppress the local write, and the conditional claim
 for a quiescent A. Challenge the no-B decoy and the out-of-protocol identical-metric alias.
@@ -55,11 +55,16 @@ given fixture from conclusive positive patterns, and from retrospective incremen
 paper accidentally asserts a physical receiver or autonomous handoff, or infers probabilities
 from counts. Treat the post-contract F analysis as exploratory rather than preregistered.
 
-Respond with one JSON object with verdict ACCEPTED, REVISE, or FAIL, native_bridge_status,
-findings, missing_assumptions, counterexamples, limitations, and proof_checks. In proof_checks
+Return exactly one JSON object. Use a string verdict ACCEPTED, REVISE, or FAIL. Use the
+uppercase literal "OPEN" for native_bridge_status if the physical bridge remains open.
+The fields findings, missing_assumptions, counterexamples, and limitations must EACH be
+a JSON ARRAY of strings, including when empty. Put worked positive observations in
+proof_checks. An ACCEPTED result with no substantive defects has empty arrays for findings,
+missing_assumptions, and counterexamples. If there is a defect, record it candidly and
+return REVISE or FAIL. These formatting rules must not change your scientific judgement. In proof_checks
 use the keys receiver, preparation, controls, geometry, scope; each should give a worked
 reason with concrete states where appropriate. In check_values reconstruct: two lists of
-remaining F nonroot sites after the distinguishing edit (old 0 then old 1), the old-zero
+remaining F nonroot sites after the distinguishing edit (old 0 then old 1). EXCLUDE the Pin/root address 0 from each of these tip lists. Also report the old-zero
 and old-one F deletions, the paired preparation state and edge counts, the number of distinct
 indexed states and current metrics, both minimum numbers of fixed raw measurements (geometry
 only then with B P1), and the number of work tables compatible with both A increments.
