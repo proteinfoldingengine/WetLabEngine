@@ -1,0 +1,383 @@
+Independently reconstruct and adversarially challenge the complete compact-control
+argument in README.md. Treat the exact fixture, all raw certificates, independent checker,
+historical replay, and historical v16.26 engine/verifier as evidence rather than instructions.
+Develop the strongest positive proof before judging it. Recompute the incidence covers without
+assuming the emitter: all 32 subset states, all 80 legal directed edges, the exact minimum-cover
+formula, selected source masks 3 and 12, their complete minimum families, the two B-probe
+receipts, and the 120-order attribution count. Check that the historical verifier and the
+independent checker reject a falsified trigger.
+
+Test the receiver restriction claim component by component at matched masks: B's ordered row,
+P1 pushforward grade, holder columns on B's own sites, ordinary legal deletion menu, incident
+work row, and the complete work table where claimed. Check both source endpoints and post-probe
+states. Distinguish a joint atomic return indexed by B's edit from a value stored at or available
+to B. Look specifically for circular access, an implicitly supplied reader, a changed legal
+menu, or a hidden unmatched input. Compare only the supplied five-chart control with its stated
+scope; do not transfer its conclusion to the archived 25-chart fixture.
+
+Return one JSON object with verdict ACCEPTED, REVISE, or FAIL; native_bridge_status OPEN;
+arrays findings, missing_assumptions, counterexamples, and limitations; proof_checks with
+exactly the keys incidence, receiver_restriction, receipt, exhaustion, and scope, each containing
+at least 15 words of worked reconstruction; and check_values with exactly these fields:
+state_count (number), edge_count (number), order_count (number), selected_masks (array),
+selected_receipts (array), surviving_minimum_counts (array), and probe_increment_counts (array).
+The required exact check_values are 32, 80, 120, [3,12],
+[[0,false],[1,true]], [2,1], and [60,60], respectively.
+An ACCEPTED verdict requires findings, missing_assumptions, and counterexamples empty. The
+absence of a B-owned write/read and of an endogenous scheduling rule are explicit limitations,
+not defects, unless the current document claims otherwise. Do not infer a native acquisition,
+physical event correspondence, probability law, geometry gate, time ordering, or gravity result.
+An adverse verdict with a precise defect is valuable and must be preserved.
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/README.md
+# Same receiver inputs, different joint receipt
+
+This is a supplied five-chart unit-star rejecting control for proposed receiver access, separate from the archived 25-chart proof in draft PR #158. The calculation was exploratory. The case here does not reproduce the archived degree-four geometry gate, propose an event scheduler, or establish a native record. No independent whole-argument verdict is claimed by this evidence packet.
+
+## Premises and consequence
+
+**Inherited:** v16.26 union-preserving single-incidence deletion and its separately implemented verifier at commit e61d5b0e827f7b412824ad46021e2ad6cc6f7875; P1 pushes the unit grade of a removed tip to its nearest retained ancestor; pair work on this star counts tips held by exactly one member of a pair. **Supplied:** the ordered five charts and seven tip supports in FIXTURE.json. All charts contain the root. Source A drops tips (1,2) or (3,4); receiver B is asked to drop tip 5 in both cases.
+
+All source cuts avoid B's sites. B's own ordered view, exact P1 grade, own-site holder columns, ordinary legal deletion menu and incident row of pair works match at corresponding steps. The two source endpoints also have identical complete work tables: each chart outside A occurs equally often among the two edited tips in each arm. As the probe incidence at tip 5 is the same, those complete work tables remain equal after the probe.
+
+Before the probe the minimum cover families are {BEX, AFX} and {BEX}. The first ordinary minimum in the specified chart order is BEX in both arms. F is the alternative holder of tip 5. The probe keeps AFX available in the first arm but destroys the only minimum BEX in the second, returning (0,false) and (1,true) respectively. The full own record of B remains identical between the two post-probe states; this distinguishes joint-caller output from local retained state. In PR #158's *archived* fixture, chart 12 has shared versus private tip 718, so its ordinary legal menu does not match; the supplied control here does not change that fact.
+
+On all 32 subsets of the five edits, the minimum is 3 plus the indicator that both (A,3) and (B,5) have occurred. The cover increment is attributed to the later of those two events. All 80 directed edges are legal and all 120 complete orders yield the stated attribution; the B probe has one-unit increment in 60 orders. These counts are not a time ordering law or probabilities.
+
+**Open:** The resulting certificate is returned to the joint caller. No inherited action in this packet supplies, writes, exposes or retains its value at B. An owner-aware mechanism must pass the identical-local-restriction control without assuming the very receipt access it is intended to establish.
+
+## Reproduction and frozen checking contract
+
+From this directory, point replay.py at the unmodified historical v16.26-consistency-increment-law directory. Both source Git blob identities are checked before evaluation.
+
+    python3 -B replay.py /path/to/v16.26-consistency-increment-law > actual.json
+    cmp EVIDENCE.json actual.json
+    python3 -B check.py actual.json
+
+The evidence contains all 80 historical certificates, not just the selected outputs. The checker imports neither the producer nor the historical code. It reconstructs each state and cover from the frozen incidence columns, checks the complete matched restrictions and pair work, counts the 120 orders and rejects a falsified trigger. The historical verifier rejects a false trigger independently. A fresh reviewer should challenge both the proof and the distinction between calculated joint attribution and B-owned access.
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/FIXTURE.json
+{
+  "charts": "BAEFX",
+  "tip_holders": ["AX", "AEF", "AE", "AXF", "BF", "AB", "X"],
+  "fine_grade": [1, 1, 1, 1, 1, 1, 1, 1],
+  "edits": [["A", 1], ["A", 2], ["A", 3], ["A", 4], ["B", 5]],
+  "receipt_paths": [[0, 1, 4, 2, 3], [2, 3, 4, 0, 1]],
+  "source_commit": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "engine_blob": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+  "verify_blob": "91cd1e507e955683e744fbdbb0745cac19d66cb3"
+}
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/EVIDENCE.json
+{"probe_counts":[60,60],"rows":[{"certificate":{"after":[[0,5,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":0,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":0,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":0,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":0,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":0,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":1,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":1,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":1,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":1,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":2,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":2,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":2,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":2,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":3,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":3,"result":[0,false]},{"certificate":{"after":[[0,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":3,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":4,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":4,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":4,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":4,"result":[1,true]},{"certificate":{"after":[[0,5,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":5,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":5,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":5,"result":[1,true]},{"certificate":{"after":[[0,5,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":6,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":6,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":6,"result":[1,true]},{"certificate":{"after":[[0,5,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":7,"result":[0,false]},{"certificate":{"after":[[0,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":7,"result":[1,true]},{"certificate":{"after":[[0,5,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":8,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":8,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":8,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":8,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":9,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":9,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":9,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":10,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":10,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":10,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":2,"mask":11,"result":[0,false]},{"certificate":{"after":[[0,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":4,"mask":11,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":12,"result":[0,false]},{"certificate":{"after":[[0,5,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":12,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":12,"result":[1,true]},{"certificate":{"after":[[0,5,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":13,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":13,"result":[1,true]},{"certificate":{"after":[[0,5,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":14,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":14,"result":[1,true]},{"certificate":{"after":[[0,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,5,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":0,"leaf":5,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":4,"mask":15,"result":[1,true]},{"certificate":{"after":[[0,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":16,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":16,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":16,"result":[1,true]},{"certificate":{"after":[[0,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":16,"result":[0,false]},{"certificate":{"after":[[0,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":17,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":17,"result":[1,true]},{"certificate":{"after":[[0,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":17,"result":[0,false]},{"certificate":{"after":[[0,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":18,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":18,"result":[1,true]},{"certificate":{"after":[[0,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":18,"result":[0,false]},{"certificate":{"after":[[0,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":19,"result":[1,true]},{"certificate":{"after":[[0,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,3,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":3,"mask":19,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":0,"mask":20,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":1,"mask":20,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":3,"mask":20,"result":[0,false]},{"certificate":{"after":[[0,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":1,"mask":21,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":3,"mask":21,"result":[0,false]},{"certificate":{"after":[[0,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":0,"mask":22,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":3,"mask":22,"result":[0,false]},{"certificate":{"after":[[0,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,4,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":4,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":3,"mask":23,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":24,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":24,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":24,"result":[1,true]},{"certificate":{"after":[[0,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":1,"mask":25,"result":[0,false]},{"certificate":{"after":[[0,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":25,"result":[1,true]},{"certificate":{"after":[[0,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":3,"h_before":3,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":3,"tau_before":3,"trigger":false,"version":"16.26"},"edit":0,"mask":26,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":26,"result":[1,true]},{"certificate":{"after":[[0,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,3,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":1,"genesis":"v16.26-common-genesis","h_after":4,"h_before":3,"index":1,"leaf":3,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":3,"trigger":true,"version":"16.26"},"edit":2,"mask":27,"result":[1,true]},{"certificate":{"after":[[0,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":0,"mask":28,"result":[0,false]},{"certificate":{"after":[[0,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":1,"mask":28,"result":[0,false]},{"certificate":{"after":[[0,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,2,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":2,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":1,"mask":29,"result":[0,false]},{"certificate":{"after":[[0,6],[0,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"before":[[0,6],[0,1,6],[0,2,3],[0,2,4,5],[0,1,4,7]],"delta_h":0,"genesis":"v16.26-common-genesis","h_after":4,"h_before":4,"index":1,"leaf":1,"parent":0,"parents":[-1,0,0,0,0,0,0,0],"tau_after":4,"tau_before":4,"trigger":false,"version":"16.26"},"edit":0,"mask":30,"result":[0,false]}]}
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/check.py
+"""Independent finite incidence checker; imports neither emitter nor replay."""
+import itertools
+import json
+from pathlib import Path
+import sys
+
+D = Path(__file__).resolve().parent
+F = json.loads((D / "FIXTURE.json").read_text())
+C = F["charts"]
+P = [-1] + [0] * len(F["tip_holders"])
+MOVES = [(C.index(i), v) for i, v in F["edits"]]
+B = C.index("B")
+H = [sum(1 << i for i, label in enumerate(C) if label in holds)
+     for holds in [C, *F["tip_holders"]]]
+
+def columns(mask):
+    h = H.copy()
+    for j, (i, v) in enumerate(MOVES):
+        if mask & (1 << j):
+            h[v] &= ~(1 << i)
+    assert all(h)
+    return h
+
+def covers(cols):
+    matches = [query for query in range(1, 1 << len(C))
+               if all(query & m for m in cols[1:])]
+    s = min(q.bit_count() for q in matches)
+    return s, tuple(q for q in matches if q.bit_count() == s)
+
+def chart_rows(cols):
+    return [[v for v, m in enumerate(cols) if m & (1 << i)] for i in range(len(C))]
+
+def work(cols):
+    return [[sum(g*g for m,g in zip(cols[1:], F["fine_grade"][1:])
+                 if bool(m & (1 << i)) != bool(m & (1 << j)))
+             for j in range(len(C))] for i in range(len(C))]
+
+def receiver(cols):
+    row = chart_rows(cols)[B]
+    grades = F["fine_grade"]
+    outside = sum(g for v,g in enumerate(grades) if v not in row)
+    return (row, [outside + grades[0], *(grades[v] for v in row[1:])],
+            [cols[v] for v in row],
+            [v for v in row[1:] if cols[v].bit_count() > 1], work(cols)[B])
+
+def check(raw):
+    receipts = {}
+    for entry in raw["rows"]:
+        m,k = entry["mask"],entry["edit"]
+        assert 0 <= m < 32 and 0 <= k < 5 and not m & (1 << k) and (m,k) not in receipts
+        i,v = MOVES[k]
+        before,after = columns(m),columns(m | (1 << k))
+        assert before[v] & (1 << i) and before[v].bit_count() > 1
+        hb, old = covers(before)
+        ha, new = covers(after)
+        assert hb == 3 + int(m & 20 == 20)
+        assert ha == 3 + int((m | (1 << k)) & 20 == 20)
+        r = ha-hb, not bool(set(old) & set(new))
+        assert entry["result"] == list(r)
+        cert = entry["certificate"]
+        assert cert["before"] == chart_rows(before) and cert["after"] == chart_rows(after)
+        assert cert["parents"] == P and (cert["index"], cert["leaf"], cert["parent"]) == (i,v,0)
+        assert cert["tau_before"] == cert["h_before"] == hb
+        assert cert["tau_after"] == cert["h_after"] == ha
+        assert (cert["delta_h"],cert["trigger"]) == r
+        receipts[m,k] = r
+    assert len(receipts) == 80
+    arms = (3, 12)
+    assert tuple(receipts[m,4] for m in arms) == ((0, False), (1, True))
+    for a,b in ((1,4),(3,12),(19,28)):
+        assert receiver(columns(a)) == receiver(columns(b))
+    for a,b in ((3,12),(19,28)):
+        assert work(columns(a)) == work(columns(b))
+    first = sum(1 << C.index(i) for i in "BEX")
+    # Proof-specific rejecting control: supplying just this same minimum
+    # would mispredict the first arm because additional minimum AFX survives.
+    assert all(covers(columns(m))[1][0] == first for m in arms)
+    counts = [0,0]
+    for order in itertools.permutations(range(5)):
+        m=0
+        for k in order:
+            if k==4:
+                counts[receipts[m,k][0]] += 1
+            m |= 1 << k
+    assert counts == raw["probe_counts"] == [60, 60]
+
+if __name__ == "__main__":
+    raw = json.loads(Path(sys.argv[1]).read_text())
+    check(raw)
+    raw["rows"][0]["certificate"]["trigger"] = not raw["rows"][0]["certificate"]["trigger"]
+    try:
+        check(raw)
+    except AssertionError:
+        pass
+    else:
+        raise AssertionError("checker accepted deliberately false trigger")
+    print("Verified 32 states, 80 edges, 120 orders, matched restrictions and work; tamper rejected.")
+
+END EXACT FILE
+
+BEGIN EXACT FILE ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/replay.py
+"""Replay on immutable historical source, not on a new receiver primitive."""
+import hashlib
+import importlib.util
+import itertools
+import json
+from pathlib import Path
+import sys
+
+D = Path(__file__).resolve().parent
+F = json.loads((D / "FIXTURE.json").read_text())
+C, H = F["charts"], F["tip_holders"]
+P = (-1,) + (0,) * len(H)
+Y = tuple((0,) + tuple(v for v, h in enumerate(H, 1) if i in h) for i in C)
+MOVES = [(C.index(i), v) for i, v in F["edits"]]
+
+def pinned(file, blob):
+    data = file.read_bytes()
+    assert hashlib.sha1(f"blob {len(data)}".encode() + b"\0" + data).hexdigest() == blob
+    spec = importlib.util.spec_from_file_location(file.stem, file)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+def produce(engine_dir):
+    atom = pinned(engine_dir / "engine.py", F["engine_blob"]).atomic
+    check = pinned(engine_dir / "verify.py", F["verify_blob"]).verify_atomic
+    states = {0: Y}
+    receipts, rows = {}, []
+    for mask in range(32):
+        for k, move in enumerate(MOVES):
+            if mask & (1 << k):
+                continue
+            e = atom(P, states[mask], *move)
+            result = check(e)
+            final = mask | (1 << k)
+            after = tuple(map(tuple, e["after"]))
+            assert states.setdefault(final, after) == after
+            receipts[mask, k] = result
+            rows.append({"mask": mask, "edit": k, "result": list(result), "certificate": e})
+    count = [0, 0]
+    for order in itertools.permutations(range(5)):
+        m = 0
+        for k in order:
+            if k == 4:
+                count[receipts[m,k][0]] += 1
+            m |= 1 << k
+    e = rows[0]["certificate"]
+    try:
+        check(dict(e, trigger=not e["trigger"]))
+    except ValueError:
+        pass
+    else:
+        raise AssertionError("historical verifier accepted a false trigger")
+    return {"rows": rows, "probe_counts": count}
+
+if __name__ == "__main__":
+    out = produce(Path(sys.argv[1]))
+    sys.stdout.write(json.dumps(out, sort_keys=True, separators=(",", ":")) + "\n")
+
+END EXACT FILE
+
+BEGIN EXACT FILE review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+from itertools import combinations,product
+import hashlib,json
+GENESIS='v16.26-common-genesis'
+def need(x,m):
+ if not x:raise ValueError(m)
+def parents(raw):
+ p=tuple(raw);need(p and all(type(x)is int for x in p) and p[0]==-1,'parents');need(all(0<=p[i]<len(p) for i in range(1,len(p))),'endpoint');return p
+def view(p,y):
+ y=tuple(y);need(y and 0 in y and len(set(y))==len(y),'view');need(all(type(v)is int and 0<=v<len(p) for v in y),'identity');need(all(v==0 or p[v] in y for v in y),'ancestor');return y
+def h(p,ys):
+ U=set().union(*map(set,ys));a=[1]
+ for v in U:
+  kids={w for w in U if w and p[w]==v}
+  if kids:a.append(min(r for r in range(1,len(ys)+1) if any(kids<=set().union(*(set(ys[i]) for i in S)) for S in combinations(range(len(ys)),r))))
+ return max(a)
+def tau_at(p,ys,v):
+ U=set().union(*map(set,ys));kids={w for w in U if w and p[w]==v}
+ if not kids:return 0
+ return min(r for r in range(1,len(ys)+1) if any(kids<=set().union(*(set(ys[i]) for i in S)) for S in combinations(range(len(ys)),r)))
+def trigger(p,ys,zs,parent):
+ t=tau_at(p,ys,parent);U=set().union(*map(set,ys));kids={w for w in U if w and p[w]==parent}
+ old=[S for S in combinations(range(len(ys)),t) if kids<=set().union(*(set(ys[i]) for i in S))]
+ return bool(old) and all(not kids<=set().union(*(set(zs[i]) for i in S)) for S in old)
+def atomic(raw,before,index,leaf):
+ p=parents(raw);ys=tuple(view(p,y) for y in before);need(type(index)is int and 0<=index<len(ys),'index');y=ys[index];need(leaf in y and leaf!=0,'leaf');need(not any(p[w]==leaf and w in y for w in y),'non-leaf');z=tuple(v for v in y if v!=leaf);zs=list(ys);zs[index]=z;zs=tuple(zs);need(set().union(*map(set,ys))==set().union(*map(set,zs)),'same union');hb,ha=h(p,ys),h(p,zs);par=p[leaf];tr=trigger(p,ys,zs,par)
+ return {'version':'16.26','genesis':GENESIS,'parents':list(p),'before':[list(x) for x in ys],'after':[list(x) for x in zs],'index':index,'leaf':leaf,'parent':par,'tau_before':tau_at(p,ys,par),'tau_after':tau_at(p,zs,par),'h_before':hb,'h_after':ha,'delta_h':ha-hb,'trigger':tr}
+def factor(raw,before,after):
+ p=parents(raw);cur=[view(p,y) for y in before];zs=tuple(view(p,z) for z in after);need(len(cur)==len(zs) and all(set(z)<=set(y) for y,z in zip(cur,zs)),'endpoint');need(set().union(*map(set,cur))==set().union(*map(set,zs)),'same union');hb=h(p,cur);steps=[]
+ while tuple(cur)!=zs:
+  moved=False
+  for i,(y,z) in enumerate(zip(cur,zs)):
+   rem=[v for v in y if v not in z and not any(p[w]==v and w in y and w not in z for w in y)]
+   if rem:
+    d=atomic(p,cur,i,max(rem));steps.append(d);cur=[tuple(x) for x in d['after']];moved=True;break
+  need(moved,'factor')
+ return {'version':'16.26','genesis':GENESIS,'parents':list(p),'before':[list(x) for x in before],'after':[list(x) for x in zs],'h_before':hb,'h_after':h(p,zs),'steps':steps}
+def code(p):
+ ch={v:[] for v in range(len(p))}
+ for w in range(1,len(p)):ch[p[w]].append(w)
+ def rec(v):return '('+''.join(sorted(rec(w) for w in ch[v]))+')'
+ return rec(0)
+def shapes(nmax):
+ d={}
+ for n in range(1,nmax+1):
+  for q in product(*(range(i) for i in range(1,n))):
+   p=(-1,)+q;d.setdefault(code(p),p)
+ return [(k,d[k]) for k in sorted(d,key=lambda x:(len(x),x))]
+def legal(p):
+ out=[]
+ for mask in range(1,1<<len(p),2):
+  y=tuple(i for i in range(len(p)) if mask>>i&1)
+  if all(v==0 or p[v] in y for v in y):out.append(y)
+ return out
+def covers(p):
+ L=legal(p)
+ for n in range(1,min(4,len(L))+1):
+  for ys in combinations(L,n):
+   if set().union(*map(set,ys))==set(range(len(p))):yield ys
+def produce(bound=5):
+ inst=[];total=strict=trigs=0
+ for sc,p in shapes(bound):
+  cnt=inc=tg=0;hist={};dig=hashlib.sha256()
+  for ys in covers(p):
+   for i,y in enumerate(ys):
+    for leaf in y:
+     if leaf and not any(p[w]==leaf and w in y for w in y):
+      try:d=atomic(p,ys,i,leaf)
+      except ValueError:continue
+      cnt+=1;inc+=d['delta_h']==1;tg+=d['trigger'];k=f"{d['h_before']}->{d['h_after']}";hist[k]=hist.get(k,0)+1;dig.update((repr((ys,i,leaf,d['tau_before'],d['tau_after'],d['h_before'],d['h_after'],d['trigger']))+'\n').encode())
+  total+=cnt;strict+=inc;trigs+=tg;inst.append({'code':sc,'parents':list(p),'atomic':cnt,'strict':inc,'triggers':tg,'transitions':hist,'digest':dig.hexdigest()})
+ return {'version':'16.26','genesis':GENESIS,'bound':bound,'atomic':total,'strict':strict,'triggers':trigs,'instances':inst}
+
+if __name__=='__main__':
+ import pathlib
+ d=produce(5);p=pathlib.Path(__file__).resolve().parent/'evidence';p.mkdir(exist_ok=True);(p/'PRODUCTION.json').write_text(json.dumps(d,sort_keys=True,indent=2)+'\n');print(json.dumps({'atomic':d['atomic'],'strict':d['strict'],'triggers':d['triggers'],'shapes':len(d['instances'])}))
+
+END EXACT FILE
+
+BEGIN EXACT FILE review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+from itertools import combinations,product
+import hashlib
+GENESIS='v16.26-common-genesis'
+def need(x,m):
+ if not x:raise ValueError(m)
+def valid(p,ys):
+ p=tuple(p);need(p and p[0]==-1 and all(type(x)is int for x in p),'parents');out=[]
+ for y in ys:
+  y=tuple(y);need(y and 0 in y and len(set(y))==len(y) and all(type(v)is int and 0<=v<len(p) for v in y) and all(v==0 or p[v] in y for v in y),'view');out.append(y)
+ return p,tuple(out)
+def hv(p,ys):
+ U=set().union(*map(set,ys));vals=[1]
+ for v in U:
+  K={w for w in U if w and p[w]==v}
+  if K:vals.append(min(r for r in range(1,len(ys)+1) if any(K<=set().union(*(set(ys[i]) for i in S)) for S in combinations(range(len(ys)),r))))
+ return max(vals)
+def tv(p,ys,v):
+ U=set().union(*map(set,ys));K={w for w in U if w and p[w]==v}
+ if not K:return 0
+ return min(r for r in range(1,len(ys)+1) if any(K<=set().union(*(set(ys[i]) for i in S)) for S in combinations(range(len(ys)),r)))
+def verify_atomic(d):
+ need(d.get('version')=='16.26' and d.get('genesis')==GENESIS,'origin');p,ys=valid(d['parents'],d['before']);_,zs=valid(p,d['after']);i=d['index'];leaf=d['leaf'];need(type(i)is int and 0<=i<len(ys) and type(leaf)is int,'ids');need(all(ys[j]==zs[j] for j in range(len(ys)) if j!=i),'multi-view mutation');need(set(ys[i])-{leaf}==set(zs[i]) and len(ys[i])==len(zs[i])+1,'not atomic');need(not any(p[w]==leaf and w in ys[i] for w in ys[i]),'non-leaf');need(set().union(*map(set,ys))==set().union(*map(set,zs)),'union')
+ par=p[leaf];tb,ta=tv(p,ys,par),tv(p,zs,par);hb,ha=hv(p,ys),hv(p,zs);need(ta-tb in (0,1),'local jump');need(ha-hb in (0,1),'global jump')
+ U=set().union(*map(set,ys));K={w for w in U if w and p[w]==par};mins=[S for S in combinations(range(len(ys)),tb) if K<=set().union(*(set(ys[j]) for j in S))];tr=bool(mins) and all(not K<=set().union(*(set(zs[j]) for j in S)) for S in mins)
+ need(d['parent']==par and d['tau_before']==tb and d['tau_after']==ta and d['h_before']==hb and d['h_after']==ha and d['delta_h']==ha-hb and d['trigger']==tr,'false certificate');return ha-hb,tr
+def verify_factor(d):
+ p,ys=valid(d['parents'],d['before']);_,zs=valid(p,d['after']);cur=ys;s=0
+ for step in d['steps']:
+  need(tuple(map(tuple,step['before']))==cur,'factor chain');delta,_=verify_atomic(step);s+=delta;cur=tuple(map(tuple,step['after']))
+ need(cur==zs and s==d['h_after']-d['h_before'] and d['h_before']==hv(p,ys) and d['h_after']==hv(p,zs),'telescope');return True
+def code(p):
+ ch={v:[] for v in range(len(p))}
+ for w in range(1,len(p)):ch[p[w]].append(w)
+ def rec(v):return '('+''.join(sorted(rec(w) for w in ch[v]))+')'
+ return rec(0)
+def legal(p):
+ return [tuple(i for i in range(len(p)) if mask>>i&1) for mask in range(1,1<<len(p),2) if all(v==0 or p[v] in tuple(i for i in range(len(p)) if mask>>i&1) for v in tuple(i for i in range(len(p)) if mask>>i&1))]
+def summary(p):
+ L=legal(p);cnt=inc=tg=0;hist={};dig=hashlib.sha256()
+ for n in range(1,min(4,len(L))+1):
+  for ys in combinations(L,n):
+   if set().union(*map(set,ys))!=set(range(len(p))):continue
+   for i,y in enumerate(ys):
+    for leaf in y:
+     if not leaf or any(p[w]==leaf and w in y for w in y):continue
+     z=tuple(v for v in y if v!=leaf);zs=list(ys);zs[i]=z;zs=tuple(zs)
+     if set().union(*map(set,zs))!=set(range(len(p))):continue
+     tb,ta=tv(p,ys,p[leaf]),tv(p,zs,p[leaf]);hb,ha=hv(p,ys),hv(p,zs);K={w for w in range(len(p)) if w and p[w]==p[leaf]};mins=[S for S in combinations(range(len(ys)),tb) if K<=set().union(*(set(ys[j]) for j in S))];tr=bool(mins) and all(not K<=set().union(*(set(zs[j]) for j in S)) for S in mins)
+     need(ta-tb in (0,1) and ha-hb in (0,1),'theorem violation');cnt+=1;inc+=ha-hb==1;tg+=tr;k=f'{hb}->{ha}';hist[k]=hist.get(k,0)+1;dig.update((repr((ys,i,leaf,tb,ta,hb,ha,tr))+'\n').encode())
+ return cnt,inc,tg,hist,dig.hexdigest()
+def verify_document(doc,bound=5):
+ need(doc['version']=='16.26' and doc['genesis']==GENESIS and doc['bound']==bound,'doc');tot=inc=tg=0
+ for x in doc['instances']:
+  p=tuple(x['parents']);need(code(p)==x['code'],'shape');s=summary(p);need((x['atomic'],x['strict'],x['triggers'],x['transitions'],x['digest'])==s,'summary');tot+=s[0];inc+=s[1];tg+=s[2]
+ need((doc['atomic'],doc['strict'],doc['triggers'])==(tot,inc,tg),'totals');return {'atomic':tot,'strict':inc,'triggers':tg,'shapes':len(doc['instances'])}
+
+if __name__=='__main__':
+ import json,pathlib
+ p=pathlib.Path(__file__).resolve().parent/'evidence';d=json.loads((p/'PRODUCTION.json').read_text());r=verify_document(d,5);(p/'VERIFICATION.json').write_text(json.dumps(r,sort_keys=True,indent=2)+'\n');print(json.dumps(r))
+
+END EXACT FILE
