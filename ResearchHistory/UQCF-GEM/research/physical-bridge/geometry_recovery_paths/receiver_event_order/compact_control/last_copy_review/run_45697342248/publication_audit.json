@@ -1,0 +1,25 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "f7c28de8a068e784e326a9e4d6b1cecaf35f42dc",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "f85070b77f9511418517f489fc90a1208134e36e93939f6a997459c6b4e1d5cd",
+  "request_sha256": "cb636835b72670f7b5f4c1905002cb251fd4a6f9c1d77b6d707175e4cc976ad8",
+  "response_sha256": "2764f955c8f2e9fb5302312b3d01b57a53a55894f5b941c60b3d905b3757fd76",
+  "run_id": "45697342248",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/FIXTURE.json": "806d2bc487e358f498cafa806226d1f658e98d26",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/README.md": "5026ac26a865d4f396f2611fedc6e0945fe1dcbe",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/RESULT.md": "bcdd693c002e9ea6c29a30ee1de40d646f2eea6b",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/check.py": "c7b0586362e74c22612a9926f1d7135cf074dfb0",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/raw.json": "755b6d2826f59c2dc2a106910a64871225c5463d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/result.json": "9d170c14a0826be22fe20bebc2513eeba7548696",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py": "48f132d141167d9cd85ff79ec41720b5dca4f8bb"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "f7c28de8a068e784e326a9e4d6b1cecaf35f42dc"
+}
