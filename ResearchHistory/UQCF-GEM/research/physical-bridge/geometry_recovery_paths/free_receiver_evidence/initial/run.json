@@ -1,0 +1,56 @@
+{
+  "run_id": 45540575849,
+  "attempt": 1,
+  "science_head": "ec792b8cd37222e0e69b62b04a2397ecd847ce45",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "name": "foundational-regression",
+      "id": 138957794137,
+      "conclusion": "success",
+      "status": "completed",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540575849/job/138957794137"
+    },
+    {
+      "name": "replay",
+      "id": 138957794484,
+      "conclusion": "failure",
+      "status": "completed",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540575849/job/138957794484"
+    },
+    {
+      "name": "argument-review",
+      "id": 138957794734,
+      "conclusion": "failure",
+      "status": "completed",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540575849/job/138957794734"
+    },
+    {
+      "name": "publication",
+      "id": 138958213648,
+      "conclusion": "skipped",
+      "status": "completed",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540575849/job/138958213648"
+    }
+  ],
+  "archives": [
+    {
+      "name": "free-receiver-foundation",
+      "id": 14989540169,
+      "digest": "sha256:153953e2bf906b26671332f9fd51ffa6f44d3244a44ed670da1f2a977864ada1",
+      "size": 306984
+    },
+    {
+      "name": "free-receiver-review",
+      "id": 14989335676,
+      "digest": "sha256:2539ec3a9f65fe7e61b2b6976653f29f6db18b8379a7f5ca307de9a3a0fe3c7a",
+      "size": 19640
+    },
+    {
+      "name": "free-receiver-replay",
+      "id": 14989012141,
+      "digest": "sha256:8db923a82018e3092cc6e0a1e2d22bf7f84cdf884b9ce3eb7c1849b5446f227b",
+      "size": 482254
+    }
+  ]
+}
