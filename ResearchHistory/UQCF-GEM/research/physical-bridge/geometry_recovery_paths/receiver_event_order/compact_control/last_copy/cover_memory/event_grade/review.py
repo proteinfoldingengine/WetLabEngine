@@ -18,9 +18,9 @@ LAST = BASE + "/last_copy"
 MEM = LAST + "/cover_memory"
 SCI = MEM + "/event_grade"
 DOCUMENTS = {
-    SCI + "/RESULT.md": "a2fdfa50f95313661cb50e83875fcc4c4c143419",
-    SCI + "/check.py": "f5dd9c2660b48bfed0de9e8efe602c10fba50d29",
-    SCI + "/result.json": "91dbe84c6ac6a914ec78beac43f1774cd7366cdc",
+    SCI + "/RESULT.md": "697e784b7f53315b8b58d256dfc0575879b94263",
+    SCI + "/check.py": "f174ff74a95bdee2b91e543e5eb2a9e4a6ad9abd",
+    SCI + "/result.json": "547b43d8df4de80b6439053ed4c1e41b1d0830d1",
     "review_sources/ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py": "9128c24b695c1b539ac60dc93aeaf0bd4795c57b",
     BASE + "/FIXTURE.json": "806d2bc487e358f498cafa806226d1f658e98d26",
     LAST + "/check.py": "c7b0586362e74c22612a9926f1d7135cf074dfb0",
@@ -35,7 +35,7 @@ DOCUMENTS = {
 }
 TOPICS = {"work", "locality", "compatibility", "scale", "scope"}
 QUESTION = """Independently referee event_grade/RESULT.md and its tests. Attempt to disprove the result.
-Reconstruct the incident work changes at B's actual withdrawal. Challenge the sign, fixed fine
+Prove or refute the equal-or-complement cut criterion, check its two examples and the time of first invisibility in each arm. Recompute the state and terminal counts from the holder choices. Reconstruct the incident work changes at B's actual withdrawal. Challenge the sign, fixed fine
 source, square, signed and zero cases. Check what current P1 alone can reconstruct, the necessity
 perturbation at an absent internal site, and when other records or known inputs could invalidate
 a necessity claim. Independently compute the current F, historical B and overlap rows under

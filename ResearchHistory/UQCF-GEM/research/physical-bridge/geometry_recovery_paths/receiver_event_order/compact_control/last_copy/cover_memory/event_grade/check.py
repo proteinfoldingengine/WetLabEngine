@@ -53,6 +53,43 @@ def paired_work(work, geom, rows, totals):
     return geometry
 
 
+def swap_visibility(work, charts, states, edges, j):
+    """Test when a legal withdrawal can expose or hide the swap in pair work."""
+    def holders(state, site):
+        return {name for name, row in zip(charts,state) if site in row}
+
+    family = {}
+    grades = []
+    for u in (1,3):
+        weights = [1]*8
+        weights[5], weights[j] = u*u, (4-u)**2
+        grades.append(weights)
+    for s in states:
+        h, k = holders(s,5), holders(s,j)
+        assert h == {"F"}
+        left, right = (work.work_for(s, w) for w in grades)
+        equal = left == right
+        assert equal == (h==k or h==set(charts)-k) == (k=={"F"})
+        family[s] = (equal,"F" in k,len(k))
+    lost = 0
+    for (s,i,v),target in edges.items():
+        equal, has_f, n = family[s]
+        now_equal, now_has_f, _ = family[target]
+        if equal:
+            assert now_equal
+        if not has_f:
+            assert not now_has_f and not now_equal
+        if now_equal and not equal:
+            assert v==j and charts[i]!="F" and n==2
+            lost += 1
+    terminal = states-{s for s,i,v in edges}
+    return dict(states=len(states),edges=len(edges), equal=sum(x[0] for x in family.values()),
+                pending=sum(x[1] and x[2]==2 for x in family.values()),
+                permanently_distinct=sum(not x[1] for x in family.values()),
+                edges_hiding_swap=lost, terminals_equal=sum(family[s][0] for s in terminal),
+                terminals_distinct=sum(not family[s][0] for s in terminal))
+
+
 def small_tree_control(p1):
     trees = retained_rows = holder_checks = missing_checks = 0
     for n in range(2, 6):
@@ -107,6 +144,12 @@ def run(root):
         assert (probe["index"], probe["leaf"], probe["delta_h"]) == (b, 5, arm)
         before, after = (prior.as_rows(probe[k]) for k in ("before","after"))
         assert before[b] == (0,5,6) and start[f] == (0,(2,4)[arm],5)
+        post_states, post_events = prior.native_graph(atom,verify,p,after)
+        separate_states, post_edges = prior.reachable_by_columns(charts,after)
+        prior.match_edges(post_states,post_events,separate_states,post_edges)
+        visibility = swap_visibility(work,charts,post_states,post_edges,start[f][1])
+        assert visibility == dict(states=189,edges=621,equal=63,pending=63,
+            permanently_distinct=63,edges_hiding_swap=63,terminals_equal=12,terminals_distinct=12)
         states, edges = prior.native_graph(atom, verify, p, start)
         prior.match_edges(states, edges, *prior.reachable_by_columns(charts,start))
         assert (len(states), len(edges)) == (9,12)
@@ -163,7 +206,8 @@ def run(root):
                     current_work=[list(map(int,r)) for r in current.work])
             rows_checked.append(dict(rows=s, cases=samples))
         evidence.append(dict(arm=arm, history=events, continuations=rows_checked))
-        summary[str(arm)]=dict(states=len(states), ordinary_edges=len(edges), cover_increment=probe["delta_h"],
+        summary[str(arm)]=dict(states=len(states), ordinary_edges=len(edges), post_B_visibility=visibility,
+                               cover_increment=probe["delta_h"],
                                 possible_pairs=sorted({v for z in rows_checked for v in z["cases"]["1"]["minimal_pairs"]}))
     # Internal site, three holders before deletion including the actor, signed cancellation.
     parent = (-1,0,1,1,0)
@@ -183,6 +227,10 @@ def run(root):
         internal.append(dict(subtree_total=totals[1],delta=expected))
     # Same two-level tree, same three legal edits, same total, unequal child splits.
     scales = []
+    complement = ((0,1),(0,2),(0,2))
+    assert paired_work(work,geom,complement,[5,1,3]) == paired_work(work,geom,complement,[5,3,1])
+    changed = ((0,1),(0,2),(0,1,2))
+    assert paired_work(work,geom,changed,[5,1,3]) != paired_work(work,geom,changed,[5,3,1])
     parent = (-1,0,1,1)
     all_sites = tuple(range(4))
     for left, right in ((2,2),(1,3)):
