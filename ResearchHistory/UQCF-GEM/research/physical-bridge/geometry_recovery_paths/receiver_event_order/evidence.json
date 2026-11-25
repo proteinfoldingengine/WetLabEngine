@@ -1,0 +1,248 @@
+{
+  "common_receiver_commands": 1303,
+  "distinguished_commands": [
+    163,
+    164
+  ],
+  "experiments": {
+    "calibrated": {
+      "exact_returns": {
+        "A": [],
+        "B": [
+          [
+            718,
+            1301
+          ],
+          [
+            718,
+            1302
+          ]
+        ]
+      },
+      "postprobe": {
+        "163": {
+          "receiver_root": "3189/13",
+          "work_gate": "degree_not_four"
+        },
+        "164": {
+          "receiver_root": "3205/13",
+          "work_gate": "degree_not_four"
+        },
+        "1301": {
+          "receiver_root": "3157/13",
+          "work_gate": "degree_not_four"
+        }
+      },
+      "receiver_fractional_tip_grades": [
+        "45/13",
+        "61/13"
+      ],
+      "receiver_incident_01_to_12": [
+        "1998",
+        "1999",
+        "1998"
+      ],
+      "receiver_root": "3144/13"
+    },
+    "nominal": {
+      "exact_returns": {
+        "A": [],
+        "B": [
+          [
+            718,
+            1301
+          ],
+          [
+            718,
+            1302
+          ]
+        ]
+      },
+      "postprobe": {
+        "163": {
+          "receiver_root": "247",
+          "work_gate": "degree_not_four"
+        },
+        "164": {
+          "receiver_root": "245",
+          "work_gate": "degree_not_four"
+        },
+        "1301": {
+          "receiver_root": "243",
+          "work_gate": "degree_not_four"
+        }
+      },
+      "receiver_fractional_tip_grades": [],
+      "receiver_incident_01_to_12": [
+        "1998",
+        "1999",
+        "1998"
+      ],
+      "receiver_root": "242"
+    }
+  },
+  "minimum_root_covers": {
+    "A": [
+      [
+        0,
+        8,
+        12
+      ],
+      [
+        0,
+        12,
+        13
+      ],
+      [
+        1,
+        12,
+        13
+      ]
+    ],
+    "B": [
+      [
+        1,
+        12,
+        13
+      ]
+    ],
+    "before": [
+      [
+        0,
+        8,
+        12
+      ],
+      [
+        0,
+        12,
+        13
+      ],
+      [
+        1,
+        12,
+        13
+      ]
+    ]
+  },
+  "order_test": {
+    "archived_changed_events": [
+      [
+        0,
+        1354
+      ],
+      [
+        12,
+        163
+      ]
+    ],
+    "assigned_to_receiver": [
+      0,
+      1
+    ],
+    "complete_orders": 120,
+    "edges": 80,
+    "final_height": 4,
+    "matched_history_receiver_work_discrepancies": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "matched_history_work_discrepancies": [
+      22,
+      0,
+      0,
+      22,
+      0
+    ],
+    "raw_witness_bytes": 3057644,
+    "raw_witness_sha256": "e66ca690dc0b065478b35bae97033523d0b08b8ec52438be0d6ecef87568bd59",
+    "receiver_increment_orders": 60,
+    "source_increment_orders": 60,
+    "states": 32
+  },
+  "prep_edits": 86,
+  "preparation_sha256": "1b1fd2baf15c672dcd87f774daead5ca5dbd368d695b1513f2072ae79d6529da",
+  "raw_single_cut_classes": {
+    "legal": 1305,
+    "work_classes": 618,
+    "work_matched_pairs": 1702
+  },
+  "source_cuts": {
+    "A": [
+      718,
+      1355
+    ],
+    "B": [
+      1304,
+      1354
+    ]
+  },
+  "source_receipts": {
+    "A": [
+      [
+        0,
+        false
+      ],
+      [
+        0,
+        false
+      ]
+    ],
+    "B": [
+      [
+        0,
+        false
+      ],
+      [
+        0,
+        false
+      ]
+    ]
+  },
+  "verified_receipts": {
+    "163": {
+      "A": [
+        0,
+        false
+      ],
+      "B": [
+        1,
+        true
+      ],
+      "before": [
+        0,
+        false
+      ]
+    },
+    "164": {
+      "A": [
+        0,
+        false
+      ],
+      "B": [
+        1,
+        true
+      ],
+      "before": [
+        0,
+        false
+      ]
+    },
+    "1301": {
+      "A": [
+        0,
+        false
+      ],
+      "B": [
+        0,
+        false
+      ],
+      "before": [
+        0,
+        false
+      ]
+    }
+  }
+}
