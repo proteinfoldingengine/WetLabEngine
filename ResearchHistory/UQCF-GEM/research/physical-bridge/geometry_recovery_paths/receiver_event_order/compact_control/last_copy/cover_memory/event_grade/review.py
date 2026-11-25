@@ -33,7 +33,7 @@ DOCUMENTS = {
     "review_sources/ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py":
         "3324c0b46e09120ae526338444a19070b692d049",
 }
-TOPICS = {"work", "locality", "compatibility", "scale", "scope"}
+TOPICS = {"work", "visibility", "locality", "compatibility", "scale", "scope"}
 QUESTION = """Independently referee event_grade/RESULT.md and its tests. Attempt to disprove the result.
 Prove or refute the equal-or-complement cut criterion, check its two examples and the time of first invisibility in each arm. Recompute the state and terminal counts from the holder choices. Reconstruct the incident work changes at B's actual withdrawal. Challenge the sign, fixed fine
 source, square, signed and zero cases. Check what current P1 alone can reconstruct, the necessity
@@ -47,12 +47,12 @@ the scope of the square-root law. Identify any errors in the finite evidence or 
 Return a single JSON object. verdict is ACCEPTED, REVISE, or FAIL. native_bridge_status is
 the literal OPEN if the wider bridge remains open. findings, missing_assumptions, counterexamples
 and limitations are each arrays of strings. Put substantiated positive checks in proof_checks,
-a dictionary with keys work, locality, compatibility, scale, scope, each with a worked argument.
+a dictionary with keys work, visibility, locality, compatibility, scale, scope, each with a worked argument. The visibility argument must address equality or complement of holder sets and which of the two legal first withdrawals of the competing site hides the exchanged grades.
 ACCEPTED with no substantive defects leaves findings, missing_assumptions and counterexamples
 empty. Record any defects freely. In check_values give a dictionary with keys
 B_to_F_jumps (two signed integers for grades 1 then 3), old_B (the two triples in the same
 order), child_jumps (two lists, balanced split then unequal), parent_jump (one integer),
-states_per_arm (one integer). Report your independently calculated values."""
+post_B_states_per_arm (all states from immediately after B releases 5), written_states_per_arm (states reachable only AFTER the E, X and F cuts from the prepared written state), and terminal_visibility (two counts of terminal states from immediately after B releases 5, in the order equal-work, distinct-work). These are different starting states. Report your independently calculated values."""
 
 
 def main():
@@ -77,7 +77,8 @@ def main():
     if not isinstance(checks, dict) or set(checks) != TOPICS or not all(isinstance(v, str) and v.strip() for v in checks.values()):
         raise ValueError("Missing worked argument checks")
     expected = dict(B_to_F_jumps=[1,9], old_B=[[8,1,1],[6,3,1]],
-                    child_jumps=[[4,4],[1,9]], parent_jump=25, states_per_arm=9)
+                    child_jumps=[[4,4],[1,9]], parent_jump=25, post_B_states_per_arm=189, written_states_per_arm=9,
+                    terminal_visibility=[12,12])
     if verdict.get("check_values") != expected:
         raise ValueError("Review values require examination")
     for key in ("findings","missing_assumptions","counterexamples"):
