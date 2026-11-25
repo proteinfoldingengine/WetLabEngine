@@ -1,0 +1,24 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "f44ccfcc91c38cd0e3f6462b0484f1f7847c5f81",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "22c7b167b57db215da72669a0deb25a6d2dc7f808f7b66d72761123f4513bd49",
+  "request_sha256": "680f11e32cb8d0dd3bd4c0f9bf97d8f5d6ac11deb72a02df0a96713db0c21a41",
+  "response_sha256": "af61ef98e303654dd1905629d7d912410ba8cb7e276359875592ac9c16b81de9",
+  "run_id": "45711473141",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/FIXTURE.json": "806d2bc487e358f498cafa806226d1f658e98d26",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/check.py": "c7b0586362e74c22612a9926f1d7135cf074dfb0",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/snapshots/RESULT.md": "3795fb59444c2d944ae31f9cb8a15cc941f34c85",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/snapshots/check_snapshots.py": "cbca82df5b83f8539a2427a291e9d7819666a15d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/snapshots/result.json": "acdd3e2dcf82098c17de06b6d952c6a9661d9e19",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "review_sources/ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py": "3324c0b46e09120ae526338444a19070b692d049"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "f44ccfcc91c38cd0e3f6462b0484f1f7847c5f81"
+}
