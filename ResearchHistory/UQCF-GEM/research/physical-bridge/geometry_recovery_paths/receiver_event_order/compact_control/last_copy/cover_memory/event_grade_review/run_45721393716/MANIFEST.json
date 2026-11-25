@@ -1,0 +1,51 @@
+{
+  "scientific_commit": "8ae5e10e43bcfbd4f7f2611fb026f3dc07d2e863",
+  "review_commit": "5499418cb764f956e4646de31767b099e6c6c7f8",
+  "run": 45721393716,
+  "archives": {
+    "foundation": {
+      "id": 15072710725,
+      "digest": "sha256:b8e16035eae31a1fd0e3dbc1bc56d35606708a721af63249cecce553cbb52605",
+      "size_in_bytes": 306985,
+      "name": "event-grade-foundation"
+    },
+    "replay": {
+      "id": 15071937677,
+      "digest": "sha256:9f06a032091d75129bcb477a98e493088299ff05305b7c23db6e12cd6b89a2a0",
+      "size_in_bytes": 11445,
+      "name": "event-grade-replay"
+    },
+    "review": {
+      "id": 15071843049,
+      "digest": "sha256:235ebac61ce9a4f722af800a81eb36a16389e62e482a85394557988f11c7c617",
+      "size_in_bytes": 80004,
+      "name": "event-grade-review"
+    },
+    "publication": {
+      "id": 15071698677,
+      "digest": "sha256:858b9e50040449af69f909feeb7b63a7126c24cf256346a5abdb615cf507a787",
+      "size_in_bytes": 35048,
+      "name": "event-grade-publication"
+    }
+  },
+  "previous_reviews": {
+    "first_review": {
+      "id": 15072386330,
+      "digest": "sha256:f75f1f37d20079b8274ce96ce460ad310bd0ac1a364dc94c268979c740e91b64",
+      "size_in_bytes": 67477,
+      "name": "event-grade-review",
+      "run": 45720892024,
+      "commit": "43f17d34449fa53aad73fea25dd83430d2bca21e",
+      "scope": "Initial event-magnitude, historical-overlap and branching checks"
+    },
+    "earlier_schema_review": {
+      "id": 15072880658,
+      "digest": "sha256:c5efe40a4ae361b37756fefda519da200bf8fd504dfe0230b97c5e44f92eb99d",
+      "size_in_bytes": 75819,
+      "name": "event-grade-review",
+      "run": 45721151049,
+      "commit": "8ae5e10e43bcfbd4f7f2611fb026f3dc07d2e863",
+      "scope": "The review answered 189 to the ambiguous states_per_arm field. The gate expected 9 and rejected this readback. The corrected schema on the final run asks for both counts and an explicit visibility proof."
+    }
+  }
+}
