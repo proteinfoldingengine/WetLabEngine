@@ -1,0 +1,146 @@
+{
+  "F_response": {
+    "0": {
+      "first_F_deletion": 4,
+      "probe_F_incident": [
+        4,
+        4,
+        3,
+        4
+      ],
+      "ready_F_incident": [
+        4,
+        4,
+        4,
+        5
+      ],
+      "retained_F": [
+        0,
+        2,
+        5
+      ],
+      "source_quiescent_terminals": 1,
+      "terminal_counts": {
+        "blank": 4,
+        "record": 4
+      }
+    },
+    "1": {
+      "first_F_deletion": 2,
+      "probe_F_incident": [
+        4,
+        4,
+        3,
+        4
+      ],
+      "ready_F_incident": [
+        4,
+        4,
+        4,
+        5
+      ],
+      "retained_F": [
+        0,
+        4,
+        5
+      ],
+      "source_quiescent_terminals": 1,
+      "terminal_counts": {
+        "blank": 4,
+        "record": 4
+      }
+    }
+  },
+  "arm_states": 378,
+  "arms": 2,
+  "atlas_record_sets": {
+    "A0": 27,
+    "A0,A1": 62,
+    "A1": 28,
+    "B0": 117,
+    "P": 117
+  },
+  "distinct_states": 351,
+  "editor_controls": {
+    "0": {
+      "exterior_counts": [
+        0,
+        2
+      ],
+      "source_quiescent_terminals": 2,
+      "states": 16,
+      "terminals": 1
+    },
+    "1": {
+      "exterior_counts": [
+        1,
+        1
+      ],
+      "source_quiescent_terminals": 2,
+      "states": 16,
+      "terminals": 1
+    }
+  },
+  "evidence_sha256": "67ee290cdea4a03fad0e794325191846e60a49bc9de02fdbfdac44399ff5f6c0",
+  "geometry_record_sets": {
+    "A0": 18,
+    "A0,A1": 52,
+    "A1": 27,
+    "B0": 97,
+    "P": 97
+  },
+  "metrics": 291,
+  "minimum_fixed_coordinate_subsets": {
+    "plus_B": {
+      "minimal_at_that_size": [
+        [
+          "BA",
+          "AE",
+          "AF",
+          "AX",
+          "EF",
+          "FX"
+        ]
+      ],
+      "minimum": 6,
+      "sufficient_subsets_by_size": {
+        "6": 1,
+        "7": 4,
+        "8": 6,
+        "9": 4,
+        "10": 1
+      }
+    },
+    "work_only": {
+      "minimal_at_that_size": [
+        [
+          "BA",
+          "BE",
+          "BX",
+          "AE",
+          "AF",
+          "AX",
+          "EF",
+          "EX",
+          "FX"
+        ]
+      ],
+      "minimum": 9,
+      "sufficient_subsets_by_size": {
+        "9": 1,
+        "10": 1
+      }
+    }
+  },
+  "paired_non_F_preparations": {
+    "disjoint_menus": 3,
+    "edges": 20,
+    "states": 12
+  },
+  "same_atlas_conflict": {
+    "arm": 1,
+    "first": 0,
+    "second": 1
+  },
+  "six_orders_local_positive": 6
+}

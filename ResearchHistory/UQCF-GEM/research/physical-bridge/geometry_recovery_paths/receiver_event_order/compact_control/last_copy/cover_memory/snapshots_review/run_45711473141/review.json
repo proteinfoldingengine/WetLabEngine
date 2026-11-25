@@ -1,0 +1,36 @@
+{
+  "verdict": "ACCEPTED",
+  "native_bridge_status": "OPEN",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [],
+  "proof_checks": {
+    "receiver": "B's withdrawal at tip 5 selects chart F structurally. Before the event, tip 5 is shared by B and F; afterward, it is held solely by F. F's initial menu is {2,4}. A successful F edit raises its P1 root from 5 to 6, which distinguishes the blank state (root 5) from the written states (root 6). The written outcomes are distinguished by the retained tip (2 vs 4), but this specific address information is lost in the scalar root grade of 6. The correlation with the old receipt is established by the retained address, independent of numerical transport.",
+    "preparation": "The common preparation edits are E-at-2 and X-at-4. Among the 12 states and 20 edges of successful non-F preparatory commands, these two edits are necessary to reach the 3 states where F's menus are disjoint. If A acts freely, it can remove its non-6 tips, suppressing F's local write and bringing both arms to the same full atlas. If A is quiescent, its shared F tip remains available, guaranteeing F's response.",
+    "controls": "The no-B decoy shows that omitting B's tip-5 withdrawal allows F to release 5 in both arms, resulting in an identical F state with tips 2 and 4. The out-of-protocol alias demonstrates that without the preparation phase, a state in the old-0 arm can have the exact same F addressed state and full work table as a legitimately prepared written state in the old-1 arm.",
+    "geometry": "A remote positive A-at-6 increment is certified by B root 7, B-A work 3, and B-E work 1. This forces A to have released 6 while retaining 3 and 4, destroying all triple covers. The separate E and X indicators (E reaching 0 tips for old-0, X reaching 1 tip for old-1) persist once reached and remain valid even if the old B probe is omitted, showing they indicate source history rather than receipt delivery.",
+    "scope": "The exhaustive audit confirms 189 states and 621 edges per arm, with 351 distinct states and 291 work tables in their union. 52 tables leave A's increment ambiguous. The exact minima for fixed coordinate subsets are 9 (work only) and 6 (with B P1). The conflicting orders A-at-6 then X-at-1 (increment 0) vs X-at-1 then A-at-6 (increment 1) reach the same atlas, showing that knowing the current atlas can establish completion and actor while losing the original increment. The analysis correctly avoids inferring probabilities from counts or asserting a physical receiver."
+  },
+  "check_values": {
+    "F_tips": [
+      [2, 5],
+      [4, 5]
+    ],
+    "F_edits": [
+      4,
+      2
+    ],
+    "common_graph": [
+      12,
+      20
+    ],
+    "indexed_states": 351,
+    "metrics": 291,
+    "work_minima": [
+      9,
+      6
+    ],
+    "ambiguous_A": 52
+  }
+}
