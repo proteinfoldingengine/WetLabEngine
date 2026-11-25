@@ -71,7 +71,7 @@ def prompt():
 
 def verify_reply(doc):
     accepted(doc)
-    checks=doc.get("proof_checks",{})
+    checks=doc.get("worked",{}).get("proof_checks",{})
     if doc["native_bridge_status"]!="OPEN" or set(checks)!=TOPICS or any(
             not isinstance(v,str) or len(v.split())<15 for v in checks.values()):
         raise ValueError("incomplete argument or unsupported scope")
