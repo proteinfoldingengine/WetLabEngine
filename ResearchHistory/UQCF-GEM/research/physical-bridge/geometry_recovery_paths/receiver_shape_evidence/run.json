@@ -1,0 +1,62 @@
+{
+  "run_id": 45536467507,
+  "attempt": 1,
+  "head": "27790d4ee92a79196dfd7f2ed001ab9cb0bcbe25",
+  "workflow_head": "27790d4ee92a79196dfd7f2ed001ab9cb0bcbe25",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "conclusion": "failure",
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45536467507",
+  "workflow": ".github/workflows/uqcf-receiver-shape.yml",
+  "jobs": [
+    {
+      "name": "argument-review",
+      "id": 138944166196,
+      "conclusion": "failure",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45536467507/job/138944166196"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138944166387,
+      "conclusion": "success",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45536467507/job/138944166387"
+    },
+    {
+      "name": "publication",
+      "id": 138944625046,
+      "conclusion": "success",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45536467507/job/138944625046"
+    },
+    {
+      "name": "replay",
+      "id": 138944166228,
+      "conclusion": "success",
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45536467507/job/138944166228"
+    }
+  ],
+  "archives": [
+    {
+      "name": "receiver-shape-foundation",
+      "id": 14986284805,
+      "size": 306985,
+      "digest": "sha256:bb52cd7837c3a6ee65bb5a483ba522ce7789c918da456856e53ae99a534b1c3d"
+    },
+    {
+      "name": "receiver-shape-publication",
+      "id": 14986513440,
+      "size": 111102,
+      "digest": "sha256:e1604189a240a3e7ba22ddb5320365a5405d520625c238930510f19daa66dd66"
+    },
+    {
+      "name": "receiver-shape-replay",
+      "id": 14986578196,
+      "size": 125255,
+      "digest": "sha256:4449a276cd2c97f1e2433d7bbd45788c0977c3909f6d4bb654b528150ca42233"
+    },
+    {
+      "name": "receiver-shape-review",
+      "id": 14986998713,
+      "size": 17949,
+      "digest": "sha256:0a3f080794daf274fa549df0b686ef269fb9e16b8dcb302e0d70249797bfb333"
+    }
+  ]
+}
