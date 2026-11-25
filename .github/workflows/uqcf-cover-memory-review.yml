@@ -1,5 +1,6 @@
 name: Review same-event P1 cover memory
 on:
+  workflow_dispatch:
   push:
     branches: [gpt/uqcf-local-cover-memory]
     paths:
@@ -192,7 +193,9 @@ jobs:
           cmp earlier_handoff/result.json handoff/result.json
           cmp earlier_handoff/raw.json handoff/raw.json
           python3 -B "$SCI/review.py" audit review_evidence
-          cp review_evidence/publication_audit.json review_evidence/receipt.json              review_evidence/review.txt review_evidence/response.json              handoff/result.json handoff/raw.json publication/
+          cp review_evidence/publication_audit.json review_evidence/receipt.json \
+             review_evidence/review.txt review_evidence/response.json \
+             handoff/result.json handoff/raw.json publication/
           (cd publication && sha256sum * > SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
