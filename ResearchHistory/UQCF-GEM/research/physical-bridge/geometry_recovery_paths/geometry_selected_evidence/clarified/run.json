@@ -1,0 +1,57 @@
+{
+  "run_id": 45323140325,
+  "attempt": 1,
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45323140325",
+  "head": "263708c96fab61c9e4b38e2f83dce7c20f673220",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "conclusion": "success",
+  "artifact_prefix": "single-view-return",
+  "jobs": [
+    {
+      "name": "foundational-regression",
+      "id": 138206200614,
+      "conclusion": "success"
+    },
+    {
+      "name": "replay",
+      "id": 138206200781,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138206200822,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 138207081875,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "single-view-return-foundation",
+      "id": 14888162915,
+      "digest": "sha256:0d01321df40f0ced8db0dbaa733e5d3b65a53aa3c38fbc29eb67cc7560a308dd",
+      "size": 306988
+    },
+    {
+      "name": "single-view-return-publication",
+      "id": 14887684020,
+      "digest": "sha256:4c4c43fb1e80bcf2a20923f176d94423bee0691f78ca9e5c3d2077554f19ff14",
+      "size": 7346
+    },
+    {
+      "name": "single-view-return-replay",
+      "id": 14888462617,
+      "digest": "sha256:b14e22282e3ec4ac0bf30ab2efd08f503b66d8758e7182bcf5e4ca63d6f6754f",
+      "size": 31881
+    },
+    {
+      "name": "single-view-return-review",
+      "id": 14887698456,
+      "digest": "sha256:205285a83708b23c651503856521547697c55eb7ae27d4861add51ba54a8a0ce",
+      "size": 92245
+    }
+  ]
+}

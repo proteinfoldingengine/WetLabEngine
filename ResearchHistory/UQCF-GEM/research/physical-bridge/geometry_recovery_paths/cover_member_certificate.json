@@ -1,0 +1,534 @@
+{
+  "archive_sha256": "f2de35e7f7fea13621c332cae71dbdc69da63cf8dd806827601fa90b07145a25",
+  "bare_common_terminal": [
+    1,
+    3,
+    25,
+    5
+  ],
+  "bare_control_paths": [
+    [
+      455777,
+      451681,
+      189537
+    ],
+    [
+      453729,
+      451681,
+      189537
+    ]
+  ],
+  "bare_join": [
+    1,
+    3,
+    25,
+    13
+  ],
+  "counts": {
+    "archival_poststates": 864,
+    "arms": 4116,
+    "bare_forced_pair_receivers": 0,
+    "different_cover_separating": 96,
+    "distinct_base_poststates": 2145,
+    "equal_cover_pairs": 2550,
+    "equal_cover_separating": 108,
+    "pair_receiver_incidences": 312,
+    "pairs": 2646,
+    "pairs_separating_empty_nonempty": 204,
+    "preparations": 2401,
+    "relabelings": 576
+  },
+  "historical": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "prior": [
+    1,
+    3,
+    31,
+    13
+  ],
+  "prior_strict_flat_receivers": [
+    3
+  ],
+  "same_endpoint_routes": {
+    "direct": {
+      "charts_ever_full": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "covers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "minimum_work": 12,
+      "path": [
+        [
+          1,
+          19,
+          13,
+          9
+        ],
+        [
+          3,
+          19,
+          13,
+          9
+        ],
+        [
+          7,
+          19,
+          13,
+          9
+        ],
+        [
+          15,
+          19,
+          13,
+          9
+        ],
+        [
+          15,
+          17,
+          13,
+          9
+        ],
+        [
+          15,
+          17,
+          9,
+          9
+        ],
+        [
+          15,
+          17,
+          1,
+          9
+        ],
+        [
+          15,
+          17,
+          1,
+          1
+        ]
+      ]
+    },
+    "v16.39": {
+      "charts_ever_full": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "covers": [
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "minimum_work": 12,
+      "path": [
+        [
+          1,
+          19,
+          13,
+          9
+        ],
+        [
+          1,
+          19,
+          13,
+          1
+        ],
+        [
+          5,
+          19,
+          13,
+          1
+        ],
+        [
+          5,
+          19,
+          9,
+          1
+        ],
+        [
+          13,
+          19,
+          9,
+          1
+        ],
+        [
+          13,
+          19,
+          1,
+          1
+        ],
+        [
+          15,
+          19,
+          1,
+          1
+        ],
+        [
+          15,
+          17,
+          1,
+          1
+        ]
+      ]
+    },
+    "v16.53": {
+      "charts_ever_full": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "covers": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "minimum_work": 0,
+      "path": [
+        [
+          1,
+          19,
+          13,
+          9
+        ],
+        [
+          3,
+          19,
+          13,
+          9
+        ],
+        [
+          3,
+          19,
+          15,
+          9
+        ],
+        [
+          3,
+          19,
+          15,
+          11
+        ],
+        [
+          7,
+          19,
+          15,
+          11
+        ],
+        [
+          7,
+          23,
+          15,
+          11
+        ],
+        [
+          7,
+          23,
+          15,
+          15
+        ],
+        [
+          15,
+          23,
+          15,
+          15
+        ],
+        [
+          15,
+          31,
+          15,
+          15
+        ],
+        [
+          31,
+          31,
+          15,
+          15
+        ],
+        [
+          31,
+          31,
+          31,
+          15
+        ],
+        [
+          31,
+          31,
+          31,
+          31
+        ],
+        [
+          31,
+          29,
+          31,
+          31
+        ],
+        [
+          31,
+          29,
+          29,
+          31
+        ],
+        [
+          31,
+          29,
+          29,
+          29
+        ],
+        [
+          31,
+          25,
+          29,
+          29
+        ],
+        [
+          31,
+          25,
+          25,
+          29
+        ],
+        [
+          31,
+          25,
+          25,
+          25
+        ],
+        [
+          31,
+          17,
+          25,
+          25
+        ],
+        [
+          31,
+          17,
+          17,
+          25
+        ],
+        [
+          31,
+          17,
+          17,
+          17
+        ],
+        [
+          15,
+          17,
+          17,
+          17
+        ],
+        [
+          15,
+          17,
+          1,
+          17
+        ],
+        [
+          15,
+          17,
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  "universe_sha256": "db8f74409935ceb864b6ccbd466be610fe2d464fe0f19f95d08d26c4ba43a6bb",
+  "witness": [
+    {
+      "all_chart_writer_end": [
+        15,
+        17,
+        1,
+        1
+      ],
+      "all_chart_writer_full": true,
+      "cut": 1,
+      "post": [
+        1,
+        3,
+        29,
+        13
+      ],
+      "receiver_cleanup": 1,
+      "receiver_deletions": [
+        2,
+        3
+      ],
+      "receiver_star_final": 1,
+      "source_delta": 1,
+      "source_height": [
+        1,
+        2
+      ],
+      "source_mask": 29,
+      "star_record": {
+        "archive_row": 163,
+        "cleanup_state": [
+          1,
+          3,
+          29,
+          1
+        ],
+        "donor_reads": [
+          [
+            2,
+            0,
+            [
+              2,
+              3,
+              4
+            ],
+            2
+          ]
+        ],
+        "first_singleton": 2,
+        "keeper_cover": [
+          1,
+          2
+        ],
+        "path": [
+          455777,
+          324705,
+          62561,
+          62565,
+          62573,
+          62589,
+          58493,
+          50301,
+          33917,
+          34045,
+          34041,
+          34043,
+          33979
+        ],
+        "q": 2
+      },
+      "trigger": true,
+      "unit_roots_source_before_after_receiver_before_cleanup": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "all_chart_writer_end": [
+        15,
+        17,
+        1,
+        1
+      ],
+      "all_chart_writer_full": true,
+      "cut": 2,
+      "post": [
+        1,
+        3,
+        27,
+        13
+      ],
+      "receiver_cleanup": 5,
+      "receiver_deletions": [
+        3
+      ],
+      "receiver_star_final": 1,
+      "source_delta": 1,
+      "source_height": [
+        1,
+        2
+      ],
+      "source_mask": 27,
+      "star_record": {
+        "archive_row": 151,
+        "cleanup_state": [
+          1,
+          1,
+          27,
+          5
+        ],
+        "donor_reads": [
+          [
+            2,
+            0,
+            [
+              1,
+              3,
+              4
+            ],
+            2
+          ],
+          [
+            3,
+            1,
+            [
+              2
+            ],
+            8
+          ]
+        ],
+        "first_singleton": 2,
+        "keeper_cover": [
+          2,
+          3
+        ],
+        "path": [
+          453729,
+          453665,
+          191521,
+          191523,
+          191531,
+          191547,
+          189499,
+          181307,
+          164923,
+          165051,
+          33979
+        ],
+        "q": 2
+      },
+      "trigger": true,
+      "unit_roots_source_before_after_receiver_before_cleanup": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Bounded external-review request after HTTP 402
+
+The scientific and foundational jobs succeeded at `f50d0bcd266662a0420b4dca66f0d16cb90f7a2d` in [run 45495339040](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45495339040). The Gemini model metadata lookup succeeded. The generation endpoint returned HTTP 402 Payment Required before a response or scientific verdict. The original ZIPs, exact prompt and request, and provider log are preserved in [the first-run evidence](cover_return_evidence/first).
+
+A single smaller request goes to the same model using the existing authorization. It includes the entire published argument, exact source excerpts, an independent budget reconstruction and frozen numerical evidence. The question and answer checks are the same. The prompt is 35,726 UTF-8 bytes and the output ceiling is 6,144 tokens. The original request had 137,938 prompt bytes and a 32,768-token ceiling. The verifier checks the identities of all thirteen original inputs before constructing the compact packet.
+
+The repeat workflow independently replays all scientific and foundational work. A fresh publication job can verify the scientific files even if the provider again returns HTTP 402. In that case the review job remains failed, and the publication receipt explicitly records that an external verdict is pending. A substantive adverse model response cannot pass either review gate.

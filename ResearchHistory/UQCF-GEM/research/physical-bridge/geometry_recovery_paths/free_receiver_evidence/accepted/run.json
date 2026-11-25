@@ -1,0 +1,58 @@
+{
+  "run_id": 45546189652,
+  "attempt": 1,
+  "head": "0c178a1bcedf7399ee003eaee9101f42e225828e",
+  "workflow_head": "0c178a1bcedf7399ee003eaee9101f42e225828e",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "workflow": ".github/workflows/uqcf-free-receiver.yml",
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45546189652",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "replay",
+      "id": 138976271448,
+      "conclusion": "success"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138976271637,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138976271715,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication",
+      "id": 138976641036,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "free-receiver-replay",
+      "id": 14991855996,
+      "size": 526538,
+      "digest": "sha256:31304e0a161a1c380d4665308d7f58aa4502bc52a009f2cd6487145541da8654"
+    },
+    {
+      "name": "free-receiver-foundation",
+      "id": 14991538013,
+      "size": 306986,
+      "digest": "sha256:cbb3bce1ad67636d55a92609248c4189b20669126bebb3b12e49e92bd3562951"
+    },
+    {
+      "name": "free-receiver-review",
+      "id": 14991472953,
+      "size": 32993,
+      "digest": "sha256:e4e47ab1166af9c3883da14e72583d9670c0db0dc3158afb03ce6e3431209570"
+    },
+    {
+      "name": "free-receiver-publication",
+      "id": 14991163773,
+      "size": 499345,
+      "digest": "sha256:8b91628ee7420c6791a986d690c01b52149fea293d01f986d1acb171684d517f"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "run_id": 45498860488,
+  "head": "7e6eaf568eb0077dbffce9c2bdefecbe0cb93874",
+  "workflow_head": "7e6eaf568eb0077dbffce9c2bdefecbe0cb93874",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "preregistration": "7b83a729f7d40f53fbad1a002010ff65a3e44ce4",
+  "supplement": "fc66b066ba952b99cbebd099c3112c8f9d1b4f1d",
+  "attempt": 1,
+  "artifact_prefix": "fixed-pair",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "name": "argument-review",
+      "id": 138816466293,
+      "conclusion": "failure"
+    },
+    {
+      "name": "replay",
+      "id": 138816466792,
+      "conclusion": "success"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138816466858,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication",
+      "id": 138817126547,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14970925571,
+      "name": "fixed-pair-review",
+      "size": 14977,
+      "digest": "sha256:4d8a1d72a7a782f66991cf70119042fb162eb6390003b1a82adcb724bece85d0"
+    },
+    {
+      "id": 14970541556,
+      "name": "fixed-pair-publication",
+      "size": 29716,
+      "digest": "sha256:427508ea570cef9ec17562c23199e91c3ba931cf0e4464a3aff91a66017ebfb4"
+    },
+    {
+      "id": 14970381693,
+      "name": "fixed-pair-foundation",
+      "size": 306984,
+      "digest": "sha256:0dd8608ec54c78fdeee98494ca55e95bb14d6152d28e4c1491682ff955c00ed4"
+    },
+    {
+      "id": 14968598304,
+      "name": "fixed-pair-replay",
+      "size": 49615,
+      "digest": "sha256:0c3866bd2e3d29aacd27c9ab6557709d5d9927edc96ca055a1c68f31bd87f880"
+    }
+  ]
+}

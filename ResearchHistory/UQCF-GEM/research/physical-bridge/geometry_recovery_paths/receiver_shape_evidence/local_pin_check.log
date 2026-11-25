@@ -1,0 +1,6 @@
+Local preflight stderr excerpt from the first attempt before scientific execution
+ValueError: v16.39-theorem-validation/check.py
+
+Expected blob in the first local transcription: d4acda0e79a35b6c42ef0984d6c42ef0984deb684
+Actual blob at e61d5b0e827f7b412824ad46021e2ad6cc6f7875: d4acda0e79a35b6c42ef0984ad362ba5e3bfb684
+The original-module loader failed its Git blob check before reading any experimental outcome. The corrected scientific revision pins the latter identifier. This is a local diagnostic excerpt, separate from the original CI logs.

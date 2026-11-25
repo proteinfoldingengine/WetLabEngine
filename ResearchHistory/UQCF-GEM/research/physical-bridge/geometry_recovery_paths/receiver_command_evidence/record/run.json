@@ -1,0 +1,57 @@
+{
+  "run_id": 45318523492,
+  "attempt": 1,
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45318523492",
+  "head": "06e494675ea05a607466622ae588fa8370981f56",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "conclusion": "success",
+  "artifact_prefix": "receiver-record",
+  "jobs": [
+    {
+      "name": "foundational-regression",
+      "id": 138191115184,
+      "conclusion": "success"
+    },
+    {
+      "name": "argument-review",
+      "id": 138191115435,
+      "conclusion": "success"
+    },
+    {
+      "name": "replay",
+      "id": 138191115499,
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 138191587099,
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "receiver-record-foundation",
+      "id": 14885634341,
+      "digest": "sha256:d364ce685c02c91815f5c2d6e66e47a984f3033329e257a80c310db803d15710",
+      "size": 306982
+    },
+    {
+      "name": "receiver-record-publication",
+      "id": 14886227103,
+      "digest": "sha256:c15389c29b93ad796fda12d7a53f54f179fc22cd8ea3a9b1ba3caf1e4703356e",
+      "size": 4743
+    },
+    {
+      "name": "receiver-record-replay",
+      "id": 14885549690,
+      "digest": "sha256:3e873bb276890db243e5a1abb5013fde804fac395a7c1eb64fe5284ed57ebe23",
+      "size": 15071
+    },
+    {
+      "name": "receiver-record-review",
+      "id": 14885802727,
+      "digest": "sha256:c81f340bdee8ca8063285484ffc15023378f9280b486276743f0ca817a81db8a",
+      "size": 68759
+    }
+  ]
+}

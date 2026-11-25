@@ -1,0 +1,62 @@
+{
+  "run_id": 45540986072,
+  "attempt": 1,
+  "head": "0e0245c6ac5e097890c3d35ceb136e47460b652a",
+  "workflow_head": "0e0245c6ac5e097890c3d35ceb136e47460b652a",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "workflow": ".github/workflows/uqcf-free-receiver.yml",
+  "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540986072",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "name": "argument-review",
+      "id": 138959155359,
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540986072/job/138959155359",
+      "conclusion": "failure"
+    },
+    {
+      "name": "foundational-regression",
+      "id": 138959155077,
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540986072/job/138959155077",
+      "conclusion": "success"
+    },
+    {
+      "name": "publication",
+      "id": 138959669041,
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540986072/job/138959669041",
+      "conclusion": "success"
+    },
+    {
+      "name": "replay",
+      "id": 138959155483,
+      "url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45540986072/job/138959155483",
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "name": "free-receiver-foundation",
+      "id": 14989605781,
+      "size": 306985,
+      "digest": "sha256:a1914bc838a6335f3fad50bd8c042154dc8f413947b9749af042e77a5c469f7a"
+    },
+    {
+      "name": "free-receiver-publication",
+      "id": 14989401361,
+      "size": 499359,
+      "digest": "sha256:0cbfa4d30cc263a63958e7f96937a706fd95d34b46131b373f41fcc3307f77cd"
+    },
+    {
+      "name": "free-receiver-replay",
+      "id": 14989665655,
+      "size": 526339,
+      "digest": "sha256:9ef4a66617f154209dd87186c6d3163a34ec787c824bf94b92e7117c492c24ea"
+    },
+    {
+      "name": "free-receiver-review",
+      "id": 14988708528,
+      "size": 20185,
+      "digest": "sha256:deb1cf74c6cd05368df5578406da79f042c07145f5ad0ada59a5a5da988d7458"
+    }
+  ]
+}

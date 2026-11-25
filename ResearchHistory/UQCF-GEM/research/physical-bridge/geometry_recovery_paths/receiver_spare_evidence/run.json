@@ -1,0 +1,60 @@
+{
+  "run_id": 45491494237,
+  "head": "0eebc827b221991e7033860420b4094f5d44ccc4",
+  "workflow_head": "0eebc827b221991e7033860420b4094f5d44ccc4",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "parent": "69463cc6cef79cb4d023061b53ee4a78d1bc0da1",
+  "preregistration": "d8ab04476b70b41554a963ade4c5a3be8268b965",
+  "supplement": "fb956263f778eb70820855b0b271d1928a4efcdd",
+  "attempt": 1,
+  "artifact_prefix": "receiver-spare",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 138790739113,
+      "name": "argument-review",
+      "conclusion": "success"
+    },
+    {
+      "id": 138790739579,
+      "name": "replay",
+      "conclusion": "success"
+    },
+    {
+      "id": 138790739606,
+      "name": "foundational-regression",
+      "conclusion": "success"
+    },
+    {
+      "id": 138791311331,
+      "name": "publication",
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14967066806,
+      "name": "receiver-spare-foundation",
+      "size": 306986,
+      "digest": "sha256:07f3fd1a7f222d3b99962cb8a0e162f5371259a7fd321c03f1423c05d3d4be1a"
+    },
+    {
+      "id": 14966996875,
+      "name": "receiver-spare-review",
+      "size": 71807,
+      "digest": "sha256:41cb829f9e439ad2e20c62e1ae81fa788a36b75cf7f1e67dbcd8a7f00e9a78ec"
+    },
+    {
+      "id": 14965843882,
+      "name": "receiver-spare-publication",
+      "size": 116842,
+      "digest": "sha256:0bcbbfdff87fe4f851d51539d78da5ffe59ad43e3ab58ecee3de3de789d58483"
+    },
+    {
+      "id": 14965709005,
+      "name": "receiver-spare-replay",
+      "size": 133661,
+      "digest": "sha256:e242dc6429872a99ea264ce150544614576b011304879fee36151f264d7cf332"
+    }
+  ]
+}

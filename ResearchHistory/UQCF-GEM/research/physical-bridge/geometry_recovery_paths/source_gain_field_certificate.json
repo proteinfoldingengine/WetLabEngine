@@ -1,0 +1,74 @@
+{
+  "cases": {
+    "archive": {
+      "coarse_root_contrast_change": "0",
+      "fine_leaf_contrast_change": "0",
+      "mean_root_contrast_change": "0",
+      "normalized_mean_changed": false,
+      "projective_discrepancy": "0.002265928331",
+      "restricted_root_contrast_change": "0",
+      "source_gain": "2"
+    },
+    "high17": {
+      "coarse_root_contrast_change": "0",
+      "fine_leaf_contrast_change": "12/17",
+      "mean_root_contrast_change": "6/17",
+      "normalized_mean_changed": true,
+      "projective_discrepancy": "0.001431620165",
+      "restricted_root_contrast_change": "0",
+      "source_gain": "46/17"
+    },
+    "high5": {
+      "coarse_root_contrast_change": "0",
+      "fine_leaf_contrast_change": "4/5",
+      "mean_root_contrast_change": "2/5",
+      "normalized_mean_changed": true,
+      "projective_discrepancy": "0.001924309318",
+      "restricted_root_contrast_change": "0",
+      "source_gain": "14/5"
+    },
+    "low17": {
+      "coarse_root_contrast_change": "0",
+      "fine_leaf_contrast_change": "-20/17",
+      "mean_root_contrast_change": "-10/17",
+      "normalized_mean_changed": true,
+      "projective_discrepancy": "0.008426319205",
+      "restricted_root_contrast_change": "0",
+      "source_gain": "14/17"
+    },
+    "low5": {
+      "coarse_root_contrast_change": "0",
+      "fine_leaf_contrast_change": "-8/5",
+      "mean_root_contrast_change": "-4/5",
+      "normalized_mean_changed": true,
+      "projective_discrepancy": "0.010644034056",
+      "restricted_root_contrast_change": "0",
+      "source_gain": "2/5"
+    }
+  },
+  "coarse_keys": 1307,
+  "driver_blob": "937325efc761d988d3cf34eb3378035a610e0773",
+  "fine_keys": 1308,
+  "legacy_examples": {
+    "cases": 4,
+    "routes": {
+      "fine_solve_into_mean": 4,
+      "mean_into_ray": 4,
+      "push_into_coarse_solve": 4
+    },
+    "verdict": "SYSTEMATIC_MISMATCH"
+  },
+  "lost_key": [
+    1
+  ],
+  "nonroot_witness_keys": [
+    [
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "tolerance": "1e-8"
+}

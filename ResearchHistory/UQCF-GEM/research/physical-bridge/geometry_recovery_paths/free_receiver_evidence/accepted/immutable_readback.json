@@ -1,0 +1,30 @@
+{
+  "workflow_head": "0c178a1bcedf7399ee003eaee9101f42e225828e",
+  "run_id": 45546189652,
+  "run_conclusion": "success",
+  "artifact_digests": {
+    "free-receiver-replay.zip": "sha256:31304e0a161a1c380d4665308d7f58aa4502bc52a009f2cd6487145541da8654",
+    "free-receiver-foundation.zip": "sha256:cbb3bce1ad67636d55a92609248c4189b20669126bebb3b12e49e92bd3562951",
+    "free-receiver-review.zip": "sha256:e4e47ab1166af9c3883da14e72583d9670c0db0dc3158afb03ce6e3431209570",
+    "free-receiver-publication.zip": "sha256:8b91628ee7420c6791a986d690c01b52149fea293d01f986d1acb171684d517f"
+  },
+  "review": {
+    "verdict": "ACCEPTED",
+    "findings": 0,
+    "missing_assumptions": 0,
+    "counterexamples": 0,
+    "limitations": 0,
+    "response_sha256": "0208db6b654d29b30a793fc3afecc4a4f5b63bf41ccc03e5fdbf721359788ca4",
+    "native_bridge_status": "OPEN",
+    "event_forces_distinction": false
+  },
+  "publication": {
+    "audit": "PASS",
+    "checkout_sha": "0c178a1bcedf7399ee003eaee9101f42e225828e",
+    "workflow_sha": "0c178a1bcedf7399ee003eaee9101f42e225828e"
+  },
+  "preserved_adverse_evidence": [
+    "45540986072 attempt 3: ACCEPTED label with nonempty findings and event_forces_distinction=true; rejected by integrity gate",
+    "45546017200: corrected scientific review response, rejected because parser read proof_checks at the wrong JSON level"
+  ]
+}

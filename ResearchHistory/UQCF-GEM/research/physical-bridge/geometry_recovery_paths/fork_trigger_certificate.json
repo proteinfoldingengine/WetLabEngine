@@ -1,0 +1,200 @@
+{
+  "bare": {
+    "complete_histories": 912,
+    "distinct_mass_pairs": 64,
+    "distinct_mass_writes": 368,
+    "equal_mass_pairs": 20,
+    "equal_mass_writes": 88,
+    "indexed_states": 1620,
+    "legal_edges": 1988,
+    "reading_before_trigger": 184,
+    "source_arms": 168,
+    "with_fork_trigger": 456
+  },
+  "examples": {
+    "balanced:5": {
+      "unchanged": {
+        "count": 4,
+        "early": 0,
+        "edits": 5,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 4,
+        "early": 1,
+        "edits": 4,
+        "global_rises": 4,
+        "local_triggers": 4,
+        "receiver_fired": 3,
+        "scalar": 10,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "balanced:6": {
+      "unchanged": {
+        "count": 6,
+        "early": 0,
+        "edits": 5,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 6,
+        "early": 3,
+        "edits": 4,
+        "global_rises": 6,
+        "local_triggers": 6,
+        "receiver_fired": 3,
+        "scalar": 10,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "named:5": {
+      "unchanged": {
+        "count": 4,
+        "early": 0,
+        "edits": 5,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 4,
+        "early": 1,
+        "edits": 4,
+        "global_rises": 4,
+        "local_triggers": 4,
+        "receiver_fired": 3,
+        "scalar": 10,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "named:6": {
+      "unchanged": {
+        "count": 6,
+        "early": 0,
+        "edits": 5,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 6,
+        "early": 3,
+        "edits": 4,
+        "global_rises": 6,
+        "local_triggers": 6,
+        "receiver_fired": 3,
+        "scalar": 9,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "one:5": {
+      "unchanged": {
+        "count": 24,
+        "early": 0,
+        "edits": 6,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 20,
+        "early": 5,
+        "edits": 5,
+        "global_rises": 0,
+        "local_triggers": 20,
+        "receiver_fired": 15,
+        "scalar": 10,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "one:6": {
+      "unchanged": {
+        "count": 36,
+        "early": 0,
+        "edits": 6,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 30,
+        "early": 15,
+        "edits": 5,
+        "global_rises": 0,
+        "local_triggers": 30,
+        "receiver_fired": 15,
+        "scalar": 9,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "two:5": {
+      "unchanged": {
+        "count": 84,
+        "early": 0,
+        "edits": 7,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 60,
+        "early": 15,
+        "edits": 6,
+        "global_rises": 0,
+        "local_triggers": 60,
+        "receiver_fired": 45,
+        "scalar": 10,
+        "uniform_enabled": "1/2"
+      }
+    },
+    "two:6": {
+      "unchanged": {
+        "count": 126,
+        "early": 0,
+        "edits": 7,
+        "global_rises": 0,
+        "local_triggers": 0,
+        "receiver_fired": 0,
+        "scalar": 3,
+        "uniform_enabled": "1/2"
+      },
+      "write": {
+        "count": 90,
+        "early": 45,
+        "edits": 6,
+        "global_rises": 0,
+        "local_triggers": 90,
+        "receiver_fired": 45,
+        "scalar": 9,
+        "uniform_enabled": "1/2"
+      }
+    }
+  },
+  "historical_blobs": {
+    "cut": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "gate": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "overlap": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "poset": "36c894db328c0865007df3ca273ddb059475fe4a"
+  },
+  "historical_sha": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "raw_sha256": "30154abcb1afa03027ce6b2aa1710e273cfdc9965ea0ca11e6056c9430afc775"
+}

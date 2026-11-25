@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/48802797b940/flat-science/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_fork_trigger.py", line 231, in <module>
+    run(Path(sys.argv[1]))
+  File "/workspace/scratch/48802797b940/flat-science/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_fork_trigger.py", line 192, in run
+    ref, counts, examples=expected_data()
+                          ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/48802797b940/flat-science/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_fork_trigger.py", line 142, in expected_data
+    row, counts = materialize(p,g,tips,s,a)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/48802797b940/flat-science/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_fork_trigger.py", line 102, in materialize
+    previous = snapshot(st)
+               ^^^^^^^^^^^^
+  File "/workspace/scratch/48802797b940/flat-science/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_fork_trigger.py", line 86, in snapshot
+    states[number] = dict(receiver=grade(st[r]), tau=f[c], h=h, edges={})
+                                   ^^^^^^^^^^^^
+  File "/workspace/scratch/48802797b940/flat-science/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/verify_fork_trigger.py", line 75, in grade
+    return [list(t) for t in zip(members(view,n), restriction(p,view,g))]
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'list'

@@ -1,0 +1,262 @@
+{
+  "arms": 4116,
+  "arms_by_cover": {
+    "1": 992,
+    "2": 2812,
+    "3": 312
+  },
+  "exact_cover_two_detour": [
+    [
+      1,
+      19,
+      13,
+      9
+    ],
+    [
+      3,
+      19,
+      13,
+      9
+    ],
+    [
+      7,
+      19,
+      13,
+      9
+    ],
+    [
+      15,
+      19,
+      13,
+      9
+    ],
+    [
+      15,
+      17,
+      13,
+      9
+    ],
+    [
+      15,
+      17,
+      9,
+      9
+    ],
+    [
+      15,
+      17,
+      1,
+      9
+    ],
+    [
+      15,
+      17,
+      1,
+      1
+    ]
+  ],
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "pairs": 2646,
+  "preparations": 2401,
+  "relabelings": 576,
+  "same_target_control": [
+    [
+      2,
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      true,
+      true,
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    [
+      2,
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      true,
+      true,
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ]
+  ],
+  "separating_pairs": 96,
+  "swapped_blank_end_masks": [
+    1,
+    1
+  ],
+  "unique_paths_stored": 2577,
+  "universe_sha256": "bbe7207fe18ef8a27d9c1430549c2380d1c054d99343b34d2a2bf7e80d0c88f2",
+  "witness": [
+    {
+      "after_source": [
+        1,
+        19,
+        21,
+        9
+      ],
+      "end": [
+        7,
+        9,
+        17,
+        1
+      ],
+      "full_chart_deletions": [],
+      "live_guard_checked_every_edit": true,
+      "live_guard_cover": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3
+      ],
+      "minimum_root_grades": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "minimum_total_pair_work": 6,
+      "p1_calls_in_writer": 0,
+      "q": 3,
+      "simultaneous_full_indices": [],
+      "steps": 19,
+      "zero_work_indices": []
+    },
+    {
+      "after_source": [
+        1,
+        19,
+        13,
+        9
+      ],
+      "end": [
+        15,
+        17,
+        1,
+        1
+      ],
+      "full_chart_deletions": [
+        [
+          12,
+          1,
+          1,
+          [
+            31,
+            31,
+            31,
+            31
+          ]
+        ],
+        [
+          13,
+          2,
+          1,
+          [
+            31,
+            29,
+            31,
+            31
+          ]
+        ],
+        [
+          14,
+          3,
+          1,
+          [
+            31,
+            29,
+            29,
+            31
+          ]
+        ],
+        [
+          21,
+          0,
+          4,
+          [
+            31,
+            17,
+            17,
+            17
+          ]
+        ]
+      ],
+      "live_guard_checked_every_edit": true,
+      "live_guard_cover": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "minimum_root_grades": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum_total_pair_work": 0,
+      "p1_calls_in_writer": 0,
+      "q": 2,
+      "simultaneous_full_indices": [
+        11
+      ],
+      "steps": 23,
+      "zero_work_indices": [
+        11
+      ]
+    }
+  ],
+  "witness_cut_order": [
+    3,
+    4
+  ]
+}

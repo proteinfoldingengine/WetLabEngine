@@ -1,0 +1,278 @@
+{
+  "counts": {
+    "candidate_trials": 920,
+    "distinct_parent_pairs": 76,
+    "distinguished_receiver_parent": 76,
+    "histories": 168,
+    "matched_source_and_receiver_cover": 84,
+    "parent_arrays": 42,
+    "positive_receiver_moves": 168,
+    "sibling_pairs": 8,
+    "source_role_pairs": 84
+  },
+  "historical_blobs": {
+    "cut": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "gate": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "overlap": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a"
+  },
+  "historical_sha": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "raw_sha256": "e92037ddcab823da5fccbdcfbdcfb84ec8df35e9963bd4d5fa5332ef577fc42b",
+  "witness": {
+    "4": {
+      "candidate_status": {
+        "0": "leaf",
+        "1": "non-leaf",
+        "2": "non-leaf",
+        "3": "non-leaf",
+        "4": "same union",
+        "5": "legal"
+      },
+      "executed": 5,
+      "other_order": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "receiver": 0,
+      "receiver_after": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "receiver_before": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "receiver_fields": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        false
+      ],
+      "source_fields": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        false
+      ],
+      "source_payload": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "third_chart_choices": [
+        4,
+        5
+      ]
+    },
+    "5": {
+      "candidate_status": {
+        "0": "leaf",
+        "1": "non-leaf",
+        "2": "non-leaf",
+        "3": "non-leaf",
+        "4": "legal",
+        "5": "same union"
+      },
+      "executed": 4,
+      "other_order": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "receiver": 0,
+      "receiver_after": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "receiver_before": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "receiver_fields": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        false
+      ],
+      "source_fields": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        false
+      ],
+      "source_payload": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "third_chart_choices": [
+        4,
+        5
+      ]
+    }
+  }
+}

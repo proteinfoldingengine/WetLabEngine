@@ -1,0 +1,60 @@
+{
+  "run_id": 45495892100,
+  "head": "6e5c4d85ce36284aa5338a72d216b6a40d4856aa",
+  "workflow_head": "6e5c4d85ce36284aa5338a72d216b6a40d4856aa",
+  "previous_science_head": "f50d0bcd266662a0420b4dca66f0d16cb90f7a2d",
+  "inherited": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "preregistration": "a8e0a0d432425d61de1efbd2ee660c259cc3b258",
+  "supplement": "0d70836a262c51e9c63f920c6bd6e311599186d1",
+  "attempt": 1,
+  "artifact_prefix": "cover-return",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": 138806150840,
+      "name": "foundational-regression",
+      "conclusion": "success"
+    },
+    {
+      "id": 138806151357,
+      "name": "argument-review",
+      "conclusion": "failure"
+    },
+    {
+      "id": 138806151593,
+      "name": "replay",
+      "conclusion": "success"
+    },
+    {
+      "id": 138806752474,
+      "name": "publication",
+      "conclusion": "success"
+    }
+  ],
+  "archives": [
+    {
+      "id": 14968363218,
+      "name": "cover-return-replay",
+      "size": 124258,
+      "digest": "sha256:bb18be2fcb976824a64b023dfb4b7570f0155fb7a1cd31ec912e0905c4859225"
+    },
+    {
+      "id": 14967893548,
+      "name": "cover-return-review",
+      "size": 26475,
+      "digest": "sha256:bec96e00007a98ff26d758b9b162950b8050e985237016c5ac45b7883c1fd9ac"
+    },
+    {
+      "id": 14967633818,
+      "name": "cover-return-foundation",
+      "size": 306982,
+      "digest": "sha256:b95b5e62d223c610ad5387cce19433cf828331149b0bce793081a1634133ac62"
+    },
+    {
+      "id": 14967529480,
+      "name": "cover-return-publication",
+      "size": 98291,
+      "digest": "sha256:8a959dc2c91a5c8c2a23a001799bf6b5563819b0c41327492e9e8f4f8f9bd6d2"
+    }
+  ]
+}
