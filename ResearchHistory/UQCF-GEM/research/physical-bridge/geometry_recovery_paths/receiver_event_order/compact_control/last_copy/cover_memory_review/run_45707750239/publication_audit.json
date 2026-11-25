@@ -1,0 +1,24 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "fef82b9634ba1b3b41d0cfa076d282788f12ca19",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "c227c6b64bcb663cf63032e372181df35274d84666b2b1a4c7538318c7c5189f",
+  "request_sha256": "fcb479abb8c35e0cb5f235455b1822f27285f6bff97a23d5c5daea802a7542a4",
+  "response_sha256": "55269c8e939c9d69bc0db2d229a01825d1e93c273f293d63b0b1e98c64e7e3ad",
+  "run_id": "45707750239",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/FIXTURE.json": "806d2bc487e358f498cafa806226d1f658e98d26",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/RESULT.md": "bcdd693c002e9ea6c29a30ee1de40d646f2eea6b",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/check.py": "c7b0586362e74c22612a9926f1d7135cf074dfb0",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/RESULT.md": "a3cb3079ab39d6c05435e7a67a4926fbd9a312a2",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/check_memory.py": "e27817d6a899c4f7c8d3bf4b3c99e664025a821d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/result.json": "d16cfe00be7519501f951ce9a693060aa8f84c9f",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py": "b18f52109ccff9c7dc77542d3b8f3e5d5989102a",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "fef82b9634ba1b3b41d0cfa076d282788f12ca19"
+}
