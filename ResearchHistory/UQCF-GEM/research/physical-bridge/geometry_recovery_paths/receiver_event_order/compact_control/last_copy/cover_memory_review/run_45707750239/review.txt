@@ -1,0 +1,68 @@
+{
+  "verdict": "ACCEPTED",
+  "native_bridge_status": "OPEN",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": [],
+  "limitations": [
+    "Supplied fixture and exterior-only maximal phase",
+    "Absence of a derived preparation/contest selection",
+    "Absence of B-owned completion notification or menu query",
+    "Absence of physical correspondence"
+  ],
+  "proof_checks": {
+    "criterion": "The analytical proof correctly identifies that A being the sole holder of another tip makes A mandatory, while B having no other tip prevents B from being mandatory, ensuring the fixed orientation.",
+    "preparation": "The unique single-edit preparations correctly establish the criterion conditions in both source histories, and the exterior-only maximal-pruning procedure successfully guarantees the conditions for specific editor subsets.",
+    "record": "The withdrawal at tip 6 emits the cover increment and leaves B's retained P1 root equal to 8 minus that increment, which is stable under all later ordinary deletions.",
+    "controls": "The unprepared zero-increment control and the common-successful-command control correctly demonstrate that without preparation, both withdrawals yield zero, and identical successful commands do not prepare either arm.",
+    "scope": "The claim is properly restricted to finite stars, and the limitations regarding the absence of a derived preparation selection and physical correspondence are explicitly acknowledged."
+  },
+  "check_values": {
+    "criterion_conditions": [
+      "A_private_other_tip",
+      "B_no_other_tip"
+    ],
+    "record_pairs": [
+      [1, 7],
+      [0, 8]
+    ],
+    "arm0": {
+      "preparation": ["E", 3],
+      "states": 63,
+      "edges": 165,
+      "pre_contest_states": 21,
+      "terminal_states": 12,
+      "paths_by_root": {
+        "7": 144,
+        "8": 144
+      }
+    },
+    "arm1": {
+      "preparation": ["X", 1],
+      "states": 63,
+      "edges": 165,
+      "pre_contest_states": 21,
+      "terminal_states": 12,
+      "paths_by_root": {
+        "7": 144,
+        "8": 144
+      }
+    },
+    "guaranteeing_editor_sets": [
+      "EF",
+      "EFX",
+      "EX",
+      "FX"
+    ],
+    "common_successful": [
+      9,
+      12,
+      0
+    ],
+    "small_stars": {
+      "totals": [40, 400, 3616],
+      "fixed_orientation": [3, 25, 141]
+    },
+    "raw_sha256": "cd5a1be10a6e27be71cb2b255b086a31c5cdbaac9ada12f4d334d20b90b56229"
+  }
+}

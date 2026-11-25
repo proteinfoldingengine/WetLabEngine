@@ -1,0 +1,166 @@
+{
+  "common_successful_preparation": {
+    "edges": 12,
+    "states": 9,
+    "states_with_robust_encoding_in_either_arm": 0
+  },
+  "historical": {
+    "0": {
+      "candidates": 7,
+      "contest_height_pairs": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "edges": 165,
+      "exterior_only_preparations": {
+        "E": {
+          "all_encode": true,
+          "states": 4,
+          "terminals": 1
+        },
+        "EF": {
+          "all_encode": true,
+          "states": 12,
+          "terminals": 2
+        },
+        "EFX": {
+          "all_encode": true,
+          "states": 24,
+          "terminals": 2
+        },
+        "EX": {
+          "all_encode": true,
+          "states": 8,
+          "terminals": 1
+        },
+        "F": {
+          "all_encode": false,
+          "states": 4,
+          "terminals": 1
+        },
+        "FX": {
+          "all_encode": true,
+          "states": 8,
+          "terminals": 1
+        },
+        "X": {
+          "all_encode": false,
+          "states": 2,
+          "terminals": 1
+        },
+        "none": {
+          "all_encode": false,
+          "states": 1,
+          "terminals": 1
+        }
+      },
+      "maximal_paths_by_B_root": {
+        "7": 144,
+        "8": 144
+      },
+      "pre_contest_states": 21,
+      "states": 63,
+      "terminal_states": 12,
+      "unique_single_preparation": [
+        "E",
+        3
+      ]
+    },
+    "1": {
+      "candidates": 7,
+      "contest_height_pairs": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "edges": 165,
+      "exterior_only_preparations": {
+        "E": {
+          "all_encode": false,
+          "states": 2,
+          "terminals": 1
+        },
+        "EF": {
+          "all_encode": true,
+          "states": 8,
+          "terminals": 1
+        },
+        "EFX": {
+          "all_encode": true,
+          "states": 24,
+          "terminals": 2
+        },
+        "EX": {
+          "all_encode": true,
+          "states": 8,
+          "terminals": 1
+        },
+        "F": {
+          "all_encode": false,
+          "states": 4,
+          "terminals": 1
+        },
+        "FX": {
+          "all_encode": true,
+          "states": 12,
+          "terminals": 2
+        },
+        "X": {
+          "all_encode": true,
+          "states": 4,
+          "terminals": 1
+        },
+        "none": {
+          "all_encode": false,
+          "states": 1,
+          "terminals": 1
+        }
+      },
+      "maximal_paths_by_B_root": {
+        "7": 144,
+        "8": 144
+      },
+      "pre_contest_states": 21,
+      "states": 63,
+      "terminal_states": 12,
+      "unique_single_preparation": [
+        "X",
+        1
+      ]
+    }
+  },
+  "independent_small_stars": {
+    "2": {
+      "fixed_orientation": 3,
+      "stars": 40
+    },
+    "3": {
+      "fixed_orientation": 25,
+      "stars": 400
+    },
+    "4": {
+      "fixed_orientation": 141,
+      "stars": 3616
+    }
+  },
+  "raw_sha256": "cd5a1be10a6e27be71cb2b255b086a31c5cdbaac9ada12f4d334d20b90b56229"
+}

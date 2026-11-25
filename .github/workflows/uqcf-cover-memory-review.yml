@@ -1,0 +1,205 @@
+name: Review same-event P1 cover memory
+on:
+  workflow_dispatch:
+  push:
+    branches: [gpt/uqcf-local-cover-memory]
+    paths:
+      - ".github/workflows/uqcf-cover-memory-review.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory/**"
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+env:
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/last_copy/cover_memory
+  HIST: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  P: ResearchHistory/UQCF-GEM/foundational-closure-verification
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install pinned analytical dependencies
+        run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Replay prepared graphs and independent star criterion
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          mkdir -p handoff
+          python3 -B "$SCI/check_memory.py" review_sources --raw handoff/raw.json > handoff/result.json
+          cmp "$SCI/result.json" handoff/result.json
+          xz -dc "$SCI/raw.json.xz" | cmp - handoff/raw.json
+          cp "$SCI"/{RESULT.md,check_memory.py} handoff/
+          (cd handoff && sha256sum * > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cover-memory-replay
+          path: handoff
+          if-no-files-found: error
+
+  argument-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+      - name: Independently reconstruct and challenge the event-to-record theorem
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -B "$SCI/review.py" review review_evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cover-memory-review
+          path: review_evidence
+          if-no-files-found: error
+
+  foundational-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/
+            /ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/
+            /ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reproduce inherited foundational tests and certificate family
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$HIST"
+          mkdir -p foundation
+          python -m pip install sympy==1.13.3 mpmath==1.3.0 > foundation/install.log
+          git rev-parse HEAD > foundation/inherited-head.txt
+          echo "$GITHUB_SHA" > foundation/workflow-head.txt
+          python --version > foundation/python-version.txt
+          (cd "$P" && python tests/test_fcv.py) 2>&1 | tee foundation/tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) 2>&1 | tee foundation/parent-tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent && python -m unittest -v && python gate.py) 2>&1 | tee foundation/historical.log
+          cp ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/result.json "$P/evidence/REPRODUCED_1615F.json"
+          (cd "$P" && python produce_certificates.py) 2>&1 | tee foundation/producer.log
+          (cd "$P" && python verify_certificates.py) 2>&1 | tee foundation/verifier.log
+          cp "$P"/evidence/{PRODUCTION,VERIFICATION,TEST_RECEIPT,REPRODUCED_1615F}.json "$P/evidence/certificates.json.xz" foundation/
+          test "$(xz -dc foundation/certificates.json.xz | sha256sum | cut -d' ' -f1)" = 21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6
+          (cd foundation && sha256sum *.json *.xz *.log *.txt > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cover-memory-foundation
+          path: foundation
+          if-no-files-found: error
+
+  publication-audit:
+    needs: [replay, argument-review, foundational-regression]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_integrity.py
+            /.github/scripts/uqcf_preparability_review.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/compact_control/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: cover-memory-review
+          path: review_evidence
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: cover-memory-replay
+          path: earlier_handoff
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: cover-memory-foundation
+          path: foundation
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Install pinned analytical dependencies
+        run: python -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Verify raw readback and independently reproduce evidence
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          (cd earlier_handoff && sha256sum -c SHA256SUMS)
+          (cd foundation && sha256sum -c SHA256SUMS)
+          mkdir -p handoff publication
+          python3 -B "$SCI/check_memory.py" review_sources --raw handoff/raw.json > handoff/result.json
+          cmp "$SCI/result.json" handoff/result.json
+          xz -dc "$SCI/raw.json.xz" | cmp - handoff/raw.json
+          cmp earlier_handoff/result.json handoff/result.json
+          cmp earlier_handoff/raw.json handoff/raw.json
+          python3 -B "$SCI/review.py" audit review_evidence
+          cp review_evidence/publication_audit.json review_evidence/receipt.json \
+             review_evidence/review.txt review_evidence/response.json \
+             handoff/result.json handoff/raw.json publication/
+          (cd publication && sha256sum * > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: cover-memory-publication
+          path: publication
+          if-no-files-found: error
