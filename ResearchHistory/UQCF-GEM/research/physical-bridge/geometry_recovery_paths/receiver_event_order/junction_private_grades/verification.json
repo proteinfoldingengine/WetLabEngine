@@ -1,0 +1,68 @@
+{
+  "first_moves": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      4,
+      24
+    ],
+    [
+      0,
+      8,
+      2
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      5,
+      6
+    ],
+    [
+      1,
+      8,
+      1
+    ]
+  ],
+  "geometry_collision": {
+    "bits": [
+      0,
+      1
+    ],
+    "delta": [
+      -16,
+      0,
+      16
+    ],
+    "grade": 4,
+    "receiver": 1,
+    "sender": 0,
+    "sites": [
+      4,
+      8
+    ],
+    "start": [
+      409,
+      681,
+      79
+    ]
+  },
+  "rejecting_controls": [
+    "starting population",
+    "starting population",
+    "edge coverage",
+    "edge coverage",
+    "edge coverage",
+    "edge numbers",
+    "return record",
+    "subtree totals or positivity"
+  ],
+  "starts": 36
+}
