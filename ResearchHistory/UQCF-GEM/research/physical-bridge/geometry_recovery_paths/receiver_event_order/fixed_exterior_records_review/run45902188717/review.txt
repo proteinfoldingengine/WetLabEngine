@@ -1,0 +1,19 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "The identity sum_j H_ij = sum_l s_l + sum_l (N - 2 s_l) b_il is derived correctly. For Hamming distance H_ij = sum_l (b_{il}(1-b_{jl}) + (1-b_{il})b_{jl}), summing over j yields sum_l [b_{il}(N-s_l) + (1-b_{il})s_l] = sum_l [s_l + b_{il}(N-2s_l)]. With N=121 and s_l=25, N-2s_l = 71, so the local count d_i = sum_l b_{il} is strictly determined by the work row sum and leaf populations. The recalculation 25*968 + 71*200 = 38400 is exact.",
+    "When populations are mixed in {25, 96}, N-2s_l becomes 71 and -71 respectively. The work row sum then fixes 71(d_{i,25} - d_{i,96}). The total local count d_i = d_{i,25} + d_{i,96} can therefore change by an even number, which the construction successfully exploits.",
+    "The injectivity proof modulo p is elegant and correct. In characteristic p, the translation operator sum M = sum_{s in S} T_s satisfies M^p = sum T_{ps} = 25 I. For primes p >= 11 (excluding 5), 25 is invertible, making M invertible. Any two configurations with identical chart counts must have choice indicators that agree modulo p. Since the differences are in {-1, 0, 1}, they must agree exactly.",
+    "The scaling argument correctly maps the footprint to native coordinates. The maximum native coordinate offset is 4. A center placed between 4 and r - 1 - h - 4 ensures the entire footprint lies within the r x r square. The number of such centers M = max(0, r - h - 8)^2 scales as p^2. The logarithm of the central binomial coefficient binom(M, M/2) scales as M, hence p^2, while the boundary crossing edges scale as 4r ~ p. This proves the volume-law scaling of the interior configurations with a fixed boundary.",
+    "The computational tests in replay.py and verify.py rigorously confirm the 9x9 (16 profiles) and 10x10 (16,930,529,280 profiles) finite cases, matching the theoretical combinatorial capacity. The tests also correctly verify the exact named exterior rows, Pin grades, and pair-work matrix."
+  ],
+  "limitations": [
+    "The result is a combinatorial capacity bound in a fixed chart frame and does not imply spontaneous accessibility or a physical probability law.",
+    "The construction requires a mixed population of leaves (e.g., 25 and 96 holders) to allow interior count variations; an all-25 state strictly fixes all local counts."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
