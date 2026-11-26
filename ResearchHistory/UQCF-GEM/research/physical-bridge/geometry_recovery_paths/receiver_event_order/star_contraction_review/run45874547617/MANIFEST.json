@@ -1,0 +1,42 @@
+{
+  "run": 45874547617,
+  "science": "99db79e7930fcbc38e1fb5f1c12cd70f29a682e8",
+  "historical": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "jobs": [
+    {
+      "name": "foundational-regression",
+      "id": 140098188596,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "replay-and-review",
+      "id": 140098189189,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 140098730985,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "archives": {
+    "star-contraction-review": {
+      "id": 15144851397,
+      "bytes": 55548,
+      "sha256": "da4bb0d292d289ef9597d6a58d09b051620f20006fc7fcf8762bf7a41797d69e"
+    },
+    "star-contraction-publication": {
+      "id": 15144312407,
+      "bytes": 33057,
+      "sha256": "a631dd1c52f318463a54824aca4fbc694f21e74ad48766333c09560785b15149"
+    },
+    "star-contraction-foundation": {
+      "id": 15143967427,
+      "bytes": 307059,
+      "sha256": "df926e0a48d0acd44e63779b1825b646dd9dd9e69d6a30df45f4d7ed70798ccd"
+    }
+  }
+}
