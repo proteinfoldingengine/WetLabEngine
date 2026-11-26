@@ -83,6 +83,8 @@ jobs:
             /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/*.py
             /ResearchHistory/UQCF-GEM/demos/v16.23-overlap-descent/engine.py
             /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+      - name: Install the original P1 module dependency
+        run: python3 -m pip install sympy==1.13.3 mpmath==1.3.0
       - name: Reproduce the inherited cohort and the new source-holder test
         run: |
           set -euo pipefail
@@ -137,6 +139,8 @@ jobs:
         with:
           name: source-holder-foundation
           path: foundation
+      - name: Install the original P1 module dependency
+        run: python3 -m pip install sympy==1.13.3 mpmath==1.3.0
       - name: Verify the frozen response, foundational certificate and both replay byte streams
         run: |
           set -euo pipefail
