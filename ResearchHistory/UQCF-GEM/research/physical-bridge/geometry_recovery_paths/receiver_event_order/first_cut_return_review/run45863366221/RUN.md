@@ -1,0 +1,3 @@
+# First review and gate failure
+
+The original proof and complete orbit census were evaluated at 0aeb3a2e2bd8103038eca1fc1af4401acce0bfbd. Gemini returned ACCEPTED / DERIVED / OPEN with eight positive proof checks in its findings array. The existing review validator requires an empty findings array on acceptance. It rejected that output, so the publication job did not run. The numerical replay and independent coordinate ledger had matched the frozen bytes before the review step. The foundational job passed. Both downloaded artifacts matched the GitHub SHA-256 digests. The subsequent request clarified the output contract and retained the original scientific documents. See [failed run](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45863366221).
