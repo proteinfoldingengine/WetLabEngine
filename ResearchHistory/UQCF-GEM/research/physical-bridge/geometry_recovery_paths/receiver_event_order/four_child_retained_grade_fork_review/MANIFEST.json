@@ -1,0 +1,31 @@
+{
+  "science_path": "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_child_retained_grade_fork",
+  "historical_commit": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "review_scope": "Ordered v16.53 four-child R comparison with v16.26 same-union source withdrawal.",
+  "reviews": [
+    {
+      "archive": "first-review.zip",
+      "science_sha": "7df964227274fc3aa8069ec1d12c007fbb54e1ca",
+      "run": 45729081651,
+      "github_artifact_id": 15075941518,
+      "sha256": "99c10c47f6f9584ccba9adef8939c7cbb77f67c7d977455671ddaa4233032822",
+      "job_conclusion": "failure",
+      "reported_verdict": "ACCEPTED",
+      "reported_bridge_status": "CONFIRMED",
+      "includes_restoration_theorem": false,
+      "interpretation": "The earlier rubric left native_bridge_status undefined. Its text accepted a conditional memory requirement and explicitly found no direct source-to-producer data flow. The scope gate rejected the CONFIRMED label. Keep this receipt separate from the final review."
+    },
+    {
+      "archive": "final-review.zip",
+      "science_sha": "1de3107f13acdc4e07f5e8e59fa15575948bded8",
+      "run": 45729381481,
+      "github_artifact_id": 15075284568,
+      "sha256": "4873d5d5da05c1614c6d759e57c8697c3f4198fc8b92ea60c7fe7db00852670e",
+      "job_conclusion": "success",
+      "reported_verdict": "ACCEPTED",
+      "reported_bridge_status": "OPEN",
+      "includes_restoration_theorem": true,
+      "interpretation": "Fresh review of the expanded argument, including the complete single-tip catalogues, the eight contrary controls, and an explicit definition of autonomous source-to-receiver delivery."
+    }
+  ]
+}
