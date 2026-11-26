@@ -1,0 +1,5 @@
+# Test at a receiver's own edit
+
+The fixed-source calculation produced 56 exceptional triples, yet A, B and all exceptions together always miss at least 160 indexed leaves. This suffices for the fixed-source construction. Before inspecting historical address order or recording local event traces, test a stronger criterion. Choose a second initial leaf U shared by the first two selected charts, processed after S. In both histories B should delete U once during contraction. Compare B's own extensive record on its first loss of U. This removes the need to observe a global phase boundary; identifying the common test address is an analytical choice.
+
+For twin source alternatives with identical cut geometry, test whether every possible second chart has co-supported twins with a third shared leaf U strictly between them in the inherited indexed order. Then local counts might differ temporarily even though they later agree at the all-singleton stage. Count failures, verify on original code, and exchange leaf order to test whether the sign or the effect depends on this supplied priority. Do not infer an order-independent numerical distinction from that example.
