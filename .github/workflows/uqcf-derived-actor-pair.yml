@@ -1,0 +1,169 @@
+name: Review derived actor pair
+on:
+  push:
+    branches: [gpt/uqcf-marked-branch-origin]
+    paths:
+      - ".github/workflows/uqcf-derived-actor-pair.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/derived_actor_pair/**"
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+env:
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/derived_actor_pair
+  HIST: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+  P: ResearchHistory/UQCF-GEM/foundational-closure-verification
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  foundational-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/
+            /ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/
+            /ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reproduce inherited foundational tests and certificates
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$HIST"
+          mkdir -p foundation
+          python -m pip install sympy==1.13.3 mpmath==1.3.0 numpy==1.26.4 > foundation/install.log
+          git rev-parse HEAD > foundation/inherited-head.txt
+          echo "$GITHUB_SHA" > foundation/workflow-head.txt
+          python --version > foundation/python-version.txt
+          (cd "$P" && python tests/test_fcv.py) 2>&1 | tee foundation/tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) 2>&1 | tee foundation/parent-tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent && python -m unittest -v && python gate.py) 2>&1 | tee foundation/historical.log
+          cp ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/result.json "$P/evidence/REPRODUCED_1615F.json"
+          (cd "$P" && python produce_certificates.py) 2>&1 | tee foundation/producer.log
+          (cd "$P" && python verify_certificates.py) 2>&1 | tee foundation/verifier.log
+          cp "$P"/evidence/{PRODUCTION,VERIFICATION,TEST_RECEIPT,REPRODUCED_1615F}.json "$P/evidence/certificates.json.xz" foundation/
+          test "$(xz -dc foundation/certificates.json.xz | sha256sum | cut -d' ' -f1)" = 21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6
+          (cd foundation && sha256sum *.json *.xz *.log *.txt > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: derived-actor-pair-foundation
+          path: foundation
+          if-no-files-found: error
+
+  replay-and-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/derived_actor_pair/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/*.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/*.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/*.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+      - name: Install historical P1 dependencies
+        run: python3 -m pip install sympy==1.13.3 mpmath==1.3.0
+      - name: Replay all signed histories from original grade fixture
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          mkdir evidence
+          PYTHONHASHSEED=8 python3 -B "$SCI/probe.py" review_sources > evidence/raw.json
+          cmp "$SCI/raw.json" evidence/raw.json
+          python3 -B "$SCI/verify.py" evidence/raw.json > evidence/verification.json
+          cmp "$SCI/verification.json" evidence/verification.json
+      - name: Request raw independent argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -B "$SCI/review.py" review evidence
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: derived-actor-pair-review
+          path: evidence
+          if-no-files-found: error
+  publication-audit:
+    needs: [replay-and-review, foundational-regression]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/derived_actor_pair/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/lineage.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/*.py
+            /ResearchHistory/UQCF-GEM/demos/v15.42-duality-covariant-transport-repair/*.py
+            /ResearchHistory/UQCF-GEM/demos/v15.43-certified-response-geometry/*.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/forced_parent_deletion/check_geometry_repair.py
+            /ResearchHistory/UQCF-GEM/demos/v15.40-global-balance-geometry-specificity/response_geometry.py
+      - name: Install historical P1 dependencies
+        run: python3 -m pip install sympy==1.13.3 mpmath==1.3.0
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: derived-actor-pair-review
+          path: evidence
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: derived-actor-pair-foundation
+          path: foundation
+      - name: Read back the review and reconstruct the exact computation
+        run: |
+          set -euo pipefail
+          (cd foundation && sha256sum -c SHA256SUMS)
+          python3 -B "$SCI/review.py" audit evidence >/dev/null
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          mkdir publication
+          PYTHONHASHSEED=71 python3 -B "$SCI/probe.py" review_sources > publication/raw.json
+          cmp "$SCI/raw.json" publication/raw.json
+          python3 -B "$SCI/verify.py" publication/raw.json > publication/verification.json
+          cmp "$SCI/verification.json" publication/verification.json
+          cmp publication/raw.json evidence/raw.json
+          cmp publication/verification.json evidence/verification.json
+          cp "$SCI"/{RESULT.md,SCOPE.md,probe.py,verify.py,review.py} publication/
+          cp evidence/{review.txt,receipt.json,response.json,publication_audit.json} publication/
+          cp foundation/SHA256SUMS publication/foundation-checksums.txt
+          (cd publication && sha256sum *.json *.py *.md review.txt foundation-checksums.txt > SHA256SUMS && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: derived-actor-pair-publication
+          path: publication
+          if-no-files-found: error
