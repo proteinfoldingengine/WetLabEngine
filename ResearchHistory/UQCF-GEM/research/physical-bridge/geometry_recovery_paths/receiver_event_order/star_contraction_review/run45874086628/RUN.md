@@ -1,0 +1,3 @@
+# Receiver records during star contraction
+
+All three [workflow jobs](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45874086628) passed. Gemini 3.1 Pro accepted the conditional mathematics, with physical enactment open. The evidence ZIPs include the two reconstruction outputs, original producer trace checks, exact raw reviewer request and answer, foundational certificates and publication readback. The [science revision](https://github.com/proteinfoldingengine/WetLabEngine/commit/bb7c6c582ddcfb07c09657f98972ad34cc244f73) identifies the inputs. Run verify_readback.py at the archive commit to check the downloaded bytes and reproduce the independent coordinate census.
