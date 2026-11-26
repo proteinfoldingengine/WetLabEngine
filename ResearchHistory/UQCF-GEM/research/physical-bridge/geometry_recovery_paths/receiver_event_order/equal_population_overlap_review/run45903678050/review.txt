@@ -1,0 +1,20 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Row sums fix chart counts: The pair work $H_{ij}$ is the symmetric difference divided by 4, so $H_{ij} = d_i + d_j - 2G_{ij}$. Summing over $j$ yields $\\sum_j H_{ij} = 121d_i + \\sum_j d_j - 2\\sum_j G_{ij}$. With 968 leaves of population 25, $\\sum_j d_j = 24200$ and $\\sum_j G_{ij} = 25d_i$. This gives $\\sum_j H_{ij} = 24200 + 71d_i$. Since $H_{ij}$ is fixed by the baseline, $d_i$ is uniquely determined to be 200. This in turn fixes the shared counts $G_{ij} = (400 - H_{ij})/2$.",
+    "Kernel directions and completeness: The incidence matrix $K$ has 484 columns. The provided 482x482 minor has a non-zero determinant (52 mod 101), proving the rank is at least 482. The footprint's autocorrelation is invariant under inversion, so the difference between an orbit and its inverted orbit yields a kernel vector. The two pairs of inversion-related orbits provide two independent kernel vectors, proving the rank is exactly 482. The integer solutions are exactly the 25 combinations of $a, b \\in \\{-2, -1, 0, 1, 2\\}$ that keep multiplicities non-negative.",
+    "Histogram test: The code verifies that for exterior records outside the tested native squares (sides 1-10), only the $(0,0)$ multiplicity vector survives. For the anti-diagonal, all 25 survive. This confirms that the exterior records fix the assignment up to leaf permutation.",
+    "Non-relabel witness: The reflected layer state changes the multiset of support multiplicities from {2: 484} to {1: 121, 2: 242, 3: 121}. Since any permutation of leaves or charts preserves this multiset, the new state is strictly not a relabeling of the original.",
+    "Two independent triple formulas: The triple intersections for (0,5,41) and (0,1,41) are $16 - 4a + 4b$ and $24 - 4b$. These linearly independent expressions uniquely determine the parameters $(a,b)$. The P1 root grade is $1 + 2(968 - |\\text{union}|)$, which is an invertible affine function of the intersection. Thus two roots distinguish all 25 states. A single triple yields at most 13 distinct values, which is insufficient to distinguish 25 states.",
+    "Physical interpretation: The text correctly distinguishes between the mathematical operation (which computes a union and root grade) and a physical event. It explicitly states that the function has no write into any chart and supplies neither an event nor delivery of the joint value, leaving the physical bridge open."
+  ],
+  "limitations": [
+    "The completeness of the 25 states relies on the restriction to the finite dictionary of 484 original supports. Arbitrary 25-subsets are not considered.",
+    "The mathematical readout of the union does not imply a physical receiver, endogenous delivery, or an event enactment. The physical bridge remains unbridged."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
