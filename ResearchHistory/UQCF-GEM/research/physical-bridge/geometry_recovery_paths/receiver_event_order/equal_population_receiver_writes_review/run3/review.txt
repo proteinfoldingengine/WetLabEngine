@@ -1,0 +1,30 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "DERIVED",
+  "proof_checks": [
+    "Verified the equal-k inference: equal endpoint work between histories forces the number of removed leaves k to agree, and then forces every c_j to agree, yielding exactly -72k change in work sum.",
+    "Verified the multiplicity bounds and exact rational rank 92 of the source-held types membership matrix, with an 8-dimensional nullspace.",
+    "Attempted to refute the exact minimum of four withdrawals from one original source modulo identical copies; the minimum is confirmed by both the nullspace search and the independent base-4 signature enumeration (100, 5050, and 171600 distinct signatures).",
+    "Verified that the 11-chart family contains every leaf and needs all its members, as each selected chart has at least 24 private witnesses relative to this cover.",
+    "Verified the actual source interventions, original normalizer, and P1 calls, confirming the 8 atomic calls preserve the union and yield identical primitive receipts.",
+    "Verified the triple-to-local-count mechanism: inclusion-exclusion correctly predicts the retained counts of 129 and 128 at chart 15 before the first gain.",
+    "Verified the first gain at chart 15 (address 3) and the resulting P1 Pin grades of 1677 and 1679 at step 1231.",
+    "Verified the source-last collision: with the source last in priority, the first winner is identical in both worlds, and the entire sequence of addressed local records agrees across arms.",
+    "Verified paired endpoints versus intermediate geometry: intermediate pair work differs at 38, 68, and 38 pairs, while the final endpoint pair work agrees completely.",
+    "Verified active cover versus full atlas: the 11-chart cover is supplied and active, and no full-atlas writer output is inferred.",
+    "Verified conditional transient record versus endogenous scheduling and persistence: the difference is a transient local record dependent on the supplied writer and priority.",
+    "Verified P_math concerns: the stated fixture and conditional software results are mathematically exact and reproducible.",
+    "Verified P_physical concerns: endogenous scheduling or physical delivery is not established, as the source actions and active cover are supplied."
+  ],
+  "limitations": [
+    "The model still needs an intrinsic reason to select the source actions, active cover, and invocation.",
+    "No physical identification or endogenous delivery is established.",
+    "The observation is a transient difference in a local extensive-grade record under an already defined writer, not a persistent physical state.",
+    "Supplied ordering can expose or erase the distinction, meaning the visibility of the difference is conditional on the chosen chart priority.",
+    "No full-atlas writer output is inferred; the expensive global cover statistic was evaluated on the selected cover only."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}

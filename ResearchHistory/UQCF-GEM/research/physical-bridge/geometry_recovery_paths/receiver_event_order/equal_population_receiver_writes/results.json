@@ -1,0 +1,319 @@
+{
+  "endpoint_pair_changes_from_start": 116,
+  "histories_pair_mismatches_by_step": [
+    38,
+    68,
+    38,
+    0
+  ],
+  "identical_remote_priors": 120,
+  "leaf_addresses": [
+    [
+      41,
+      217,
+      278,
+      454
+    ],
+    [
+      91,
+      157,
+      338,
+      404
+    ]
+  ],
+  "number_of_pairs": 7260,
+  "reflected_preparation": {
+    "arms": [
+      {
+        "after_contraction": 102,
+        "edits": 2766,
+        "first_gain": {
+          "address": 4,
+          "leaves": 101,
+          "local_edit": 101,
+          "new_to_prior": true,
+          "pin": 1735,
+          "step": 1239
+        },
+        "local_word_sha256": "2381b779cd5e03b129df456ae91ceff07406fbc0534dc35c9d0b6183a212670e",
+        "private_witnesses": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24
+        ],
+        "terminal": 1
+      },
+      {
+        "after_contraction": 101,
+        "edits": 2766,
+        "first_gain": {
+          "address": 4,
+          "leaves": 100,
+          "local_edit": 102,
+          "new_to_prior": true,
+          "pin": 1737,
+          "step": 1239
+        },
+        "local_word_sha256": "f616a1d8461236c42ca8842ca8ed332e72dae687259f8ef52e037986bbca06e8",
+        "private_witnesses": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24
+        ],
+        "terminal": 1
+      }
+    ],
+    "order": [
+      15,
+      30,
+      49,
+      0,
+      34,
+      64,
+      68,
+      83,
+      98,
+      102,
+      117
+    ],
+    "receiver": 0,
+    "same_receiver_word": false,
+    "same_terminal": true
+  },
+  "single_source_collision": {
+    "arms": [
+      {
+        "after_contraction": 129,
+        "edits": 2780,
+        "first_gain": {
+          "address": 3,
+          "leaves": 130,
+          "local_edit": 72,
+          "new_to_prior": true,
+          "pin": 1677,
+          "step": 1231
+        },
+        "local_word_sha256": "4e2fc393eaf266ef86719d9b92750522f9b759254fe43bf55bd6648f0872f6d6",
+        "private_witnesses": [
+          24,
+          24,
+          25,
+          24,
+          24,
+          24,
+          24,
+          24,
+          25,
+          24,
+          24
+        ],
+        "terminal": 1
+      },
+      {
+        "after_contraction": 128,
+        "edits": 2780,
+        "first_gain": {
+          "address": 3,
+          "leaves": 129,
+          "local_edit": 73,
+          "new_to_prior": true,
+          "pin": 1679,
+          "step": 1231
+        },
+        "local_word_sha256": "6f98e65231f4f097770ac30b8d8579ccc89a06e5afd3b688136da2e1f40429d8",
+        "private_witnesses": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          25,
+          24,
+          24
+        ],
+        "terminal": 1
+      }
+    ],
+    "order": [
+      0,
+      117,
+      15,
+      30,
+      34,
+      49,
+      64,
+      68,
+      83,
+      98,
+      102
+    ],
+    "receiver": 15,
+    "same_receiver_word": false,
+    "same_terminal": true
+  },
+  "source_endpoint_count": 196,
+  "source_last_control": {
+    "arms": [
+      {
+        "after_contraction": 200,
+        "edits": 2758,
+        "first_gain": {
+          "address": 1,
+          "leaves": 201,
+          "local_edit": 1,
+          "new_to_prior": true,
+          "pin": 1535,
+          "step": 1229
+        },
+        "local_word_sha256": "b853ac5573168dc0014f5886e14103393071e92a01b896c067bcf4c3bb907a66",
+        "private_witnesses": [
+          25,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          25,
+          24,
+          24,
+          24
+        ],
+        "terminal": 958
+      },
+      {
+        "after_contraction": 200,
+        "edits": 2758,
+        "first_gain": {
+          "address": 1,
+          "leaves": 201,
+          "local_edit": 1,
+          "new_to_prior": true,
+          "pin": 1535,
+          "step": 1229
+        },
+        "local_word_sha256": "b853ac5573168dc0014f5886e14103393071e92a01b896c067bcf4c3bb907a66",
+        "private_witnesses": [
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          24,
+          25,
+          24,
+          24,
+          24
+        ],
+        "terminal": 958
+      }
+    ],
+    "order": [
+      15,
+      117,
+      30,
+      34,
+      49,
+      64,
+      68,
+      83,
+      98,
+      102,
+      0
+    ],
+    "receiver": 15,
+    "same_receiver_word": true,
+    "same_terminal": true
+  },
+  "source_primitive_receipts": [
+    [
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ],
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ],
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ],
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ]
+    ],
+    [
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ],
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ],
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ],
+      [
+        11,
+        11,
+        11,
+        11,
+        0,
+        false
+      ]
+    ]
+  ],
+  "varied_source": 0
+}

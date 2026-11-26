@@ -1,0 +1,31 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified the change in work from chart 0 to j upon withdrawal of k leaves is 4(2c_j - k), and its sum over the 120 other charts is exactly -72k, proving that equal endpoint work forces both the total withdrawals k and the local intersections c_j to agree.",
+    "Verified the pair-work equivalence condition M d = 0, where M is the 121-by-100 membership matrix and d is the difference vector of removed multiplicities, bounded between -2 and 2 due to the two identical copies per support type.",
+    "Verified the independent small-count enumeration: base-4 encoding of chart counts for multisets up to size 3 yields exactly 100, 5,050, and 171,600 distinct signatures, proving no collisions exist for fewer than 4 withdrawals without relying on the nullspace basis.",
+    "Verified the rational rank of the membership matrix is 92, leaving an 8-dimensional nullspace, and that exactly 8 directed vectors attain the minimum positive-part sum of 4.",
+    "Verified the inclusion-exclusion calculation for chart 15's retained leaves (the triple-to-local-count mechanism): 200 - 39 - 48 + 16 = 129 and 200 - 39 - 48 + 15 = 128.",
+    "Verified the P1 Pin grade calculations for the first gain: 1 + 2*(968 - 130) = 1677 and 1 + 2*(968 - 129) = 1679.",
+    "Verified that the 11-chart active cover contains every leaf and that each chart has at least 24 private witnesses, certifying its exact minimum cover size is 11.",
+    "Verified the actual source interventions, the 8 v16.26 atomic calls preserving the union with delta_h=0, and the original v16.43 normalizer and P1 calls.",
+    "Verified that placing the source last in the chart priority results in identical first winners and terminal states across both histories, erasing the distinction."
+  ],
+  "limitations": [
+    "The observation is a conditional transient difference in a local extensive-grade record under an already defined software writer.",
+    "The model lacks an intrinsic endogenous reason to select the specific source actions, active cover, and invocation.",
+    "No physical identification, endogenous scheduling, or persistence is established.",
+    "The 11-chart minimum cover bound applies only to the selected active cover, not the full 121-chart atlas."
+  ],
+  "findings": [
+    "Four source withdrawals are necessary and sufficient to conceal a difference in the types of leaf supports withdrawn from pair work when only one chart withdraws.",
+    "The rational rank of the source-held types is 92, and its 8-dimensional nullspace contains smaller collisions (size 4) than the anticipated 25-withdrawal orientation layers.",
+    "Intermediate geometry differs between the histories (38, 68, 38 mismatches), allowing a continuous observer to distinguish them despite identical paired endpoints.",
+    "The existing v16.43 star normalizer produces different local records at chart 15 (Pin 1677 vs 1679) from the two histories.",
+    "A common chart priority with the source last erases the distinction, resulting in identical first winners and terminal states."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
