@@ -1,0 +1,47 @@
+{
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "run": 45746320050,
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45746320050",
+  "verified_commit": "ddae7cd4a6f78142a2785d14929d9b1d1187d917",
+  "scope_commit": "40da7afa1b68b39131b3cb85f2614b77a0c8255c",
+  "historical_commit": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "previous_checkpoint": "bf2edeec785c48f5fdd68162f591349de7e723fa",
+  "raw_sha256": "d7e9d5366e5837a249dfbc9caba6b404e49918d67daa1b10668e8c9939b7eb9d",
+  "jobs": [
+    {
+      "id": 139663145466,
+      "name": "foundational-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 139663145620,
+      "name": "replay-and-review",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 139663600112,
+      "name": "publication-audit",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "archives": {
+    "live-receiver-source-foundation": {
+      "github_artifact_id": 15083592669,
+      "bytes": 307059,
+      "sha256": "d5e2296fbf7433574af0482352887c5efe08a213587b3ab8673cf30d3b931d13"
+    },
+    "live-receiver-source-review": {
+      "github_artifact_id": 15082934397,
+      "bytes": 117313,
+      "sha256": "1fe1afad5b8f32e9dcc476768f583cb57e021efffcddcbeef2a01320039b2bd7"
+    },
+    "live-receiver-source-publication": {
+      "github_artifact_id": 15082828580,
+      "bytes": 54874,
+      "sha256": "77b7ba7e87e10d3a4c6e09d244680734a846a78696652c65de3dc7182dd1e7f6"
+    }
+  }
+}
