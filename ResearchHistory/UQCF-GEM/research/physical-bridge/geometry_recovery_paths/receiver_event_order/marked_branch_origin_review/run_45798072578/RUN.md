@@ -1,0 +1,8 @@
+# Independent origin review and audited archives
+
+- Original bounded conclusion: 208 exact first copies in 288 presentations; 64 inexact first writes before later acquisition; 16 idle. All 272 nonconstant runs retained distinct unlabelled model P1 in the receiving chart.
+- [Frozen proof and scope](https://github.com/proteinfoldingengine/WetLabEngine/blob/64831547357004694c6b20d62242b9b28e728314/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/marked_branch_origin/RESULT.md).
+- [GitHub Actions run 45798072578](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45798072578), attempt 1; foundational-regression, replay-and-review, publication-audit succeeded. Source and workflow checkout: `64831547357004694c6b20d62242b9b28e728314`. Historical engine/foundation: `e61d5b0e827f7b412824ad46021e2ad6cc6f7875`.
+- Gemini independent verdict: ACCEPTED, program DERIVED, native bridge OPEN. No independent invocation or physical-access closure is claimed. All three downloaded ZIPs matched GitHub's digests. Foundation checksums and complete publication checksums independently matched. The two embedded raw ledgers, independent verification and raw reviewer responses match byte-for-byte across separate artifacts.
+
+To reproduce an archive, concatenate its numbered parts in lexical order and decode with `base64 -d`. Then verify the ZIP against the manifest. `review.zip` holds the full raw reviewer exchange; `publication.zip` holds the separate audit, regenerated proof bytes and review; `foundation.zip` holds inherited tests and certificates.

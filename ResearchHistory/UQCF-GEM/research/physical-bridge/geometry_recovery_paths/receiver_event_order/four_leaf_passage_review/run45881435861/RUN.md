@@ -1,0 +1,3 @@
+# Four-leaf local passage
+
+The [first-loss theorem and equal-cover controls](https://github.com/proteinfoldingengine/WetLabEngine/blob/42d172e9689a1399ebc4751b315ad851841dfaa7/ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_leaf_local_passage/RESULT.md) received an independent Gemini 3.1 Pro acceptance for the conditional mathematics. Physical enactment remains open. The [workflow](https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45881435861) reproduced the original R archive, direct order sweeps and foundational checks. MANIFEST.json pins all three raw archives; verify_readback.py checks them.

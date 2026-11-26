@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/workspace/shared/uqcf-marked-branch-origin/verify.py", line 106, in <module>
+    print(json.dumps({'history_classes':verify(r),'rejecting_controls':rejection(r),'receiver_only_states':9,'receiver_only_edges':24},sort_keys=True))
+                                                                       ^^^^^^^^^^^^
+  File "/workspace/shared/uqcf-marked-branch-origin/verify.py", line 101, in rejection
+    raise ValueError('corruption passed')
+ValueError: corruption passed
