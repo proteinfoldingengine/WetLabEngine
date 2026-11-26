@@ -98,6 +98,8 @@ jobs:
           cmp "$SCI/raw.json" evidence/raw.json
           python3 -B "$SCI/verify.py" evidence/raw.json > evidence/verification.json
           cmp "$SCI/verification.json" evidence/verification.json
+          python3 -B "$SCI/cover.py" review_sources/ResearchHistory/UQCF-GEM/demos > evidence/cover.json
+          cmp "$SCI/cover.json" evidence/cover.json
       - name: Request raw independent argument review
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -160,9 +162,11 @@ jobs:
           cmp "$SCI/raw.json" publication/raw.json
           python3 -B "$SCI/verify.py" publication/raw.json > publication/verification.json
           cmp "$SCI/verification.json" publication/verification.json
+          python3 -B "$SCI/cover.py" review_sources/ResearchHistory/UQCF-GEM/demos > publication/cover.json
+          cmp "$SCI/cover.json" publication/cover.json
           cmp publication/raw.json evidence/raw.json
           cmp publication/verification.json evidence/verification.json
-          cp "$SCI"/{RESULT.md,SCOPE.md,FOUR.md,SINGLE_LEAF.md,probe.py,verify.py,review.py} publication/
+          cp "$SCI"/{RESULT.md,SCOPE.md,FOUR.md,SINGLE_LEAF.md,COVER_SCOPE.md,COVER.md,cover.py,probe.py,verify.py,review.py} publication/
           cp evidence/{review.txt,receipt.json,response.json,publication_audit.json} publication/
           cp foundation/SHA256SUMS publication/foundation-checksums.txt
           (cd publication && sha256sum *.json *.py *.md review.txt foundation-checksums.txt > SHA256SUMS && sha256sum -c SHA256SUMS)
