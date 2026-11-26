@@ -1,0 +1,767 @@
+{
+  "after": [
+    31,
+    681,
+    457
+  ],
+  "chamber": [
+    159,
+    681,
+    457
+  ],
+  "controls": {
+    "exact_cycle": [
+      [
+        31,
+        681,
+        457
+      ],
+      [
+        31,
+        683,
+        457
+      ],
+      [
+        31,
+        683,
+        461
+      ],
+      [
+        31,
+        681,
+        461
+      ],
+      [
+        31,
+        681,
+        457
+      ]
+    ],
+    "original_binary_first_move": [
+      1,
+      8,
+      1
+    ],
+    "original_binary_first_profile": [
+      2,
+      3,
+      1
+    ],
+    "original_unmodified_path": [
+      [
+        409,
+        681,
+        79
+      ],
+      [
+        411,
+        681,
+        79
+      ],
+      [
+        411,
+        683,
+        79
+      ],
+      [
+        415,
+        683,
+        79
+      ],
+      [
+        415,
+        687,
+        79
+      ],
+      [
+        415,
+        687,
+        207
+      ],
+      [
+        415,
+        685,
+        207
+      ],
+      [
+        415,
+        685,
+        205
+      ],
+      [
+        415,
+        681,
+        205
+      ],
+      [
+        415,
+        681,
+        201
+      ],
+      [
+        415,
+        681,
+        457
+      ],
+      [
+        159,
+        681,
+        457
+      ],
+      [
+        31,
+        681,
+        457
+      ],
+      [
+        31,
+        937,
+        457
+      ],
+      [
+        31,
+        937,
+        201
+      ],
+      [
+        31,
+        937,
+        713
+      ],
+      [
+        31,
+        425,
+        713
+      ]
+    ],
+    "parent_cut_step": 12
+  },
+  "exact_witness_relabelings": 144,
+  "final": [
+    31,
+    425,
+    713
+  ],
+  "geodesics": {
+    "after_band": {
+      "distance": 4,
+      "geodesic_states": 9,
+      "passes_through_after": true,
+      "passes_through_chamber": false,
+      "shortest_paths": 6,
+      "witness": [
+        [
+          31,
+          681,
+          457
+        ],
+        [
+          31,
+          681,
+          969
+        ],
+        [
+          31,
+          169,
+          969
+        ],
+        [
+          31,
+          425,
+          969
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ]
+    },
+    "original_band": {
+      "distance": 10,
+      "geodesic_states": 98,
+      "passes_through_after": false,
+      "passes_through_chamber": false,
+      "shortest_paths": 1900,
+      "witness": [
+        [
+          409,
+          681,
+          79
+        ],
+        [
+          409,
+          681,
+          207
+        ],
+        [
+          409,
+          681,
+          719
+        ],
+        [
+          409,
+          169,
+          719
+        ],
+        [
+          409,
+          425,
+          719
+        ],
+        [
+          153,
+          425,
+          719
+        ],
+        [
+          25,
+          425,
+          719
+        ],
+        [
+          29,
+          425,
+          719
+        ],
+        [
+          29,
+          425,
+          715
+        ],
+        [
+          31,
+          425,
+          715
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ]
+    },
+    "original_exact": {
+      "distance": 10,
+      "geodesic_states": 20,
+      "passes_through_after": false,
+      "passes_through_chamber": false,
+      "shortest_paths": 2,
+      "witness": [
+        [
+          409,
+          681,
+          79
+        ],
+        [
+          413,
+          681,
+          79
+        ],
+        [
+          413,
+          681,
+          75
+        ],
+        [
+          413,
+          681,
+          203
+        ],
+        [
+          413,
+          681,
+          715
+        ],
+        [
+          413,
+          169,
+          715
+        ],
+        [
+          413,
+          425,
+          715
+        ],
+        [
+          157,
+          425,
+          715
+        ],
+        [
+          29,
+          425,
+          715
+        ],
+        [
+          31,
+          425,
+          715
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ]
+    }
+  },
+  "modes": {
+    "binary_only": {
+      "edges": 4398,
+      "exchange_distance": 4,
+      "exchange_geodesic_states": 9,
+      "exchange_witness": [
+        [
+          31,
+          681,
+          457
+        ],
+        [
+          31,
+          681,
+          969
+        ],
+        [
+          31,
+          169,
+          969
+        ],
+        [
+          31,
+          425,
+          969
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ],
+      "first": {
+        "first_edge_count": 90,
+        "prior_states": 33,
+        "types": [
+          {
+            "chart": 0,
+            "distance": 4,
+            "shortest_paths": 4,
+            "site": 8
+          },
+          {
+            "chart": 0,
+            "distance": 4,
+            "shortest_paths": 4,
+            "site": 9
+          },
+          {
+            "chart": 1,
+            "distance": 1,
+            "shortest_paths": 1,
+            "site": 8
+          },
+          {
+            "chart": 2,
+            "distance": 1,
+            "shortest_paths": 1,
+            "site": 9
+          }
+        ]
+      },
+      "first_witnesses": [
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            31,
+            681,
+            461
+          ],
+          [
+            27,
+            681,
+            461
+          ],
+          [
+            155,
+            681,
+            461
+          ],
+          [
+            411,
+            681,
+            461
+          ]
+        ],
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            31,
+            681,
+            461
+          ],
+          [
+            27,
+            681,
+            461
+          ],
+          [
+            155,
+            681,
+            461
+          ],
+          [
+            667,
+            681,
+            461
+          ]
+        ],
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            31,
+            937,
+            457
+          ]
+        ],
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            31,
+            681,
+            969
+          ]
+        ]
+      ],
+      "reachable_states": 1248,
+      "shortest_exchanges": 6,
+      "states_in_slice": 1248
+    },
+    "exact": {
+      "edges": 564,
+      "exchange_distance": 12,
+      "exchange_geodesic_states": 66,
+      "exchange_witness": [
+        [
+          31,
+          681,
+          457
+        ],
+        [
+          31,
+          681,
+          459
+        ],
+        [
+          29,
+          681,
+          459
+        ],
+        [
+          157,
+          681,
+          459
+        ],
+        [
+          413,
+          681,
+          459
+        ],
+        [
+          413,
+          681,
+          203
+        ],
+        [
+          413,
+          681,
+          715
+        ],
+        [
+          413,
+          169,
+          715
+        ],
+        [
+          413,
+          425,
+          715
+        ],
+        [
+          157,
+          425,
+          715
+        ],
+        [
+          29,
+          425,
+          715
+        ],
+        [
+          31,
+          425,
+          715
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ],
+      "first": {
+        "first_edge_count": 24,
+        "prior_states": 33,
+        "types": [
+          {
+            "chart": 0,
+            "distance": 4,
+            "shortest_paths": 4,
+            "site": 8
+          },
+          {
+            "chart": 0,
+            "distance": 4,
+            "shortest_paths": 4,
+            "site": 9
+          }
+        ]
+      },
+      "first_witnesses": [
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            31,
+            681,
+            461
+          ],
+          [
+            27,
+            681,
+            461
+          ],
+          [
+            155,
+            681,
+            461
+          ],
+          [
+            411,
+            681,
+            461
+          ]
+        ],
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            31,
+            681,
+            461
+          ],
+          [
+            27,
+            681,
+            461
+          ],
+          [
+            155,
+            681,
+            461
+          ],
+          [
+            667,
+            681,
+            461
+          ]
+        ]
+      ],
+      "reachable_states": 270,
+      "shortest_exchanges": 8,
+      "states_in_slice": 270
+    },
+    "root_only": {
+      "edges": 3150,
+      "exchange_distance": 8,
+      "exchange_geodesic_states": 14,
+      "exchange_witness": [
+        [
+          31,
+          681,
+          457
+        ],
+        [
+          159,
+          681,
+          457
+        ],
+        [
+          415,
+          681,
+          457
+        ],
+        [
+          415,
+          681,
+          201
+        ],
+        [
+          415,
+          681,
+          713
+        ],
+        [
+          415,
+          169,
+          713
+        ],
+        [
+          415,
+          425,
+          713
+        ],
+        [
+          159,
+          425,
+          713
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ],
+      "first": {
+        "first_edge_count": 98,
+        "prior_states": 98,
+        "types": [
+          {
+            "chart": 0,
+            "distance": 2,
+            "shortest_paths": 1,
+            "site": 8
+          },
+          {
+            "chart": 0,
+            "distance": 2,
+            "shortest_paths": 1,
+            "site": 9
+          }
+        ]
+      },
+      "first_witnesses": [
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            159,
+            681,
+            457
+          ],
+          [
+            415,
+            681,
+            457
+          ]
+        ],
+        [
+          [
+            31,
+            681,
+            457
+          ],
+          [
+            159,
+            681,
+            457
+          ],
+          [
+            671,
+            681,
+            457
+          ]
+        ]
+      ],
+      "reachable_states": 882,
+      "shortest_exchanges": 2,
+      "states_in_slice": 882
+    }
+  },
+  "original_preparations": {
+    "by_first_event": {
+      "existing holder copies the other leaf": 18,
+      "no binary leaf edit": 6,
+      "outsider copies": 12
+    },
+    "exact_through_first": 0,
+    "example": {
+      "exact_prefix": false,
+      "first": [
+        2,
+        8,
+        1
+      ],
+      "outsider": 2,
+      "profile_after": [
+        1,
+        3,
+        2
+      ],
+      "profile_before": [
+        1,
+        3,
+        2
+      ],
+      "start": [
+        409,
+        681,
+        79
+      ],
+      "step": 10,
+      "still_holds_copied_leaf_at_return": false
+    },
+    "first_copy_absent_at_return": 18,
+    "indexed": 36,
+    "named": 72
+  },
+  "raw_sha256": "15fe2b69196593ccd165d3c8c4cc152535a3d7f03574d09d355d8aa4346a6733",
+  "roles": [
+    "D",
+    "B",
+    "C"
+  ],
+  "start": [
+    409,
+    681,
+    79
+  ],
+  "target": [
+    2,
+    3,
+    2
+  ]
+}

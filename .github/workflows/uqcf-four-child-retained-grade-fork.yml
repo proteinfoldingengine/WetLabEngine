@@ -1,0 +1,54 @@
+name: Replay and review the four-child continuation fork
+on:
+  push:
+    branches: [gpt/uqcf-receiver-work-response]
+    paths:
+      - ".github/workflows/uqcf-four-child-retained-grade-fork.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_child_retained_grade_fork/**"
+permissions:
+  contents: read
+env:
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_child_retained_grade_fork
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  replay-and-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_child_retained_grade_fork/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/*.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+      - name: Reproduce the full matched campaign
+        run: |
+          mkdir evidence
+          python3 -B "$SCI/check.py" review_sources --raw evidence/positive_rows.json > evidence/result.json
+          cmp evidence/result.json "$SCI/result.json"
+          xz -dc "$SCI/positive_rows.json.xz" | cmp - evidence/positive_rows.json
+      - name: Request independent argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -B "$SCI/review.py" review evidence
+      - name: Verify the response and frozen inputs
+        run: python3 -B "$SCI/review.py" audit evidence > /dev/null
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: four-child-fork-evidence
+          path: evidence
+          if-no-files-found: error

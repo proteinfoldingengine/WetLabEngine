@@ -1,0 +1,94 @@
+{
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "run": 45751353294,
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45751353294",
+  "verified_commit": "f25b526f8f46a182b0b96ef85444645df9e44252",
+  "science_commit": "726da69da4e2c8787538a96eb60cab3152da2896",
+  "scope_commit": "7b99e09dfc288cf67d985261fb9291de71288d90",
+  "historical_commit": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "raw_sha256": "2e33eae95b3a64b6f94e5a79e3dc6d81b7c7d6772097bc8100bf393fa8193577",
+  "jobs": [
+    {
+      "id": 139679633434,
+      "name": "replay-and-review",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 139679633685,
+      "name": "foundational-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 139680409462,
+      "name": "publication-audit",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "initial_adjudication": {
+    "run": 45750850656,
+    "commit": "726da69da4e2c8787538a96eb60cab3152da2896",
+    "jobs": [
+      {
+        "id": 139678001574,
+        "name": "replay-and-review",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 139678001854,
+        "name": "foundational-regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 139679051675,
+        "name": "publication-audit",
+        "status": "completed",
+        "conclusion": "failure"
+      }
+    ],
+    "publication_error": [
+      "2026-11-26T03:48:02.9316157Z Traceback (most recent call last):",
+      "2026-11-26T03:48:02.9320128Z     raise ValueError(\"Review requires scientific adjudication\")",
+      "2026-11-26T03:48:02.9321014Z ValueError: Review requires scientific adjudication",
+      "2026-11-26T03:48:02.9485229Z ##[error]Process completed with exit code 1."
+    ],
+    "initial_archive_field": "native_bridge_status = DERIVED",
+    "reason_for_second_review": "The initial work accepted the bounded mathematics but its physical status conflicted with its written qualification about origin. Its rank and clearance wording also required checking against the actual code and trace. The scientific sources and numerical records were unchanged; the follow-up asks separate questions about software and physical realization."
+  },
+  "archives": {
+    "endogenous-junction-publication": {
+      "github_name": "endogenous-junction-publication",
+      "github_artifact_id": 15085812159,
+      "bytes": 70166,
+      "sha256": "2f1bf12755bb9cef6e56a4d7188b9689e5a7c8cb4e0715eb7625fa18afbbdca5"
+    },
+    "endogenous-junction-foundation": {
+      "github_name": "endogenous-junction-foundation",
+      "github_artifact_id": 15085672142,
+      "bytes": 307062,
+      "sha256": "87378f970ef19a01c0c132cae35f77147194bed36b8489c95eed56e3bd79c148"
+    },
+    "endogenous-junction-review": {
+      "github_name": "endogenous-junction-review",
+      "github_artifact_id": 15085442785,
+      "bytes": 132967,
+      "sha256": "2b9dfe34e6aa27d774886a02f2d2323a4aadc1c2406c38e609d58b3934d0a229"
+    },
+    "initial-review": {
+      "github_name": "endogenous-junction-review",
+      "github_artifact_id": 15085995360,
+      "bytes": 144265,
+      "sha256": "0e3053ed4938f20d61e2ebe5b63132b281f4751396c7ce6cea12358140a2399b"
+    },
+    "initial-foundation": {
+      "github_name": "endogenous-junction-foundation",
+      "github_artifact_id": 15085965212,
+      "bytes": 307060,
+      "sha256": "2203552aa1995f56ec6e94a8a29d6058177a1317777f171aae55d07c3447ade9"
+    }
+  }
+}

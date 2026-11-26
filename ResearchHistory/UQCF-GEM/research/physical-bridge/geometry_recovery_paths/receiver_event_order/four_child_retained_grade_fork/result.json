@@ -1,0 +1,215 @@
+{
+  "categories": [
+    [
+      2,
+      1,
+      2,
+      true,
+      true,
+      12
+    ],
+    [
+      3,
+      1,
+      2,
+      true,
+      true,
+      240
+    ],
+    [
+      3,
+      2,
+      3,
+      false,
+      false,
+      52
+    ],
+    [
+      3,
+      2,
+      3,
+      true,
+      true,
+      8
+    ]
+  ],
+  "category_columns": [
+    "chart_count",
+    "null_target",
+    "source_target",
+    "has_fork",
+    "has_matching_local_history_at_a_fork",
+    "count"
+  ],
+  "counts": {
+    "different_next_move_at_same_state": 260,
+    "eligible": 2730,
+    "fork_source_step_does_not_reach_source_cover": 8,
+    "fork_source_step_uniquely_restores_source_cover": 252,
+    "joint_reunion": 260,
+    "positive": 312,
+    "same_local_history_at_fork": 260,
+    "shared_full_atlas": 252,
+    "transient_null_exposure": 312
+  },
+  "example": {
+    "current_fork": [
+      31,
+      17
+    ],
+    "fresh_restart_at_target_two": "recursive call requires exact parent",
+    "fresh_restart_path": [
+      [
+        31,
+        17
+      ],
+      [
+        31,
+        19
+      ],
+      [
+        31,
+        23
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        29
+      ],
+      [
+        31,
+        25
+      ],
+      [
+        31,
+        17
+      ],
+      [
+        31,
+        1
+      ]
+    ],
+    "fresh_restart_target": 1,
+    "null_path": [
+      [
+        31,
+        9
+      ],
+      [
+        31,
+        11
+      ],
+      [
+        31,
+        15
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        29
+      ],
+      [
+        31,
+        25
+      ],
+      [
+        31,
+        17
+      ],
+      [
+        31,
+        1
+      ]
+    ],
+    "null_target": 1,
+    "receiver_history_to_fork": [
+      9,
+      11,
+      15,
+      31,
+      29,
+      25,
+      17
+    ],
+    "source_path": [
+      [
+        23,
+        9
+      ],
+      [
+        23,
+        11
+      ],
+      [
+        23,
+        15
+      ],
+      [
+        31,
+        15
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        29
+      ],
+      [
+        31,
+        25
+      ],
+      [
+        31,
+        17
+      ],
+      [
+        15,
+        17
+      ]
+    ],
+    "source_target_from_atom": 2
+  },
+  "original_R_rows": 2507,
+  "unique_immediate_restoration": [
+    {
+      "all_primitive_neighbors_by_cover": {
+        "1": 4,
+        "2": 1
+      },
+      "comparison_count": 12,
+      "only_source_target_successor": [
+        15,
+        17
+      ],
+      "shared_atlas": [
+        31,
+        17
+      ]
+    },
+    {
+      "all_primitive_neighbors_by_cover": {
+        "1": 8,
+        "2": 1
+      },
+      "comparison_count": 240,
+      "only_source_target_successor": [
+        15,
+        17,
+        17
+      ],
+      "shared_atlas": [
+        31,
+        17,
+        17
+      ]
+    }
+  ]
+}

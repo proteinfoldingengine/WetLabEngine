@@ -1,0 +1,41 @@
+{
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "run": 45731071551,
+  "workflow_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45731071551",
+  "workflow_commit": "163d8c53445a52b1096411ea2e738132224f01b0",
+  "scientific_commit": "1de3107f13acdc4e07f5e8e59fa15575948bded8",
+  "historical_commit": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "review_run": 45729381481,
+  "previous_failed_publication_run": 45730739531,
+  "jobs": {
+    "foundational_regression": {
+      "id": 139612908761,
+      "conclusion": "success"
+    },
+    "publication_audit": {
+      "id": 139613327495,
+      "conclusion": "success"
+    }
+  },
+  "artifacts": {
+    "foundation": {
+      "id": 15076284394,
+      "name": "four-child-fork-foundation",
+      "bytes": 307060,
+      "digest": "sha256:2c94dd5ba8206b396100387562b3662f0cf2bad6bfa33218006ed08d4514d13b",
+      "archive": "foundation.zip"
+    },
+    "publication": {
+      "id": 15076098557,
+      "name": "four-child-fork-publication",
+      "bytes": 121070,
+      "digest": "sha256:9bf4dfbf6651f7765aee42785727bb35ba3a929cec7c07775d85334bb7940961",
+      "archive": "publication.zip"
+    }
+  },
+  "adjudication": {
+    "finite_result": "ACCEPTED",
+    "native_bridge_status": "OPEN",
+    "publication_audit": "PASS"
+  }
+}
