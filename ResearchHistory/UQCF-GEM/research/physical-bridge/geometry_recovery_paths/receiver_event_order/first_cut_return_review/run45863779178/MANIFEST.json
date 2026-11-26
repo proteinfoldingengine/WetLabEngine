@@ -1,0 +1,48 @@
+{
+  "run": 45863779178,
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45863779178",
+  "science": "0ac2f157a61c49460e043f5f87c0066284035761",
+  "original_science": "0aeb3a2e2bd8103038eca1fc1af4401acce0bfbd",
+  "historical": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "scope": "edc57451cd4963c0ca6a8bdce5aa9a260d6bdddc",
+  "orbit_extension": "de2e8c8087cb12eda76d8f4530854962efaf02e4",
+  "prior_failed_run": 45863366221,
+  "prior_failed_archive": "89a34a2f5cfd9d61bacc37ffa4692946b90bdc11",
+  "jobs": [
+    {
+      "name": "foundational-regression",
+      "id": 140061277736,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "replay-and-review",
+      "id": 140061278215,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "publication-audit",
+      "id": 140062091103,
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "archives": {
+    "first-cut-return-publication": {
+      "id": 15139506899,
+      "bytes": 30048,
+      "sha256": "13c7093e995516c3692cb82c50a34cdc4b0e7352e6e10cabe5fcda025b38f718"
+    },
+    "first-cut-return-foundation": {
+      "id": 15139356796,
+      "bytes": 307058,
+      "sha256": "f1d825ba5943024e080b84e17619bff21dcb3459c2671574a0d13f7e0d034057"
+    },
+    "first-cut-return-review": {
+      "id": 15138664661,
+      "bytes": 72621,
+      "sha256": "11be0181e08d9d80dd0d6c43e794285398a1121e02645fd2fc418c64dfa21cb5"
+    }
+  }
+}
