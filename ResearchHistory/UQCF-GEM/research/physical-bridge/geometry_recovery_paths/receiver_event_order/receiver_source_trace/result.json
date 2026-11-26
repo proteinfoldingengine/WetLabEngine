@@ -1,0 +1,358 @@
+{
+  "R_rows": 2507,
+  "admissible_alternative": {
+    "alternative_low": [
+      [
+        15,
+        1,
+        17
+      ],
+      [
+        15,
+        5,
+        17
+      ],
+      [
+        15,
+        5,
+        21
+      ],
+      [
+        15,
+        5,
+        29
+      ],
+      [
+        31,
+        5,
+        29
+      ],
+      [
+        31,
+        21,
+        29
+      ],
+      [
+        31,
+        17,
+        29
+      ],
+      [
+        31,
+        17,
+        25
+      ],
+      [
+        31,
+        17,
+        17
+      ],
+      [
+        15,
+        17,
+        17
+      ],
+      [
+        15,
+        1,
+        17
+      ],
+      [
+        15,
+        17,
+        17
+      ],
+      [
+        15,
+        17,
+        1
+      ]
+    ],
+    "original_high": [
+      [
+        7,
+        9,
+        17
+      ],
+      [
+        7,
+        13,
+        17
+      ],
+      [
+        7,
+        13,
+        21
+      ],
+      [
+        7,
+        13,
+        29
+      ],
+      [
+        23,
+        13,
+        29
+      ],
+      [
+        23,
+        29,
+        29
+      ],
+      [
+        23,
+        25,
+        29
+      ],
+      [
+        23,
+        25,
+        25
+      ],
+      [
+        23,
+        25,
+        17
+      ],
+      [
+        7,
+        25,
+        17
+      ],
+      [
+        7,
+        9,
+        17
+      ]
+    ],
+    "original_low": [
+      [
+        15,
+        1,
+        17
+      ],
+      [
+        15,
+        3,
+        17
+      ],
+      [
+        15,
+        3,
+        19
+      ],
+      [
+        15,
+        7,
+        19
+      ],
+      [
+        15,
+        7,
+        23
+      ],
+      [
+        15,
+        15,
+        23
+      ],
+      [
+        15,
+        15,
+        31
+      ],
+      [
+        31,
+        15,
+        31
+      ],
+      [
+        31,
+        31,
+        31
+      ],
+      [
+        31,
+        29,
+        31
+      ],
+      [
+        31,
+        29,
+        29
+      ],
+      [
+        31,
+        25,
+        29
+      ],
+      [
+        31,
+        25,
+        25
+      ],
+      [
+        31,
+        17,
+        25
+      ],
+      [
+        31,
+        17,
+        17
+      ],
+      [
+        15,
+        17,
+        17
+      ],
+      [
+        15,
+        17,
+        1
+      ]
+    ],
+    "receiver": 2,
+    "start": [
+      15,
+      9,
+      17
+    ],
+    "tip": 3
+  },
+  "all_labelled_entry_state_chart_checks": 3108,
+  "complete_single_chart_trace_classes_per_target": {
+    "2": 45,
+    "3": 30
+  },
+  "event_entry_incidence_by_robust_arm_and_height": [
+    [
+      false,
+      "competing release",
+      2,
+      1440
+    ],
+    [
+      false,
+      "competing release",
+      3,
+      432
+    ],
+    [
+      false,
+      "high",
+      3,
+      1872
+    ],
+    [
+      false,
+      "retained-incidence control",
+      2,
+      2880
+    ],
+    [
+      false,
+      "retained-incidence control",
+      3,
+      864
+    ],
+    [
+      true,
+      "competing release",
+      2,
+      576
+    ],
+    [
+      true,
+      "high",
+      3,
+      576
+    ],
+    [
+      true,
+      "retained-incidence control",
+      2,
+      1152
+    ]
+  ],
+  "full_source_events": 720,
+  "immediate_by_initial_degree_and_is_other_holder": [
+    [
+      1,
+      false,
+      216
+    ],
+    [
+      1,
+      true,
+      288
+    ],
+    [
+      2,
+      false,
+      504
+    ],
+    [
+      2,
+      true,
+      432
+    ]
+  ],
+  "matched_grade_comparisons_by_bystander_and_retention_count": [
+    [
+      false,
+      116,
+      144
+    ],
+    [
+      true,
+      116,
+      72
+    ]
+  ],
+  "nonrobust_by_equal_rival_trace_count_and_equal_null_joint_trace_count": [
+    [
+      144,
+      144,
+      432
+    ]
+  ],
+  "order_pairs_per_event": 144,
+  "original_rows_per_target": {
+    "2": 1548,
+    "3": 132
+  },
+  "raw_sha256": "579c87fc338b3cf3d0019456bad61688f217f651dc0c04a163b3f9a441faabf8",
+  "robust_by_status_and_number_of_source_delay_states": [
+    [
+      false,
+      3,
+      288
+    ],
+    [
+      false,
+      7,
+      144
+    ],
+    [
+      true,
+      1,
+      144
+    ],
+    [
+      true,
+      3,
+      144
+    ]
+  ],
+  "three_tip_decisions": {
+    "1": {
+      "2": 12
+    },
+    "2": {
+      "-1": 6,
+      "1": 2,
+      "2": 4
+    }
+  }
+}
