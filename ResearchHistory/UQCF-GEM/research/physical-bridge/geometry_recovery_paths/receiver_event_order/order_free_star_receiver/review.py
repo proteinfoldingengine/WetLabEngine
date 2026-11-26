@@ -26,6 +26,17 @@ DOCUMENTS = {
     "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b"
 }
 QUESTION = """Independently check RESULT.md against the attached original code and independent enumerations. Return one JSON object. In particular test the theorem about the count at the first actual gain across contraction, palette substitution and final anchoring, the local collision construction for m>q, and the remote indistinguishability argument for the transitive orbit. Verify each optimum and both physical roles in the 5-by-5 preparation, case counting, unchanged and rising hitting number controls, the 1248 common novel addresses and all silent histories. Distinguish conditional mathematical behavior from a process that autonomously initiates a physical receiver transition. Use verdict ACCEPTED, REVISE or FAIL; assign program_status to the bounded mathematical result and native_bridge_status to physical enactment independently using DERIVED, REFUTED or OPEN. Use proof_checks for successful verifications and limitations for scope. Only an acceptance has findings, missing_assumptions, counterexamples all literal empty arrays. Challenge actual flaws. Do not treat a physical interpretation or a new payload value as established. The independent archive byte check is a separate workflow step."""
+QUESTION += """
+Output one JSON object with these REQUIRED top-level keys, in this order.
+1. verdict -- your overall review decision. Choose exactly one string from ACCEPTED, REVISE, FAIL.
+2. program_status -- the status of the finite mathematical claims. Choose exactly one string from DERIVED, REFUTED, OPEN.
+3. native_bridge_status -- the status of autonomous physical enactment. Choose exactly one string from DERIVED, REFUTED, OPEN.
+4. proof_checks -- a list of worked checks.
+5. limitations -- a list of limitations.
+6. findings -- a list of substantive issues.
+7. missing_assumptions -- a list.
+8. counterexamples -- a list.
+Return all eight named keys in valid JSON. Judge the merits yourself. Do not replace verdict by program_status or put an overall review decision in a scientific status field."""
 payload = DRIVER.read_bytes()
 if sha1(b"blob " + str(len(payload)).encode() + b"\0" + payload).hexdigest() != "0fd5a1c3965e5be4b874969b8ae8c715b9e43a2e":
     raise ValueError("Unexpected inherited review driver")
