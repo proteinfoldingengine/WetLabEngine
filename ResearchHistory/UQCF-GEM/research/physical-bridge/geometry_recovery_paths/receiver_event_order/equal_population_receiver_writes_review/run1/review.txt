@@ -1,0 +1,10 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": "The equal-k inference correctly uses the sum of pair-work changes over the 120 other charts to deduce k_A = k_B and subsequently c_j_A = c_j_B. The multiplicity bounds and exact minimum of 4 are rigorously established by the rational rank 92 nullspace and the 5^8 enumeration, yielding 13,471 feasible vectors and exactly 8 directed minimal vectors. The independent base-4 signature check correctly rules out collisions for sizes 1, 2, and 3 without relying on the nullspace. The 11-chart cover is proven minimal for the selected charts because each retains at least 24 private witnesses, meaning removal of any chart uncovers a leaf. The actual source interventions use the historical v16.26 atomic routine, yielding the expected (11,11,11,11,0,false) receipts. The triple-to-local-count mechanism correctly applies inclusion-exclusion (200 - 39 - 48 + 16 = 129) to explain the retained count difference. The first gain correctly occurs at step 1231 with leaf 3, yielding Pin grades 1677 and 1679 via the historical P1 push. The source-last collision correctly demonstrates that a different chart priority erases the distinction. The intermediate geometry correctly shows pair-work differences (38, 68, 38) before converging to 0 at the endpoints. The distinction between the active cover and the full atlas is precisely maintained.",
+  "limitations": "The result is a conditional software observation. It relies on a supplied active cover, a supplied chart priority, and a supplied sequence of source actions. No endogenous scheduler, physical delivery, or intrinsic reason for these specific selections is established. The full-atlas minimum cover size remains uncertified.",
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
