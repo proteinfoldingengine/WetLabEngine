@@ -1,0 +1,50 @@
+# The first binary leaf edit and the cost of keeping the geometry fixed
+
+For a private binary split on three charts, the first edit to either leaf has exactly two possible geometric effects. If the binary minimum cover stays at two, the chart initially holding neither leaf must acquire the first copy. If an existing holder acquires the opposite leaf, the binary minimum cover falls to one. This rule applies to any primitive history up to its first binary leaf edit. It uses neither chart priority nor a chosen endpoint. The occurrence of an edit and the choice of leaf are additional information.
+
+In the ten-vertex example the outside chart initially holds two remote singleton leaves. If **all three** cover counts stay fixed, at least one of those singletons must pass to another chart before the outside chart can acquire a binary leaf. Four edits are necessary and sufficient for that first acquisition. Both the original preparation and the state following the historical junction withdrawal satisfy the hypotheses.
+
+## State, operations and premises
+
+The root has singleton children X and Y, a ternary branch W, and a binary branch S. Each of three charts retains the Pin and the ancestors of its retained sites. Every site must stay covered. One edit changes one chart-site incidence. A withdrawal removes a terminal site of that chart while preserving the union. An addition is the reverse of such a withdrawal. A chart's indexed mask is its software record.
+
+The local cover is the fewest charts whose combined holdings contain every child of a given parent. The measured profile at (root,W,S) is (2,3,2). The historical v16.53 path verifier admits total absolute deviation up to one during a computation. The restriction that every edit preserve the profile is an additional control. An exact parent immediately before a recursive call does not enforce exactness throughout that call.
+
+The original input I=(409,681,79) and post-withdrawal state H=(31,681,457) have the same incidence pattern up to renaming. Every W leaf has a different sole holder. Two charts hold one S leaf each, and the third chart alone holds both X and Y and lacks S. At H, in chart order D,B,C, B owns right and C owns left. D holds neither. At I, C is the outside chart, D owns left and B owns right. The previous program reaches P=(159,681,457), releases D at S to give H, then exchanges the two binary leaf roles to reach F=(31,425,713). P and H name particular indexed states.
+
+## First edit without a chosen actor or endpoint
+
+Before the first edit to either binary leaf, their two original sole holders are unchanged. A deletion would uncover a leaf. An addition to an existing holder can only give it the opposite leaf. That holder would then cover both, so S would require one chart. An addition to the sole other chart gives that chart a single leaf, and no chart would hold both. The binary cover would remain two. Prior moves at any other sites cannot change this dichotomy. In particular, preserving the binary cover through that edit fixes the **role of its recipient** even if the other geometry has fluctuated. This predicts a first acquisition, which initially creates a duplicate. An original holder may release its copy later.
+
+For every cover count to remain exact there is a further constraint. With three W leaves and three charts, cover three requires each chart to hold exactly one W leaf, all different. A chart holding two W leaves would lower the cover to at most two. Removing a private W leaf would break coverage. The W leaf assignments and each chart's W membership are therefore fixed throughout this control. For the outside chart to enter S while keeping root cover two, it must then lack either X or Y. Otherwise it would cover X,Y,W,S by itself. Initially it is the sole holder of both singletons. Another chart must first copy one of them, and the original holder must release it **before** entering S. A remote copy alone does not suffice.
+
+The bound is attained. Copy X or Y to either of the other two charts, have the outside chart release that singleton, have it add S, and let it copy either binary leaf. These are all eight shortest four-edit histories from H to the first binary incidence change. Even after fixing the entire first three edits, either leaf can supply the fourth. The proof extends under all sibling and chart relabelings. If a second outside chart were available, the uniqueness argument for the recipient would no longer apply.
+
+## Two ways to accommodate an exchange
+
+Fix F only in this test, which asks for a full exchange, with every other incidence restored to the one in H. All distances count primitive one-incidence edits. A route allowing only the root count to vary keeps the binary split throughout. A route allowing only the binary count to vary keeps the root exact.
+
+| Cover variation allowed | Earliest edit of a binary leaf | Complete H to F exchange | Number of shortest exchanges |
+| --- | ---: | ---: | ---: |
+| None | 4 | 12 | 8 |
+| Root only, at most one | 2 | 8 | 2 |
+| Binary only, at most one | 1 | 4 | 6 |
+| Original total unit band | 1 | 4 | 6 |
+
+For fixed binary cover, trading the two private leaves without ever letting either chart hold both requires the third chart to hold a temporary copy. The four net changes at B and C are necessary. At least one copy into D and one withdrawal from D are also necessary. D begins and ends outside S, adding two more edits. If root and W must also stay exact, D has to release a singleton first and recover it afterward. Starting and ending with D its sole holder adds four more edits. The enumerated paths realize the respective bounds. Under the historical band the four net edits alone suffice by letting the binary cover drop to one. The native suffix does precisely this. Immediately after the reviewed withdrawal D is the conditional recipient for a fixed binary cover, while B is the actual first recipient in the original suffix, where the binary cover changes.
+
+The exact-profile component through H has **270 states and 564 undirected edges**. Thirty-three states are reachable without touching either binary leaf. From them 24 directed edges give a first binary leaf edit, every one a copy into D. All edges and all in-band exact neighbors of the component were compared against the original v16.26 primitive and its independent verifier. For the root-only and binary-only controls the components have respectively 882 states and 3,150 edges, and 1,248 states and 4,398 edges. The ledger includes all adjacency lists, all first-event boundary edges, all shortest-exchange state layers, and representative paths. The software checked the exact witnesses in 144 chart and sibling presentations. These are related presentations of one shape.
+
+## From the original preparation
+
+There are two shortest paths from I to the same F at constant (2,3,2). Each takes **10 edits**, the Hamming lower bound for these endpoints. The two choices are which singleton first passes from C to D. C then adds S, takes the right leaf from B, B takes the left leaf from D, D leaves S and the other singleton passes from C to D. Each leaf handoff uses copy then release. Both paths avoid P and H. In the historical unit band there are 1,900 ten-edit paths from I to F. None visits P or H. Those states give C an intermediate left-leaf copy that is absent in both I and F. A shortest path cannot add and later remove that bit. The native normalizer uses 16 edits and visits both states. Thus neither the starting geometry nor even the specified final indexed ownership requires the program's particular chamber.
+
+The 36 distinct indexed preparations in the previous cover-two family (72 named presentations) are exactly the orbit of H under chart and sibling relabeling. Replaying each through the unchanged normalizer, 12 runs first copy a leaf into the outsider with the binary cover still two, 18 first copy the opposite leaf into an existing holder and lower the binary cover, and 6 return without a binary leaf edit. All 12 outsider first copies occur at root cover one. None of the 30 active runs keeps all three counts exact from entry through its first binary edit. Eighteen of those 30 first copies are absent from that receiver's record at return. At I the native program first gives C the left leaf at step 10 and C later releases it. The two shortest constant-profile paths from the same I first give C the right leaf. Recipient identity under a condition, the copied address, and retention to the endpoint are different claims.
+
+An explicit four-edit cycle from H copies X to B and Y to C, then releases those copies in the same order. It stays exact, contains no immediate reversal and never touches a binary leaf. It can repeat. Activity alone cannot force the conditional first edit. The costs count ordered edits; they are not elapsed physical times. These finite results determine an accessibility constraint within the admitted chart model. Initiation, the physical accessibility of a chart record, a scale law or quantum dynamics require other premises.
+
+## Reproduction and provenance
+
+The [initial scope](SCOPE.md) and [family extension](PREPARATIONS.md) were committed before their respective tests. The prior [source study](../endogenous_junction/RESULT.md) supplies the population and original trace. The earlier [upstream control](https://github.com/proteinfoldingengine/WetLabEngine/pull/111#issuecomment-7182222505) measured shortest paths **to P**. This study tests the first binary edit from two compact preparations and paths **to F**.
+
+Run `python3 -B check.py HISTORICAL_CHECKOUT --raw actual.json` at historical commit `e61d5b0e827f7b412824ad46021e2ad6cc6f7875`. The sibling endogenous_junction directory supplies the original-loading helper and the prior frozen population. Output should match result.json and the decompressed raw.json.xz byte for byte. Shortest-path multiplicities count indexed primitive paths. The independent historical verifier validates profiles, admission and complete witness paths.
