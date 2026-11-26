@@ -151,5 +151,22 @@ lo,hi=[z["record"] for z in local_results["adjacent_twins"]]
 assert lo["pin"]==hi["pin"] and lo["leaves"]!=hi["leaves"]
 # Bind semantic twin identities across the order permutation.
 assert [z["record"]["pin"] for z in local_results["twins"]]==list(reversed([z["record"]["pin"] for z in local_results["swapped_twins"]]))
-print(json.dumps(dict(local=local_results,census=census(),fixed=fixed_out,twins=twin_out,
+def promote_receiver(columns, cut_leaf):
+    # Keep physical chart 0 as the source and physical chart 1 as the receiver.
+    order=(1,0,2)
+    cut=drop(columns,cut_leaf,0)
+    ordered=tuple(sum(1<<i for i,c in enumerate(order) if s&(1<<c)) for s in cut)
+    h=first_cover(ordered)
+    assert {order[i] for i in h}==set(first_cover(cut))
+    path=normalize(rows_of(ordered),len(columns),K,len(h))
+    boundary=next(i for i,rows in enumerate(path) if sum(r.bit_count()-1 for r in rows)==len(columns))
+    assert all(state[0]==rows_of(cut)[1] for state in path[:boundary+1])
+    return dict(edits_at_receiver=0,contraction=record(path[boundary][0],len(columns)),steps=boundary)
+
+priority={
+    "fixed":[promote_receiver(local_fixed,i) for i in (3,5)],
+    "twins":[promote_receiver(local_twins,i) for i in (2,4)],
+}
+assert all(arms[0]["contraction"]==arms[1]["contraction"] for arms in priority.values())
+print(json.dumps(dict(priority=priority,local=local_results,census=census(),fixed=fixed_out,twins=twin_out,
                       chart_reindexing_roles=ordered_roles,control_covers=[first_cover(control),first_cover(drop(control,1,0))]),sort_keys=True))
