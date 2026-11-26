@@ -1,0 +1,292 @@
+{
+  "historical_campaign": [
+    "VERIFIED",
+    2863,
+    34234
+  ],
+  "one_binary": {
+    "direct_comparison_contexts": 12,
+    "one_binary_counts": [
+      [
+        3,
+        "equal moving bystander",
+        108
+      ],
+      [
+        3,
+        "equal resting bystander",
+        540
+      ],
+      [
+        3,
+        "final junction release",
+        324
+      ],
+      [
+        3,
+        "inputs",
+        1296
+      ],
+      [
+        4,
+        "equal moving bystander",
+        1280
+      ],
+      [
+        4,
+        "equal resting bystander",
+        7936
+      ],
+      [
+        4,
+        "final junction release",
+        3072
+      ],
+      [
+        4,
+        "inputs",
+        12288
+      ]
+    ]
+  },
+  "prior_fixture": {
+    "reads": [
+      [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          7,
+          1
+        ]
+      ],
+      [
+        [
+          0
+        ],
+        [
+          7
+        ]
+      ]
+    ],
+    "singleton": 0
+  },
+  "raw_sha256": "2e33eae95b3a64b6f94e5a79e3dc6d81b7c7d6772097bc8100bf393fa8193577",
+  "released": {
+    "original_N": 96,
+    "original_N_final_junction_by_later_bystander_and_veto": []
+  },
+  "two_subtrees": {
+    "by_cover_and_writing_bystanders": [
+      [
+        1,
+        0,
+        312
+      ],
+      [
+        1,
+        2,
+        48
+      ],
+      [
+        2,
+        0,
+        48
+      ],
+      [
+        2,
+        2,
+        24
+      ]
+    ],
+    "clean_comparisons_by_natural_writes_and_receiver_activity": [
+      [
+        0,
+        false,
+        true,
+        192
+      ],
+      [
+        2,
+        true,
+        false,
+        48
+      ],
+      [
+        2,
+        true,
+        true,
+        48
+      ]
+    ],
+    "clean_comparisons_by_ordinary_closure_size": [
+      [
+        1,
+        2,
+        288
+      ]
+    ],
+    "cover_two_by_original_double_holder_rank": [
+      [
+        0,
+        true,
+        0,
+        24
+      ],
+      [
+        1,
+        false,
+        0,
+        24
+      ],
+      [
+        2,
+        false,
+        2,
+        24
+      ]
+    ],
+    "distinct_indexed_inputs": 216,
+    "example": {
+      "acquirer_P1": [
+        [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            9,
+            1
+          ]
+        ]
+      ],
+      "after": [
+        31,
+        681,
+        457
+      ],
+      "before": [
+        159,
+        681,
+        457
+      ],
+      "index": 12,
+      "start": [
+        409,
+        681,
+        79
+      ],
+      "suffix": [
+        [
+          31,
+          681,
+          457
+        ],
+        [
+          31,
+          937,
+          457
+        ],
+        [
+          31,
+          937,
+          201
+        ],
+        [
+          31,
+          937,
+          713
+        ],
+        [
+          31,
+          425,
+          713
+        ]
+      ]
+    },
+    "local_record_sets": [
+      [
+        [
+          2,
+          [
+            1
+          ]
+        ],
+        [
+          3,
+          [
+            2
+          ]
+        ]
+      ],
+      [
+        [
+          2,
+          [
+            2
+          ]
+        ],
+        [
+          3,
+          []
+        ]
+      ]
+    ],
+    "presentations": 432
+  }
+}
