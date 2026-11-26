@@ -1,0 +1,209 @@
+{
+  "cases": {
+    "five_halves": {
+      "all_next_legal": 32575,
+      "eligible_non_source": [],
+      "fine_Pin": 1,
+      "geometry_after_receiver": "degree_not_four",
+      "geometry_after_source": "degree_not_four",
+      "geometry_before": "ADMITTED",
+      "historical_scanner": {
+        "called": true,
+        "precondition": "minimum != MU"
+      },
+      "neighbor_pair_works": [
+        "3975/2",
+        "3975/2",
+        "3999/2",
+        "3999/2",
+        "3975/2",
+        "3975/2"
+      ],
+      "neighbors_after": [],
+      "neighbors_before": [
+        7,
+        11,
+        13,
+        17
+      ],
+      "own_row_sum_after": "191567/4",
+      "own_row_sum_before": 47898,
+      "receiver_prior_sha256": "1d8f82071e7d8b4ba441e81b523f3ffb958b196bda129dc09fcfa9582ca58a5c",
+      "receiver_root_after_fixed_legal_cut": 244,
+      "receiver_root_prior": 242,
+      "source_pair_after": "7967/4",
+      "source_pair_before": 1998,
+      "source_subtotal": "5/2",
+      "total": 3177,
+      "traced_local_maximum": "3999/2"
+    },
+    "nominal": {
+      "all_next_legal": 32575,
+      "eligible_non_source": [
+        [
+          12,
+          2
+        ]
+      ],
+      "fine_Pin": 1,
+      "geometry_after_receiver": "ADMITTED",
+      "geometry_after_source": "degree_not_four",
+      "geometry_before": "ADMITTED",
+      "historical_scanner": {
+        "called": true,
+        "candidates": [
+          [
+            12,
+            2
+          ]
+        ]
+      },
+      "neighbor_pair_works": [
+        1992,
+        1992,
+        2004,
+        2004,
+        1992,
+        1992
+      ],
+      "neighbors_after": [
+        7,
+        11,
+        13,
+        17
+      ],
+      "neighbors_before": [
+        7,
+        11,
+        13,
+        17
+      ],
+      "own_row_sum_after": 47894,
+      "own_row_sum_before": 47898,
+      "receiver_prior_sha256": "1d8f82071e7d8b4ba441e81b523f3ffb958b196bda129dc09fcfa9582ca58a5c",
+      "receiver_root_after_fixed_legal_cut": 244,
+      "receiver_root_prior": 242,
+      "source_pair_after": 1994,
+      "source_pair_before": 1998,
+      "source_subtotal": 2,
+      "total": 3177,
+      "traced_local_maximum": 2004
+    },
+    "one": {
+      "all_next_legal": 32575,
+      "eligible_non_source": [],
+      "fine_Pin": 1,
+      "geometry_after_receiver": "degree_not_four",
+      "geometry_after_source": "degree_not_four",
+      "geometry_before": "ADMITTED",
+      "historical_scanner": {
+        "called": true,
+        "candidates": []
+      },
+      "neighbor_pair_works": [
+        1998,
+        1998,
+        2010,
+        2010,
+        1998,
+        1998
+      ],
+      "neighbors_after": [
+        7,
+        11,
+        13,
+        17
+      ],
+      "neighbors_before": [
+        7,
+        11,
+        13,
+        17
+      ],
+      "own_row_sum_after": 47897,
+      "own_row_sum_before": 47898,
+      "receiver_prior_sha256": "1d8f82071e7d8b4ba441e81b523f3ffb958b196bda129dc09fcfa9582ca58a5c",
+      "receiver_root_after_fixed_legal_cut": 244,
+      "receiver_root_prior": 242,
+      "source_pair_after": 1997,
+      "source_pair_before": 1998,
+      "source_subtotal": 1,
+      "total": 3177,
+      "traced_local_maximum": 2010
+    }
+  },
+  "combined_rank": 27,
+  "five_chart": {
+    "before_after": [
+      [
+        {
+          "AF": 3,
+          "incident_neighbors": [
+            0
+          ],
+          "minimum": 2
+        },
+        {
+          "AF": 11,
+          "incident_neighbors": [
+            0
+          ],
+          "minimum": 2
+        }
+      ],
+      [
+        {
+          "AF": 2,
+          "incident_neighbors": [
+            0,
+            3
+          ],
+          "minimum": 2
+        },
+        {
+          "AF": 10,
+          "incident_neighbors": [
+            0
+          ],
+          "minimum": 2
+        }
+      ]
+    ],
+    "rejected_five_label_graphs": {
+      "degree_not_four": 1023,
+      "edge_cycle_count": 1
+    }
+  },
+  "incident_rank": 24,
+  "matrix_columns": 28,
+  "neighbor_pairs": [
+    [
+      7,
+      11
+    ],
+    [
+      7,
+      13
+    ],
+    [
+      7,
+      17
+    ],
+    [
+      11,
+      13
+    ],
+    [
+      11,
+      17
+    ],
+    [
+      13,
+      17
+    ]
+  ],
+  "raw_sha256": "02160f2f64cc1c6a44ed729fe952306783e231ff214187c5f9e258f722f020ce",
+  "receiver": 12,
+  "source": 0,
+  "source_site": 1
+}
