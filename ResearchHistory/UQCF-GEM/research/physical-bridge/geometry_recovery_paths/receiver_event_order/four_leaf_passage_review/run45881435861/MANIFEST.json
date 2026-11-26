@@ -1,0 +1,42 @@
+{
+  "run": 45881435861,
+  "science": "42d172e9689a1399ebc4751b315ad851841dfaa7",
+  "historical": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "jobs": [
+    {
+      "id": 140121482307,
+      "name": "foundational-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 140121482519,
+      "name": "replay-and-review",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 140121948659,
+      "name": "publication-audit",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "archives": {
+    "four-leaf-passage-review": {
+      "id": 15148005112,
+      "bytes": 60318,
+      "sha256": "54583d3bd9ccdca3b703e718b334d25535708d3af84b59d55ab168d498e14740"
+    },
+    "four-leaf-passage-foundation": {
+      "id": 15147815516,
+      "bytes": 307061,
+      "sha256": "e1cc6a7556f031f6958c3b7133f888b6db1d94822e47ad931c5f8b56dc2d559b"
+    },
+    "four-leaf-passage-publication": {
+      "id": 15147411434,
+      "bytes": 31176,
+      "sha256": "df49771fde867eb6d3abf65fa4b3559a20e1420cb6b4cc0ce52625d32b819c20"
+    }
+  }
+}
