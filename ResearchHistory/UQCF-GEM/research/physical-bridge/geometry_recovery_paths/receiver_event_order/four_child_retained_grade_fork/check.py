@@ -57,11 +57,29 @@ def changed_successor(null, event, receiver):
                        == local_history(event[:j + 1], receiver))
 
 
+@cache
+def primitive_catalogue(state):
+    """All single-tip edits on the same covered star, including inverse withdrawals."""
+    catalogue = {}
+    for chart, mask in enumerate(state):
+        for tip in children:
+            new = state[:chart] + (mask ^ (1 << tip),) + state[chart + 1:]
+            if not holders(new, tip):
+                continue
+            if mask & (1 << tip):
+                assert cut(state, chart, tip)[0] == new
+            else:
+                assert cut(new, chart, tip)[0] == state
+            catalogue[new] = verifier.profile_check(producer.Q, len(new), list(new))[0]
+    return catalogue
+
+
 family = [item for item in verifier.expected_specs() if item[0] == "R"]
 assert family == [item for item in producer.specs() if item[0] == "R"]
 counts = Counter()
 categories = Counter()
 raw = []
+restoring_forks = Counter()
 for _, k, *roots in family:
     start = tuple(verifier.raw_roots(k, roots))
     null_target, null = route(start)
@@ -94,6 +112,22 @@ for _, k, *roots in family:
                     counts["same_local_history_at_fork"] += matching
                     counts["shared_full_atlas"] += (31,) * k in common
                     counts["transient_null_exposure"] += any(row[receiver] & hidden for row in null)
+                    forced = set()
+                    reaches_target = False
+                    for i, j, matches_history in forks:
+                        if not matches_history:
+                            continue
+                        shared = null[i]
+                        catalogue = primitive_catalogue(shared)
+                        assert null[i + 1] in catalogue and event[j + 1] in catalogue
+                        reaching = {s for s, cover in catalogue.items() if cover == event_target}
+                        reaches_target |= event[j + 1] in reaching
+                        if reaching == {event[j + 1]}:
+                            forced.add((shared, event[j + 1]))
+                    for pair in forced:
+                        restoring_forks[pair] += 1
+                    counts["fork_source_step_uniquely_restores_source_cover"] += bool(forced)
+                    counts["fork_source_step_does_not_reach_source_cover"] += matching and not reaches_target
                     categories[k, before, after, bool(forks), matching] += 1
                     raw.append({"start": start, "receiver": receiver, "hidden": [first, second],
                                 "source": source, "site": site, "targets": [before, after],
@@ -124,6 +158,11 @@ result = {
     "category_columns": ["chart_count", "null_target", "source_target", "has_fork",
                          "has_matching_local_history_at_a_fork", "count"],
     "categories": [list(key) + [count] for key, count in sorted(categories.items())],
+    "unique_immediate_restoration": [{
+        "shared_atlas": state, "only_source_target_successor": successor,
+        "comparison_count": count,
+        "all_primitive_neighbors_by_cover": dict(sorted(Counter(primitive_catalogue(state).values()).items())),
+    } for (state, successor), count in sorted(restoring_forks.items())],
     "example": {"null_path": null, "source_path": event, "current_fork": fork,
                 "receiver_history_to_fork": local_history(event[:-1], 1),
                 "null_target": null_target, "source_target_from_atom": target,

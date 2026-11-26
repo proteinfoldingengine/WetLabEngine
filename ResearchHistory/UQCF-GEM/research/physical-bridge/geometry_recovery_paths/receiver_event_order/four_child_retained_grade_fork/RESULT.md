@@ -29,6 +29,19 @@ Of 2,730 eligible comparisons, 312 have this lasting endpoint distinction. In al
 | 3 | 1 | 2 | 240 | 0 |
 | 3 | 2 | 3 | 8 | 52 |
 
+## When the recorded cover actually fixes the next edit
+
+In 252 positive comparisons the two runs reach one of just two labeled fork states. If the next operation must restore the cover number 2 already returned by the source withdrawal, the editor and tip are both forced. We enumerated every single-tip addition and same-union withdrawal on the covered star at each fork. Each addition was also verified as the inverse of an original atomic withdrawal.
+
+| Shared atlas | Legal edits ending with cover 1 | Legal edits ending with cover 2 | Only edit reaching 2 | Matched comparisons |
+|---|---:|---:|---|---:|
+| [31,17] | 4 | 1 | Chart 0 withdraws tip 4 | 12 |
+| [31,17,17] | 8 | 1 | Chart 0 withdraws tip 4 | 240 |
+
+Chart 0 is the sole chart covering all four tips, and tip 4 is the only one it can withdraw while preserving their union. Adding a tip to any chart cannot destroy chart 0's cover. Withdrawing a tip from a different chart leaves that cover intact. Withdrawing tip 4 from chart 0 leaves tips 1–3 on chart 0 and tip 4 on at least one other chart. Exactly two charts are then necessary and sufficient. In the two-chart case the other chart becomes sole holder of 4. The three-chart case still has two holders of 4 immediately after the forced edit.
+
+The original caller takes this unique edit in all 252 comparisons. There are eight other positive comparisons with a common fork and cover targets 2 and 3. In every one the sourced next edit fails to reach its original target 3 at the fork. For example the shared [11,5,21] goes to [11,13,21] in the sourced run, and both states have cover 2. The caller's histories in the remaining 52 cases are disjoint. Immediate restoration is therefore a sufficient conditional selector on these two observed fork configurations. The requirement to restore the source cover at that point has yet to be derived from an event acting on the atlas alone.
+
 Every one of the 2,730 comparisons checked equality between the original source atom's tau_after and the target separately computed by the original producer. This equality follows from their common cover definition. The open question is whether a continuing native operation preserves that target, makes it available beyond the source, and initiates the next edit from it. The 52 disjoint comparisons do not settle that question. No time coordinate is used in the comparison of consecutive distinct records.
 
 ## Reproduction

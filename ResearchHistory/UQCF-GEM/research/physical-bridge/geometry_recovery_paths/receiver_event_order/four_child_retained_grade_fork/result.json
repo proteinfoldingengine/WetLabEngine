@@ -44,6 +44,8 @@
   "counts": {
     "different_next_move_at_same_state": 260,
     "eligible": 2730,
+    "fork_source_step_does_not_reach_source_cover": 8,
+    "fork_source_step_uniquely_restores_source_cover": 252,
     "joint_reunion": 260,
     "positive": 312,
     "same_local_history_at_fork": 260,
@@ -175,5 +177,39 @@
     ],
     "source_target_from_atom": 2
   },
-  "original_R_rows": 2507
+  "original_R_rows": 2507,
+  "unique_immediate_restoration": [
+    {
+      "all_primitive_neighbors_by_cover": {
+        "1": 4,
+        "2": 1
+      },
+      "comparison_count": 12,
+      "only_source_target_successor": [
+        15,
+        17
+      ],
+      "shared_atlas": [
+        31,
+        17
+      ]
+    },
+    {
+      "all_primitive_neighbors_by_cover": {
+        "1": 8,
+        "2": 1
+      },
+      "comparison_count": 240,
+      "only_source_target_successor": [
+        15,
+        17,
+        17
+      ],
+      "shared_atlas": [
+        31,
+        17,
+        17
+      ]
+    }
+  ]
 }
