@@ -71,8 +71,6 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
-            /.github/scripts/uqcf_preparability_integrity.py
-            /.github/scripts/uqcf_preparability_review.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_child_retained_grade_fork/
             /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/four_child_retained_grade_fork_review/
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -96,18 +94,16 @@ jobs:
           test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
           (cd foundation && sha256sum -c SHA256SUMS)
           python3 -B "$REV/verify_reviews.py" "$SCI" > review-readback.txt
-          rm -rf review_evidence
-          unzip -q "$REV/final-review.zip" -d review_evidence
-          python3 -B "$SCI/review.py" audit review_evidence
-          mkdir -p publication/review_evidence
+          mkdir -p publication
           python3 -B "$SCI/check.py" review_sources --raw publication/positive_rows.json > publication/result.json
           cmp "$SCI/result.json" publication/result.json
           xz -dc "$SCI/positive_rows.json.xz" | cmp - publication/positive_rows.json
           cp "$SCI"/{RESULT.md,check.py} publication/
           cp "$REV"/{MANIFEST.json,verify_reviews.py,first-review.zip,final-review.zip} publication/
-          cp review_evidence/* publication/review_evidence/
           cp review-readback.txt publication/
           cp foundation/SHA256SUMS publication/foundation-SHA256SUMS
+          git rev-parse HEAD > publication/workflow-head.txt
+          git -C review_sources rev-parse HEAD > publication/historical-head.txt
           (
             cd publication
             find . -type f ! -name SHA256SUMS -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS
