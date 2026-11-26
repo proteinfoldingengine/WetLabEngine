@@ -34,7 +34,10 @@ Check whether all claims are appropriately limited to the finite inherited input
 
 Return JSON with verdict ACCEPTED, REVISE or FAIL. Include arrays findings, missing_assumptions, counterexamples and
 limitations, and a proof_checks object with worked entries classification, grades, caller, source_holder, paths, order and
-scope. Give genuine objections under findings. native_bridge_status refers specifically to a source autonomously
+scope. The project uses findings EXCLUSIVELY for unresolved substantive defects. Put affirmative or explanatory
+observations in proof_checks. For an ACCEPTED result without unresolved defects, findings, missing_assumptions and
+counterexamples must each be an empty JSON list. Any actual objection must still be stated with REVISE or FAIL.
+native_bridge_status refers specifically to a source autonomously
 necessitating a physically accessible receiver record without supplying an update occurrence or excluding undo/rest.
 Use OPEN if underived, DERIVED if established, or REFUTED if impossibility was proved. This is separate from verdict on
 the finite mathematics. Calculate for yourself the next-edit counts and sample P1 values. Do not modify your scientific
