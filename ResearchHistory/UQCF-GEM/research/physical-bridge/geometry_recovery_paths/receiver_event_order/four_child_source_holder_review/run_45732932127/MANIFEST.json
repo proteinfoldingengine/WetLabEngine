@@ -1,0 +1,56 @@
+{
+  "repository": "proteinfoldingengine/WetLabEngine",
+  "run": 45732932127,
+  "run_url": "https://github.com/proteinfoldingengine/WetLabEngine/actions/runs/45732932127",
+  "verified_commit": "e5b897375a6261e11108d9a0d8dfe9a1affe8c2f",
+  "initial_science_commit": "62baa28815f4ce847db13a0d6a635ec9dccecba4",
+  "historical_commit": "e61d5b0e827f7b412824ad46021e2ad6cc6f7875",
+  "earlier_dependency_run": {
+    "id": 45732539435,
+    "conclusion": "Archived P1 imports SymPy. The runner lacked this dependency and stopped before model review. The pinned dependency was added and the checked science bytes stayed identical."
+  },
+  "earlier_argument": {
+    "run": 45732630988,
+    "commit": "fbd472d9a194645fd6ad232a97767bc8cb7fb53e",
+    "github_artifact_id": 15076214803,
+    "sha256": "95547fa8f1b5a8ec54417315d8b3f228c51624ba7eacb4f7cd0159b8dbb5df0f",
+    "interpretation": "The preserved initial raw response returned ACCEPTED and OPEN. Its findings array contained five affirmative observations. The inherited validation gate rejected that layout. The subsequent review clarified the field definitions, with no change to the proof, checker, or data."
+  },
+  "jobs": [
+    {
+      "id": 139619107463,
+      "name": "foundational-regression",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 139619108080,
+      "name": "replay-and-review",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 139619657399,
+      "name": "publication-audit",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "archives": {
+    "source-holder-foundation": {
+      "github_artifact_id": 15077761975,
+      "bytes": 307061,
+      "sha256": "2a2881f4a65a5b9fc9b9d079c9b3eae19635bece5bf82b85b68ee5530b008149"
+    },
+    "source-holder-publication": {
+      "github_artifact_id": 15077392293,
+      "bytes": 41218,
+      "sha256": "6a2e10802f557cf4646856bf9ee1e3973a7671f289682a62fc311266e9238140"
+    },
+    "source-holder-review": {
+      "github_artifact_id": 15077033705,
+      "bytes": 96285,
+      "sha256": "566e2b651d49d9c542875dd022f12c29060f011980133097eff818b0240ea744"
+    }
+  }
+}
