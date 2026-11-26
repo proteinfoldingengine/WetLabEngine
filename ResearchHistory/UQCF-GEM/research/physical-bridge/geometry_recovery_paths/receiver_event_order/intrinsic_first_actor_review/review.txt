@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Metric separation identifies chart 0 as the unique common actor capable of increasing the current minimum in a single edit, based on the two 688 and two 720 spokes.",
+    "The length-four common-actor argument shows that moving both 688 spokes up by 16 and both 720 spokes down by 16 requires exactly four edits at chart 0.",
+    "The opposite-pair necessary equalities constrain the work from chart 0 to the point two steps down that spoke, requiring exactly two disjoint opposite neighbor pairs.",
+    "The exhaustive sufficiency step tests all 135,751 subsets against the four necessary opposite equalities, leaving exactly one subset that restores the starting atlas.",
+    "Parity at five edits is impossible because neighbor row cardinalities must have the same parity across the connected graph to maintain even Hamming distances.",
+    "The six-step remote-first counterexample demonstrates that the unique actor conclusion depends strictly on the shortest-return optimization criterion.",
+    "The translation cover certificate for the original v16.26 trigger establishes a lower bound of 11 distinct source charts needed for a possible trigger.",
+    "Symmetry and normalizer scope analysis confirms that the chart stabilizer is trivial and symmetry alone supplies no unique first actor in a damaged state.",
+    "Source-priority census confirms that every source-first order exposes the distinction somewhere in addressed holdings, distinguishing full holdings from the pair work alone."
+  ],
+  "limitations": [
+    "The shortest-return criterion is a supplied optimization assumption, not an inherited invocation.",
+    "Whether a repair starts remains open; the archived check only tests a state when called, and no claim of an unsolicited physical update is made.",
+    "The exact value of q (the fewest charts that cover every leaf) and sufficiency at eleven remain undetermined."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
