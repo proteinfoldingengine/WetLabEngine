@@ -1,0 +1,21 @@
+{
+  "verdict": "The historical campaign successfully serialized original in-process atom receipts to a campaign log, establishing durable campaign custody. However, delivery to a participant-owned state remains open.",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified original in-process object identity of the four receipts via reference tracking during replay.",
+    "Verified the subprocess-to-file route using historical command records, execution metadata, and exact byte-for-byte stdout replay.",
+    "Confirmed the independently reconstructed WITNESS.json matches the parsed witness data but correctly lacks live object identities.",
+    "Verified the historical source manifest, Git blob hashes, and execution metadata for the pinned checkout.",
+    "Confirmed same-actor histories and different local priors for chart 2 leaf 1 across the two paths."
+  ],
+  "limitations": [
+    "The literal filename and alias scan does not establish repository-wide absence of indirect, external, or differently named readers.",
+    "No recipient inbox, participant-owned retained object, or actor-facing reader is present on the verified route.",
+    "The archive does not supply a stronger comparison fixing chart 2's complete prior to the particular event.",
+    "The archive does not contain the six-chart witness cited in the live thread."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
