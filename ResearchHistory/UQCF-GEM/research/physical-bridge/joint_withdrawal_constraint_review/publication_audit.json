@@ -1,0 +1,31 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "7535da6302fe394fea46f315e99733a5448dd018",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "560f9db3bf58ecd3b24db00b68e48bde03d4acb76bce6c098a5a49ecad5fe89c",
+  "request_sha256": "805e07229f5d60dac0e003a824317b0ddb2806a5c0f13af32c8731edd6155d09",
+  "response_sha256": "4db94a860122e8524515a310f9c080924d5860b88ffd58271b1b8820c4e7ddea",
+  "run_id": "45933975554",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/RESULT.md": "657e9004a81e88c5f0f1c3b2b194c625f77810a1",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/SCOPE.md": "c609fe90b8985e9085889809b2b4e668ae1d28c1",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/fixture.json": "806d2bc487e358f498cafa806226d1f658e98d26",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/replay.py": "3132dd784785e334a70ef58546bcd5013bdc4936",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/results.json": "e90716d658cb8de20297feec02a75af7c68eed56",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/verification.json": "77fdb50302f34f09fff3d013c3e9e381634ec83d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/verify.py": "ae17ce07a856d7110823c54323626254cb49fab9",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/RESULT.md": "c4cec91a74b89c0cbc1b2d3091f3fadc5087e1cd",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/SCOPE.md": "547caee7d7f40b039baeef8fdb832c8d051ecea0",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/native.json": "9c80bb24a39c21bb96a2404724df5f1a59a8af46",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/scan.py": "ca9d08618b753d7701778f86647461981ec50135",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/verification.json": "ac6577f998f00369de6aab6ad64611856b2543a5",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/verify.py": "53025aa59b5298b9806ebcccb4bd016aa9f105ba",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.29-local-profile-closure/evidence/EXAMPLES.json": "94909a58db4d8dcc59c76fcfb61f2712edb5627f"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "7535da6302fe394fea46f315e99733a5448dd018"
+}

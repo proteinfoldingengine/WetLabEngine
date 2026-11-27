@@ -1,0 +1,25 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "The group projection theorem correctly identifies that a group's possible sequences shrink exactly when the site is a leaf of the covered union and the group contains all remaining holders.",
+    "The proof correctly distinguishes internal sites, noting that their descendants require at least one surviving copy in the group, preventing the joint removal of all copies of the internal site.",
+    "The matched-source graph theorem correctly establishes that an edge in the compatibility graph corresponds to a global leaf held by exactly two charts, robust to arbitrary interleavings and multi-step individual words.",
+    "The minimum size for the matched-source loop (four covered leaves, five covered vertices) is correctly derived from the need for two existing two-holder leaves and two alternative three-holder leaves involving the source.",
+    "The archived ZERO example correctly demonstrates a symmetric state where a deterministic participant-neutral rule cannot select just one of the two remaining holders to release the leaf.",
+    "The five-chart replay correctly shows that the receiver can be preempted, as the caller does not bind the write to F from the committed source event alone.",
+    "The distinction between optional stopping and maximal completion is correctly handled, as the pairwise conflict only forces exactly one release if withdrawals continue to exhaustion.",
+    "The unbounded proof correctly handles arbitrary finite projected addressed sequences, while the finite enumerations exhaustively verify the bounded domain including reached duplicate rows."
+  ],
+  "limitations": [
+    "native_bridge_status is OPEN: The exact undecided proposition is whether a participant-owned delivery mechanism (such as a participant-side receipt or an operation making a specific receiver act in preference to another) can be derived.",
+    "The model supplies no clock, probability law, or scheduling choice.",
+    "Generating new shared sites, causal propagation between sites, scale dependence, and spacetime curvature remain open problems.",
+    "The graph criterion is an inference from original admissions and refusals, with no metric, physical transport, or chart-to-chart message supplied.",
+    "The results apply to finite projected addressed sequences and finite enumerations, without an encompassing physics program."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}

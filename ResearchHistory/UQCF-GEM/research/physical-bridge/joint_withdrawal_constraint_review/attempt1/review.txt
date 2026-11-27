@@ -1,0 +1,25 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "OPEN",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified the theorem that a withdrawal at a leaf x shrinks the set of possible sequences for a group G exactly when G contains all remaining holders of x.",
+    "Verified that the missing sequences are precisely those that withdraw x from every member of the remaining holders, while all other old sequences remain possible.",
+    "Confirmed that at an internal vertex, every group of nonactors keeps its full set of possibilities.",
+    "Checked the quantifiers over finite projected addressed sequences and arbitrary interleavings, confirming the proof holds without imposing scheduling choices.",
+    "Verified the two-untouched-chart relation in the archived ZERO example, where exactly one of the two remaining holders must release the leaf upon maximal completion.",
+    "Inspected the five-chart source histories and terminal counts, confirming that the source event does not bind the write to the receiver, allowing preemption.",
+    "Verified the historical factor endpoint control and the six-chart preemption, showing that the caller decides which participant gives up the site based on the supplied endpoint.",
+    "Confirmed the historical census counts (1,472; 10,310; 6,969; 1,244) and the independent four-site graph enumeration including reached duplicate rows."
+  ],
+  "limitations": [
+    "The mathematical set of possibilities is not necessarily recorded or observed by the program.",
+    "The unchanged rule admits either outcome for the remaining holders; the model supplies no clock, probability law, or scheduling choice.",
+    "The existing operation creates a constraint from original shared holdings but supplies no participant-side receipt.",
+    "The operation does not force the receiver to act in preference to the source; preemption remains possible.",
+    "Generating new shared sites, propagation between sites, scale dependence, and spacetime curvature remain separate open problems."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
