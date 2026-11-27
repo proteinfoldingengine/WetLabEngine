@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Derived the slot and demand lists for both stages and the no-source control in the compact and extended cases.",
+    "Verified that strict floor and demand-width inequalities in the extended case make the endpoints insensitive to simultaneous row and label relabeling, while primitive order can change.",
+    "Checked that rows 4 and 6 are disjoint and unchanged, and that labels {3,6} form an exact cover of two throughout the paths.",
+    "Verified the signed cuts on the source (releasing 3 labels or 1 label) and the receiver-only writes (A shrinks 5->4 or B grows 5->6).",
+    "Confirmed the no-source control writes B with width 5->7, and that starting fresh from the post-first-command state reproduces the exact suffix.",
+    "Checked the equal-floor symmetry argument: if A and B had equal floors, their enumeration would determine which receives the nonneutral demand.",
+    "Verified that the post-first-command state admits 69 exact commands, 58 of which make a nonempty write, and (3,9) is an exact no-op.",
+    "Confirmed that the inputs are constructed exact inputs, not archived catalog occurrences.",
+    "Noted a minor typo in the text where the compact input's floors array is written as [2,2,3,1,1,1,1] (7 elements) instead of the 8 elements used in the code."
+  ],
+  "limitations": [
+    "The common prior already permits the second command, which writes B with width 5->7 rather than 5->6 or leaving B unchanged.",
+    "Starting fresh from either exact post-first-command state and supplying the second command reproduces the entire associated receiver suffix, showing it is a source-state-dependent write rather than evidence of a source receipt crossing into the peer.",
+    "The inherited loop does not select its label commands or invoke itself; its floor distinctions, preparations, shared access, and call are supplied.",
+    "Varying the first command is an intervention; the sign and content of the source cuts are computed by the producer, not defined as input changes to row 0.",
+    "No new trigger was added, and the result does not meet the complete native constructive milestone.",
+    "The catalog's exhaustive enrollment contract is not asserted for these new eight-row cases."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
