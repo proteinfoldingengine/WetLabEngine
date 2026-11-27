@@ -1,0 +1,20 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "The necessary-and-sufficient conditional snapshot criterion is verified by the general_check in verify.py, which tests all subviews and confirms the exact condition for exclusivity.",
+    "Internal sites are included in the general_check enumeration, and the covered_leaf condition correctly handles them.",
+    "The minimum number of writes is confirmed to be exactly the number of remote holders of the uncut tip (len(hm)).",
+    "The irreversibility/merger classification on the named star matches the counts: 27 written, 81 erased, and 81 undecided states per arm.",
+    "The anonymous shape [0,0,3] correctly identifies the path arm, and no anonymous shape identifies the triangle arm, matching the whole_atlas_anonymous_exclusive and terminal_only_exclusive fields.",
+    "Exhaustive positive and erasing outcomes match the reported 8/16 terminal states and 960/1920 maximal paths.",
+    "The source-last and no-source controls in archive_order.py confirm that the remote records can be formed identically without the source acting first, preserving the local P1 histories.",
+    "The order argument for arbitrary withdrawal-only trees is mathematically sound: componentwise containment preserves the union, and preserving the internal sequence of each chart's actions preserves local leaf tests and ancestry.",
+    "The archive identity is confirmed at zero-based entry 14,633 (byte 20,039,362), and the original archive square is correctly distinguished from the reconstructed matched path."
+  ],
+  "limitations": [],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
