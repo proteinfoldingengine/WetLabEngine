@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/uqcf-joint-withdrawal-constraint.yml"
       - "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/**"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/**"
 permissions:
   contents: read
 defaults:
@@ -12,6 +13,7 @@ defaults:
     shell: bash
 env:
   SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint
+  LOOPS: ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops
   HIST: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
   DEMOS: review_sources/ResearchHistory/UQCF-GEM/demos
   P: ResearchHistory/UQCF-GEM/foundational-closure-verification
@@ -72,6 +74,7 @@ jobs:
             /.github/scripts/uqcf_preparability_review.py
             /.github/scripts/uqcf_preparability_integrity.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/joint_withdrawal_constraint_loops/
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
@@ -98,6 +101,11 @@ jobs:
           cmp "$SCI/records.json.xz" evidence/records.json.xz
           PYTHONHASHSEED=91 python -B "$SCI/verify.py" evidence/records.json.xz > evidence/verification.json
           cmp "$SCI/verification.json" evidence/verification.json
+          mkdir evidence/loops
+          python -B "$LOOPS/scan.py" "$DEMOS" > evidence/loops/native.json
+          cmp "$LOOPS/native.json" evidence/loops/native.json
+          python -B "$LOOPS/verify.py" evidence/loops/native.json > evidence/loops/verification.json
+          cmp "$LOOPS/verification.json" evidence/loops/verification.json
       - name: Request independent argument review
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -109,8 +117,11 @@ jobs:
           PYTHONHASHSEED=17 python -B "$SCI/replay.py" "$DEMOS" fresh.xz | cmp - evidence/results.json
           cmp fresh.xz evidence/records.json.xz
           PYTHONHASHSEED=17 python -B "$SCI/verify.py" fresh.xz | cmp - evidence/verification.json
+          PYTHONHASHSEED=17 python -B "$LOOPS/scan.py" "$DEMOS" | cmp - evidence/loops/native.json
+          PYTHONHASHSEED=17 python -B "$LOOPS/verify.py" "$LOOPS/native.json" | cmp - evidence/loops/verification.json
+          cp "$LOOPS"/{RESULT.md,SCOPE.md,scan.py,verify.py} evidence/loops/
           cp "$SCI"/{RESULT.md,SCOPE.md,fixture.json,replay.py,verify.py,review.py} evidence/
-          (cd evidence && sha256sum *.md *.py *.json *.txt *.log *.xz > SHA256SUMS && sha256sum -c SHA256SUMS)
+          (cd evidence && sha256sum *.md *.py *.json *.txt *.log *.xz loops/* > SHA256SUMS && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:

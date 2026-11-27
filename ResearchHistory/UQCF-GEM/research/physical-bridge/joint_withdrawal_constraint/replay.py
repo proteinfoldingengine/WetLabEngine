@@ -157,7 +157,7 @@ def five_chart(native, verifier):
             assert verifier.verify_factor(factor)
             receipts = [(names[e["index"]], e["leaf"]) for e in factor["steps"]]
             assert [e for e in receipts if e[1] == target] == [(actor, target)]
-            assert ((target in endpoint[alt]) is False)
+            assert target not in endpoint[alt]
             endpoint_tests[actor] = dict(endpoint=endpoint, executed=receipts)
         ends_a, ends_f = (endpoint_tests[n]["endpoint"] for n in "AF")
         assert [(names[k], x) for k in range(len(s))
