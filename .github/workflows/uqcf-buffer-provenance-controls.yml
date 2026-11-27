@@ -1,0 +1,65 @@
+name: Review archived receiver buffer provenance controls
+on:
+  push:
+    branches: [gpt/archived-buffer-local-word-review]
+    paths:
+      - ".github/workflows/uqcf-buffer-provenance-controls.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/archived_buffer_local_word/residue_controls/**"
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/archived_buffer_local_word
+  CTRL: ResearchHistory/UQCF-GEM/research/physical-bridge/archived_buffer_local_word/residue_controls
+  DEMOS: ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity
+jobs:
+  replay-review-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_buffer_local_word/
+            /ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/mechanisms.py
+            /ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/model.py
+            /ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/verifier.py
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Replay unchanged stock producers and controls
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          PYTHONHASHSEED=91 python -B "$CTRL/replay_residue_controls.py" "$DEMOS" > evidence/replay.json
+          cmp "$CTRL/expected_control.json" evidence/replay.json
+          PYTHONHASHSEED=17 python -B "$CTRL/replay_residue_controls.py" "$DEMOS" | cmp - evidence/replay.json
+      - name: Obtain independent review of complete scoped argument
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -B "$CTRL/review_residue.py" review evidence
+      - name: Audit request, original response and reproducibility
+        run: |
+          set -euo pipefail
+          python -B "$CTRL/review_residue.py" audit evidence | tee evidence/audit.log
+          cp "$CTRL"/{FINDING.md,expected_control.json,replay_residue_controls.py,review_residue.py,root-residue-fresh-original.json,root-residue-mirror-original.json} "$SCI/buffer-rows-0.json" evidence/
+          (cd evidence && sha256sum *.md *.py *.json *.txt *.log > SHA256SUMS && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: archived-buffer-provenance-control-review
+          path: evidence
+          if-no-files-found: error
