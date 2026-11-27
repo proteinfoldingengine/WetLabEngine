@@ -1,0 +1,66 @@
+{
+  "common_priorities": [
+    {
+      "arms": [
+        {
+          "contraction_edits": 22882,
+          "records": {
+            "5": 0,
+            "15": 1
+          },
+          "total_edits": 24432
+        },
+        {
+          "contraction_edits": 22882,
+          "records": {
+            "5": 1,
+            "15": 0
+          },
+          "total_edits": 24434
+        }
+      ],
+      "priority": "line first",
+      "same_terminal_state": true
+    },
+    {
+      "arms": [
+        {
+          "contraction_edits": 22882,
+          "records": {
+            "5": 0,
+            "15": 1
+          },
+          "total_edits": 24466
+        },
+        {
+          "contraction_edits": 22882,
+          "records": {
+            "5": 1,
+            "15": 0
+          },
+          "total_edits": 24466
+        }
+      ],
+      "priority": "both receivers before source",
+      "same_terminal_state": true
+    }
+  ],
+  "compulsory_chart_first": [
+    {
+      "contraction_edits": 22882,
+      "records": {
+        "5": 0,
+        "15": 200
+      },
+      "total_edits": 24420
+    },
+    {
+      "contraction_edits": 22882,
+      "records": {
+        "5": 200,
+        "15": 0
+      },
+      "total_edits": 24416
+    }
+  ]
+}

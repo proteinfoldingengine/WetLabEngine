@@ -1,0 +1,292 @@
+{
+  "archived_rejected_full_calls": 2,
+  "archived_successful_restriction_calls": 18,
+  "arms": [
+    {
+      "events": [
+        [
+          11,
+          11,
+          false
+        ],
+        [
+          11,
+          11,
+          false
+        ],
+        [
+          11,
+          12,
+          true
+        ],
+        [
+          12,
+          12,
+          false
+        ]
+      ],
+      "minimum_cover": [
+        0,
+        15,
+        18,
+        25,
+        43,
+        50,
+        57,
+        75,
+        82,
+        89,
+        107,
+        114
+      ],
+      "pair_signatures": [
+        "facb3271a85078441652c45f63af09337e6bab2fce3bd0cb4e518a453832d444",
+        "32a38b9fdf63e8a418c01c0bdb7a3271d6bcbdfffb6b034da505eef1ab7e006c",
+        "1a35e36f7794fc3df4594350e2ea906d8ccf183a8f2a354164b100b16ae31970",
+        "ef9f4110c2609a26f8a0d1dea0caf36c2f982b9bc977ded9d46da1d01862cf0e",
+        "a771890f220db1dbc889774081f6cae1d24dfb031f97540792ab184a86508c9e"
+      ],
+      "source": [
+        196,
+        1545
+      ]
+    },
+    {
+      "events": [
+        [
+          11,
+          11,
+          false
+        ],
+        [
+          11,
+          11,
+          false
+        ],
+        [
+          11,
+          12,
+          true
+        ],
+        [
+          12,
+          12,
+          false
+        ]
+      ],
+      "minimum_cover": [
+        0,
+        5,
+        18,
+        25,
+        43,
+        50,
+        57,
+        75,
+        82,
+        89,
+        107,
+        114
+      ],
+      "pair_signatures": [
+        "facb3271a85078441652c45f63af09337e6bab2fce3bd0cb4e518a453832d444",
+        "7027befcb38004b3b43a813c4e420ede0d0c2a2a0701eef82c6e50aa6d5720dc",
+        "2063c218dc4d886bcdfb7693cc823c0ed03c5ca1da9e6a6d7f9d008620d31bd8",
+        "07f4ee9356c06cfbfd5e9ab1450fb835328419b8b61304ad8b0ebe7d91d01158",
+        "a771890f220db1dbc889774081f6cae1d24dfb031f97540792ab184a86508c9e"
+      ],
+      "source": [
+        196,
+        1545
+      ]
+    }
+  ],
+  "completely_original_chart_rows": [
+    0,
+    5,
+    15,
+    18,
+    43,
+    57,
+    82,
+    89,
+    117
+  ],
+  "distinct_preparatory_actors": 112,
+  "full_equal_pairs": 7260,
+  "join_cover": [
+    0,
+    5,
+    15,
+    18,
+    25,
+    43,
+    50,
+    57,
+    75,
+    82,
+    89,
+    107,
+    114
+  ],
+  "join_receipts": [
+    [
+      [
+        12,
+        12,
+        false
+      ],
+      [
+        12,
+        12,
+        false
+      ],
+      [
+        12,
+        13,
+        true
+      ],
+      [
+        13,
+        13,
+        false
+      ]
+    ],
+    [
+      [
+        12,
+        12,
+        false
+      ],
+      [
+        12,
+        12,
+        false
+      ],
+      [
+        12,
+        13,
+        true
+      ],
+      [
+        13,
+        13,
+        false
+      ]
+    ]
+  ],
+  "local_withdrawal_probes": [
+    {
+      "15": {
+        "after": [
+          200,
+          1537
+        ],
+        "before": [
+          200,
+          1537
+        ],
+        "outcome": "same union"
+      },
+      "5": {
+        "after": [
+          199,
+          1539
+        ],
+        "before": [
+          200,
+          1537
+        ],
+        "outcome": "permitted"
+      }
+    },
+    {
+      "15": {
+        "after": [
+          199,
+          1539
+        ],
+        "before": [
+          200,
+          1537
+        ],
+        "outcome": "permitted"
+      },
+      "5": {
+        "after": [
+          200,
+          1537
+        ],
+        "before": [
+          200,
+          1537
+        ],
+        "outcome": "same union"
+      }
+    }
+  ],
+  "preparatory_withdrawals": 346,
+  "singleton_anchors": {
+    "0": 2,
+    "18": 80,
+    "25": 135,
+    "43": 113,
+    "50": 70,
+    "57": 29,
+    "75": 105,
+    "82": 62,
+    "89": 19,
+    "107": 97,
+    "114": 54
+  },
+  "starting_menu": {
+    "one_new_compulsory_chart": 2,
+    "positive": 255,
+    "zero": 23588
+  },
+  "terminal_leaf_count_ranges": [
+    {
+      "5": [
+        0
+      ],
+      "15": [
+        1,
+        200
+      ]
+    },
+    {
+      "5": [
+        1,
+        200
+      ],
+      "15": [
+        0
+      ]
+    }
+  ],
+  "trigger_positive_withdrawals_by_chart": {
+    "0": 25,
+    "18": 23,
+    "25": 23,
+    "43": 23,
+    "50": 23,
+    "57": 23,
+    "75": 23,
+    "82": 23,
+    "89": 23,
+    "107": 23,
+    "114": 23
+  },
+  "unique_new_chart_events": [
+    [
+      0,
+      278,
+      15
+    ],
+    [
+      0,
+      338,
+      5
+    ]
+  ]
+}
