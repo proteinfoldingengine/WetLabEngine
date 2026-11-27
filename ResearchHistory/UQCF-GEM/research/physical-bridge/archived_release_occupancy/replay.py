@@ -1,5 +1,5 @@
 from hashlib import sha1, sha256
-from itertools import combinations
+from itertools import combinations, groupby
 from pathlib import Path
 import json, sys
 
@@ -55,6 +55,7 @@ for i,h in enumerate(input_hashes):
     assert [hit(s) for s in path]==[2]*7
     assert [hit(gain(path[1],j,x)) for _,x,j in P]==[1,1]
     assert [hit(gain(path[2],j,x)) for _,x,j in P]==([2,1] if i==0 else [1,2])
+    assert reads[0]['pending']==P+([(1,2,2)] if i==0 else [(0,2,2)])
     assert len(reads)==3 and reads[1]=={'rows':path[2],'pending':P,'picked':P[i]}
     assert pick(path[1],P)==[] and pick(path[2],P)==[P[i]]
     assert path[3]==gain(path[2],P[i][2],P[i][1])
@@ -62,4 +63,6 @@ for i,h in enumerate(input_hashes):
     # Not all exact legal gains are on the scheduler's pending list.
     assert hit(gain(path[2],2,1-i))==2 # undo is allowed in the top-level q=2 constraint
     paths.append(dict(index=i,guard_reads=reads,path=path))
+assert [[list(k) for k,g in groupby(s[0] for s in d['path'])] for d in paths]==[[[0],[0,1],[1]]]*2
+assert [[list(k) for k,g in groupby(s[1] for s in d['path'])] for d in paths]==[[[1],[0,1],[0]]]*2
 print(json.dumps(paths,sort_keys=True,separators=(',',':')))
