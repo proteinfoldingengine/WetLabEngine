@@ -1,0 +1,24 @@
+{
+  "attempt": "1",
+  "audit": "PASS",
+  "checkout_sha": "bac17edd56686fdbe13ab4e2443d153ff27f881a",
+  "model_requested": "gemini-3.1-pro-preview",
+  "model_returned": "gemini-3.1-pro-preview",
+  "prompt_sha256": "56c4e9e23bfddd3b0180a68001b6054be0fdd7d33f1010f6131fd1d24b114bb9",
+  "request_sha256": "605ae69af343b9174d2eaa6f1f21fd3dc3109682e6724ec3acd6c8238bf075b5",
+  "response_sha256": "ecefb88a9156d468fe18a58aa98fdf650251f044f5960aa37889ba81fa11532c",
+  "run_id": "45931267404",
+  "source_blobs": {
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals/RESULT.md": "850ea88335e8fac7f67346de373f26120b6ef5d9",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals/SCOPE.md": "a4d373baab67ed834fafd4e79d742250a5c24915",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals/replay.py": "c27f3ca192c7d797177fa7cf5f6d706f083a8b3d",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals/results.json": "072df9d75a74e7526f4cf011a431fcbfe0725944",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals/verification.json": "551dac81982f6ad3a4ca60dbf8efc3c6160ecb3e",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals/verify.py": "a79c6a4d47d9adb5216a987d67b8f545bf0228e8",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py": "c10ac57f988a439144e21898bd2b33ece0838a9b",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py": "91cd1e507e955683e744fbdbb0745cac19d66cb3",
+    "review_sources/ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/historical-producer.log": "84ac51dc629da88adf84549a3c3a139f612c3cc6"
+  },
+  "verdict": "ACCEPTED",
+  "workflow_sha": "bac17edd56686fdbe13ab4e2443d153ff27f881a"
+}

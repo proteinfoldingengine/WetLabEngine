@@ -1,0 +1,23 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "The iff theorem for the existential projected withdrawal language under arbitrary interleaving is logically sound and verified by the independent mask enumerator.",
+    "The internal-site case in the proof correctly deduces that if x has a covered child c, the remote chart R must be the sole holder of c, preventing R from ever deleting c or x.",
+    "The exact words lost are correctly identified as precisely the old words containing x.",
+    "The four genuine v16.27 receipts behave exactly as described under both orderings, with the affected chart and lost action remaining invariant while the trigger reverses.",
+    "The five-site archived control correctly demonstrates that identical local holdings and remaining action histories cannot encode which of the two triggers occurred.",
+    "Computed counterfactuals are properly distinguished from centrally saved fields and participant retention.",
+    "Domains, event identity, and global projection verification are confirmed by the full interleaving graph traversal through four sites."
+  ],
+  "limitations": [
+    "No new physical or delivery mechanism is claimed.",
+    "Receiver-owned delivery remains open; the source operation makes no write on the affected chart.",
+    "The historical refusal is an exception to a caller, with no participant-side refusal record.",
+    "Neither the census nor the theorem promotes the changed option to an observation or an event receipt in the affected chart's retained state."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
