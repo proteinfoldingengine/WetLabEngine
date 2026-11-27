@@ -1,0 +1,3 @@
+# Independent review readback
+
+GitHub run 46021559734 attempt 1, job 140582214638, checkout and workflow SHA 74a7b079891983bcb5789bcf92079d61575daaf8. Original artifact 15208925555, 144490 bytes, SHA-256 ac5150d780bc6b952313f3c5bbef23e80dbba4548b5ede217894d85603f230d8. Downloaded original ZIP passed CRC and all 15 published file hashes. The raw request, raw response and evidence are in original.zip. The first attempted review returned ACCEPTED on the program and combinatorial argument, with native bridge status OPEN, no findings, no missing assumptions and no counterexamples. Native event and receiver history custody are not derived.

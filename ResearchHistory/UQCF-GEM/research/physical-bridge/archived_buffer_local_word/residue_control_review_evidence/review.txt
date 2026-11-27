@@ -1,0 +1,22 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified exact SHA-256 identities of primary (1914516), mirror (1914567), and fresh (1914568) records.",
+    "Confirmed fresh case path exactly matches the primary case path suffix, with the buffered cycle event interval exactly offset by two (start 0, end 6 vs start 2, end 8).",
+    "Confirmed fresh case has no label 2 in its initial holdings and performs no source edit.",
+    "Confirmed mirror case swaps labels 2 and 3 in start and target, executing a 3->2 source edit while retaining buffer label 2 due to the implementation's fixed numerical palette ordering.",
+    "Confirmed receiver size word (1,2,1,2,1) is identical across all three cases.",
+    "Verified that the fresh execution and reindexed buffer reject interpreting a four-edit path as proof of source occurrence or proof that the released label had to be buffered."
+  ],
+  "limitations": [
+    "Scoped historical software correction only; does not derive prior physical custody.",
+    "Does not assert what might have happened before a fresh case's supplied input (historical unknown).",
+    "Does not claim that no such mechanism is possible or refute a distinct future mechanism that actually carries a source record.",
+    "No physics or durable receiver custody is derived."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
