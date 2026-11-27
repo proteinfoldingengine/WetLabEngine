@@ -118,7 +118,7 @@ jobs:
           PYTHONHASHSEED=17 python -B "$SCI/verify.py" fresh.xz "$PRIOR" | cmp - evidence/verification.json
           PYTHONHASHSEED=17 python -B "$SCI/archive_order.py" "$DEMOS" | cmp - evidence/archive_order.json
           cp "$SCI"/{RESULT.md,SCOPE.md,ARCHIVE_SCOPE.md,ORDER_SCOPE.md,replay.py,verify.py,archive_order.py,review.py} evidence/
-          (cd evidence && sha256sum *.md *.py *.json *.txt *.log *.xz > SHA256SUMS && sha256sum -c SHA256SUMS)
+          (cd evidence && find . -type f ! -name SHA256SUMS -printf '%P\0' | LC_ALL=C sort -z | xargs -0 sha256sum -- > SHA256SUMS && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
