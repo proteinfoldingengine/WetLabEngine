@@ -1,0 +1,31 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified masks, carrier, and rooted supports via the support extraction and exact profile check functions.",
+    "Verified exact profile is strictly maintained throughout each positive path with zero tolerance.",
+    "Verified actual first-pair and ordered-label selection via diagnostic trace anchor events.",
+    "Verified old-label contraction (-2 at 5, 6, and 4) via explicit edit sequence assertions in the intermediate phase.",
+    "Verified fixed reference (leaf 8) remains unchanged through the intermediate phase.",
+    "Verified input custody (input arrays unchanged) and loss at the canonical endpoint (overlap becomes 0).",
+    "Verified that neither the target nor the diagnostic trace supplies the varying destination.",
+    "Verified that the two fresh phases omit an answer-bearing argument (no destination label or event identity is passed).",
+    "Verified that the no-gain and reversed-order controls successfully rule out generic receiver writes to every source change and independence from the stock order.",
+    "Verified the distinction between a path computation and an actual listener, activation, state commitment, event provenance, and independently available participant-owned retained readout."
+  ],
+  "limitations": [
+    "The replay is a focused, post hoc, mathematical/software replay, not a historical post-gain invocation, event-subscription mechanism, physical mechanism, or participant-owned readout.",
+    "No independent acceptance is claimed in this argument.",
+    "The experiment does not grant a receiver the reference row or a way to read and retain the intermediate phase.",
+    "The earliest intermediate effect is genuinely transient relative to canonical normalization.",
+    "The controlled source gain is state-sufficient for the conditional software response, but not uniquely identifiable from state history.",
+    "The original archived caller took a different code path at the matched location, using a canonical desired role rather than a post-event fresh entry point.",
+    "No inherited listener, physical typing, independently justified invocation/commit, or receiver-owned accessible record has been established.",
+    "The replay source input forms a distinguishable full state and the caller supplies invocation; nothing proves that the original source gain invokes the normalizer or physically writes any receiver state.",
+    "The result removes the need to pass a duplicate branch operand in this specific existing conditional writer, and no more."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
