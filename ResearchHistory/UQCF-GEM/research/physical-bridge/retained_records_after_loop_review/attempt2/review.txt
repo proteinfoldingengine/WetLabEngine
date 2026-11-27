@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "REFUTED",
+  "proof_checks": [
+    "The necessary-and-sufficient conditional snapshot criterion is verified for all pairs of distinct legal cuts by the same actor and all remote groups through four sites, including internal sites.",
+    "The minimum number of writes is verified to be exactly the number of remote holders of the uncut tip.",
+    "The irreversibility/merger classification on the named star is verified, with 27 written, 81 erased, and 81 undecided states per arm.",
+    "The anonymous shape (0,0,3) exclusively identifies the path arm among remote charts, while the triangle arm has no exclusive anonymous signature.",
+    "Exhaustive positive and erasing outcomes are verified, with 960 exclusive and 1920 common maximal paths per arm.",
+    "The source-last and no-source controls preserve the remote local histories and the final remote record, confirming the causal limit.",
+    "The order argument for arbitrary withdrawal-only trees correctly establishes that union and ancestry are preserved under any interleaving of local subsequences.",
+    "The archive identity is verified, distinguishing the original archive square (2 events) from the reconstructed matched path (5 remote events)."
+  ],
+  "limitations": [
+    "The distributed record distinguishes two specified source-first histories but does not encode unrestricted event provenance.",
+    "The record cannot tell the participants that a source event has occurred, as the same remote record can be reached before the source acts.",
+    "Access to both bare roots by one participant, a source-triggered dispatch, and transport around a loop remain open.",
+    "The anonymous remote chart signature (0,0,3) requires the supplied source boundary (excluding the source chart); sorting the tip counts of all four charts with no source marker gives no exclusive signature."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}

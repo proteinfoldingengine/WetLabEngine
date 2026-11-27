@@ -1,0 +1,250 @@
+{
+  "cases": 24,
+  "named": {
+    "arms": [
+      {
+        "all_edges": 621,
+        "all_states": 189,
+        "anonymous_exclusive": [
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "anonymous_witnesses": [
+          [
+            5,
+            1,
+            1,
+            27
+          ]
+        ],
+        "arm": "path",
+        "counts": {
+          "erased": 81,
+          "undecided": 81,
+          "written": 27
+        },
+        "cut": 1,
+        "group_records": [
+          {
+            "charts": [],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 1
+          },
+          {
+            "charts": [
+              1
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 8
+          },
+          {
+            "charts": [
+              2
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 4
+          },
+          {
+            "charts": [
+              3
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 8
+          },
+          {
+            "charts": [
+              1,
+              2
+            ],
+            "exclusive": 8,
+            "minimum_writes": 2,
+            "snapshots": 32
+          },
+          {
+            "charts": [
+              1,
+              3
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 36
+          },
+          {
+            "charts": [
+              2,
+              3
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 24
+          },
+          {
+            "charts": [
+              1,
+              2,
+              3
+            ],
+            "exclusive": 27,
+            "minimum_writes": 2,
+            "snapshots": 108
+          }
+        ],
+        "maximal_paths": {
+          "erased": 1920,
+          "written": 960
+        },
+        "terminal_only_exclusive": [
+          [
+            0,
+            0,
+            3
+          ]
+        ],
+        "terminal_states": {
+          "erased": 16,
+          "written": 8
+        },
+        "whole_atlas_anonymous_exclusive": []
+      },
+      {
+        "all_edges": 621,
+        "all_states": 189,
+        "anonymous_exclusive": [],
+        "anonymous_witnesses": [],
+        "arm": "triangle",
+        "counts": {
+          "erased": 81,
+          "undecided": 81,
+          "written": 27
+        },
+        "cut": 2,
+        "group_records": [
+          {
+            "charts": [],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 1
+          },
+          {
+            "charts": [
+              1
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 8
+          },
+          {
+            "charts": [
+              2
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 4
+          },
+          {
+            "charts": [
+              3
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 8
+          },
+          {
+            "charts": [
+              1,
+              2
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 24
+          },
+          {
+            "charts": [
+              1,
+              3
+            ],
+            "exclusive": 12,
+            "minimum_writes": 2,
+            "snapshots": 48
+          },
+          {
+            "charts": [
+              2,
+              3
+            ],
+            "exclusive": 0,
+            "minimum_writes": null,
+            "snapshots": 24
+          },
+          {
+            "charts": [
+              1,
+              2,
+              3
+            ],
+            "exclusive": 27,
+            "minimum_writes": 2,
+            "snapshots": 108
+          }
+        ],
+        "maximal_paths": {
+          "erased": 1920,
+          "written": 960
+        },
+        "terminal_only_exclusive": [],
+        "terminal_states": {
+          "erased": 16,
+          "written": 8
+        },
+        "whole_atlas_anonymous_exclusive": []
+      }
+    ],
+    "common": 81,
+    "common_terminal": 16,
+    "cuts": [
+      1,
+      2
+    ],
+    "p": [
+      -1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "source": 0,
+    "start": [
+      7,
+      15,
+      21,
+      27
+    ]
+  },
+  "record_bytes": 452379,
+  "record_sha256": "af7a82a1a2c203cb5efadf7753f3b3c01713d0b8216f38dca0d1fd18e32e1c3d",
+  "signatures_by_topology": [
+    [
+      2,
+      [
+        [
+          0,
+          0,
+          3
+        ]
+      ],
+      24
+    ],
+    [
+      3,
+      [],
+      24
+    ]
+  ]
+}
