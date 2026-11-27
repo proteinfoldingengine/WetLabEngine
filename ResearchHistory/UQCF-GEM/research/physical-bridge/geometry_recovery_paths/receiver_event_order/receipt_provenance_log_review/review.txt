@@ -1,0 +1,24 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified the historical subprocess-to-file route via command record, source hashes, and execution metadata.",
+    "Confirmed the retained 1,509-byte log matches the original SHA-256 manifest.",
+    "Reproduced the archived stdout byte for byte with an uninstrumented rerun of the original 3,486-endpoint enumeration.",
+    "Verified original in-process object identity of the four returned dictionaries from the v16.26 atom.",
+    "Confirmed deep copies preserved equality but failed the identity test.",
+    "Confirmed the independently reconstructed WITNESS.json matched the parsed witness but carried no live identities.",
+    "Confirmed changing one trigger bit failed the raw replay comparison.",
+    "Verified the same-actor histories and different local priors for chart 2 leaf 1."
+  ],
+  "limitations": [
+    "The archive supplies no stronger comparison fixing chart 2's complete prior to that particular event.",
+    "The archive does not archive the six-chart witness cited in the live thread.",
+    "Filename and call spelling scans do not establish repository-wide absence of indirect, external or differently named readers.",
+    "The destination of serialization is the campaign file, not a participant-owned state or actor-facing reader."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}

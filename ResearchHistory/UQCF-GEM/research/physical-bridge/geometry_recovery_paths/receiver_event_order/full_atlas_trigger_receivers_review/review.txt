@@ -1,0 +1,27 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "The starting positive-event census correctly identifies 23,843 legal withdrawals, with exactly 2 events creating a unique new compulsory chart.",
+    "Endpoint pair work is perfectly matched across all 7,260 measurements.",
+    "The native trigger fires exactly at the third source withdrawal in both histories.",
+    "The minimum cover uniquely requires chart 15 in history A and chart 5 in history B.",
+    "The identical remote probe is legally permitted in one history and rejected in the other due to the union test.",
+    "The protected completion theorem holds: every terminal count from 1 to 200 is attainable for the compulsory receiver.",
+    "Unrestricted merger requires exactly one additional positive receipt and a 13-chart cover, which is correctly bounded and witnessed.",
+    "Six full writer trajectories execute correctly, with additions in late stages erasing the split that pure withdrawals could not erase at cover number 12.",
+    "The 13-chart restriction correctly reproduces the 18 successful restricted calls and 2 rejected full calls.",
+    "The small verification graph correctly yields 28 states in each constant-level branch with no common state, and 63 unrestricted descendants with 9 common states."
+  ],
+  "limitations": [
+    "The preparation of 346 withdrawals is supplied, not spontaneously generated.",
+    "The source acts on a supplied schedule.",
+    "Attempting a local read is a separate, supplied action.",
+    "Invoking the writer is supplied.",
+    "It is not computed whether earlier receipts occurred during preparation or what the optimal preparation size is."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
