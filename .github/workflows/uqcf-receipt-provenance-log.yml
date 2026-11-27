@@ -1,0 +1,118 @@
+name: Check historical custody of the original receipts
+on:
+  push:
+    branches: [gpt/full-atlas-trigger-receivers]
+    paths:
+      - ".github/workflows/uqcf-receipt-provenance-log.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/receipt_provenance_log/**"
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+env:
+  SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/receipt_provenance_log
+  HIST: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+  ORBIT: ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/orbit_exchange/probe.py
+  DEMOS: review_sources/ResearchHistory/UQCF-GEM/demos
+  P: ResearchHistory/UQCF-GEM/foundational-closure-verification
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+jobs:
+  foundational-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/foundational-closure-verification/
+            /ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/
+            /ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction/
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reproduce inherited foundational tests and certificates
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$HIST"
+          mkdir -p foundation
+          python -m pip install sympy==1.13.3 mpmath==1.3.0 numpy==1.26.4 > foundation/install.log
+          git rev-parse HEAD > foundation/inherited-head.txt
+          echo "$GITHUB_SHA" > foundation/workflow-head.txt
+          python --version > foundation/python-version.txt
+          (cd "$P" && python tests/test_fcv.py) 2>&1 | tee foundation/tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v15.56-response-selector-obstruction && python -m unittest -v test_pruning_consistency_audit) 2>&1 | tee foundation/parent-tests.log
+          (cd ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent && python -m unittest -v && python gate.py) 2>&1 | tee foundation/historical.log
+          cp ResearchHistory/UQCF-GEM/demos/v16.15F-graded-obstruction-descent/result.json "$P/evidence/REPRODUCED_1615F.json"
+          (cd "$P" && python produce_certificates.py) 2>&1 | tee foundation/producer.log
+          (cd "$P" && python verify_certificates.py) 2>&1 | tee foundation/verifier.log
+          cp "$P"/evidence/{PRODUCTION,VERIFICATION,TEST_RECEIPT,REPRODUCED_1615F}.json "$P/evidence/certificates.json.xz" foundation/
+          test "$(xz -dc foundation/certificates.json.xz | sha256sum | cut -d' ' -f1)" = 21357bdc79429f9d4214024b125e75693609a2538a08a57037978b191ab432c6
+          (cd foundation && sha256sum *.json *.xz *.log *.txt > SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: receipt-custody-foundation
+          path: foundation
+          if-no-files-found: error
+
+
+  replay-and-review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/receipt_provenance_log/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/geometry_recovery_paths/receiver_event_order/orbit_exchange/probe.py
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/**/*.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/COMMANDS.json
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/EXECUTION.json
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/SHA256SUMS
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/historical-producer.log
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/WITNESS.json
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reproduce both calculations against frozen source
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$UQCF_WORKFLOW_SHA"
+          test "$(git -C review_sources rev-parse HEAD)" = "$HIST"
+          mkdir evidence
+          python -m pip install numpy==1.26.4 sympy==1.13.3 mpmath==1.3.0 > evidence/install.log
+          PYTHONHASHSEED=91 python3 -B "$SCI/replay.py" review_sources > evidence/results.json
+          cmp "$SCI/results.json" evidence/results.json
+      - name: Request independent argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -B "$SCI/review.py" review evidence
+      - name: Audit the source, original response and replay
+        run: |
+          set -euo pipefail
+          python3 -B "$SCI/review.py" audit evidence > evidence/audit.log
+          PYTHONHASHSEED=17 python3 -B "$SCI/replay.py" review_sources | cmp - evidence/results.json
+          cp "$SCI"/{RESULT.md,SCOPE.md,replay.py,review.py} evidence/
+          (cd evidence && sha256sum *.md *.py *.json *.txt *.log > SHA256SUMS && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: receipt-custody-review
+          path: evidence
+          if-no-files-found: error
