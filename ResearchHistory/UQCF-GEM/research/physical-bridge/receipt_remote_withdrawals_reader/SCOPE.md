@@ -1,0 +1,5 @@
+# Source-reader follow-up
+
+Source inspection after the primary review found the original v16.27 verify_document and its executed test_complete_bounded_search. Its source reads first_witness and each step's before, index, leaf and delta_h. The separate campaign log comparison reads four totals. The predicted mutation outcomes below follow from inspection and are disclosed before executing those controls.
+
+Use the pinned historical log as input to the unmodified v16.27 document verifier. Compare the untouched input with four counterfactuals: reverse all step triggers, remove all per-step fields except the four read by verify_path, corrupt one delta_h while leaving totals intact, and corrupt one step's before while leaving totals intact. Compare its successful outputs and rejection reasons. Check the trigger corruption also against the original v16.26 per-atom verifier. Pin the historical test transcript, caller, log, atom and both verifiers. Distinguish the campaign test's live in-memory document from the file handed to the reader by this follow-up. No claim that the historical verifier itself opened the log or wrote a participant record.
