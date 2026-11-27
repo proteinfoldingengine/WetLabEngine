@@ -1,0 +1,15 @@
+Two source withdrawals on an identical four-site prior: 6 matched priors from 12 additional whole paths
+Default marker 0
+  source gain 125 receiver cut 131 children [[0, 2, 3], [2], [0]] next visit 145 local edits 24
+  source gain None receiver cut 32 children [[0, 2, 3], [3], [2]] next visit 196 local edits 0
+  post-capture order changes [edit count, narrow marker withdrawal sites] [(24, [9]), (16, [9]), (24, [9]), (24, [9]), (16, [9]), (16, [9]), (0, []), (16, []), (0, []), (0, []), (16, []), (16, [])]
+  mixed states [wide edits, narrow edits, narrow root gains of 3] {'00': [8, 16, 1], '01': [8, 0, 0], '10': [0, 16, 1], '11': [0, 0, 0]}
+Default marker 1
+  source gain 113 receiver cut 119 children [[1, 2, 3], [2], [1]] next visit 133 local edits 24
+  source gain None receiver cut 28 children [[1, 2, 3], [3], [2]] next visit 192 local edits 0
+  post-capture order changes [edit count, narrow marker withdrawal sites] [(24, [9]), (16, [9]), (24, [9]), (24, [9]), (16, [9]), (16, [9]), (0, []), (16, []), (0, []), (0, []), (16, []), (16, [])]
+  mixed states [wide edits, narrow edits, narrow root gains of 3] {'00': [8, 16, 1], '01': [8, 0, 0], '10': [0, 16, 1], '11': [0, 0, 0]}
+Matched pairs 648 whole paths 1296 local replay paths 2592
+Source gain vs prefill, next native visit edit counts [((24, 0), 648)]
+Hybrid matrices [(((8, 16, 1), (8, 0, 0), (0, 16, 1), (0, 0, 0)), 648)]
+Fixed physical snapshots, six new child orders per arm: 7776 replays; named narrow marker withdrawal exactly matches its captured owner in every replay
