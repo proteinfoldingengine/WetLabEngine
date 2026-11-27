@@ -1,0 +1,5 @@
+T start A,A,B and target B,B,A: (peak, mapped first site) [(0, 1), (0, 4)]
+T calls 72 (differing subtrees,exact first sites,exact schedules): [((0, 0, 2), 6), ((1, 1, 2), 12), ((2, 1, 1), 12), ((3, 2, 2), 6)]
+U start A,A,B and target B,B,A: (peak, mapped first site) [(0, 1), (0, 4)]
+U calls 72 (differing subtrees,exact first sites,exact schedules): [((0, 0, 2), 6), ((1, 1, 2), 12), ((2, 1, 1), 12), ((3, 2, 2), 6)]
+first qualifying archived case, path cost, actual and alternative first site: {'T': (14, 18, 1, 7), 'U': (302, 30, 1, 9)}
