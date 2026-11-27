@@ -1,0 +1,25 @@
+[
+  {
+    "verdict": "ACCEPTED",
+    "program_status": "DERIVED",
+    "native_bridge_status": "REFUTED",
+    "request_menu_status": "SUPPLIED",
+    "proof_checks": [
+      "The complete initial pending tuples are [(0,1,0), (1,0,1), (1,2,2)] in the first call and [(0,1,0), (1,0,1), (0,2,2)] in the second. Their common residual menu after the first release is exactly [(0,1,0), (1,0,1)].",
+      "The input endpoints already supply the target plans, which prescribe both peer addresses and their labels. The single decision remaining computed from the live state is the selection of which of the two pending peer requests executes first, based on the live occupancy comparison.",
+      "The exact root profile is rejected as the sole cause of the next action: restoring the released incidence is an exact alternative among unplanned edits, so the scheduler and its pending menu are essential.",
+      "Early-gain controls are rejected: prematurely adding either requested gain to the common pre-release state creates a triple intersection (hitting number 1). After release, the chosen gain avoids this, while the other would still create it.",
+      "Each peer's complete stutter-compressed local word is identical across both histories (row 0: {0} -> {0,1} -> {1}; row 1: {1} -> {0,1} -> {0}). Neither peer can infer the relative order of releases from its own sequence absent cross-row order information.",
+      "Confirmed that the scope does not infer a P1 event, receiver-owned access, or physically enforced activity from the implementation."
+    ],
+    "limitations": [
+      "The scope does not infer a P1 event, receiver-owned access, or physically enforced activity from the implementation.",
+      "The setting establishes actual in-call dispatch but does not derive who invokes the initial program, what keeps it running outside the supplied loop, or how any actual receiver reads an event.",
+      "No gravity, continuum, or scale-recurrence inference follows.",
+      "A physical clock is not assumed by the mathematics, and a rule making that relative order accessible is not derived."
+    ],
+    "findings": [],
+    "missing_assumptions": [],
+    "counterexamples": []
+  }
+]

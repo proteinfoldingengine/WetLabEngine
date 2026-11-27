@@ -1,0 +1,23 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Independently reconstructed the archive pair, exact root profiles, and wrong-gain controls from the supplied rows, unchanged producer and verifier, and observed guard-read replay.",
+    "Verified actual in-call recomputation with equal remaining pending requests.",
+    "Verified alternate possible restoration as a legal edit.",
+    "Verified receiver own-row contrast versus equal final row.",
+    "Confirmed that neither input plan supplies labels or receivers."
+  ],
+  "limitations": [
+    "Rejected any claim that the incidence guard forces progress without the supplied loop and requests.",
+    "Rejected any claim that M2 is a P1 event.",
+    "Distinguished an existing central software continuation from a derived native operation.",
+    "Does not derive ownership/read access or physical significance.",
+    "Does not derive who invokes the initial program, what keeps it running outside the supplied loop, or how any actual receiver reads an event.",
+    "No gravity, continuum, or scale-recurrence inference follows."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
