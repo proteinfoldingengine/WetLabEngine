@@ -14,9 +14,9 @@ d=module_from_spec(spec)
 spec.loader.exec_module(d)
 d.ROOT=root
 d.DOCUMENTS={
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/clone_address_equivariance/FINDING.md": "d275dfe599fcfc4a4b306cf9a5184fcb7851c0fc",
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/clone_address_equivariance/replay_clone.py": "b548d5e39e55e0fa9528c4ebd5713152b36cd3d6",
-    "ResearchHistory/UQCF-GEM/research/physical-bridge/clone_address_equivariance/expected.json": "31cb937a2899ee0acf2b0bd70de0ef3e6d0da73f",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/clone_address_equivariance/FINDING.md": "cdf70a7adb222dc452455cae5a25d96af404c033",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/clone_address_equivariance/replay_clone.py": "e7b90e9e059560071ea74330c53a770418efbc8e",
+    "ResearchHistory/UQCF-GEM/research/physical-bridge/clone_address_equivariance/expected.json": "0bc531d2163ea0c483ae10e33c9b6062e09d7246",
     "ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/mechanisms.py": "ab3541cba29d5e1ebd4fe6c56128daf020c1a81f",
     "ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/model.py": "a4a6407990c36084ab3b6e8e7da9022a4f9d63a8",
     "ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/verifier.py": "e19999dfd46cd134d8191a59da7b8bf2cdb74b43"
