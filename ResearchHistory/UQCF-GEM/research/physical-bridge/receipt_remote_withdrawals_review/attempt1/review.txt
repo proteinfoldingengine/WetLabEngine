@@ -1,0 +1,29 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "Verified the definition of the finite covered rooted tree U, allowing it to be a proper subtree of the ambient tree.",
+    "Checked the internal-site case logic: if x has a covered child c, A cannot hold c, making R the sole holder of c and compelling R to keep c and x, meaning no word at R ever deleted x.",
+    "Confirmed the exact words lost are precisely the old words containing x.",
+    "Verified the four genuine receipts against both orderings, confirming the affected chart and lost action stayed the same while the trigger reversed.",
+    "Checked the distinction between computed counterfactuals, centrally saved fields, and participant retention.",
+    "Validated domains, event identity, and global projection verification through the independent mask enumerator and full interleaving graph traversal."
+  ],
+  "limitations": [
+    "Receiver-owned delivery remains open; the source operation makes no write on the affected chart.",
+    "The historical refusal is an exception to a caller, with no participant-side refusal record.",
+    "Neither the census nor the theorem promotes the changed option to an observation or an event receipt in the affected chart's retained state.",
+    "No new physical or delivery mechanism is claimed."
+  ],
+  "findings": [
+    "The set of possible words at a remote chart R shrinks precisely when the cut site x is a leaf of the covered union and its holders immediately before the cut were exactly the actor A and R.",
+    "A single successful cut can constrain at most one other chart.",
+    "When constrained, the remote chart loses exactly the old words containing x, including the one-letter word x, while keeping every other old word.",
+    "All four genuine receipts from the v16.27 campaign affected an identifiable other chart under the v16.26 withdrawal rule.",
+    "The trigger predicate and the remote loss predicate disagree on 9,151 of 19,995 cuts.",
+    "A chart's identical holdings and entire remaining local action histories cannot encode which of its two triggers occurred, as demonstrated by the five-site archived control."
+  ],
+  "missing_assumptions": [],
+  "counterexamples": []
+}
