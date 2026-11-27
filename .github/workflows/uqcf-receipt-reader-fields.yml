@@ -1,0 +1,48 @@
+name: Replay the original witness reader on the archived receipt fields
+on:
+  push:
+    branches: [gpt/receipt-remote-withdrawals]
+    paths:
+      - ".github/workflows/uqcf-receipt-reader-fields.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals_reader/**"
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      SOURCE: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+      SCI: ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals_reader
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout: ResearchHistory/UQCF-GEM/research/physical-bridge/receipt_remote_withdrawals_reader
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: historical
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.26-consistency-increment-law/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/engine.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/verify.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/test_gate.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/run_campaign.py
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/historical-v1627.log
+            /ResearchHistory/UQCF-GEM/demos/v16.27-increment-attribution-closure/completion/evidence/historical-producer.log
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Reproduce all six original reader calls and their rejecting controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C historical rev-parse HEAD)" = "$SOURCE"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python -B "$SCI/check.py" historical/ResearchHistory/UQCF-GEM/demos | tee reproduced.json
+          cmp "$SCI/results.json" reproduced.json
+          sha256sum reproduced.json
