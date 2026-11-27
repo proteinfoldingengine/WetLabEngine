@@ -1,0 +1,11 @@
+Original certificate Git blob 571d38f08006b7023a65ec64cac77fe23e0db52a
+Admitted states, states reachable from the archived start 210 210
+Receiver 497: source masks [655, 671, 703, 735, 767, 911]; source site 8 present in 1
+Receiver 499: source masks [655, 671, 703, 735, 767]; source site 8 present in 0
+Minimum site tests with bits set as in receiver 499 [(1, 2, 8), (1, 3, 8), (1, 4, 8), (1, 5, 8), (1, 6, 8)]
+Original and source-late costs [0, 1, 1, 1, 0, 1] [0, 1, 1, 1, 2, 1]
+Verifier rejects reordered path: total excursion exceeds one
+Accepted paths with the same full receiver word: source releases before first 499 are 1 and 2
+Original transport helper with source 655: [497, 655] -> [499, 655]
+Original transport helper with source 911: [497, 911] -> [499, 911]
+Archive windows {'cases': 2592, 'exact frame between distinct defects': 1412, 'separate top branches and label rows': 245}
