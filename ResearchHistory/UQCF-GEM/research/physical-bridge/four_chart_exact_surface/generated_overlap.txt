@@ -1,0 +1,7 @@
+Canonical ternary width triples checked: 4096
+clearance False frames 28 40 receivers ('A', 'C') sites [2, 3, 4, 8, 9, 10] available labels [0, 1]
+source bit False entry [2049, 4097, 8447, 1827] first and second input overlaps [(0, 1, 2), (1, 2, 3)] [(0, 2, 0)] second visit frame 57 second visit edits 0 endpoint [3871, 4323, 8193, 1]
+clearance True frames 25 31 receivers ('B',) sites [5, 6, 7] available labels [0, 3]
+source bit True entry [2049, 4099, 8447, 1827] first and second input overlaps [(0, 1, 2), (1, 2, 3)] [(0, 2, 1)] second visit frame 42 second visit edits 18 endpoint [3871, 4323, 8193, 1]
+Default palette, transported peer names and cleared groups: [(('A', 'B', 'C'), ('A', 'C'), ('B',)), (('A', 'C', 'B'), ('A', 'B'), ('C',)), (('B', 'A', 'C'), ('B', 'C'), ('A',)), (('B', 'C', 'A'), ('B', 'A'), ('C',)), (('C', 'A', 'B'), ('C', 'B'), ('A',)), (('C', 'B', 'A'), ('C', 'A'), ('B',))]
+All paired counts: {"both emit 2 to 0": 18, "both emit 2 to 0 at different named receivers": 6, "paired comparisons": 144, "second edit counts differ": 36, "second overlap labels differ": 36}
