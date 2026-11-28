@@ -1,5 +1,7 @@
 # Constructing a receiving guard from the initial incidences
 
+**Endpoint correction.** The target constructed below has root hitting number two against the stored target of three. The reported writes pass the historical one-unit-band verifier. The exact-endpoint follow-up derives the required correction and tests the receiver again. [Proof and corrected runs](EXACT_ENDPOINT_CORRECTION.md)
+
 In the earlier six-row example, reversing the eight palette labels exposed a remote write. The initial records identify a smaller object that suffices for the same kind of interaction. They determine two complementary pairs, a row containing one pair, and a single row meeting all four pairs in the partition. A proposed rule turns those facts into an M9 target. The historical M9 routine then determines the withdrawals, the leaf address and the writes.
 
 ## What the starting records determine
