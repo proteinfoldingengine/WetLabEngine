@@ -1,0 +1,70 @@
+name: Review original matched UQCF receiver pair
+on:
+  push:
+    branches: [gpt/archived-generated-balance-review]
+    paths:
+      - ".github/workflows/uqcf-archived-stock-pair.yml"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/archived_stock_tail_pair/review_stock_pair.py"
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+
+  CTRL: ResearchHistory/UQCF-GEM/research/physical-bridge/archived_stock_tail_pair
+  BASE_REPLAY: ResearchHistory/UQCF-GEM/research/physical-bridge/archived_nested_balance_lift
+  DEMOS: ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity
+  INNER: ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary
+jobs:
+  replay-review-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_nested_balance_lift/
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_stock_tail_pair/
+            /ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/mechanisms.py
+            /ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/model.py
+            /ResearchHistory/UQCF-GEM/demos/v16.54-parent-support-connectivity/verifier.py
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.53-four-child-boundary/feasibility.py
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Replay unchanged stock producers and controls
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          PYTHONHASHSEED=91 python -B "$CTRL/stock_tail_replay.py" "$BASE_REPLAY" "$DEMOS" "$INNER" | tail -1 > evidence/replay.json
+          cmp "$CTRL/stock-tail-evidence.json" evidence/replay.json
+          PYTHONHASHSEED=17 python -B "$CTRL/stock_tail_replay.py" "$BASE_REPLAY" "$DEMOS" "$INNER" | tail -1 | cmp - evidence/replay.json
+      - name: Obtain independent review of complete scoped argument
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -B "$CTRL/review_stock_pair.py" review evidence
+      - name: Audit request, original response and reproducibility
+        run: |
+          set -euo pipefail
+          python -B "$CTRL/review_stock_pair.py" audit evidence | tee evidence/audit.log
+          cp "$CTRL"/{FINDING.md,stock-tail-evidence.json,stock_tail_replay.py,review_stock_pair.py,stock-tail-cases0.json.gz,stock-tail-cases1.json.gz,stock-tail-records0.json.gz,stock-tail-records1.json.gz} evidence/
+          (cd evidence && sha256sum *.md *.py *.json *.txt *.log *.gz > SHA256SUMS && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: archived-stock-pair-review
+          path: evidence
+          if-no-files-found: error

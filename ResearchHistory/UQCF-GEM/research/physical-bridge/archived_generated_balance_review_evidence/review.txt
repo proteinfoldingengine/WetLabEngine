@@ -1,0 +1,22 @@
+{
+  "verdict": "ACCEPTED",
+  "program_status": "DERIVED",
+  "native_bridge_status": "OPEN",
+  "proof_checks": [
+    "The script correctly identifies the unique eligible directed moves at each boundary: initially group 2 (C->A) is uniquely eligible for widths (1,4,3), then group 1 (B->C) for widths (2,4,2), and finally none for (2,3,3), matching the actual materialized relocations of label 5 and label 1.",
+    "The primitive cover and floor facts are verified: all 70 relocation frames preserve a minimum floor of 3 and have a covering number of 4 or 5, with the cover being exactly 5 at the boundaries 0, 36, and 70.",
+    "The six necessarily newly changed rows are reconstructed using the `remote_6` logic, identifying the 3x2=6 triples that avoid the first moved label (5) but contain the second (1). These correspond to rows [6, 7, 10, 11, 13, 14] in the archive, which must change because their old holdings are no longer valid core triples after the second relocation.",
+    "The exact trajectory of row 11 is audited, confirming its local word `[[1, 3, 7], [1, 3, 6, 7], [1, 6, 7]]` during the first 71 frames, and its final canonical value `[0, 6, 7]` which demonstrates that the terminal value alone is not an occurrence record.",
+    "The bypass-only control confirms that executing B->C at the initial state (bypassing the scheduler) still maintains floor 3 and cover 4/5, proving that the ordering is a property of the scheduler and not a primitive impossibility.",
+    "The fresh encoded-start replay from the intermediate state (frame 36) successfully reproduces the same local word for row 11 and reaches the exact same final canonical state, showing that the partial local word and final state are not exclusive signatures of the first operation's occurrence.",
+    "The independent unordered core reconstruction correctly quotients by rotations to find 1,932 nonempty partitions, and verifies that the core boundaries uniquely determine the directed partition of eight labels without relying on mutable group metadata."
+  ],
+  "limitations": [
+    "The analysis is a bounded historical replay of an existing M5 campaign record, not a new numbered campaign or a demonstration of a novel physical capability.",
+    "The report does not derive physical access, a persistent occurrence record, or a native origin for the balancing rule; it relies on the inherited scheduler and supplied initial directed cycle.",
+    "The independent reconstruction property grants neither local access nor native genesis of the cycle, as the real scheduler uses its mutable group metadata rather than reconstructing a partition from a receiver's row."
+  ],
+  "findings": [],
+  "missing_assumptions": [],
+  "counterexamples": []
+}

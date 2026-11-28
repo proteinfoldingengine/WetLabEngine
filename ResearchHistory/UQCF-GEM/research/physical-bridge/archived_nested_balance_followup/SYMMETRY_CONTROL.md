@@ -1,0 +1,11 @@
+# The archived intervention is not an order-free source selector
+
+The previous matched-source intervention keeps the historical ordered implementation fixed. We checked whether its different receiver word is instead forced by the unordered support/nesting structure alone.
+
+Swap palette labels 5 and 7. On the original 26 distinct triples, this induces root slots (0 2)(5 7)(9 11)(12 14)(16 18)(19 21)(22 24), fixing all others. Match each leaf to the unique singleton of the transformed label under its image slot. This involution preserves the complete initial **unordered** nested holding structure, its target profile, and fixes row 6 and its three receiver leaves pointwise. It need not preserve the supplied palette or sibling order.
+
+Any deterministic single-label selector equivariant under this involution cannot choose the historical 5 or the diagnostic 7 at that state: the input is fixed and those outputs are exchanged. This does not exclude the fixed label 6 under this particular involution, stochastic/equivariant sets of outcomes, or an inherited enriched structure that actually distinguishes the candidates.
+
+Apply the involution to all 425 states of the original nested path. The stock nested checker accepts every frame. This produces a legal continuation through the conjugate first relocation (label 7) with receiver leaf 27 unchanged at {2}. In contrast, rerunning the fixed-order producer after forcing label 7 gave leaf 27 four edits. The post-first-relocation root *multisets* agree, but indexed states already differ at frame 36: row 2 is {0,1,7} in the conjugate path and {0,2,7} in the ordered intervention. Thus unordered admissibility alone does not force that receiver word; the intervention demonstrates source sensitivity **under the supplied slot/label binding**. The conjugate trace is not claimed to satisfy the historical deterministic M5 schedule or share the exact final ordered parent tuple.
+
+Replay: `PYTHONHASHSEED=97 python -B symmetry_transport.py ../archived_nested_balance_lift /absolute/v16.54-parent-support-connectivity /absolute/v16.53-four-child-boundary matched-probe-raw.json.gz`. The last output line matches the included evidence, verified at seeds 97 and 31337. This is an author-side control, not independent review.
