@@ -1,0 +1,11 @@
+Example [0, 2, 1] PA [(2, 'PA', True), (2, 'PA1', True), (1, 'PA1', False), (1, 'PA', False)] all-full state 26 source withdrawal 31
+Example [0, 1, 2] RA [(1, 'RA', True), (1, 'RA1', True), (2, 'RA1', False), (2, 'RA', False)] all-full state 26 source withdrawal 32
+All 24 junction orders x 6 active label orders: 144 pairs
+Terminal tip digits, no fixed named tip: [(('0', '0'), 38), (('0', '1'), 40), (('1', '0'), 35), (('1', '1'), 31)]
+Three independent upper fork orders: 216 pairs
+Recursive receiver test: (depth, whole-tree sites, proper edits) and seed count [((1, 50, 4), 2), ((2, 98, 6), 4), ((3, 194, 8), 8), ((4, 386, 10), 4)]
+Four-tip receivers, 24 junction x 24 receiving-fork orders, subsequent marker gains [((3, 3), 576)]
+Isolated frozen receiver: 24 leaf orders x 2 label orders x 2 arms: 96
+Compact priority: 720 external label orders in each arm, 24 junction traversals for each derived priority
+Key (2,) receiver pairs [(('PA', 'PA'), 6)]
+Key (1, 2) receiver pairs [(('PA', 'PA'), 3), (('PA', 'RA'), 3)]
