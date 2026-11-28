@@ -7,6 +7,7 @@ on:
 permissions:
   contents: read
 env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
   CTRL: ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle
   DEMO: ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface
 jobs:
