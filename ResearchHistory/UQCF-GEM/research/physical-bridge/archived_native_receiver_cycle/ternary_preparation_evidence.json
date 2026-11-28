@@ -1,0 +1,1727 @@
+{
+  "archive_cases": 2592,
+  "archive_sha256": "91aac71f6e786af4a3876ee9a7ec09d78b4bbe0906eb5461e08d9be1318b93f9",
+  "complete_witness_paths": {
+    "compact_2208": {
+      "handoff_frame": 0,
+      "path": [
+        [
+          7687,
+          25099,
+          41713,
+          273
+        ]
+      ],
+      "peaks": [
+        0,
+        0,
+        0
+      ],
+      "receiver_parent_and_leaves_at_handoff": [
+        [
+          2,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "start": [
+        7687,
+        25099,
+        41713,
+        273
+      ],
+      "trace": [
+        {
+          "end": 0,
+          "kind": "anchor",
+          "label": 0,
+          "pair": [
+            0,
+            2
+          ]
+        },
+        {
+          "child": 1,
+          "end": 0,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 4,
+          "end": 0,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 9,
+          "end": 0,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 1,
+          "kind": "role_transport"
+        },
+        {
+          "child": 4,
+          "kind": "role_transport"
+        },
+        {
+          "child": 9,
+          "kind": "role_transport"
+        },
+        {
+          "end": 0,
+          "kind": "transport_complete"
+        }
+      ]
+    },
+    "inflated_2209": {
+      "handoff_frame": 13,
+      "path": [
+        [
+          7687,
+          25099,
+          41713,
+          275
+        ],
+        [
+          7687,
+          25099,
+          41713,
+          279
+        ],
+        [
+          7683,
+          25099,
+          41713,
+          279
+        ],
+        [
+          7691,
+          25099,
+          41713,
+          279
+        ],
+        [
+          7691,
+          25091,
+          41713,
+          279
+        ],
+        [
+          7691,
+          25089,
+          41713,
+          279
+        ],
+        [
+          7691,
+          25089,
+          41713,
+          311
+        ],
+        [
+          7691,
+          25089,
+          41713,
+          375
+        ],
+        [
+          7691,
+          25089,
+          41713,
+          503
+        ],
+        [
+          7691,
+          25089,
+          41585,
+          503
+        ],
+        [
+          7691,
+          25089,
+          41521,
+          503
+        ],
+        [
+          7691,
+          25089,
+          41489,
+          503
+        ],
+        [
+          7691,
+          25089,
+          41745,
+          503
+        ],
+        [
+          7691,
+          25089,
+          41745,
+          247
+        ],
+        [
+          7691,
+          25091,
+          41745,
+          247
+        ],
+        [
+          7691,
+          25099,
+          41745,
+          247
+        ],
+        [
+          7683,
+          25099,
+          41745,
+          247
+        ],
+        [
+          7681,
+          25099,
+          41745,
+          247
+        ],
+        [
+          7683,
+          25099,
+          41745,
+          247
+        ],
+        [
+          7687,
+          25099,
+          41745,
+          247
+        ],
+        [
+          7687,
+          25099,
+          41745,
+          243
+        ],
+        [
+          7687,
+          25099,
+          41745,
+          241
+        ],
+        [
+          7703,
+          25099,
+          41745,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41745,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41489,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41473,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41489,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41521,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41585,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          241
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          113
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          49
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          17
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          1
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          17
+        ],
+        [
+          7959,
+          25099,
+          41713,
+          273
+        ],
+        [
+          7703,
+          25099,
+          41713,
+          273
+        ],
+        [
+          7687,
+          25099,
+          41713,
+          273
+        ]
+      ],
+      "peaks": [
+        1,
+        1,
+        1
+      ],
+      "receiver_parent_and_leaves_at_handoff": [
+        [
+          2,
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "start": [
+        7687,
+        25099,
+        41713,
+        275
+      ],
+      "trace": [
+        {
+          "end": 0,
+          "kind": "anchor",
+          "label": 3,
+          "pair": [
+            0,
+            1
+          ]
+        },
+        {
+          "child": 1,
+          "end": 5,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 4,
+          "end": 13,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 9,
+          "end": 13,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 1,
+          "kind": "role_transport"
+        },
+        {
+          "child": 1,
+          "kind": "local_hole",
+          "label": 1
+        },
+        {
+          "child": 4,
+          "kind": "role_transport"
+        },
+        {
+          "child": 4,
+          "kind": "local_hole",
+          "label": 0
+        },
+        {
+          "child": 9,
+          "kind": "role_transport"
+        },
+        {
+          "end": 37,
+          "kind": "transport_complete"
+        }
+      ]
+    },
+    "other_eligible_site": {
+      "handoff_frame": 1,
+      "path": [
+        [
+          7687,
+          25099,
+          41713,
+          785
+        ],
+        [
+          7687,
+          25099,
+          41713,
+          273
+        ]
+      ],
+      "peaks": [
+        0,
+        0,
+        0
+      ],
+      "receiver_parent_and_leaves_at_handoff": [
+        [
+          2,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "start": [
+        7687,
+        25099,
+        41713,
+        785
+      ],
+      "trace": [
+        {
+          "end": 0,
+          "kind": "anchor",
+          "label": 0,
+          "pair": [
+            0,
+            2
+          ]
+        },
+        {
+          "child": 1,
+          "end": 0,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 4,
+          "end": 0,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 9,
+          "end": 1,
+          "kind": "child_normalization"
+        },
+        {
+          "child": 1,
+          "kind": "role_transport"
+        },
+        {
+          "child": 4,
+          "kind": "role_transport"
+        },
+        {
+          "child": 9,
+          "kind": "role_transport"
+        },
+        {
+          "end": 1,
+          "kind": "transport_complete"
+        }
+      ]
+    }
+  },
+  "eligible_additions": [
+    [
+      1,
+      3
+    ],
+    [
+      9,
+      3
+    ]
+  ],
+  "isolated_receiver_checkpoints_with_stationary_compact_control": [
+    {
+      "case_indices": [
+        120,
+        121
+      ],
+      "frame": 13,
+      "receiver_node": 4,
+      "restart_edits": 4,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        984,
+        985
+      ],
+      "frame": 17,
+      "receiver_node": 4,
+      "restart_edits": 8,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        1020,
+        1021
+      ],
+      "frame": 17,
+      "receiver_node": 4,
+      "restart_edits": 8,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        1344,
+        1345
+      ],
+      "frame": 21,
+      "receiver_node": 4,
+      "restart_edits": 10,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        1380,
+        1381
+      ],
+      "frame": 21,
+      "receiver_node": 4,
+      "restart_edits": 10,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        2208,
+        2209
+      ],
+      "frame": 21,
+      "receiver_node": 4,
+      "restart_edits": 8,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        2244,
+        2245
+      ],
+      "frame": 21,
+      "receiver_node": 4,
+      "restart_edits": 8,
+      "restart_matches_archived_suffix": false
+    },
+    {
+      "case_indices": [
+        2568,
+        2569
+      ],
+      "frame": 25,
+      "receiver_node": 4,
+      "restart_edits": 10,
+      "restart_matches_archived_suffix": false
+    }
+  ],
+  "positive_receiver_comparisons": [
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        120,
+        121
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        7
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        5
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "case_indices": [
+        230,
+        231
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        7
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        5
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        1
+      ],
+      "case_indices": [
+        232,
+        233
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        9
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        5
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        912,
+        913
+      ],
+      "edits_to_initial": [
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "handoff_frames": [
+        6,
+        14
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        948,
+        949
+      ],
+      "edits_to_initial": [
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "handoff_frames": [
+        6,
+        14
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        984,
+        985
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        11
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        1020,
+        1021
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        11
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        1344,
+        1345
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        15
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        1380,
+        1381
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        15
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        2
+      ],
+      "case_indices": [
+        2030,
+        2031
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        11
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        1
+      ],
+      "case_indices": [
+        2032,
+        2033
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        13
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        2208,
+        2209
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          3
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        13
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        2244,
+        2245
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          3
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        13
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6,
+        7
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "case_indices": [
+        2354,
+        2355
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ]
+      ],
+      "handoff_frames": [
+        16,
+        26
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        1
+      ],
+      "case_indices": [
+        2356,
+        2357
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          12,
+          3
+        ]
+      ],
+      "handoff_frames": [
+        12,
+        20
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "case_indices": [
+        2390,
+        2391
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ]
+      ],
+      "handoff_frames": [
+        16,
+        26
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        1
+      ],
+      "case_indices": [
+        2392,
+        2393
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          15,
+          3
+        ]
+      ],
+      "handoff_frames": [
+        12,
+        20
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "case_indices": [
+        2426,
+        2427
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        14,
+        27
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        1
+      ],
+      "case_indices": [
+        2428,
+        2429
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        6,
+        17
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        3
+      ],
+      "case_indices": [
+        2462,
+        2463
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        18,
+        31
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        0
+      ],
+      "anchor_before": [
+        [
+          0,
+          1
+        ],
+        1
+      ],
+      "case_indices": [
+        2464,
+        2465
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          0
+        ]
+      ],
+      "handoff_frames": [
+        6,
+        17
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    },
+    {
+      "anchor_after": [
+        [
+          0,
+          1
+        ],
+        4
+      ],
+      "anchor_before": [
+        [
+          0,
+          2
+        ],
+        0
+      ],
+      "case_indices": [
+        2568,
+        2569
+      ],
+      "edits_to_initial": [
+        [
+          1,
+          4
+        ]
+      ],
+      "handoff_frames": [
+        0,
+        17
+      ],
+      "receiver_node": 4,
+      "receiving_leaves": [
+        6
+      ]
+    }
+  ],
+  "rank_two_counts": {
+    "anchor_changes": 284,
+    "different_leaf_records_at_handoff": 64,
+    "new_anchor_at_new_named_leaf": 22,
+    "one_bit_examples": 11,
+    "one_bit_pair_switches": 3,
+    "rank_two_pairs": 432,
+    "unchanged_receiver_subtrees_with_anchor_change": 297
+  },
+  "restart_from_frame_21": {
+    "handoff_frame": 8,
+    "path": [
+      [
+        7687,
+        25099,
+        41745,
+        241
+      ],
+      [
+        7687,
+        25099,
+        41777,
+        241
+      ],
+      [
+        7687,
+        25099,
+        41841,
+        241
+      ],
+      [
+        7687,
+        25099,
+        41969,
+        241
+      ],
+      [
+        7687,
+        25099,
+        41969,
+        113
+      ],
+      [
+        7687,
+        25099,
+        41969,
+        49
+      ],
+      [
+        7687,
+        25099,
+        41969,
+        17
+      ],
+      [
+        7687,
+        25099,
+        41969,
+        273
+      ],
+      [
+        7687,
+        25099,
+        41713,
+        273
+      ]
+    ],
+    "peaks": [
+      1,
+      1,
+      1
+    ],
+    "receiver_parent_and_leaves_at_handoff": [
+      [
+        2,
+        3
+      ],
+      [
+        2
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "start": [
+      7687,
+      25099,
+      41745,
+      241
+    ],
+    "trace": [
+      {
+        "end": 0,
+        "kind": "anchor",
+        "label": 0,
+        "pair": [
+          0,
+          2
+        ]
+      },
+      {
+        "child": 1,
+        "end": 0,
+        "kind": "child_normalization"
+      },
+      {
+        "child": 4,
+        "end": 8,
+        "kind": "child_normalization"
+      },
+      {
+        "child": 9,
+        "end": 8,
+        "kind": "child_normalization"
+      },
+      {
+        "child": 1,
+        "kind": "role_transport"
+      },
+      {
+        "child": 4,
+        "kind": "role_transport"
+      },
+      {
+        "child": 9,
+        "kind": "role_transport"
+      },
+      {
+        "end": 8,
+        "kind": "transport_complete"
+      }
+    ]
+  },
+  "root_triples_checked_by_palette_size_1_to_5": [
+    0,
+    12,
+    168,
+    1620,
+    13440
+  ],
+  "sibling_order_controls_on_parent_rule": [
+    {
+      "added": [
+        [
+          1,
+          3
+        ]
+      ],
+      "chosen_nodes": [
+        1,
+        4
+      ],
+      "label": 3,
+      "row_order": [
+        1,
+        4,
+        9
+      ]
+    },
+    {
+      "added": [
+        [
+          1,
+          3
+        ]
+      ],
+      "chosen_nodes": [
+        1,
+        9
+      ],
+      "label": 0,
+      "row_order": [
+        1,
+        9,
+        4
+      ]
+    },
+    {
+      "added": [
+        [
+          1,
+          3
+        ]
+      ],
+      "chosen_nodes": [
+        4,
+        1
+      ],
+      "label": 3,
+      "row_order": [
+        4,
+        1,
+        9
+      ]
+    },
+    {
+      "added": [
+        [
+          9,
+          3
+        ]
+      ],
+      "chosen_nodes": [
+        4,
+        9
+      ],
+      "label": 2,
+      "row_order": [
+        4,
+        9,
+        1
+      ]
+    },
+    {
+      "added": [
+        [
+          9,
+          3
+        ]
+      ],
+      "chosen_nodes": [
+        9,
+        1
+      ],
+      "label": 0,
+      "row_order": [
+        9,
+        1,
+        4
+      ]
+    },
+    {
+      "added": [
+        [
+          9,
+          3
+        ]
+      ],
+      "chosen_nodes": [
+        9,
+        4
+      ],
+      "label": 2,
+      "row_order": [
+        9,
+        4,
+        1
+      ]
+    }
+  ],
+  "witness_spec": {
+    "k": 4,
+    "mode": "compact",
+    "permutation": "identity",
+    "q": [
+      2,
+      2,
+      2,
+      1,
+      2,
+      1,
+      2
+    ],
+    "tree": "U"
+  }
+}

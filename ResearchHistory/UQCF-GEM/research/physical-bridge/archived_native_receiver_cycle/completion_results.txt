@@ -1,0 +1,17 @@
+Constructed arm 0: row 4, final leaves (4, 0), withdraw 1 at frame 35 then 0 goes to leaf 15
+Constructed arm 1: row 4, final leaves (0, 4), withdraw 1 at frame 32 then 0 goes to leaf 14
+Extra 7 at row 1 disables the proposed trigger with identical initial leaves.
+The proposed trigger is absent in both terminal records using their actual retained leaves.
+Role identification covariant in all 720 row presentations in each arm
+Destination-row assignment (3, 4, 5) gives 36 of 36 terminal distinctions at row 4
+Destination-row assignment (3, 5, 4) gives 0 of 36 terminal distinctions at row 4
+Destination-row assignment (4, 3, 5) gives 0 of 36 terminal distinctions at row 4
+Destination-row assignment (4, 5, 3) gives 0 of 36 terminal distinctions at row 4
+Destination-row assignment (5, 3, 4) gives 0 of 36 terminal distinctions at row 4
+Destination-row assignment (5, 4, 3) gives 0 of 36 terminal distinctions at row 4
+Pairing census at target arm 0: 8/105 on each of six shifts
+Pairing census at target arm 1: 4/105 on each of six shifts
+Historical verifier declined control (3, 7) [['global native deviation exceeds one', 'lower hitting guard'], ['global native deviation exceeds one', 'lower hitting guard']]
+Historical verifier declined control (4, 5) [['global native deviation exceeds one', 'lower hitting guard'], ['global native deviation exceeds one', 'lower hitting guard']]
+Neighborhood of matched one-bit controls [('below floor', 4), ('historical verifier declined pair', 2), ('no common unique roles', 27), ('same terminal tuple', 3), ('terminal distinction', 4)] admitted negatives [(2, 7), (4, 0), (4, 2)]
+Verified 2968 stock records, uncompressed stream SHA-256 23a7ceb6791af2707a08c7543f8f5d3ba5e9072a03095046edd98de5ad78abee

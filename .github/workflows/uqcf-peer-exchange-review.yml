@@ -1,0 +1,67 @@
+name: Review compact ternary peer handoff
+on:
+  push:
+    branches: [gpt/four-chart-exact-surface]
+    paths:
+      - ".github/workflows/uqcf-peer-exchange-review.yml"
+permissions:
+  contents: read
+env:
+  UQCF_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  CTRL: ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle
+  DEMO: ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface
+jobs:
+  replay-review-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/PEER_EXCHANGE.md
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/peer_exchange.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/peer_exchange_results.json
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/peer_exchange_paths.jsonl.xz
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/ternary_preparation.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/review_peer_exchange.py
+            /ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/producer.py
+            /ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: e61d5b0e827f7b412824ad46021e2ad6cc6f7875
+          path: review_sources
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/v1686_recombination_trace/review.py
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Replay original archive, theorem cases and adverse controls
+        run: |
+          set -euo pipefail
+          mkdir evidence
+          PYTHONHASHSEED=91 python -B "$CTRL/peer_exchange.py" "$DEMO" > evidence/replay.json
+          cmp "$CTRL/peer_exchange_results.json" evidence/replay.json
+          PYTHONHASHSEED=17 python -B "$CTRL/peer_exchange.py" "$DEMO" | cmp - evidence/replay.json
+      - name: Obtain independent whole-argument review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -B "$CTRL/review_peer_exchange.py" review evidence
+      - name: Audit request, response and exact evidence
+        run: |
+          set -euo pipefail
+          python -B "$CTRL/review_peer_exchange.py" audit evidence | tee evidence/audit.log
+          cp "$CTRL"/{PEER_EXCHANGE.md,peer_exchange.py,peer_exchange_results.json,peer_exchange_paths.jsonl.xz,review_peer_exchange.py} evidence/
+          (cd evidence && sha256sum * > SHA256SUMS && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: peer-exchange-review
+          path: evidence
+          if-no-files-found: error

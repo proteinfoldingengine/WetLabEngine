@@ -1,0 +1,172 @@
+{
+  "archived_edits_until_loss": {
+    "2": 40,
+    "3": 18
+  },
+  "blob": "9dd2e4445bca36dfe59f10fc7b7debd1ee2bc81e",
+  "counts": {
+    "archived": {
+      "runs": 132,
+      "self_identified": 28,
+      "self_identified_complete": 14,
+      "transfers": 226
+    },
+    "four_label_controls": {
+      "runs": 2952,
+      "self_identified": 768,
+      "self_identified_complete": 270,
+      "transfers": 6012
+    }
+  },
+  "examples": {
+    "hit": {
+      "case": 1515,
+      "frame": 9,
+      "local": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "receipt": {
+        "after": [
+          [
+            0,
+            1,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            2,
+            4
+          ]
+        ],
+        "before": [
+          [
+            0,
+            1,
+            2,
+            4
+          ],
+          [
+            0,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            4
+          ]
+        ],
+        "delta_h": 0,
+        "genesis": "v16.26-common-genesis",
+        "h_after": 2,
+        "h_before": 2,
+        "index": 2,
+        "leaf": 1,
+        "parent": 0,
+        "parents": [
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "tau_after": 2,
+        "tau_before": 2,
+        "trigger": false,
+        "version": "16.26"
+      },
+      "site": 3
+    },
+    "same_endpoints_without_target": {
+      "case": 390,
+      "changes": [
+        [
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1
+        ]
+      ]
+    }
+  },
+  "local_prefix_counts": {
+    "[[0], [0, 1], [1], [1, 2]]": 7,
+    "[[1], [0, 1], [1], [1, 2]]": 7
+  },
+  "recognizable_complete_signatures": [
+    0,
+    2
+  ]
+}

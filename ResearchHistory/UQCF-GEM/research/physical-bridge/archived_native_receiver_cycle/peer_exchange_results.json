@@ -1,0 +1,3230 @@
+{
+  "archive_sha256": "91aac71f6e786af4a3876ee9a7ec09d78b4bbe0906eb5461e08d9be1318b93f9",
+  "census": {
+    "archive_exchanges": 2048,
+    "archive_paths": 864,
+    "case_170_incidence_predicted_edits": 22,
+    "direct_exchanges": 1220,
+    "direct_saturated_exchanges": 890,
+    "direct_saturated_midpoints_with_competing_archive_outcome": 0,
+    "distinct_direct_saturated_midpoints": 439,
+    "distinct_midpoint_keys": 1154,
+    "keys_with_several_payloads": 73,
+    "keys_with_several_payloads_in_compact_alone": 0,
+    "rank_two_paths": 864,
+    "rank_two_width_one_branches": 816,
+    "rank_two_width_one_gains": 452,
+    "saturated_exchanges": 1304,
+    "spare_exchanges": 744
+  },
+  "collisions": [
+    {
+      "gained": 1,
+      "k": 5,
+      "midpoint": [
+        7,
+        907,
+        113,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          176,
+          "compact",
+          4,
+          12
+        ],
+        [
+          177,
+          "interface_and_binary_inflated",
+          3,
+          7
+        ]
+      ],
+      "peer": 7,
+      "ranks": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "T"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        395,
+        641,
+        113,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          212,
+          "compact",
+          5,
+          16
+        ],
+        [
+          213,
+          "interface_and_binary_inflated",
+          4,
+          11
+        ]
+      ],
+      "peer": 7,
+      "ranks": [
+        3,
+        2,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "T"
+    },
+    {
+      "gained": 0,
+      "k": 6,
+      "midpoint": [
+        391,
+        11,
+        113,
+        641,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          212,
+          "compact",
+          5,
+          34
+        ],
+        [
+          213,
+          "interface_and_binary_inflated",
+          4,
+          29
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2
+      ],
+      "sender": 7,
+      "tree": "T"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        907,
+        49,
+        81,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          248,
+          "compact",
+          5,
+          16
+        ],
+        [
+          249,
+          "interface_and_binary_inflated",
+          4,
+          11
+        ]
+      ],
+      "peer": 7,
+      "ranks": [
+        3,
+        2,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "T"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        395,
+        641,
+        49,
+        81,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          284,
+          "compact",
+          6,
+          20
+        ],
+        [
+          285,
+          "interface_and_binary_inflated",
+          5,
+          15
+        ]
+      ],
+      "peer": 7,
+      "ranks": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "T"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        391,
+        11,
+        49,
+        81,
+        641,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          284,
+          "compact",
+          6,
+          44
+        ],
+        [
+          285,
+          "interface_and_binary_inflated",
+          5,
+          39
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "sender": 7,
+      "tree": "T"
+    },
+    {
+      "gained": 1,
+      "k": 5,
+      "midpoint": [
+        7,
+        65035,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1472,
+          "compact",
+          4,
+          12
+        ],
+        [
+          1473,
+          "interface_and_binary_inflated",
+          3,
+          7
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        32267,
+        41473,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1508,
+          "compact",
+          5,
+          22
+        ],
+        [
+          1509,
+          "interface_and_binary_inflated",
+          4,
+          14
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 6,
+      "midpoint": [
+        32263,
+        11,
+        497,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1508,
+          "compact",
+          5,
+          62
+        ],
+        [
+          1509,
+          "interface_and_binary_inflated",
+          4,
+          54
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        60939,
+        5633,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1544,
+          "compact",
+          5,
+          22
+        ],
+        [
+          1545,
+          "interface_and_binary_inflated",
+          4,
+          14
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 6,
+      "midpoint": [
+        60935,
+        11,
+        497,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1544,
+          "compact",
+          5,
+          62
+        ],
+        [
+          1545,
+          "interface_and_binary_inflated",
+          4,
+          54
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        28171,
+        46593,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1580,
+          "compact",
+          5,
+          20
+        ],
+        [
+          1581,
+          "interface_and_binary_inflated",
+          4,
+          15
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 6,
+      "midpoint": [
+        28167,
+        11,
+        497,
+        46593,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1580,
+          "compact",
+          5,
+          60
+        ],
+        [
+          1581,
+          "interface_and_binary_inflated",
+          4,
+          55
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        7691,
+        57857,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1616,
+          "compact",
+          5,
+          24
+        ],
+        [
+          1617,
+          "interface_and_binary_inflated",
+          4,
+          19
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 6,
+      "midpoint": [
+        7687,
+        11,
+        497,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1616,
+          "compact",
+          5,
+          58
+        ],
+        [
+          1617,
+          "interface_and_binary_inflated",
+          4,
+          53
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        7691,
+        25089,
+        41473,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1652,
+          "compact",
+          6,
+          56
+        ],
+        [
+          1653,
+          "interface_and_binary_inflated",
+          5,
+          51
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        7687,
+        11,
+        497,
+        41473,
+        25089,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1652,
+          "compact",
+          6,
+          88
+        ],
+        [
+          1653,
+          "interface_and_binary_inflated",
+          5,
+          83
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        57857,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1688,
+          "compact",
+          6,
+          36
+        ],
+        [
+          1689,
+          "interface_and_binary_inflated",
+          5,
+          31
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        3591,
+        11,
+        497,
+        57857,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1688,
+          "compact",
+          6,
+          64
+        ],
+        [
+          1689,
+          "interface_and_binary_inflated",
+          5,
+          59
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        25089,
+        41473,
+        497,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1724,
+          "compact",
+          7,
+          36
+        ],
+        [
+          1725,
+          "interface_and_binary_inflated",
+          6,
+          31
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        3591,
+        11,
+        497,
+        25089,
+        41473,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1724,
+          "compact",
+          7,
+          64
+        ],
+        [
+          1725,
+          "interface_and_binary_inflated",
+          6,
+          59
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        25095,
+        11,
+        497,
+        3585,
+        5633,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1724,
+          "compact",
+          7,
+          124
+        ],
+        [
+          1725,
+          "interface_and_binary_inflated",
+          6,
+          119
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        65035,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1760,
+          "compact",
+          5,
+          18
+        ],
+        [
+          1761,
+          "interface_and_binary_inflated",
+          4,
+          12
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        32267,
+        41473,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1796,
+          "compact",
+          6,
+          28
+        ],
+        [
+          1797,
+          "interface_and_binary_inflated",
+          5,
+          19
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        32263,
+        11,
+        369,
+        177,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1796,
+          "compact",
+          6,
+          78
+        ],
+        [
+          1797,
+          "interface_and_binary_inflated",
+          5,
+          69
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        60939,
+        5633,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1832,
+          "compact",
+          6,
+          28
+        ],
+        [
+          1833,
+          "interface_and_binary_inflated",
+          5,
+          19
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        60935,
+        11,
+        369,
+        177,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1832,
+          "compact",
+          6,
+          78
+        ],
+        [
+          1833,
+          "interface_and_binary_inflated",
+          5,
+          69
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        28171,
+        46593,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1868,
+          "compact",
+          6,
+          26
+        ],
+        [
+          1869,
+          "interface_and_binary_inflated",
+          5,
+          20
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        28167,
+        11,
+        369,
+        177,
+        46593,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1868,
+          "compact",
+          6,
+          80
+        ],
+        [
+          1869,
+          "interface_and_binary_inflated",
+          5,
+          74
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        7691,
+        57857,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1904,
+          "compact",
+          6,
+          30
+        ],
+        [
+          1905,
+          "interface_and_binary_inflated",
+          5,
+          24
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        7687,
+        11,
+        369,
+        177,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1904,
+          "compact",
+          6,
+          76
+        ],
+        [
+          1905,
+          "interface_and_binary_inflated",
+          5,
+          70
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        7691,
+        25089,
+        41473,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1940,
+          "compact",
+          7,
+          62
+        ],
+        [
+          1941,
+          "interface_and_binary_inflated",
+          6,
+          56
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        7687,
+        11,
+        369,
+        177,
+        25089,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1940,
+          "compact",
+          7,
+          104
+        ],
+        [
+          1941,
+          "interface_and_binary_inflated",
+          6,
+          98
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        25095,
+        11,
+        369,
+        177,
+        7681,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1940,
+          "compact",
+          7,
+          136
+        ],
+        [
+          1941,
+          "interface_and_binary_inflated",
+          6,
+          130
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        57857,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1976,
+          "compact",
+          7,
+          42
+        ],
+        [
+          1977,
+          "interface_and_binary_inflated",
+          6,
+          36
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        3591,
+        11,
+        369,
+        177,
+        5633,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1976,
+          "compact",
+          7,
+          82
+        ],
+        [
+          1977,
+          "interface_and_binary_inflated",
+          6,
+          76
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        5639,
+        11,
+        369,
+        177,
+        3585,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          1976,
+          "compact",
+          7,
+          112
+        ],
+        [
+          1977,
+          "interface_and_binary_inflated",
+          6,
+          106
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 9,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        25089,
+        41473,
+        369,
+        177,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2012,
+          "compact",
+          8,
+          42
+        ],
+        [
+          2013,
+          "interface_and_binary_inflated",
+          7,
+          36
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 9,
+      "midpoint": [
+        3591,
+        11,
+        369,
+        177,
+        41473,
+        5633,
+        25089,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2012,
+          "compact",
+          8,
+          80
+        ],
+        [
+          2013,
+          "interface_and_binary_inflated",
+          7,
+          74
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 6,
+      "midpoint": [
+        7,
+        65035,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2048,
+          "compact",
+          5,
+          20
+        ],
+        [
+          2049,
+          "interface_and_binary_inflated",
+          4,
+          15
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        32267,
+        41473,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2084,
+          "compact",
+          6,
+          30
+        ],
+        [
+          2085,
+          "interface_and_binary_inflated",
+          5,
+          22
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        32263,
+        11,
+        241,
+        273,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2084,
+          "compact",
+          6,
+          78
+        ],
+        [
+          2085,
+          "interface_and_binary_inflated",
+          5,
+          70
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        60939,
+        5633,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2120,
+          "compact",
+          6,
+          30
+        ],
+        [
+          2121,
+          "interface_and_binary_inflated",
+          5,
+          22
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        60935,
+        11,
+        241,
+        273,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2120,
+          "compact",
+          6,
+          78
+        ],
+        [
+          2121,
+          "interface_and_binary_inflated",
+          5,
+          70
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        28171,
+        46593,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2156,
+          "compact",
+          6,
+          28
+        ],
+        [
+          2157,
+          "interface_and_binary_inflated",
+          5,
+          23
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        28167,
+        11,
+        241,
+        273,
+        46593,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2156,
+          "compact",
+          6,
+          80
+        ],
+        [
+          2157,
+          "interface_and_binary_inflated",
+          5,
+          75
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        7691,
+        57857,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2192,
+          "compact",
+          6,
+          32
+        ],
+        [
+          2193,
+          "interface_and_binary_inflated",
+          5,
+          27
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 7,
+      "midpoint": [
+        7687,
+        11,
+        241,
+        273,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2192,
+          "compact",
+          6,
+          76
+        ],
+        [
+          2193,
+          "interface_and_binary_inflated",
+          5,
+          71
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        7691,
+        25089,
+        41473,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2228,
+          "compact",
+          7,
+          64
+        ],
+        [
+          2229,
+          "interface_and_binary_inflated",
+          6,
+          59
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        7687,
+        11,
+        241,
+        273,
+        25089,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2228,
+          "compact",
+          7,
+          104
+        ],
+        [
+          2229,
+          "interface_and_binary_inflated",
+          6,
+          99
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        25095,
+        11,
+        241,
+        273,
+        7681,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2228,
+          "compact",
+          7,
+          136
+        ],
+        [
+          2229,
+          "interface_and_binary_inflated",
+          6,
+          131
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        57857,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2264,
+          "compact",
+          7,
+          44
+        ],
+        [
+          2265,
+          "interface_and_binary_inflated",
+          6,
+          39
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        3591,
+        11,
+        241,
+        273,
+        5633,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2264,
+          "compact",
+          7,
+          82
+        ],
+        [
+          2265,
+          "interface_and_binary_inflated",
+          6,
+          77
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        5639,
+        11,
+        241,
+        273,
+        3585,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2264,
+          "compact",
+          7,
+          112
+        ],
+        [
+          2265,
+          "interface_and_binary_inflated",
+          6,
+          107
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 9,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        25089,
+        41473,
+        241,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2300,
+          "compact",
+          8,
+          44
+        ],
+        [
+          2301,
+          "interface_and_binary_inflated",
+          7,
+          39
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 9,
+      "midpoint": [
+        3591,
+        11,
+        241,
+        273,
+        41473,
+        5633,
+        25089,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2300,
+          "compact",
+          8,
+          80
+        ],
+        [
+          2301,
+          "interface_and_binary_inflated",
+          7,
+          75
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 7,
+      "midpoint": [
+        7,
+        65035,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2336,
+          "compact",
+          6,
+          28
+        ],
+        [
+          2337,
+          "interface_and_binary_inflated",
+          5,
+          23
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        32267,
+        41473,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2372,
+          "compact",
+          7,
+          38
+        ],
+        [
+          2373,
+          "interface_and_binary_inflated",
+          6,
+          30
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        32263,
+        11,
+        113,
+        177,
+        273,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2372,
+          "compact",
+          7,
+          96
+        ],
+        [
+          2373,
+          "interface_and_binary_inflated",
+          6,
+          88
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        60939,
+        5633,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2408,
+          "compact",
+          7,
+          38
+        ],
+        [
+          2409,
+          "interface_and_binary_inflated",
+          6,
+          30
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        60935,
+        11,
+        113,
+        177,
+        273,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2408,
+          "compact",
+          7,
+          96
+        ],
+        [
+          2409,
+          "interface_and_binary_inflated",
+          6,
+          88
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        28171,
+        46593,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2444,
+          "compact",
+          7,
+          36
+        ],
+        [
+          2445,
+          "interface_and_binary_inflated",
+          6,
+          31
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        28167,
+        11,
+        113,
+        177,
+        273,
+        46593,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2444,
+          "compact",
+          7,
+          102
+        ],
+        [
+          2445,
+          "interface_and_binary_inflated",
+          6,
+          97
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 8,
+      "midpoint": [
+        7,
+        7691,
+        57857,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2480,
+          "compact",
+          7,
+          40
+        ],
+        [
+          2481,
+          "interface_and_binary_inflated",
+          6,
+          35
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 8,
+      "midpoint": [
+        7687,
+        11,
+        113,
+        177,
+        273,
+        57857,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2480,
+          "compact",
+          7,
+          96
+        ],
+        [
+          2481,
+          "interface_and_binary_inflated",
+          6,
+          91
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 9,
+      "midpoint": [
+        7,
+        7691,
+        25089,
+        41473,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2516,
+          "compact",
+          8,
+          72
+        ],
+        [
+          2517,
+          "interface_and_binary_inflated",
+          7,
+          67
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 9,
+      "midpoint": [
+        7687,
+        11,
+        113,
+        177,
+        273,
+        41473,
+        25089,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2516,
+          "compact",
+          8,
+          122
+        ],
+        [
+          2517,
+          "interface_and_binary_inflated",
+          7,
+          117
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 9,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        57857,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2552,
+          "compact",
+          8,
+          52
+        ],
+        [
+          2553,
+          "interface_and_binary_inflated",
+          7,
+          47
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 9,
+      "midpoint": [
+        3591,
+        11,
+        113,
+        177,
+        273,
+        57857,
+        5633,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2552,
+          "compact",
+          8,
+          100
+        ],
+        [
+          2553,
+          "interface_and_binary_inflated",
+          7,
+          95
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 1,
+      "k": 10,
+      "midpoint": [
+        7,
+        3595,
+        5633,
+        25089,
+        41473,
+        113,
+        177,
+        273,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2588,
+          "compact",
+          9,
+          52
+        ],
+        [
+          2589,
+          "interface_and_binary_inflated",
+          8,
+          47
+        ]
+      ],
+      "peer": 9,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sender": 1,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 10,
+      "midpoint": [
+        3591,
+        11,
+        113,
+        177,
+        273,
+        5633,
+        25089,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2588,
+          "compact",
+          9,
+          98
+        ],
+        [
+          2589,
+          "interface_and_binary_inflated",
+          8,
+          93
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 10,
+      "midpoint": [
+        5639,
+        11,
+        113,
+        177,
+        273,
+        3585,
+        25089,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2588,
+          "compact",
+          9,
+          128
+        ],
+        [
+          2589,
+          "interface_and_binary_inflated",
+          8,
+          123
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    },
+    {
+      "gained": 0,
+      "k": 10,
+      "midpoint": [
+        25095,
+        11,
+        113,
+        177,
+        273,
+        3585,
+        5633,
+        41473,
+        1,
+        1
+      ],
+      "occurrences": [
+        [
+          2588,
+          "compact",
+          9,
+          158
+        ],
+        [
+          2589,
+          "interface_and_binary_inflated",
+          8,
+          153
+        ]
+      ],
+      "peer": 1,
+      "ranks": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sender": 9,
+      "tree": "U"
+    }
+  ],
+  "compact_factor_panel": [
+    {
+      "destination": 7,
+      "midpoint": [
+        7,
+        907,
+        113,
+        1,
+        1
+      ],
+      "payload": 4,
+      "peer_changed": false,
+      "received": [
+        7,
+        11,
+        113,
+        1,
+        897
+      ],
+      "shuffles": {
+        "both_labels_continuously_held_below_root": 208,
+        "payload_absent_below_root": 1,
+        "total": 210
+      },
+      "source_changed": false
+    },
+    {
+      "destination": 4,
+      "midpoint": [
+        7,
+        123,
+        897,
+        1,
+        1
+      ],
+      "payload": 4,
+      "peer_changed": true,
+      "received": [
+        7,
+        11,
+        897,
+        1,
+        113
+      ],
+      "shuffles": {
+        "both_labels_continuously_held_below_root": 208,
+        "payload_absent_below_root": 1,
+        "total": 210
+      },
+      "source_changed": false
+    },
+    {
+      "destination": 7,
+      "midpoint": [
+        7,
+        907,
+        113,
+        1,
+        1
+      ],
+      "payload": 3,
+      "peer_changed": false,
+      "received": [
+        7,
+        11,
+        113,
+        897,
+        1
+      ],
+      "shuffles": {
+        "both_labels_continuously_held_below_root": 208,
+        "payload_absent_below_root": 1,
+        "total": 210
+      },
+      "source_changed": true
+    },
+    {
+      "destination": 4,
+      "midpoint": [
+        7,
+        123,
+        897,
+        1,
+        1
+      ],
+      "payload": 3,
+      "peer_changed": true,
+      "received": [
+        7,
+        11,
+        897,
+        113,
+        1
+      ],
+      "shuffles": {
+        "both_labels_continuously_held_below_root": 208,
+        "payload_absent_below_root": 1,
+        "total": 210
+      },
+      "source_changed": true
+    }
+  ],
+  "compact_relays": [
+    {
+      "branches": [
+        4,
+        7,
+        1
+      ],
+      "case": 68,
+      "exact_restart": false,
+      "frames": [
+        10,
+        16,
+        20,
+        24,
+        30
+      ],
+      "payload": 3
+    },
+    {
+      "branches": [
+        1,
+        4,
+        7
+      ],
+      "case": 170,
+      "exact_restart": true,
+      "frames": [
+        14,
+        18,
+        24,
+        30,
+        36
+      ],
+      "payload": 3
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 356,
+      "exact_restart": false,
+      "frames": [
+        16,
+        26,
+        38,
+        50,
+        56
+      ],
+      "payload": 3
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 392,
+      "exact_restart": false,
+      "frames": [
+        16,
+        26,
+        38,
+        50,
+        56
+      ],
+      "payload": 3
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 428,
+      "exact_restart": false,
+      "frames": [
+        14,
+        24,
+        34,
+        44,
+        50
+      ],
+      "payload": 3
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 464,
+      "exact_restart": false,
+      "frames": [
+        18,
+        28,
+        36,
+        44,
+        50
+      ],
+      "payload": 3
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 500,
+      "exact_restart": false,
+      "frames": [
+        50,
+        60,
+        68,
+        76,
+        82
+      ],
+      "payload": 4
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 536,
+      "exact_restart": false,
+      "frames": [
+        30,
+        40,
+        46,
+        52,
+        58
+      ],
+      "payload": 4
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 572,
+      "exact_restart": false,
+      "frames": [
+        30,
+        40,
+        46,
+        52,
+        58
+      ],
+      "payload": 5
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 1220,
+      "exact_restart": false,
+      "frames": [
+        62,
+        66,
+        78,
+        90,
+        96
+      ],
+      "payload": 5
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 1256,
+      "exact_restart": false,
+      "frames": [
+        62,
+        66,
+        78,
+        90,
+        96
+      ],
+      "payload": 5
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 1292,
+      "exact_restart": false,
+      "frames": [
+        62,
+        66,
+        76,
+        86,
+        92
+      ],
+      "payload": 5
+    },
+    {
+      "branches": [
+        4,
+        9,
+        1
+      ],
+      "case": 1328,
+      "exact_restart": false,
+      "frames": [
+        62,
+        66,
+        74,
+        82,
+        88
+      ],
+      "payload": 5
+    },
+    {
+      "branches": [
+        1,
+        4,
+        9
+      ],
+      "case": 1466,
+      "exact_restart": true,
+      "frames": [
+        22,
+        26,
+        36,
+        46,
+        60
+      ],
+      "payload": 3
+    }
+  ],
+  "family_calls": 870,
+  "path_rows": 890,
+  "uncompressed_sha256": "7196c0c89ccf1c8a744e5ed76342f41769282c88f015e4716d666a292002e3be"
+}

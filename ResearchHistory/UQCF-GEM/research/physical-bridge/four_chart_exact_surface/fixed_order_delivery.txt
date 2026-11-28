@@ -1,0 +1,13 @@
+base widths [3, 3, 3, 3] remove 1 write ['A1'] later edits 4 receiver endpoint masks (3, 0, 5, 9)
+reduce widths [3, 3, 3, 2] remove 2 write ['A2'] later edits 0 receiver endpoint masks (3, 5, 0, 9)
+alt widths [3, 3, 3, 2] remove 2 write ['A2'] later edits 0 receiver endpoint masks (3, 5, 0, 9)
+neutral widths [3, 3, 3, 3] remove 1 write ['A1'] later edits 4 receiver endpoint masks (3, 0, 5, 9)
+evidence 0 remove 2 write ['A2'] later edits 0
+evidence 3 remove 1 write ['A1'] later edits 4
+Admissible target tables and positional minima [(24, [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]], [(0, 1, 2), (0, 1, 3), (0, 2, 3), (1, 2, 3)]), (108, [[0, 1, 2], [0, 1, 2], [0, 1, 3], [2, 3]], [(0, 1, 2), (0, 1, 3), (0, 2, 3), (1, 2, 3)])]
+All 24 junction orders, observed withdrawal pairs [((0, 0), 6), ((1, 1), 4), ((1, 2), 2), ((2, 3), 6), ((3, 3), 6)]
+Two different leaf writes 2
+All 72 non-perturbed branches, counts for changed withdrawals by active clearance in both arms [((False, True), 2), ((True, False), 6), ((True, True), 16)]
+Junction orders with at least one other branch actively writing two different roles 13
+structural 216 matched pairs; 864 verified whole paths including controls; 18 ordered recipient-leaf pairs each realized 12 times
+equal profile 216 matched pairs; 432 verified whole paths including controls; 18 ordered recipient-leaf pairs each realized 12 times

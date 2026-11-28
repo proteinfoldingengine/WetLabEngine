@@ -1,0 +1,8 @@
+exact vertices, components, candidate priors: 24 2 12
+swap distance per control: [(('exact', 6), 12), (('exact, helper held', None), 12), (('inner exact, outer may deviate, helper held', 4), 12), (('outer exact, inner may deviate, helper held', 10), 12)]
+identity compact prior (3, 1, 2, 1, 1, 2) first edit profile (2, 2) profiles [(1, 2), (2, 2)]
+identity inflated prior (3, 1, 2, 3, 1, 2) first edit profile (1, 2) profiles [(1, 2), (2, 2)]
+reversal compact prior (3, 2, 1, 2, 2, 1) first edit profile (2, 1) profiles [(1, 2), (2, 1), (2, 2)]
+reversal inflated prior (3, 2, 1, 3, 2, 1) first edit profile (2, 1) profiles [(1, 2), (2, 1), (2, 2)]
+cyclic compact prior (3, 2, 1, 2, 2, 1) first edit profile (2, 1) profiles [(1, 2), (2, 1), (2, 2)]
+cyclic inflated prior (3, 2, 1, 3, 2, 1) first edit profile (2, 1) profiles [(1, 2), (2, 1), (2, 2)]

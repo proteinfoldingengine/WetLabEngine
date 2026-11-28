@@ -1,0 +1,13 @@
+Original 2393446 parent/nested start (48, 134) unique shortest moves ((79, 7), (79, 4), (77, 4))
+Original 2393447 parent/nested start (7, 19) unique shortest moves ((17, 4), (17, 2), (16, 2))
+Original 2393448 parent/nested start (13, 37) unique shortest moves ((30, 6), (30, 3), (29, 3))
+Original 2393449 parent/nested start (23, 61) unique shortest moves ((36, 5), (36, 3), (34, 3))
+Original M9 ordinal 2393447 SHA-256 4341d70cc3ee321b37ddb64202743ca55482c261f6c512d69ab03483c98e1ff3
+Frame 19. New states, exact endpoints, shortest exact paths at each distance: [(19, 0, 0), (202, 0, 0), (1564, 1, 1)]
+Sole shortest path (node, toggled label): ((17, 4), (17, 2), (16, 2)) matches archived frames 20-22.
+Four-move exact alternative: parent 10 and leaf 12; leaf 17 stays fixed.
+Frame 23. Exact repairs in one move: [((1, 2),)] actual next change: [(1, 3)]
+All root-defective parent boundaries in this original record, horizon three: [('multiple bypassed', 11), ('multiple followed', 4), ('no exact path within three', 6), ('unique bypassed', 6), ('unique followed', 1)]
+Unique shortest paths followed, by (starting frame, distance): [(19, 3)]
+Compact arm 0 unrestricted BFS: [(48, 0, 0), (1179, 0, 0), (19771, 0, 0), (254645, 1, 4)]
+Compact arm 1 unrestricted BFS: [(48, 0, 0), (1179, 0, 0), (19771, 0, 0), (254645, 1, 4)]

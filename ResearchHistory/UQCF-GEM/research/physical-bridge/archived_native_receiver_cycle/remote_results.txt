@@ -1,0 +1,12 @@
+source=0 target=0 parent/nested frames=49/83 receiver=(2, 3) own initial labels retained=0 common-withdrawal frames=[34, 42, 43]
+source=0 target=1 parent/nested frames=48/78 receiver=(2, 3) own initial labels retained=0 common-withdrawal frames=[33, 41, 42]
+source=1 target=0 parent/nested frames=52/86 receiver=(3, 2) own initial labels retained=1 common-withdrawal frames=[37, 45, 46]
+source=1 target=1 parent/nested frames=47/77 receiver=(3, 2) own initial labels retained=1 common-withdrawal frames=[32, 40, 41]
+fixed target 0: 42 identical terminal parent frames, only leaves 14 and 15 differ
+fixed target 1: 38 identical terminal parent frames, only leaves 14 and 15 differ
+Pilot receiver 5: withdraw 6, native destination for 0 is leaf 18 versus 17
+reversal=0: all six shifts and both fixed-target contrasts checked
+reversal=1: all six shifts and both fixed-target contrasts checked
+Archive controls [ordinal, floor-preserving flips, original guard rank preserved, maximum cover size]
+[[2393446, 127, 107, 4], [2393447, 22, 19, 3], [2393448, 41, 37, 3], [2393449, 58, 46, 4]]
+50 full new records verified; uncompressed SHA-256 523f72aa166f8c9ef2e75920b56ff81a3bfe9493f6608bacb912962df144f38d
