@@ -20,6 +20,8 @@ jobs:
           persist-credentials: false
           sparse-checkout-cone-mode: false
           sparse-checkout: |
+            /.github/scripts/uqcf_preparability_review.py
+            /.github/scripts/uqcf_preparability_integrity.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/PEER_EXCHANGE.md
             /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/peer_exchange.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/peer_exchange_results.json
