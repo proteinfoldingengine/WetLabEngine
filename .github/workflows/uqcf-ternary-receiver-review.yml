@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/uqcf-ternary-receiver-review.yml"
       - "ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/review_ternary_preparation.py"
+      - "ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/REVIEW_STATUS.md"
 permissions:
   contents: read
 env:
@@ -28,6 +29,7 @@ jobs:
             /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/ternary_preparation.py
             /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/ternary_preparation_evidence.json
             /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/review_ternary_preparation.py
+            /ResearchHistory/UQCF-GEM/research/physical-bridge/archived_native_receiver_cycle/REVIEW_STATUS.md
             /ResearchHistory/UQCF-GEM/demos/v16.50-recursive-binary-composition/producer.py
             /ResearchHistory/UQCF-GEM/demos/v16.51-ternary-interface/
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -56,7 +58,7 @@ jobs:
         run: |
           set -euo pipefail
           python -B "$CTRL/review_ternary_preparation.py" audit evidence | tee evidence/audit.log
-          cp "$CTRL"/{TERNARY_PREPARATION.md,ternary_preparation.py,ternary_preparation_evidence.json,review_ternary_preparation.py} evidence/
+          cp "$CTRL"/{TERNARY_PREPARATION.md,ternary_preparation.py,ternary_preparation_evidence.json,review_ternary_preparation.py,REVIEW_STATUS.md} evidence/
           (cd evidence && sha256sum *.md *.py *.json *.txt *.log > SHA256SUMS && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
