@@ -1,0 +1,686 @@
+{
+  "additional_q3": [
+    [
+      4,
+      9,
+      101,
+      197
+    ],
+    [
+      5,
+      11,
+      145,
+      285
+    ],
+    [
+      6,
+      13,
+      197,
+      389
+    ],
+    [
+      7,
+      15,
+      257,
+      509
+    ]
+  ],
+  "archived": [
+    {
+      "closed_changed": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "h": 3,
+      "nested_frames": 371,
+      "ordinal": 2393446,
+      "parent_frames": 199,
+      "q": 4,
+      "unequal_terminal_pairs": [
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          17,
+          19
+        ],
+        [
+          18,
+          19
+        ]
+      ]
+    },
+    {
+      "closed_changed": [
+        5
+      ],
+      "cycle_row": 5,
+      "h": 2,
+      "matched": [
+        {
+          "leaf": 15,
+          "read": {
+            "add": false,
+            "after": [
+              0,
+              1
+            ],
+            "before": [
+              0,
+              1,
+              4
+            ],
+            "changes": [
+              [
+                15,
+                1,
+                true
+              ],
+              [
+                15,
+                4,
+                false
+              ],
+              [
+                13,
+                4,
+                false
+              ]
+            ],
+            "nested_frames": [
+              65,
+              68
+            ],
+            "parent_frame": 36,
+            "slots_after": [
+              0,
+              1
+            ],
+            "slots_before": [
+              0,
+              4
+            ],
+            "x": 4
+          },
+          "row": 4,
+          "slot": 1,
+          "sorted_control_slot": 1,
+          "terminal_leaves": [
+            0,
+            1
+          ],
+          "terminal_parent": [
+            0,
+            1
+          ],
+          "write": {
+            "add": false,
+            "after": [
+              2,
+              4
+            ],
+            "before": [
+              2,
+              3,
+              4
+            ],
+            "changes": [
+              [
+                15,
+                4,
+                true
+              ],
+              [
+                15,
+                3,
+                false
+              ],
+              [
+                13,
+                3,
+                false
+              ]
+            ],
+            "nested_frames": [
+              10,
+              13
+            ],
+            "parent_frame": 5,
+            "slots_after": [
+              2,
+              4
+            ],
+            "slots_before": [
+              2,
+              3
+            ],
+            "x": 3
+          }
+        },
+        {
+          "leaf": 17,
+          "read": {
+            "add": false,
+            "after": [
+              0,
+              1
+            ],
+            "before": [
+              0,
+              1,
+              4
+            ],
+            "changes": [
+              [
+                17,
+                1,
+                true
+              ],
+              [
+                17,
+                4,
+                false
+              ],
+              [
+                16,
+                4,
+                false
+              ]
+            ],
+            "nested_frames": [
+              45,
+              48
+            ],
+            "parent_frame": 24,
+            "slots_after": [
+              1,
+              0
+            ],
+            "slots_before": [
+              4,
+              0
+            ],
+            "x": 4
+          },
+          "row": 5,
+          "slot": 0,
+          "sorted_control_slot": 1,
+          "terminal_leaves": [
+            1,
+            0
+          ],
+          "terminal_parent": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "write": {
+            "add": false,
+            "after": [
+              3,
+              4
+            ],
+            "before": [
+              2,
+              3,
+              4
+            ],
+            "changes": [
+              [
+                17,
+                4,
+                true
+              ],
+              [
+                17,
+                2,
+                false
+              ],
+              [
+                16,
+                2,
+                false
+              ]
+            ],
+            "nested_frames": [
+              19,
+              22
+            ],
+            "parent_frame": 8,
+            "slots_after": [
+              4,
+              3
+            ],
+            "slots_before": [
+              2,
+              3
+            ],
+            "x": 2
+          }
+        }
+      ],
+      "nested_frames": 69,
+      "ordinal": 2393447,
+      "parent_frames": 37,
+      "q": 3,
+      "unequal_terminal_pairs": []
+    },
+    {
+      "closed_changed": [
+        6,
+        7
+      ],
+      "cycle_row": 7,
+      "h": 3,
+      "matched": [
+        {
+          "leaf": 24,
+          "read": {
+            "add": false,
+            "after": [
+              0,
+              1,
+              2
+            ],
+            "before": [
+              0,
+              1,
+              2,
+              6
+            ],
+            "changes": [
+              [
+                24,
+                2,
+                true
+              ],
+              [
+                24,
+                6,
+                false
+              ],
+              [
+                21,
+                6,
+                false
+              ]
+            ],
+            "nested_frames": [
+              121,
+              124
+            ],
+            "parent_frame": 64,
+            "slots_after": [
+              0,
+              1,
+              2
+            ],
+            "slots_before": [
+              0,
+              1,
+              6
+            ],
+            "x": 6
+          },
+          "row": 5,
+          "slot": 2,
+          "sorted_control_slot": 2,
+          "terminal_leaves": [
+            0,
+            1,
+            2
+          ],
+          "terminal_parent": [
+            0,
+            1,
+            2
+          ],
+          "write": {
+            "add": false,
+            "after": [
+              3,
+              4,
+              6
+            ],
+            "before": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "changes": [
+              [
+                24,
+                6,
+                true
+              ],
+              [
+                24,
+                5,
+                false
+              ],
+              [
+                21,
+                5,
+                false
+              ]
+            ],
+            "nested_frames": [
+              13,
+              16
+            ],
+            "parent_frame": 6,
+            "slots_after": [
+              3,
+              4,
+              6
+            ],
+            "slots_before": [
+              3,
+              4,
+              5
+            ],
+            "x": 5
+          }
+        },
+        {
+          "leaf": 30,
+          "read": {
+            "add": false,
+            "after": [
+              0,
+              1,
+              2
+            ],
+            "before": [
+              0,
+              1,
+              2,
+              6
+            ],
+            "changes": [
+              [
+                30,
+                2,
+                true
+              ],
+              [
+                30,
+                6,
+                false
+              ],
+              [
+                29,
+                6,
+                false
+              ]
+            ],
+            "nested_frames": [
+              77,
+              80
+            ],
+            "parent_frame": 40,
+            "slots_after": [
+              2,
+              0,
+              1
+            ],
+            "slots_before": [
+              6,
+              0,
+              1
+            ],
+            "x": 6
+          },
+          "row": 7,
+          "slot": 0,
+          "sorted_control_slot": 2,
+          "terminal_leaves": [
+            2,
+            0,
+            1
+          ],
+          "terminal_parent": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "write": {
+            "add": false,
+            "after": [
+              4,
+              5,
+              6
+            ],
+            "before": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "changes": [
+              [
+                30,
+                6,
+                true
+              ],
+              [
+                30,
+                3,
+                false
+              ],
+              [
+                29,
+                3,
+                false
+              ]
+            ],
+            "nested_frames": [
+              37,
+              40
+            ],
+            "parent_frame": 14,
+            "slots_after": [
+              6,
+              4,
+              5
+            ],
+            "slots_before": [
+              3,
+              4,
+              5
+            ],
+            "x": 3
+          }
+        }
+      ],
+      "nested_frames": 125,
+      "ordinal": 2393448,
+      "parent_frames": 65,
+      "q": 3,
+      "rows_6_7_initial_terminal": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            6,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ]
+      ],
+      "unequal_terminal_pairs": [
+        [
+          6,
+          7
+        ]
+      ]
+    },
+    {
+      "closed_changed": [
+        8,
+        9,
+        10
+      ],
+      "h": 2,
+      "nested_frames": 169,
+      "ordinal": 2393449,
+      "parent_frames": 95,
+      "q": 4,
+      "unequal_terminal_pairs": [
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ]
+      ]
+    }
+  ]
+}
